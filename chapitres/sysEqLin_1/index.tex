@@ -1,0 +1,79 @@
+\chapter{Systèmes d'equations linéaires}
+\section{$\R$ (Le corps $\R$)}
+%
+%
+\section{Systèmes d'equations lineaires}
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel. On appelle éqaution linéaire à coefficients dans $\R$ tout relation de la forme 
+$$a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = b$$
+si $a_1, a_2, \ldots, a_n, b \in \R$. Les $x_i$ sont \underline{les inconnues} de l'équation et les $a_i$ sont \underline{les coefficients}.
+
+\paragraph{Définition} Soient $n \geq 1$ et $m \leq 1$ deux entiers naturels; un systeme d'équation linéaire à $n$ équations et $m$ inconnues est de la forme:
+$$n \left\{ \begin{array}.
+  a_{11}x_{1} + a_{12}x_{2} + \ldots + a_{1m}x_{m} = b_{1} \\
+  a_{21}x_{1} + a_{22}x_{2} + \ldots + a_{2m}x_{m} = b_{2} \\
+  \vdots \\
+  a_{n1}x_{1} + a_{n2}x_{2} + \ldots + a_{nm}x_{m} = b_{n}
+\end{array} \right. (a_i, b_l \in \mathbb(R))$$
+Soit $S$ un système d'équations linéaires à $n$ équations et $m$ inconnues.
+
+\paragraph{Définition} Une solution du système dans $\R^m$ est un $m$-uplet $(t_1, t_1, \ldots, t_m) \in \R^m$ tel que les $n$ égalités soient veréfiés, en prennant $x_i = t_i$. Résoudre dans R$\R^m$ le système $S$ consiste à déterminer l'ensemble des solutions de $S$ dans $\R^m$.
+
+\paragraph{Définition} On dit que deux systèmes d'équations linéaires sont équivalents s'ils ont le même ensebmle de solutions.
+
+\paragraph{} Pour résoudre un système d'équations linéaires, on va effectuer des opérations élémentaires sur les équations de la système à fin de se ramener à un système plus simple. Ces opérations sont de 3 types:
+\begin{enumerate}[ a)]
+  \item multiplier une équation par un réel non nul
+  \item ajuter à une équation un multiple d'un autre équation
+  \item permuter deux équations
+\end{enumerate}
+
+Chaque de ces opérations amit une opération inverse. Par suite, effectue un opération élémentaire donne lieu à un système équivalent. Au terme du processus, le système obtenue aura donc le même ensemble de solutions que le système initial.
+%
+%
+\section{L'algorithme d'elimination de Gauss}
+Il s'agit d'une méthode permettant de résoudre un système linéaire quelconque en le mettant sous une forme plus simple, dite échelonnée réduite, à l'aide d'opérations élémentaires.
+On observe que les opérations élémentaires effectuées sur les équations du système portant sur les coefficients et rien sur les inconnues. Il serve donc au même d'effectuer ces mêmes opérations sur les lignes du tableau des coéfficiants du système.
+
+\paragraph{Définition} Soit S un système linéaire à $n$ équations et $m$ inconnues. La matrice associée au système est le tableau
+$$\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1m} \\
+  a_{21} & a_{22} & \cdots & a_{2m} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nm}
+ \end{pmatrix}$$
+La matric augmentée associée au système est le tableau
+$$\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1m} & b_{1} \\
+  a_{21} & a_{22} & \cdots & a_{2m} & b_{2} \\
+  \vdots  & \vdots  & \ddots & \vdots & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nm} & b_{n}
+ \end{pmatrix}$$
+ 
+\paragraph{Définition} Une matrice est dit échelonnée si elle se présente sous la forme suivante:
+\begin{itemize}
+  \item Le premier coefficient non nul d'une ligne non nulle vaut 1, On l'appelle coefficient pivot.
+  \item Les lignes nulles sont regroupées en bas de la matrice.
+  \item Pour deux lignes non nulles consécutives, le pivot de la ligne inférieure se touve en bas à droit du pivot de la ligne supérieure.
+  \item Une matrice échelonnée est dite \underline{échelonnée réduite} si de plus les colonnes contenant un coefficient pivot ont des zéros partout ailleurs.
+\end{itemize}
+\paragraph{} On peut mettre une matrice quelconque sous forme échelonnée ou échelonnée réduite eu effectuant des opérations d'élémentaires. C'est l'algorithme de Gauss. \\
+On procède comme suit:
+\begin{enumerate}
+  \item On repére la première colonne non nulle.
+  \item On cherche à faire apparaître dans cette colonne un coefficient notant 1, soit en multipliant une ligne par un réel non nul, soit en ajoutant à une ligne un multiple d'une autre.
+  \item En permutant éventuellement deux lignes, on place ce coefficient 1 en première ligne. On l'appelle coefficient pivot.
+  \item En ajoutant aux lignes concernées un multiple de la première, on fait apparaître des zéros au dessous du pivot. 
+  \item On masque la première ligne contenant le pivot déjà placé, et on recommence avec la sous-matrice obtenue.
+\end{enumerate}
+La première partie de l'algorithme est faite. Pour mettre la matrice sous forme échelonnée réduite, on commence par le dernier pivot placé. On cherche les lignes audessus du pivot qui ne sont pas nulles, et on ajoute un multiple de la ligne avec le pivot choisit. Quand tous les coefficients audessus du dernier pivot sont nuls, on fait le même avec tout les autres pivot en direction de droit à gauche. On est fini si on a une matrice échelonnée réduite selon la définition audesus.
+%
+%
+\section{Résolution d'un système linéaire}
+\paragraph{} Pour résoudre un système linéaire on commence par mettre la matrice augmentée du système sous forme échelonnée réduite, en limitant la recherche des pivots aux colonnes de la matrice du système.
+Si la dernière ligne de la matrice totale est entièrement nulle: Le système est compatible; il admit au moins une solution.
+\paragraph{}On procède alors aux trois étapes suivantes:
+\begin{enumerate}
+  \item Les inconnues se trouvant dans le colonnes des coefficients pivot s'appellent les inconnues principales. Les autres s'appellent inconnues secondaires; ce sont elles que vont parametier les solutions du système.
+  \item Exprimer les inconnues principales en fonction des inconnues secondaires.
+  \item Écrire l'ensemble des solutions du système.
+\end{enumerate}

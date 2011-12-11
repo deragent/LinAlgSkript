@@ -1,0 +1,142 @@
+\chapter{Calcul matriciel}
+
+\section{Matrices}
+\paragraph{Définition} Soient $n \geq 1$ et $m \geq 1$ deux entiers naturels. On appelle matrice de taille $n\times m$ à coefficients dans $\R$ un tableau à $n$ lignes et $m$ colonnes de la forme
+$$\begin{pmatrix}
+  a_{11} & a_{12} & \ldots & a_{1m} \\
+  a_{21} & a_{22} & \ldots & a_{2m} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{n1} & a_{n2} & \ldots & a_{nm}
+\end{pmatrix} \text{ avec } a_{ij} \in \R$$
+On peut noter la matrice $A = (a_{ij})_{1 \leq i \leq n, 1 \leq j \leq m}$ ou simplement $A = (a_{ij})$.
+
+\paragraph{Définition} On note $M_{n, m}(\R)$ l'ensemble des matrices de taille $n\times m$ à coefficients dans $\R$.
+
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel et $A$ une matrice de taille $n\times n$. On dit alors que $A$ est une matrice carrée. \\ 
+On note $M_{n}(\R)$ l'ensemble des matrices carrées de taille $n\times m$ à coefficients dans $\R$. Les coefficients $a_{ii}$ pour $1 \leq i \leq n$ sont appellés coefficients diagonaux de $A$.
+
+%
+%
+\section{Opérations sur les matrices}
+\paragraph{Définition} Soient $m\geq 1$ et $n \geq 1$ deux entiers naturels. On peut définir la somme de deux matrices de même taille. Si $A = (a_{ij}), B = (b_{ij}) \in M_{n, m}(\R)$ on définit leur somme $S = A + B \in M_{n, m}(\R)$ par
+$$s_{ij} = a_{ij} + b_{ij} ~ \forall ~ 1 \leq i \leq n, 1 \leq j \leq m$$
+
+\paragraph{Définition} Soient $n \geq 1, m \geq 1$ deux entiers naturels, $A = (a_{ij}) \in M_{n, m}(\R)$ et $\alpha \in \R$. On  définit le produit de $A$ par $\alpha$ que l'on note $\alpha A$, par
+$$\alpha A = (\alpha a_{ij}) \in M_{n, m}(\R)$$
+
+\paragraph{Définition} Soient $n \geq 1, m \geq 1$ et $p \geq 1$ trois entiers naturels. On peut définir le produit $A \times B$ d'une matrice $A$ et d'une matrice $B$ dans cet ordre si le nombre de colonnes de $A$ est égal au nombre de lignes de $B$. \\
+Si $A = (a_{ij}) \in M_{n, m}(\R)$ et $B = (b_{ij}) \in M_{m, p}(\R)$, alors on définit $C = A \times B \in M_{n, p}(\R)$
+$$c_{ij} = \sum_{l=1}^{m} {a_{il} * b_{lj} = a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + \ldots + a_{im} \cdot b_{mj}$$
+
+\paragraph{Proposition} Soient $m \geq 1$ et $n\geq 1$ des entiers naturels.
+\begin{enumerate}
+  \item Soient $a, B, C \in M_{n, m}(\R)$. Alors
+    $$(A + B) + C = A + (B + C)$$
+  \item On note $0$ la matrice nulle dans $M_{n, m}(\R)$, c'est-à-dire la matrice dont tous les coefficients sont nuls. Alors pour tout $A \in M_{n, m}(\R)$ on a
+    $$A + 0 = A = 0 + A$$
+  \item Soit $A \in M_{n, m}(\R)$. On note $-A$ la matrice $(-a_{ij})$ dans l'ensemble $M_{n, m}(\R)$. Alors on a
+    $$(-A) + A = 0 = A + (-A)$$
+\end{enumerate}
+Ainsi, l'addition $+$ dans $M_{n, m}(\R)$ est associative, unifère et tout $A \in M_{n, m}(\R)$ admet une matrice opposée. Par conséquence $(M_{n, m}(\R), +)$ est un groupe.\\
+De plus, comme $+$ dans $\R$ est commutative, l'addition dans $M_{n,m}(\R)$ est commutative:
+$$\forall A, B \in M_{n, m}(\R), ~ A + B = B + A$$
+En conclusion, $(M_{n, m}(\R)$ est un groupe commutatif.
+
+\paragraph{Proposition} Soient $n \geq 1, m \geq 1$ des entiers naturels. On a
+\begin{enumerate}
+  \item $\forall \alpha \in \R, ~ A, B \in M_{n, m}(\R)$ 
+    $$\alpha \cdot (A + B) = \alpha \cdot A + \alpha \cdot B$$
+    
+  \item $\forall \alpha, \beta \in \R, ~ A \in M_{n, m}(\R)$
+    \begin{eqnarray*}
+      (\alpha + \beta) \cdot A &=& \alpha \cdot A + \beta \cdot A \\
+      (\alpha \cdot \beta) \cdot A &=& \alpha \cdot (\beta \cdot A)
+    \end{eqnarray*}
+    
+  \item $\forall A \in M_{n, m}(\R)$
+    $$1 \cdot A = A$$
+\end{enumerate}
+On peut donc dire, que $M_{n, m}(\R)$ muni de l'addition des matrices et de la multiplication par les réels est un $\R$-espace vectoriel.
+
+\paragraph{Proposition} A conditions que les produits et les sommes considerés soient bien définit, on a
+\begin{enumerate}
+  \item $$A \times (B \times C) = (A \times B) \times C$$
+  \item $$A \times (B + C) = A \times B + A \times C$$ 
+    $$(B + C) \times A = B \times A + C \times A$$
+  \item Pour tout entier $m \geq 1$ on appelle matrice identité de taille $n \times n$ la matrice carrée
+    $$I_n = (a_{ij}) ~ ~ a_{ij} = \left\{ \begin{array}{lr} 1, & i=j \\ 0, & i \neq j \end{array}$$
+\end{enumerate}
+
+\paragraph{Attention} Deux matrices quelconques ne commutent pas nécessairement.
+
+\paragraph{Attention}
+\begin{itemize}
+  \item Si $A$ et $B$ sont deux matrices on peut avoir $A \neq 0, B \neq 0$ et $AB = 0$
+  \item On peut donc avoir également $AB = AC$ et $B \neq C$ pour des matrices $A, B, C$.
+\end{itemize}
+
+\paragraph{} On a, $(M_{n, m}(\R), +, \times, \cdot)$ est une $\R$-algèbre. En particulier $(M_{n, m}(\R), +, \times)$ est un anneau.
+
+%
+%
+\section{Inversion des matrices}
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel. Soit $A$ une matrice carrée de taille $n \times n$. On dit que $A$ est inversible s'il existe une matrice carrée $B$ de taille $n \times n$ telle que $A B = I_n = B A$. Dans ce cas on dit que $B$ est un inverse de $A$.
+
+\paragraph{Proposition} Soit $A$ une matrice carrée de taille $n \times n$. Si $A$ est inversible alors son inverse est unique.
+
+\paragraph{Démonstration} On suppose que $A$ est inversible. Si $B$ et $C$ sont deux inverses pour $A$, alors on a
+$$B A C = (B A) C = I_n C = C$$
+on a également
+$$B A C = B (A C) = B I_n = B$$
+d'où $B = C$.
+
+\paragraph{Notation} Si $A$ est inversible, on note $A^{-1}$ son inverse. On a donc
+$$A A^{-1} = I_n = A^{-1} A$$
+
+\paragraph{Lemme} Soient $a, b, c, d \in \R, A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{n, m}(\R)$ et $B = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \in M_{2}(\R)$. Alors $A B = (a d - b c) I_n = B A$.
+
+\paragraph{Proposition} Soit $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$. Alors $A$ est inversible si et seuelement si $a d - b c \neq 0$, et dans ce cas
+$$A^{-1} = \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
+On suppose que $a d - b c = 0$. On raisonne par l'absurde. Si $A$ est inversible, on obtient: D'après le lemme on a
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} = (a d - b c) I_2 = 0$$
+d'où
+\begin{eqnarray*}
+  A^{-1} \left( A \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \right) &=& A^{-1} 0 = 0 \\
+    &=& A^{-1} A \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \\
+  0 &=& \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+\end{eqnarray*}
+Par conséquent $a = b = c = d = 0$, donc $A = 0$ donc $A$ n'est pas inversible, ce qui donn lien à une contradiction. Ainsi $A$ n'est pas inversible si $a d - b c = 0$.
+
+\paragraph{Proposition} Soient $A$ et $B$ des matrices inversibles de taille $n \times n$. Alors
+\begin{enumerate}
+  \item $A^{-1}$ est inversible d'inverse $A$
+  \item $A B$ est inversible et $(A B)^{-1} = B^{-1} A^{-1}$
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}
+  \item Puisuque $A$ est inversible d'inverse $A^{-1}$, on a
+    $$A A^{-1} = I_n = A^{-1} A$$
+    donc $A^{-1}$ est inversible d'inverse $A$.
+  \item On a
+    $$(A B)(B^{-1} A^{-1}) = A (B B^{-1}) A^{-1} = A I_n A^{-1} = A A^{-1} = I_n$$
+    De même, on a $(B^{-1} A^{-1}) A B = I_n$ \\
+    Par conséquence, $A B$ est inversible d'inverse $(B^{-1} A^{-1})$
+\end{enumerate}
+
+\paragraph{Proposition} L'ensemble des matrices inversibles de taille $n \times n$ muni de la multiplication des matrices est un group. En effet
+\begin{itemize}
+  \item L'assertion $2.$ de la proposition précédante assure que $\times$ restreinte à l'ensemble des matrices inversibles est une loi de composition interne.
+  \item $\times$ étant associative sur $M__{n}(\R)$, elle l'est en restriction à l'ensemble des matrices inversibles.
+  \item $I_n$ est élément neutre.
+  \item L'assertion $1.$ de la proposition assure que l'inverse d'une matrice inversible est bien inversible.
+\end{itemize}
+On note $(GL_{n}(\R), \times)$ le groupe des matrices inversibles de taille $n$ ($GL$ est mis pour "groupe linéaire").
+
+\paragraph{Proposition} Plus généralement, si $A_1, A_2, \ldots, A_m$ sont des matrices inversibles on a $(A_1 A_2 \ldots A_m)^{-1} = A_m^{-1} A_{m-1}^{-1} \ldots A_1^{-1}$
+
+%
+%
+\section{Matrices élémentaires}
+\paragraph{Définition} Soient $n \geq 1$ un entier naturel et $(i, j) \in \{1; \ldots; n\} \times \{1; \ldots; n\}$. On note $F_{i, j}$ la matrice carrée de taille $n \times n$ contenant un $1$ en $i^{ème}$ ligne et $j^{ème}$ colonne et des $0$ partout ailleurs. On dit que $F_{i, j}$ est une matrice standard.
+
