@@ -681,4 +681,101 @@ Alors $\R$ posséde $2$ coefficients pivot, dans les colonnes $1$ et $2$. Il s'e
 \\\\
 Dans la relation
 $$R = P M$$
-$P$ peut être interprêté comme la matrice de passage de la base canonique £ une base de $V$ contenant $(\vec{v}_1, \vec{v}_2)$.
+$P$ peut être interprêté comme la matrice de passage de la base canonique £ une base de $V$ contenant $(\vec{v}_1, \vec{v}_2)$. Dans $\R^3$ $\vec{v}_1 = (1, 0, 2), \vec{v}_2 = (-1, 2, 3)$ et$\vec{v}_3 = (-1, 2, 8)$
+$$M = \begin{pmatrix} 
+  1 & -1 & -1 \\
+  0 & 1§ & 2  \\
+  2 & 3 & 8
+\end{pmatrix}
+\rightsquigarrow  
+R = \begin{pmatrix}
+  1 & 0 & 1 \\
+  0 & 1 & 2 \\
+  0 & 0 & =
+\end{pmatrix}$$
+\begin{eqnarray*}
+  R &=& P M \\
+    &=& P \left([\vec{v}_1]_{\T} [\vec{v}_2]_{\T} [\vec{v}_3]_{\T}\right)
+\end{eqnarray*}
+on peut interpréter $P$ comme la matrice de passage de $\T$ à une base de $\R^3$ comprenant $(\vec{v}_2, \vec{v}_2)$ ucomme premiers vecteurs. En effet, on a
+$$[\vec{v}_1]_{\B} \left( \begin{array}{m} 1 \\ 0 \\ 0 \end{array} \right) = P[\vec{v}_1]_{\T} \text{ et } 
+  [\vec{v}_2]_{\B} \left( \begin{array}{m} 0 \\ 1 \\ 0 \end{array} \right) = P[\vec{v}_2]_{\T}$$
+Ces relations signifient que $\vec{v}_1$ est la premier vecteur de $\mB$ et $\vec{v_2}$ le deuxième. On a également
+$$[\vec{v}_3}]_{\B} = \left( \begin{array}{m} 1 \\ 2 \\ 0 \end{array}\right) = P [\vec{v}_3]_{\T}$$
+d'où $\vec{v}_3 = \vec{v}_1 + 2 \vec{v}_2$. \\
+Le troisième vecteur de $\B$ est généré par les opération élémentaires effectuèes. Ce peut être n'importe quel vecteur de $\R^3$ qui complète $(\vec{v}_1, \vec{v}_2)$ en une base de $\R^3$. \\
+La forme échelonnée réduite $R$ de $M$ est donc la matrice du système $(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ dans la base $\B$ dont les premiers vecteurs sont ceux de la base qu'on peut extraire du système en appliquant lâlgorithme défini précédemment. $R$ ne fait intervenir que les vecteurs de cette base extraite. \\
+Cela implique en particulier que la forme échelonnée réduité de $M$ est unique. Par contre la matrice $P$ n'est panécessairement unique.
+
+\paragraph{Définition} Soit $E$ un espace vectoriel. Soit $S = (\vec{v}, \ldots, \vec{v}_r)$ un système de vecteurs de $E$. On appelle rang de $S$ la dimension de $Vect(\vec{v}_1, \ldots, \vec{v}_r)$.
+
+\paragraph{Définition} Soit $M$ une matrice de taille $n\times M$ quelconque. On appelle rang de $M$ le rand dans $M_{n\times 1}(\R)$ du système des colonnes de $M$.
+
+%
+%
+\section{Systèmes d'équations cartésiennes} 
+%
+%
+Soient $R$ un espace vectoriel de dimension finie $n$. Soient $W$ un sous-espace vectoriel de $E$ et $\B$ une base de $E$.
+\paragraph{Définition} On appelle système d'équations cartésiennes de $W$ dans la base $\B$ tout système d'équations à $n$ inconnues tel que, pour tout vecteur $\vec{w} \in E$ on ait $\vec{v} \in W \Leftrightarrow$ le n-uplet $(\alpha_1, \ldots, \alpha_n)$ des coordonnées de $\vec{w}$ dans la base $\B$ est solution de $S$.
+
+\paragraph{Example} Si $D$ est la droite vectorielle dans $\R^2$ engendrée par $\vec{u} = (2, 1)$, alors une équation cartésienne de $D$ (dnas la base canonique de $\R^2$) est
+$$ - \frac{1}{2} x + y = 0$$
+On a, pour tout $\vec{v} = (\alpha, \beta) \in \R^2$ 
+$$\vec{v} \in D \Leftrightarrow -\frac{1}{2} \alpha + \beta = 0$$
+
+\paragraph{Question} Comment déterminer un système d'équations cartésiennes d'un sous-espace vectoriel lorsque celui-ci est donné par un système générateur?
+
+\paragraph{Example} Dans $\R^3$, considérons le sous-espace vectorie engendré par $\vec{v}_1 = (1, 0, 0)$, $\vec{v}_2 = (1, 1, 10)$ et $\vec{v}_3 = (2, 1, 0)$. Déterminons un système d'équations cartésiennes du sous-espace $W = Vect(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ de $\R^3$. Soit $\vec{v} = (a, b, c) \in \R^3$. \\
+Alors $\vec{v} \in W$ 
+\begin{itemize}
+  \item[$\Leftrightarrow$] il existe $\lambda_1, \lambda_2, \lambda_3 \in \R$ tels que $\vec{v} = \lambda_1 \vec{v}_1 + \lambda_2, \vec{v}_2 + \lambda_3 \vec{v}_3$ 
+  \item[$\Leftrightarrow$] il existe $\lambda_1, \lambda_2, \lambda_3 \in \R$ tels que 
+    $\left\{ \begin{array}{rrrc}
+       \lambda_1 & + \lambda_2 & + 2 \lambda_3 & = a \\
+       & \lambda_2 & + \lambda_3 & = b \\
+       &  & 0 & = c
+    \end{array}$
+  \item [$\Leftrightarrow$] le système 
+    $\left\{ \begin{array}{rrrc}
+      x_1 & + x_2 & + 2 x_3 & = a \\
+       & x_2 & + x_3 & = b \\
+       &  & 0 & = c
+    \end{array}$ admet au moins une solution.
+\end{itemize}
+On cherche alors les conditions de compatibilité du système, c'est-à-dire les conditions sous lesquelles le système admet au moins une solution. Pour cela, on échelonne et réduit le système
+\begin{eqnarray*}
+  \begin{pmatrix}
+    1 & 1 & 2 & a \\
+    0 & 1 & 1 & b \\
+    0 & 0 & 0 & c
+  \end{pmatrix}
+  \rightarrow^{L_1 \leftarrow L_1 - L_2} 
+  \begin{pmatrix}
+    1 & 0 & 1 & a \\
+    0 & 1 & 1 & b \\
+    0 & 0 & 0 & c
+  \end{pmatrix}
+\end{eqnarray*}
+Pour ce système, une seule condition de compatibilité:
+$$\left\{ c= 0$$
+On a obtenu un système d'équations cartésiennes de $W$ (ici, on a une seule équation). Ainsi, on a $\vec{v} = (a, b, c) \in \R^3$
+$$\vec{v} \in W \Leftrightarrow c = 0$$
+Si maintenant $V$ est un sous-espace de $E$ donné par un système linéaire d'équations cartésiennes dans une base de $E$, pour déterminer une base et la dimension, on résout ce système. À partir de l'expression des solutions du système, on trouve une base de $V$, puis sa dimension.
+
+%
+%
+\section{Représentation matricielle des applications linéaires}
+%
+%
+Soient $E$ est $F$ deux espaces vectoriels de dimensions finies $m$ et $n$ respectivement, $\cE = \{ \vec{u}_1, \dots, \vec{u}_m\}, \cF = \{\vec{v}_1, \ldots, \vec{v}_n\}$ des bases de $E$ et $F$ respectivement, et $f: E \rightarrow F$ une application linéaire. \\
+Nous avons vu précédemment que $f$ est entièrement déterminée par la donnée de $f(\vec{u}_1), \ldots, f(\vec{u}_m)$.
+
+\paragraph{Définition} On appelle matrice de $f$ dans les bases $cE$ et $cF$ la  matrice
+$$[F]_{\cF \cE} = \bigg(
+  [f(\vec{u}_1]_{\cF}] & \ldots & [f(\vec{u}_1]_{\cF}]
+\bigg)$$
+de taille $n \times m$.
+
+\paragraph{Théorème} Pour tout $\vec{u} \in E$, on a 
+$$[f(\vec{u})]_{\cF} = [f]_{\cF \cE} [\vec{v}]_{\cE}$$
