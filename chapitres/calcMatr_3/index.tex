@@ -140,3 +140,39 @@ On note $(GL_{n}(\R), \times)$ le groupe des matrices inversibles de taille $n$ 
 \section{Matrices élémentaires}
 \paragraph{Définition} Soient $n \geq 1$ un entier naturel et $(i, j) \in \{1; \ldots; n\} \times \{1; \ldots; n\}$. On note $F_{i, j}$ la matrice carrée de taille $n \times n$ contenant un $1$ en $i^{ème}$ ligne et $j^{ème}$ colonne et des $0$ partout ailleurs. On dit que $F_{i, j}$ est une matrice standard.
 
+\paragraph{Proposition} Toute matrice carrée de taille $\times n$ peut s'exprimer à l'aide des matrices standard de taille $n\times n$
+$$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
+
+\paragraph{Proposition} Soit $A$ une matrice de taille $n\times m$.
+\begin{enumerate}[a)]
+  \item Soit $F_{ij}$ une matrice standard de taille $n\times n$. Alors $F_{ij} A$ est la matrice de taille $n \times m$ dont la $i^{ème}$ ligne est la $j^{ème}$ ligne de $A$ et dont les autres sont nulles.
+  \item Soit $F_{ij}$ une matrice standard de taille $m\times m$. Alors $A F_{ij}$ est la matrice de taille $n\times m$ dont la $j^{ème}$ colonne est la $i^{ème}$ de $A$ et dont les autres colonnes sont nulles.
+\end{enumerate}
+
+\paragraph{Symbole de Kronecker} Soit $n \geq 1$ un entier naturel. On note
+$$\mS: \{1; \ldots; n\}\times\{1; \ldots; n \} \rightarrow {0; 1}$$
+L'application est défini par
+$$\delta_{ij} = \left\{\begin{array}{lr} 1 & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$ 
+
+\paragraph{Corollaire} Soient $n \geq 1$ un entier naturel et
+$$(i, j), (k, l) \in \{1; \ldots; n\}\times\{1; \ldots; n\}$$
+alors
+$$F_{ij}F_{kl} = \delta_{ik} F_{il} = 
+  \left\{\begin{array}{lr} F_{il} & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$
+
+\paragraph{Démonstration} D'après la proposition, précédente, $F_{ij} F_{kl}$ est la matrice don la $i^{ème}$ ligne est la $j^{ème}$ ligne de $F_{kl}$ et dont les autres lignes sont nulles. Il vient
+\begin{itemize}
+  \item si $j\neq k$, la $j^{ème}$ ligne de $F_{kl}$ est nulle
+  \item si $j = k$ la $j^{ème} = k^{ème}$ ligne de $F_{kl}$ est $(0_{1} \ldots 0_{l-1} ~ 1_{l} ~ 0_{l+1} \ldots 0_{n})$
+\end{itemize}
+Par conséquent, si $j\neq k$, toutes les lignes de $F_{ij} F_{kl}$ sont nulles donc $F_{ij} F_{kl} = 0$; si $j=k$, alors 
+$$F_{ij} F_{kl} = \begin{pmatrix} 
+  & & & 0 & & & \\
+  & & & \vdots & & & \\
+  & & & 0 & & & \\
+  0 & \ldots & 0 & 1 & 0 & \ldots & 0 \\
+  & & & 0 & & & \\
+  & & & \vdots & & & \\
+  & & & 0 & & & 
+\end{pmatrix} = F_{il}$$
+Ainsi $F_{ij} F{kl} = \delta_{ik} F_{il}$.
