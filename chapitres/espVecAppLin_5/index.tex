@@ -600,7 +600,7 @@ Soient $V$ un espace vectoriel de dimension $n$ et $\B = (\vec{v}_1, \ldots, \ve
 $$[\vec{v}]_\B = P_{\B \B'} \cdot [\vec{v}]_{\B'}$$
 
 \paragraph{Remarque} Cette formule indique que l'on obtient les coordonnées de $\vec{v}$ dans l'ancienne base $\B$ en fonction des coordonnées de $\vec{v}$ dans la nouvelle base $\B'$, alors que l'on souhaiterait plutôt l'inverse. Pour ce faire, il faut calculer $P_{\B \B'}$. En fait on a
-$${P_{\B \B'}}^{-1} = P_{\B \B'}$$
+$${P_{\B \B'}}^{-1} = P_{\B' \B}$$
 En effet, on a
 \begin{eqnarray*}
   P_{\B \B'} \cdot P_{\B' \B} \cdot [\vec{v}]_{\B} &=& P_{\B \B'} \cdot [\vec{v}]_{\B'} \\
@@ -681,25 +681,25 @@ Alors $\R$ posséde $2$ coefficients pivot, dans les colonnes $1$ et $2$. Il s'e
 \\\\
 Dans la relation
 $$R = P M$$
-$P$ peut être interprêté comme la matrice de passage de la base canonique £ une base de $V$ contenant $(\vec{v}_1, \vec{v}_2)$. Dans $\R^3$ $\vec{v}_1 = (1, 0, 2), \vec{v}_2 = (-1, 2, 3)$ et$\vec{v}_3 = (-1, 2, 8)$
+$P$ peut être interprêté comme la matrice de passage de la base canonique £ une base de $V$ contenant $(\vec{v}_1, \vec{v}_2)$. Dans $\R^3$ $\vec{v}_1 = (1, 0, 2), \vec{v}_2 = (-1, 2, 3)$ et $\vec{v}_3 = (-1, 2, 8)$
 $$M = \begin{pmatrix} 
   1 & -1 & -1 \\
-  0 & 1§ & 2  \\
+  0 & 1 & 2  \\
   2 & 3 & 8
 \end{pmatrix}
 \rightsquigarrow  
 R = \begin{pmatrix}
   1 & 0 & 1 \\
   0 & 1 & 2 \\
-  0 & 0 & =
+  0 & 0 & 0
 \end{pmatrix}$$
 \begin{eqnarray*}
   R &=& P M \\
     &=& P \left([\vec{v}_1]_{\T} [\vec{v}_2]_{\T} [\vec{v}_3]_{\T}\right)
 \end{eqnarray*}
-on peut interpréter $P$ comme la matrice de passage de $\T$ à une base de $\R^3$ comprenant $(\vec{v}_2, \vec{v}_2)$ ucomme premiers vecteurs. En effet, on a
-$$[\vec{v}_1]_{\B} \left( \begin{array}{m} 1 \\ 0 \\ 0 \end{array} \right) = P[\vec{v}_1]_{\T} \text{ et } 
-  [\vec{v}_2]_{\B} \left( \begin{array}{m} 0 \\ 1 \\ 0 \end{array} \right) = P[\vec{v}_2]_{\T}$$
+on peut interpréter $P$ comme la matrice de passage de $\T$ à une base de $\R^3$ comprenant $(\vec{v}_1, \vec{v}_2)$ comme premiers vecteurs. En effet, on a
+$$[\vec{v}_1]_{\B} = \left( \begin{array}{m} 1 \\ 0 \\ 0 \end{array} \right) = P[\vec{v}_1]_{\T} \text{ et } 
+  [\vec{v}_2]_{\B} = \left( \begin{array}{m} 0 \\ 1 \\ 0 \end{array} \right) = P[\vec{v}_2]_{\T}$$
 Ces relations signifient que $\vec{v}_1$ est la premier vecteur de $\mB$ et $\vec{v_2}$ le deuxième. On a également
 $$[\vec{v}_3}]_{\B} = \left( \begin{array}{m} 1 \\ 2 \\ 0 \end{array}\right) = P [\vec{v}_3]_{\T}$$
 d'où $\vec{v}_3 = \vec{v}_1 + 2 \vec{v}_2$. \\
@@ -709,14 +709,14 @@ Cela implique en particulier que la forme échelonnée réduité de $M$ est uniq
 
 \paragraph{Définition} Soit $E$ un espace vectoriel. Soit $S = (\vec{v}, \ldots, \vec{v}_r)$ un système de vecteurs de $E$. On appelle rang de $S$ la dimension de $Vect(\vec{v}_1, \ldots, \vec{v}_r)$.
 
-\paragraph{Définition} Soit $M$ une matrice de taille $n\times M$ quelconque. On appelle rang de $M$ le rand dans $M_{n\times 1}(\R)$ du système des colonnes de $M$.
+\paragraph{Définition} Soit $M$ une matrice de taille $n\times m$ quelconque. On appelle rang de $M$ le rang dans $M_{n\times 1}(\R)$ du système des colonnes de $M$.
 
 %
 %
 \section{Systèmes d'équations cartésiennes} 
 %
 %
-Soient $R$ un espace vectoriel de dimension finie $n$. Soient $W$ un sous-espace vectoriel de $E$ et $\B$ une base de $E$.
+Soit $E$ un espace vectoriel de dimension finie $n$. Soient $W$ un sous-espace vectoriel de $E$ et $\B$ une base de $E$.
 \paragraph{Définition} On appelle système d'équations cartésiennes de $W$ dans la base $\B$ tout système d'équations à $n$ inconnues tel que, pour tout vecteur $\vec{w} \in E$ on ait $\vec{v} \in W \Leftrightarrow$ le n-uplet $(\alpha_1, \ldots, \alpha_n)$ des coordonnées de $\vec{w}$ dans la base $\B$ est solution de $S$.
 
 \paragraph{Example} Si $D$ est la droite vectorielle dans $\R^2$ engendrée par $\vec{u} = (2, 1)$, alors une équation cartésienne de $D$ (dnas la base canonique de $\R^2$) est
@@ -726,7 +726,7 @@ $$\vec{v} \in D \Leftrightarrow -\frac{1}{2} \alpha + \beta = 0$$
 
 \paragraph{Question} Comment déterminer un système d'équations cartésiennes d'un sous-espace vectoriel lorsque celui-ci est donné par un système générateur?
 
-\paragraph{Example} Dans $\R^3$, considérons le sous-espace vectorie engendré par $\vec{v}_1 = (1, 0, 0)$, $\vec{v}_2 = (1, 1, 10)$ et $\vec{v}_3 = (2, 1, 0)$. Déterminons un système d'équations cartésiennes du sous-espace $W = Vect(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ de $\R^3$. Soit $\vec{v} = (a, b, c) \in \R^3$. \\
+\paragraph{Example} Dans $\R^3$, considérons le sous-espace vectorie engendré par $\vec{v}_1 = (1, 0, 0)$, $\vec{v}_2 = (1, 1, 1)$ et $\vec{v}_3 = (2, 1, 0)$. Déterminons un système d'équations cartésiennes du sous-espace $W = Vect(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ de $\R^3$. Soit $\vec{v} = (a, b, c) \in \R^3$. \\
 Alors $\vec{v} \in W$ 
 \begin{itemize}
   \item[$\Leftrightarrow$] il existe $\lambda_1, \lambda_2, \lambda_3 \in \R$ tels que $\vec{v} = \lambda_1 \vec{v}_1 + \lambda_2, \vec{v}_2 + \lambda_3 \vec{v}_3$ 
@@ -779,3 +779,133 @@ de taille $n \times m$.
 
 \paragraph{Théorème} Pour tout $\vec{u} \in E$, on a 
 $$[f(\vec{u})]_{\cF} = [f]_{\cF \cE} [\vec{v}]_{\cE}$$
+Cette relation caractérise $[f]_{\cF \cE}$, c'est-à-dire si $M$ est une matrice (de taille convenable) telle qze pour tout $\vec{u} \in E, [f(\vec{u})]_{\cF} = M [\vec{u}]_{\cE}$, alors $M = [f]_{\cF \cE}$.
+
+\paragraph{Démonstration} Soit $<vec{u} \in E$. On écrit
+$$[\vec{u}]_{\cE} = \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix}, \lambda_1, \ldots \lambda_m \in \R$$
+Il vient
+\begin{eqnarray*}
+  [f]_{\cF \cE}[\vec{u}]_{\cE}
+  &=& 
+  \begin{pmatrix} \\ [f(\vec{u}_1]_\F & \ldots & [f(\vec{u}_m]_\F \\ \\ \end{pmatrix}
+  \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix} \\
+  &=& \lambda_1 [f(\vec{u}_1)]_\F + \ldots + [f(\vec{u}_m)]_\F \\
+  &=& [\lambda_1 f(\vec{u}_1) + \ldots + \lambda_m f(\vec{u}_m)]_\F \\
+  &=& [ f( \lambda_1 \vec{u}_1 + \ldots + \lambda_m \vec{u}_m]_\F \\
+  &=& [f(\vec{u})]_\F
+\end{eqnarray*}
+
+\paragraph{Example} Soit $f: \R^3 \rightarrow \R^2$ définie par
+$$f(x, y, z) = (2x + y - %z ,  x + 3y)$$
+f est linéaire. \\
+Soit $\cE = (\vec{e}_1, \vec{e}_2, \vec{e}3)$ la base canonique de $\R^3$ et $\cF$ la base canonique de $\R^2$. On a
+$$[f]_{\cF \cE} = ([f(\vec{e}_1)]_\cF, [f(\vec{e}_2)]_\cF,[f(\vec{e}_3)]_\cF)$$ de taille $2\times 3$. Calculons
+\begin{eqnarray*}
+  f(\vec{e}_1) &=& f(1, 0, 0) = (2, 1) \\
+  f(\vec{e}_2) &=& f(0, 1, 0) = (1, 3) \\
+  f(\vec{e}_3) &=& f(0, 0, 1) = (-5, 0) 
+\end{eqnarray*}
+On a donc
+$$[f]_{\cF \cE}
+  =
+  \begin{pmatrix}
+    2 & 1 & -5 \\
+    1 & 3 & 0
+  \end{pmatrix}$$
+On observe que pour tout $\vec{u} = (x, y, z) \in \R^3$, on a
+\begin{eqnarray*}
+  [f]_{\cF \cE}[\vec{u}]_\cE 
+  &=& [f]_{\cF \cE} \begin{pmatrix} x \\ y \\ z \end{pmatrix} \\
+  &=&
+    \begin{pmatrix}
+      2 & 1 & -5 \\
+      1 & 3 & 0
+    \end{pmatrix}
+    \begin{pmatrix} x \\ y \\ z \end{pmatrix} \\
+  &=&
+    \begin{pmatrix} 
+      2x + y -5 z \\ 
+      x + 3y
+    \end{pmatrix}
+  = [f(x, y, z)]_{\cF}
+\end{eqnarray*}
+
+\paragraph{Proposition} Soient $E$ et $F$ deux espaces vectoriels, $f: E \rightarrow F$ et $g: E \rightarrow F$ deux applications linéaires, $\cE$ une base de $E$ et $\cF$ une base de $F$. Alors
+\begin{enumerate}
+  \item $[f+ g]_{\cF \cE} = [f]_{\cF \cE} + [g]_{\cF \cE}$
+  \item pour tout $\lambda \in \R$, $[\lambda f]_{\cF \cE} = \lambda [f]_{\cF \cE}$.
+  \item L'application\footnote{$Hom_\R(E, F)$ est l'ensemble des applications linéaires de $E$ dans $F$, c'est un $\R$-espace vectoriel.}
+    \begin{eqnarray*}
+      Hom_\R(E, F) &\rightarrow& \M_{n\times m}(\R) \\
+      f &\mapsto [f]_{\cF \cE}
+    \end{eqnarray*}
+    est un isomorphisme d'espace vectoriels.
+\end{enumerate}
+
+\paragraph{Proposition} Soient $f: E \rightarrow F$ et $g: F \rightarrow G$ deux applications linéaires, et $\cE, \cF$ et $\cG$ des bases de $E, F, G$ respectivement. Alors
+$$[g \circ f]_{\cG \cE} = [g]_{\cG \cF} [f]_{\cF \cE} ~ (g \circ f: E \rightarrow G)$$
+
+\paragraph{Démonstration} Soit $\vec{u} \in E$
+\begin{eqnarray*}
+  [(g \circ f)(\vec{u})]_{\cG} &=& [g(f(\vec{u}))]_{\cG} = [g]_{\cG \cF} [f(\vec{u})]_{\cF} \\
+    &=& [g]_{\cG \cF} ([f]_{\cF \cE} [\vec{u}]_{\cE}) \\
+    &=& ([g]_{\cG \cF} [f]_{\cF \cE}) [\vec{u}]_{\cE} 
+\end{eqnarray*}
+Par suite, $[g \circ f]_{\cG \cE} = [g]_{\cG \cF} [f]_{\cF \cE}$.
+
+\paragraph{Méthode de calcul} Pour déterminer une base et la dimension du noyau et de l'image d'une application, on utilise la matrice de cette application linéaire dans des bases. \\
+Soit $f: E \rightarrow F$ une application linéaire $\cE, \cF$ des bases de $E$ et $F$.
+\begin{itemize}
+  \item Déterminer $Ker(f) = \{\vec{v} \in E \vert f(\vec{v}) = \vec{0}_F \}$ consiste à résoudre le système $[f]_{\cF \cE} X = 0$
+  \item $Im(f) = \{ \vec{v} \in F \vert \text{ il existe } \vec{u} \in E, \vec{v} = f(\vec{u}) \} = f(E)$
+\end{itemize}
+Si $\cE = (\vec{u}_1, \ldots, \vec{u}_m)$, alors $E$ est engendré par $\vec{u}_1, \ldots, \vec{u}_m$. Il s'ensuit que $Im(F) = f(E)$ est engendré par $f(\vec{u}_1, \ldots, \vec{u}_m)$. En particulier, $dim(Im(f))$ est le rang du système $(f(\vec{u}_1), \ldots, f(\vec{u}_m))$. Pour déterminer une base et la dimension de $Im(f)$, on a besoin de former la matrice de ce système dans la base $\cF$ de $F$. Cette matrice est exactement $[f]_{\cF \cE} = \big([f(\vec{u}_1)]_{\cF}, \ldots, [f(\vec{u}_1)]_{\cF}\big)$.
+
+\paragraph{Remarque} $dim(Im(F))$ s'appelle également le rang de $f$.
+
+%
+\subsection{Théorème du rang}
+%
+\paragraph{} $dim(Ker(f))$ et $dim(Im(f)) = rang(f)$ ne sont pas indépendants
+\paragraph{Théorème (du rang)} Soit $f: E \rightarrow F$ une application linéaire. On suppose que $E$ est de dimension finie. Alors:
+$$dim(Ker(f)) + dim(Im(f)) = dim(E)$$
+
+\paragraph{Théorème} Soit $f: E \rightarrow E$ une application linéaire. On suppose que $E$ et $F$ ont même dimension finie. Alors les conditions suivantes sont équivalentes:
+\begin{enumerate}
+  \item $f$ est injective 
+  \item $f$ est surjective
+  \item $f$ est bijective
+\end{enumerate}
+
+\paragraph{Démonstration} 
+\begin{itemize}
+  \item[3. $\Rightarrow$ 1.] est clair.
+  \item[1. $\Rightarrow$ 2.] on suppose que $f$ est injective donc $Ker(f) = \{\vec{0}_E\}$ donc $dim(Ker(f)) = 0$. Par le théorème du rang on a
+    \begin{eqnarray*}
+      dim(Im(f)) &=& dim(e) - dim(Ker(f)) \\
+        &=& dim(E) = dim(F)
+    \end{eqnarray*}
+    Ainsi, $Im(f)$ est un sous-epsace vectoriel de $F$ de même dimension que $F$: on en déduit qu e$Im(f) = F$. Donc f est surjectve.
+  \item[2. $ \Rightarrow$ 3.] On suppose que $f$ est surjective. Il s'agit de voir que $f$ est injective. Cela se-fait montrant que $dim(Ker(f)) = 0$. 
+\end{itemize}
+Enfi, $f$ est bijective si et seuelement si sa matrice dans les bases de $E$ et $F$ est inversible.
+
+%
+%
+\section[Récapitulatif]{\underline{Récapitulatif}: bases, dimensions et système d'équations cartesiennes d'un sous-espace vectoriel}
+%
+%
+Dans ce qui précède, nous avons en particulier appris à traiter les trois situations suivantes:
+\begin{itemize}
+  \item $E$ espace vectoriel de dimension finie
+  \item $W$ sous-espace vectoriel de $E$
+  \item $\B$ base de $E$
+\end{itemize}
+
+\begin{enumerate}
+  \item trouver une base et la dimension de $W$ quand on  connaît un système linéaire d'équations cartesiennes de $W$: il s'agit alors de toruver une base et la dimension de l'ensemble des solutions de ce système.
+  \item trouver une base et la dimension de $W$ quand on connaît un système générateur $S$ de $W$: on comence par fermer la matrice de $S$ dans la base $\B$, on échelonne et on réduit cette matrice, on repère les indices des colonnes qui portent les coefficients pivot...
+  \item Déterminer un système d'équations cartésiennes de $W$ quand on connaît un système générateur de $W$: ces équations apparaissent comme les conditions de compabilité d'un certain système linéaire...
+\end{enumerate}
+À bien connaître!
+\end{enumerate}
