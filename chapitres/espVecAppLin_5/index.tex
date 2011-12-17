@@ -35,13 +35,20 @@ $$b(\alpha \cdot \vec{u} +\vec{v}) = \alpha \cdot b(\vec{u}) + b(\vec{v})$$
 \section{Sous-espaces vectoriels}
 %
 %
-\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} ~ (r\leq 1)$ des vecteurs de $V$. On dit qu'un vecteur $\vec{w}$ de $V$ est combinaison linéaire des $\vec{v_i}$ s'il existe des réels $\alpha_1, \ldots, \alpha_r$ tel que
+
+%
+\subsection{Combinaison linéaire}
+%
+\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} ~ (r\geq 1)$ des vecteurs de $V$. On dit qu'un vecteur $\vec{w}$ de $V$ est combinaison linéaire des $\vec{v_i}$ s'il existe des réels $\alpha_1, \ldots, \alpha_r$ tel que
 $$\vec{w} = \alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r}$$
 
+%
+\subsection{Sous-espace vectoriel}
+%
 \paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $W$ un sous-ensemble non vide de $V$. On dit que $W$ est un sous-espace vectoriel de $V$ si $W$ est stable par $+$ et $\cdot$, ce que signifie:
 \begin{eqnarray*}
-  \forall \vec{u}, \vec{v} \in W, \vec{u}, ~ \vec{u} + \vec{v} \in W \\
-  \forall \vec{u} \in W, \alpha \in \R, ~ \alpha \cdot \vec{u} \in W \\
+  \forall \vec{u}, \vec{v} \in W, & \vec{u} + \vec{v} \in W \\
+  \forall \vec{u} \in W, \alpha \in \R, & \alpha \cdot \vec{u} \in W \\
 \end{eqnarray*}
 et que $W$ (muni de ces deux lois) soit un $\R$-espace vectoriel.
 
@@ -51,6 +58,9 @@ autrement dit, si $W$ est stable par combinaison linéaire.
 
 \paragraph{Proposition} Soient V un $\R$-espace vectoriel et $(W_i)_{i \in I}$ une famille de sous-espaces vectoriels de $V$. Alors $\cap_{i \in I} W_i = \{ \vec{v} \in V | \forall i \in I, \vec{v} \in W_i\}$ est encore un sous-espace vectoriel de V.
 
+%
+\subsection{Sous-espace vectoriel engendré par un système de vecteurs}
+%
 \paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} \in V$. On appelle sous-espace vectoriel de V engerdré par $\{\vec{v_1}, \ldots, \vec{v_r}\}$ le plus petit sous-espace vectoriel de $V$ (au sens de l'inclusion) contenant $\vec{v_1}, \ldots, \vec{v_r}$. C'est l'intérsection de tous les sous-espaces vectoriels de $V$ contenant $\vec{v_1}, \ldots, \vec{v_r}$. On le noté $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$.
 
 \paragraph{Théorème} On a $Vect\{\vec{v_1}, \ldots, \vec{v_r}\} = \{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \}$; c'est-à-dire: le sous-espace vectoriel de $V$ engerdré par $\vec{v_1}, \ldots, \vec{v_r}$ est constitué des combinaisons linéaires de $\vec{v_1}, \ldots, \vec{v_r}$.
@@ -74,15 +84,28 @@ autrement dit, si $W$ est stable par combinaison linéaire.
 \section{Systèmes générateurs, systèmes libres}
 %
 %
+
+
+%
+\subsection{Système générateur}
+%
 \paragraph{Définition} Soient $V$ un espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r}$ des vecteurs de $V$. On dit que les $\vec{v}_i$ forment un système générateur de $V$ si $V = Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$, autrement di si tout vecteur de $V$ est combinaison linéaire des $\vec{v}_i$.
 
 \paragraph{Remarque} Lorsqu'un vetuer est combinaison linéaire d'un système de vecteurs donnés, la question de savoir si son écriture comme combinaison linéaire est unique conduit à la notion de systèm libre.
 
+
+%
+\subsection{Système libre}
+%
 \paragraph{Définition} Soit $V$ un espace vectoriel et $\vec{v}_1, \ldots , \vec{v}_r$ des vectuers de $V$. On dit que les $\vec{v}_i$ forment un system libre (ou linéaire indépendant) si:
 $$\forall \alpha_i \in \R, \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = \vec{0} ~ \Rightarrow ~ \alpha_i = 0$$
 \paragraph{Remarque} tout vecteur $\neq 0$ forme à lui seul un système libre ($\alpha \cdot \vec{v} = \vec{0} \Leftrightarrow \alpha = 0$).
 
-\paragraph{Définition} Soit $V$ un espace vectoriel. On dit qu'un système de vecteurs de $V$ est liè (ou encore linéaire dépentant) s'il n'est pas libre, c'est-à-dire le système $(\vec{v}_1, \ldots, \vec{v}_r)$ est lié s'il existe des réels $\alpha_1, \ldots, \alpha_r$ non tous nuls tel que $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = 0$.
+
+%
+\subsection{Système lié}
+%
+\paragraph{Définition} Soit $V$ un espace vectoriel. On dit qu'un système de vecteurs de $V$ est lié (ou encore linéaire dépentant) s'il n'est pas libre, c'est-à-dire le système $(\vec{v}_1, \ldots, \vec{v}_r)$ est lié s'il existe des réels $\alpha_1, \ldots, \alpha_r$ non tous nuls tel que $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = 0$.
 \paragraph{Ramarque} Tout système de vecteurs contenant $\vec{0}$ est lié.
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel et $\vec{v}_1, \ldots, \vec{v}_r$ des vecteurs de $V$. Alors $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié si et seulement si l'un des $\vec{v}_i$ est combinaison linéaire des autres.
@@ -106,7 +129,7 @@ $$\forall \alpha_i \in \R, \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \v
 
 \paragraph*{Théorème} Soient $V$ un espace vectoriel et $(\vec{v}_1, \ldots, \vec{v}_R)$ un système libre de vectuers de $V$. Alors si un vecteur peut s'écrire comme combinaison linéaire des $\vec{v}_i$, alors son écriture comme tel est unique.
 
-\paragraph*{Démonstration} Soiv $\vec{v} \in V$. Si 
+\paragraph{Démonstration} Soiv $\vec{v} \in V$. Si 
 \begin{eqnarray*}
   \vec{v} &=& \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r, \alpha_i \in \R \\
   \vec{v} &=& \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r, \beta_i \in \R 
@@ -126,6 +149,10 @@ Dans l'espace $\R^3$, trois vecteurs sont liés s'ils sont coplanaires, c'est-à
 %
 \section{Bases et dimension d'un espace vectoriel}
 %
+%
+
+%
+\subsection{Base}
 %
 \paragraph{Définition} Soit $V$ un espace vectoriel. On appelle base de $V$ tout système de vecteurs de $V$ libre et générateur.
 
@@ -149,6 +176,9 @@ Dans l'espace $\R^3$, trois vecteurs sont liés s'ils sont coplanaires, c'est-à
     forment une base appelée également base canonique de $M_{2 \times 2}(\R)$.
 \end{itemize}
 
+%
+\subsection{Prouver qu'un système de vecteurs est une base}
+%
 \paragraph{Example} Montrons que le système de vectuers de $\R^3$ 
 $$\left( (1, 2, 1), (2, 7, 0), (3, 1, -1) \right)$$
 est une base de $\R^3$. \\
@@ -217,11 +247,14 @@ $$\vec{v} \in V, \vec{v}=\alpha_i \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec
 Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\vec{v}_1, \ldots, \vec{v}_n)$.
 \paragraph{Démonstration} Comme le système $(\vec{v}_1, \ldots, \vec{v}_n)$ est générateur il existe  $\alpha_1, \ldots, \alpha_n \in \R$ tels que $\vec{v}=\alpha_i \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_n$. Comme ce système est libre, les $\alpha_i$ sont uniques.
 
+%
+\subsection{Cardinalité}
+%
 \paragraph{Définition} Soit $V$ un espace vectoriel. Si $S$ est un système libre (resp. système générateur, base) de $V$, on appelle cardinal de $S$ et on note $card(S)$ le nombre de vecteurs de $S$.
 
 \paragraph{Remarque} Dans la suite, nous ne considérerons que des systèmes de cardinal fini.
 
-\paragraph*{Définition} On dit qu'un espace vectoriel $V$ est de type fini s'il admet un système générateur de cardinal fini.
+\paragraph{Définition} On dit qu'un espace vectoriel $V$ est de type fini s'il admet un système générateur de cardinal fini.
 
 \paragraph{Théorème} Soit $V$ un espace vectoriel de type fini. Alors
 \begin{enumerate} 
@@ -248,23 +281,23 @@ Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\
     \end{itemize}
     Au terme de ce processus, on obtient un système $S_r$ de vecteurs de $V$ obtenu en completant $S$ par des vectuers de $T$. $S_r$ est libre et générateur, donc est un base de $V$.
     
-    \item On note $S = (\vec{u}_1, \ldots, \vec{u}_r)$ et $T = (\vec{v}_1, \ldots, \vec{v}_s)$ quitte à extraire une base de T, on peut supposer que $T$ est une base. Pout tout $j \in \{1; \ldots ; r\}$ on a
-      $$\vec{u}_j = \sum_{i=1}^{j} {a_{ij} \vec{v}_i}$$
-      Raisonnons par l'absurde, et supposons que $s < r$. Pour tous $\lambda_1, \ldots, \lambda_r \in \R$, on a
-      \begin{eqnarray*}
-        \sum_{j=1}^r { \lambda_j \vec{u}_j} &=& \sum_{j=1}^r {\lambda_j \left( \sum_{i=1}^r {a_{ij}\vec{v}_i} \right)} \\
-          & =& \sum_{i=1}^s {\left( \sum_{j=1}^r {a_{ij}\lambda_j} \right) \vec{v}_i
-      \end{eqnarray*}
-      On a $\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$ si eut seulement si pour tout $i$, $\sum_{j=1}^r {a_{ij} \lambda_j } = 0$ car $T$ est en particulier un système libre. Puisque $s < r$, le nombre d'équations du système
-      $$ \left\{ \begin{matrix}
-        a_{11} \lambda_1 + \ldots + a_{1r} \lambda_r = 0 \\
-        \vdots \\
-        a_{s1} \lambda_1 + \ldots + a_{sr} \lambda_r = 0
-      \end{matrix} $$
-      est strictement inférieur au nombre d'inconnues. Puisque le système admet au moins une solution, à savoir $(0, \ldots, 0) \in \R^r$, il admet une infinité de solutions. \\
-      Soit $(\lambda_1, \ldots, \lambda_r) \neq (0, \ldots, 0)$ une solution de ce système. On a alors
-      $$\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$$
-      donc $S$ est lié, ce qui donne lien à une contradiction.
+  \item On note $S = (\vec{u}_1, \ldots, \vec{u}_r)$ et $T = (\vec{v}_1, \ldots, \vec{v}_s)$ quitte à extraire une base de T, on peut supposer que $T$ est une base. Pout tout $j \in \{1; \ldots ; r\}$ on a
+    $$\vec{u}_j = \sum_{i=1}^{j} {a_{ij} \vec{v}_i}$$
+    Raisonnons par l'absurde, et supposons que $s < r$. Pour tous $\lambda_1, \ldots, \lambda_r \in \R$, on a
+    \begin{eqnarray*}
+      \sum_{j=1}^r { \lambda_j \vec{u}_j} &=& \sum_{j=1}^r {\lambda_j \left( \sum_{i=1}^r {a_{ij}\vec{v}_i} \right)} \\
+        & =& \sum_{i=1}^s {\left( \sum_{j=1}^r {a_{ij}\lambda_j} \right) \vec{v}_i
+    \end{eqnarray*}
+    On a $\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$ si eut seulement si pour tout $i$, $\sum_{j=1}^r {a_{ij} \lambda_j } = 0$ car $T$ est en particulier un système libre. Puisque $s < r$, le nombre d'équations du système
+    $$ \left\{ \begin{matrix}
+      a_{11} \lambda_1 + \ldots + a_{1r} \lambda_r = 0 \\
+      \vdots \\
+      a_{s1} \lambda_1 + \ldots + a_{sr} \lambda_r = 0
+    \end{matrix} $$
+    est strictement inférieur au nombre d'inconnues. Puisque le système admet au moins une solution, à savoir $(0, \ldots, 0) \in \R^r$, il admet une infinité de solutions. \\
+    Soit $(\lambda_1, \ldots, \lambda_r) \neq (0, \ldots, 0)$ une solution de ce système. On a alors
+    $$\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$$
+    donc $S$ est lié, ce qui donne lien à une contradiction.
 \end{enumerate}
 
 \paragraph{Corollaire} Tout espace vectoriel de type fini, admet une base de cardinal fini.
@@ -274,6 +307,9 @@ Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\
 \paragraph{Démonstration} Soient $\B$ et $\B'$ deux bases de $V$. En particulier $\B$ est un système libre, et $\B'$ un système générateur. On a donc $card(\B) \leq card(\B')$. \\
 En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') \leq card(\B)$, d'où $card(\B) = card(\B')$.
 
+%
+\subsection{Dimension}
+%
 \paragraph{Définition} Soit $V$ un epsace vectoriel de type fini. On appelle dimension de $V$ et on note $dim_\R(V)$ (ou simplement $dim(V)$) le cardinal d'une base quelconque de $V$.
 \paragraph{Examples}
 \begin{itemize}
@@ -286,6 +322,18 @@ En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') 
   \item L'espace vectoriel$\R[X]$ n'est pas de dimension finie. Il admet pour base le système $(X^m)_{n\in \N$ que est de cardinal infini.
 \end{itemize}
 
+\paragraph{Théorème} Soit $V$ un espace vectoriel de dimension $n$. Alors 
+\begin{enumerate}
+  \item Si $S$ est un système libre de vecteurs de V,  $card(S) \leq n$.
+  \item Si $T$ est un système générateur de $V$, alors $card(T) \geq n$.
+\end{enumerate}
+
+\paragraph{Démonstration} Soit $\B$ une base de $V$.
+\begin{enumerate}
+  \item Comme $\B$ est en particulier un système générateur de $V$ on a $card(s) \leq card(\B) = n$.
+  \item Comme $\B$ est un particulier un système libre, on a $n = card(\B) \leq card(T)$.
+\end{enumerate}
+
 \paragraph{Théorème} Soit $V$ un espace vectoriel de dimension $n$. Soit $S$ un système de $n$ vecteurs de $V$. Alors les affirmations suivantes sont équivalentes.
 \begin{enumerate}
   \item $S$ est une base de $V$;
@@ -293,18 +341,7 @@ En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') 
   \item $S$ est libre.
 \end{enumerate}
 
-\paragraph{Théorème} Soit $V$ un espace vectoriel de dimension $n$. Alors 
-\begin{enumerate}
-  \item Si $S$ est un système libre de vecteurs de V,  $card(S) \leq n$.
-  \item Si $T$ est un système générateur de $V$, alors $card(T) \geq n$.
-\end{enumerate}
-\paragraph{Démonstration} Soit $\B une base de V$.
-\begin{enumerate}
-  \item Comme $\B$ est en particulier un système générateur de $V$ on a $card(s) \leq card(\B) = n$.
-  \item Comme $\B$ est un particulier un système libre, on a $n = card(\B) \leq card(T)$.
-\end{enumerate}
-
-\paragraph{Démonstration du théorème précèdent}
+\paragraph{Démonstration}
 \begin{enumerate}
   \item $\Rightarrow$ 2. est clair par définition d'une base
   \item $\Rightarrow$ 3. Raisonnons par l'absurde et supposons que $S$ est lié. Alors l'un des vectuers de $S$ est combinaison linéaire des autres. Notons $vec{v}$ un tel vecteur de $S$. \\
@@ -355,7 +392,10 @@ $$f(x_1, \ldots, \x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
     \end{eqnarray*}
 \end{itemize}
 
-\paragraph*{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$. \\
+%
+\subsection{Équation linéaire homogène}
+%
+\paragraph{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$. \\
 On dit que ctte équation est homogène si $a=0$. \\
 Cela justice la terminologie d'équation linéaire et de système utilisée jusqu'ici.
 
@@ -378,7 +418,8 @@ Par conséquent, $\mS$ est un sous-espace vectoriel de $\R^m$.
 %
 %
 \section{Applications linéaires}
-
+%
+%
 \paragraph{Rappel} Soient $E$ et $F$ deux ensembles et $f: E \rightarrow F$ une application de $E$ dans $F$.
 \begin{itemize}
  \item On dit que $f$ est injective si pour tous $x, x' \in E$, si $f(x) = f(x')$ alors $x=x'$. De façon équivalente, $f$ est injective si pour tous $x, x' \in E$, si $x \neq x'$, alors $f(x) \neq f(x')$.
@@ -388,7 +429,10 @@ Par conséquent, $\mS$ est un sous-espace vectoriel de $\R^m$.
   \item De façon générale, si $x \in E$ et $y \in F$ tels gue $y = f(x)$, on dit que $x$ est un antécédent de $y$ par $f$.
 \end{itemize}
 
-\paragraph{Définition} Soient $E$ et $F$ deux espaces vectoriels et $f: E \rightarrow F$ une application linéaire de $E$ dans $F$. On appelle \underline{noyau} de $f$, et on note $Ker(f)$ le sous-ensemble de $E$ définit par
+%
+\subsection{Noyau}
+%
+\paragraph{Définition} Soient $E$ et $F$ deux espaces vectoriels et $f: E \rightarrow F$ une application linéaire de $E$ dans $F$. On appelle noyau de $f$, et on note $Ker(f)$ le sous-ensemble de $E$ définit par
 $$Ker(f) = \left\{ x\in E \vert f(x) = 0_F \right\}$$
 
 \paragraph{Example} Si $f: \R^m \rightarrow \R$ est une application linéaire, l'ensemble des solutions de l'équation linéaire homogène
@@ -415,7 +459,10 @@ Donc $f$ est injective.
 $$x + Ker(f) = \left\{ x+z \vert z \in Ker(f) \right\}$$
 Autrement dit, si $x \in E$, alors pour tout $x' \in E, f(x') = f(x) \Leftrightarrow x' \in x + Ker(f)$.
 
-\paragraph*{Définition} Soit $f: E \rightarrow F$ une application linéaire. On appelle image de $f$ le sous-esemble de $F$ noté $Im(f)$ défini par
+%
+\subsection{Image}
+%
+\paragraph{Définition} Soit $f: E \rightarrow F$ une application linéaire. On appelle image de $f$ le sous-esemble de $F$ noté $Im(f)$ défini par
 $$Im(f) = \left\{ y \in F \vert \text{ il existe } x \in E \text{ tel que } y = f(x) \right\}$$
 
 \paragraph{Proposotion} Soit $f: E \rightarrow F$ une application linéaire. Alors $Im(f)$ est un sous-espace vectoriel de $F$.
@@ -424,7 +471,7 @@ $$\alpha \vec{y} + \beta \vec{y}' = \alpha f(\vec{x}) + \beta f(\vec{x}') = f(\a
 
 \paragraph{Théorème} Soit $f: E \rightarrow F$  une application linéaire. Alors $f$ est surjective si et seulement si $Im(f) = F$.
 
-\paragraph{} On rappelle que si $E$ et $F$ sont deux espaces vectoriels, alors un isomorphisme (d'espaces vectoriels) de $E$ dans $F$, s'il en existe, est une application de $E$ dans $F$ linéaire et bijective. \\
+\paragraph{Rappel} On rappelle que si $E$ et $F$ sont deux espaces vectoriels, alors un isomorphisme (d'espaces vectoriels) de $E$ dans $F$, s'il en existe, est une application de $E$ dans $F$ linéaire et bijective. \\
 On dit que $F$ est \underline{isomorphe} à $E$ s'il existe un isomorphisme d'espaces vectoriels de $E$ dans $F$.
 
 \paragraph{Théorème} Soit $f: E \rightarrow F$  une application linéaire. Alors $f$ est un isomorphisme si et seulement si $Ker(f) = \{\vec{0}_E\}$ et $Im(f) = F$.
@@ -542,10 +589,17 @@ De plus $\mS$ est de dimension $2$: c'est un plan vectoriel.
 \section{Réprésentation matricielle d'un vecteur dans une base}
 %
 %
-\paragraph{} Soit $V$ un esapace vectoriel de dimsension finie $n$. Soit $\B = (\vec{v}_1, \ldots, \vec{v}_n)$ une base de $V$. Si $\vec{v} \in V$, on peut écrire 
+
+%
+\subsection{Coordonnées}
+%
+\paragraph{Définition} Soit $V$ un esapace vectoriel de dimsension finie $n$. Soit $\B = (\vec{v}_1, \ldots, \vec{v}_n)$ une base de $V$. Si $\vec{v} \in V$, on peut écrire 
 $$\vec{v} = \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n$$
 où les $\alpha_i$ sont les coordonnées de $\vec{v}$ dans la base $\B$.
 
+%
+\subsection{Matrice d'un vecteur}
+%
 \paragraph{Définition} On appelle  matrice de $\vec{v}$ dans la base $\B$ la matrice colonne 
 $$[\vec{v}]_{\B} = 
 \begin{pmatrix} 
@@ -594,9 +648,16 @@ $$M_{\T S} = \begin{pmatrix}
 où $\T$ désigne la base canonique $\big(1, X, X^2 \big)$ de $\mP_2$. Comme $M_{\T S}$ est inversible, S est une base de $\mP_2$.
 \\\\
 Soient $V$ un espace vectoriel de dimension $n$ et $\B = (\vec{v}_1, \ldots, \vec{v}_n)$ et $\B' = (\vec{v}'_1, \ldots, \vec{v}'_n)$ deux bases de $V$.
-\paragraph{Définition} On appelle \underline{matrice de passage} de $\B$ à $\B'$ la matrice carrée $P_{\B \B'}$ du système $\B'$ dans la base $\B$. Du fait que $\B'$ est une base de $V$, $P_{\B \B'}$ est inversible.
 
-\paragraph{Théorème (formule de changement de base)} Pour tout $\vec{v} \in V$, on a 
+%
+\subsection{Matrice de passage}
+%
+\paragraph{Définition} On appelle matrice de passage de $\B$ à $\B'$ la matrice carrée $P_{\B \B'}$ du système $\B'$ dans la base $\B$. Du fait que $\B'$ est une base de $V$, $P_{\B \B'}$ est inversible.
+
+%
+\subsection{Formule de changement de base}
+%
+\paragraph{Théorème} Pour tout $\vec{v} \in V$, on a 
 $$[\vec{v}]_\B = P_{\B \B'} \cdot [\vec{v}]_{\B'}$$
 
 \paragraph{Remarque} Cette formule indique que l'on obtient les coordonnées de $\vec{v}$ dans l'ancienne base $\B$ en fonction des coordonnées de $\vec{v}$ dans la nouvelle base $\B'$, alors que l'on souhaiterait plutôt l'inverse. Pour ce faire, il faut calculer $P_{\B \B'}$. En fait on a
@@ -612,6 +673,9 @@ $$[\vec{v}]_{\B'} = P_{\B' \B} \cdot [\vec{v}]_{\B} = {P_{\B \B'}}^{-1} \cdot [\
 Si $\B, \B', \B''$ sont trois bases de $V$, alors
 $$P_{\B \B''} = P_{\B \B'} \cdot P_{\B' \B''}$$
 
+%
+\subsection{Extraire une base d'un système générateur}
+%
 \paragraph{} Considérons le problème suivant: Soient $V$ un espace vectoriel de dimension $n$, $W$ un sous-espace vectoriel de $V$, $S = (\vec{v}_1, \ldots, \vec{v}_m)$ un système générateur de $V$ de sorte que $W = Vect(\vec{v}_1, \ldots, \vec{v}_m)$, et $\B$ une base de $V$. On cherche à extraire de $S$ une base de $W$. On peut procéder comme suit:
 \begin{itemize}
   \item on construit une suite $S_0, S_1, \ldots, S_m$ de système de vecteurs de $W$, $S_0 = \{\vec{0}\}$
@@ -707,6 +771,9 @@ Le troisième vecteur de $\B$ est généré par les opération élémentaires ef
 La forme échelonnée réduite $R$ de $M$ est donc la matrice du système $(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ dans la base $\B$ dont les premiers vecteurs sont ceux de la base qu'on peut extraire du système en appliquant lâlgorithme défini précédemment. $R$ ne fait intervenir que les vecteurs de cette base extraite. \\
 Cela implique en particulier que la forme échelonnée réduité de $M$ est unique. Par contre la matrice $P$ n'est panécessairement unique.
 
+%
+\subsection{Rang}
+%
 \paragraph{Définition} Soit $E$ un espace vectoriel. Soit $S = (\vec{v}, \ldots, \vec{v}_r)$ un système de vecteurs de $E$. On appelle rang de $S$ la dimension de $Vect(\vec{v}_1, \ldots, \vec{v}_r)$.
 
 \paragraph{Définition} Soit $M$ une matrice de taille $n\times m$ quelconque. On appelle rang de $M$ le rang dans $M_{n\times 1}(\R)$ du système des colonnes de $M$.
@@ -716,6 +783,10 @@ Cela implique en particulier que la forme échelonnée réduité de $M$ est uniq
 \section{Systèmes d'équations cartésiennes} 
 %
 %
+
+%
+\subsection{Système d'équations cartésiennes}
+%
 Soit $E$ un espace vectoriel de dimension finie $n$. Soient $W$ un sous-espace vectoriel de $E$ et $\B$ une base de $E$.
 \paragraph{Définition} On appelle système d'équations cartésiennes de $W$ dans la base $\B$ tout système d'équations à $n$ inconnues tel que, pour tout vecteur $\vec{w} \in E$ on ait $\vec{v} \in W \Leftrightarrow$ le n-uplet $(\alpha_1, \ldots, \alpha_n)$ des coordonnées de $\vec{w}$ dans la base $\B$ est solution de $S$.
 
@@ -724,6 +795,9 @@ $$ - \frac{1}{2} x + y = 0$$
 On a, pour tout $\vec{v} = (\alpha, \beta) \in \R^2$ 
 $$\vec{v} \in D \Leftrightarrow -\frac{1}{2} \alpha + \beta = 0$$
 
+%
+\subsection{Détermine un système d'équations cartésiennes d'un SEL}
+%
 \paragraph{Question} Comment déterminer un système d'équations cartésiennes d'un sous-espace vectoriel lorsque celui-ci est donné par un système générateur?
 
 \paragraph{Example} Dans $\R^3$, considérons le sous-espace vectorie engendré par $\vec{v}_1 = (1, 0, 0)$, $\vec{v}_2 = (1, 1, 1)$ et $\vec{v}_3 = (2, 1, 0)$. Déterminons un système d'équations cartésiennes du sous-espace $W = Vect(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ de $\R^3$. Soit $\vec{v} = (a, b, c) \in \R^3$. \\
@@ -768,6 +842,10 @@ Si maintenant $V$ est un sous-espace de $E$ donné par un système linéaire d'�
 \section{Représentation matricielle des applications linéaires}
 %
 %
+
+%
+\subsection{Matrice d'un morphisme}
+%
 Soient $E$ est $F$ deux espaces vectoriels de dimensions finies $m$ et $n$ respectivement, $\cE = \{ \vec{u}_1, \dots, \vec{u}_m\}, \cF = \{\vec{v}_1, \ldots, \vec{v}_n\}$ des bases de $E$ et $F$ respectivement, et $f: E \rightarrow F$ une application linéaire. \\
 Nous avons vu précédemment que $f$ est entièrement déterminée par la donnée de $f(\vec{u}_1), \ldots, f(\vec{u}_m)$.
 
@@ -781,7 +859,7 @@ de taille $n \times m$.
 $$[f(\vec{u})]_{\cF} = [f]_{\cF \cE} [\vec{v}]_{\cE}$$
 Cette relation caractérise $[f]_{\cF \cE}$, c'est-à-dire si $M$ est une matrice (de taille convenable) telle qze pour tout $\vec{u} \in E, [f(\vec{u})]_{\cF} = M [\vec{u}]_{\cE}$, alors $M = [f]_{\cF \cE}$.
 
-\paragraph{Démonstration} Soit $<vec{u} \in E$. On écrit
+\paragraph{Démonstration} Soit $\vec{u} \in E$. On écrit
 $$[\vec{u}]_{\cE} = \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix}, \lambda_1, \ldots \lambda_m \in \R$$
 Il vient
 \begin{eqnarray*}

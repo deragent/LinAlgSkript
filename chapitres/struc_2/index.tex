@@ -1,32 +1,50 @@
 \chapter{Structures}
 \section{Lois de composition internes}
-\paragraph{} On rapelle que si $E$ est un ensemble, une loi de composition interne $\star$ sur $E$ est une application:
+\paragraph{Rappels} On rapelle que si $E$ est un ensemble, une loi de composition interne $\star$ sur $E$ est une application:
 \begin{eqnarray*}
 \star{}: & E \times E \rightarrow E \\
 & (x, y) \mapsto x \star y
 \end{eqnarray*}
 
-\paragraph{} Soit E un ensemble muni d'une loi de composition interne $\star$. On dit que $\star$ est associative si
+%
+\subsection{Associativité}
+%
+\paragraph{Définition} Soit E un ensemble muni d'une loi de composition interne $\star$. On dit que $\star$ est associative si
 $$ \forall x, y, z \in E, (x \star y) \star z = x \star (y \star z)$$
 Si $\star$ est associative, alors la composition d'un membre fini $m \leq 1$ quelconque d'éléments $x_1, x_2, \ldots , x_n$ de $E$ dans cet order est bien défini indépendamment de l'orde dans lequel on effectue la composition des éléments 2 à 2. \\
 On peut alors écrire $x_1 \star x_2 \star \ldots \star x_n$
 
-\paragraph{} On dit que $\star$ est commutative si
+%
+\subsection{Commutativité}
+%
+\paragraph{Définition} On dit que $\star$ est commutative si
 $$ \forall x, y \in E, x \star y = y \star x$$
 
-\paragraph{} On dit que $\star$ est unifié si $E$ posséde un élément neutre pour $\star$, c'est-à-dire un élément tel que
+%
+\subsection{Unifierité}
+%
+\paragraph{Définition} On dit que $\star$ est unifière si $E$ posséde un élément neutre pour $\star$, c'est-à-dire un élément tel que
 $$ \forall x \in E, e \star x = x = x \star e$$
 Cet élément neutre, s'il existe, est unique.
 %Vielleicht Beweis einfügen
 
-\paragraph{} Ons uppose que $\star$ est unifière d'élément neutre e. Soit $x \in E$. On dit qu'un élément $y \in E$ est un symétrique de $x$ pour $\star$ si
+%
+\subsection{Symétrie}
+%
+\paragraph{Définition} On suppose que $\star$ est unifière d'élément neutre e. Soit $x \in E$. On dit qu'un élément $y \in E$ est un symétrique de $x$ pour $\star$ si
 $$ x \star y = e = y \star x$$
 Le symétrique de $x$, s'il existe, est unique. Pour un $x \in E$. Si $\star$ est l'addition ($+$) le symétrique s'appelle l'oposé de $x$ et s'écrit $-x$. Si $\star$ est la multiplication ($\times$) le symétrique s'appelle l'inverse de x et s'écrit $x^{-1}$.
  
 \paragraph{Example} La sustraction ($-$) sur $\mathbb{Z}$ n'est ni associative ni commutative nu unifère. ($0$ est élément neutre à droit mais pas à gauche $\rightarrow$ $0 - x = x \neq x - 0$.)
+
 %
 %
 \section{Groupes, Anneaux, Corps}
+%
+%
+%
+\subsection{Groupe}
+%
 \paragraph{Définition} On appelle groupe un ensemble $E$ muni d'une loi de composition interne $\star$ associativew et unifère et telle que tout élément de $E$ admette une symétrique pour $\star$. \\
 Si de plus $\star$ est commutative, on dit que le groupe est commutatif.
 
@@ -35,6 +53,9 @@ $(\mathbb{Z}, +)$ est un groupe commutatif. Mais $(\mathbb{N}, +)$ n'est pas un 
 
 \paragraph{Example} Soit $n \geq 1$ un entier naturel. On appelle permutation de $\{ 1; 2; \ldots ; n\}$ une bijection de $\{ 1; 2; \ldots ; n\}$ dans lui-même. Alors l'ensemble $S_n$ des permutations de $\{ 1; 2; \ldots ; n\}$ muni de la composition des permutations est un groupe non commutatif pour $n \leq 3$.
 
+%
+\subsection{Anneau}
+%
 \paragraph{Définition} On appelle anneau un triplet $(A, +, \times)$ où $A$ est un ensemble et $+$ et $\times$ sont des lois de composition internes sur A appellées respectivement addition et multiplication telles que:
 \begin{itemize}
   \item $A$ muni de $+$ est un groupe d'élément neutre noté $0$.
@@ -49,8 +70,11 @@ Si de plus $\times$ est commutative, on dit que $(A, +, \times)$ est un anneaux 
 
 \paragraph{Example}  $(\mathbb{Z}, +, \times), (\R, +, \times)$ sont des anneaux commutatifs.
 
-\paragraph{Définition} Soient $(A, +, \times)$ un anneaux et $x \in A$. On dit que $x$ est un élément inversible de $A$, si $A$ admet un enverse pour $x$. On note $A^{x}$ l'ensemble des éléments inversibles de $A$. L'ensemble $A^{x}$ muni de $\times$ est un groupe.
+\paragraph{Définition} Soient $(A, +, \times)$ un anneau et $x \in A$. On dit que $x$ est un élément inversible de $A$, si $A$ admet un enverse pour $x$. On note $A^{x}$ l'ensemble des éléments inversibles de $A$. L'ensemble $A^{x}$ muni de $\times$ est un groupe.
 
+%
+\subsection{Corps}
+%
 \paragraph{Définition} Un corps est un anneaux dans lequel tout élément non nul est inversible.
 
 \paragraph{Example}
@@ -59,9 +83,16 @@ Si de plus $\times$ est commutative, on dit que $(A, +, \times)$ est un anneaux 
   \item $(\R, +, \times)$ cest le corps des nombres réels.
   \item $(\mathbb{C}, +, \times)$ cest le corps des nombres complexes.
 \end{itemize}
+
 %
 %
 \section{Espaces vectoriels, algèbres}
+%
+%
+
+%
+\subsection{Espace vectoriel}
+%
 \paragraph{Définition} Soit $K$ un corps commutatif. On appelle espace vectoriel sur $K$ (ou $K$-espace vectoriel) un ensemble $V$ muni d'une loi de composition $+$ et d'une loi de composition externe
 \begin{eqnarray*}
   \times: K \times V &\rightarrow& V \\
@@ -120,8 +151,11 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
     En effet, la structure de groupe commutatif de $(\R, +)$ donne la structure de groupe commutatif de $(\mathcal{A}(X, \R), +)$. Ainsi, l'élément $0$ application nulle est l'application de $X$ dans $\R$ qui associé $0$ à tout $x \in X$. \\
     Si $f \in \mathcal{A}(X, \R)$, l'opposée de $f$ est l'application de $X$ dans $\R$ qui à tout $x \in X$ associé à $-f(x)$. Le reste des axiômes de la structure d'espace vectoriel sont assurés par les propriétés de la multiplication dans $\R$.
 \end{enumerate}
-  
-\paragraph{Définition} Soient $(U, +, \cdot)$ et $(V, +, \cdot)$ deux $\R$-espace vectoriels. Un morphisme de $\R$-espace vectoriels de $U$ dans $V$ est und application linéaire
+
+%
+\subsection{Morphisme}
+%
+\paragraph{Définition} Soient $(U, +, \cdot)$ et $(V, +, \cdot)$ deux $\R$-espace vectoriels. Un morphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application linéaire
   $$f: U \rightarrow V$$
   telle que
   \begin{eqnarray*}
@@ -134,6 +168,9 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
     f(\alpha \vec{u} + \ve{v}) = \alpha f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U, \alpha \in \R \mbox{~ (linéarité)}
   \end{eqnarray*}
 
+%
+\subsection{Isomorphisme}
+%
 \paragraph{Définition} Soient $U$ et $V$ deux $\R$-espace vectoriels. Un isomorphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application $\R$-linéaire bijective de $U$ dans $V$.
 
 \paragraph{Proposition} Soit $(V, +, \cdot)$ un $\R$-espace vectoriel. Alors on a:
@@ -203,7 +240,9 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
     \end{enumerate}
 \end{enumerate}
 
+%
 \subsection{Algèbre}
+%
 \paragraph{Définition} Soit$K$ un corps commutatif. On appelle algèbre sur $K$ (ou $K$-algèbre) un quadrouplet $(A, +, \times, \cdot)$ ou $A$ est un ensemble, $+$ et $\times$ sont des lois de composition internes sur $A$ et $\cdot: K \cdot A \rightarrow A$ une loi de composition externe tels que:
 \begin{itemize}
   \item $(A, +, \cdot)$ est un $K$-espace vectoriel.
