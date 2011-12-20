@@ -212,12 +212,375 @@ $$F_{ij}F_{kl} = \delta_{ik} F_{il} =
 \end{itemize}
 Par conséquent, si $j\neq k$, toutes les lignes de $F_{ij} F_{kl}$ sont nulles donc $F_{ij} F_{kl} = 0$; si $j=k$, alors 
 $$F_{ij} F_{kl} = \begin{pmatrix} 
-  & & & 0 & & & \\
-  & & & \vdots & & & \\
-  & & & 0 & & & \\
-  0 & \ldots & 0 & 1 & 0 & \ldots & 0 \\
-  & & & 0 & & & \\
-  & & & \vdots & & & \\
-  & & & 0 & & & 
+  & & & 0 & \\
+  & & & \vdots & \\
+  & & & 0 & \\
+  0 & \ldots & 0 & 1 & 0 \\
+  & & & 0 & \\
 \end{pmatrix} = F_{il}$$
 Ainsi $F_{ij} F{kl} = \delta_{ik} F_{il}$.
+
+%
+\subsection{Les opérations élémentaires}
+%
+\paragraph{Rappel} On rappelle que l'on distingue trois types d'opérations éLémentaires que l'on peut effectuer sur les lignes d'une matrice
+\begin{itemize}
+  \item multiplier une ligne par un réel
+  \item ajouter à une ligne un multiple quelconque d'une autre ligne
+  \item permuter deux lignes
+\end{itemize}
+On introdiut les matrices suivantes ($n \geq 1$ entier naturel)
+\begin{itemize}
+  \item $c \in \R \backslash \{0 \}, i \in \{1; \ldots; n\}$
+    $$E_i(c) = \left( \sum_{l=1, l\neq i}^n F_{ll} \right) +  c F_{ii} = 
+      \begin{pmatrix}
+        1 & & \\
+        & 1 & \\
+        & & \ddots & \\
+        & & & c & \\
+        & & & & 1
+      \end{pmatrix}$$
+      
+  \item $c \in \R, (i, j) \in \{1;\ldots;n\}\times\{1;\ldots;n\}, i\neq j$
+    $$E_{ij}(c) = I_n + c F_{ij} =
+      \begin{pmatrix}
+        1 & & & \\
+        & 1 & & c \\
+        & & \ddots & \\
+        & & & 1
+      \end{pmatrix}$$
+      
+  \item $(i, j) \in \{1; \ldots; n\}\times\{1;\ldots; n\}, i\neq j$
+    $$E_{ij} = \left( \sum_{l=1, l \notin {i; j}}^n F_{ll} \right) + F_{ij} + F_{ji} = 
+      \begin{pmatrix}
+        1 & & & & & & 0 \\
+        & 0 & & & & 1 & \\
+        & & 1 & & 0 & & \\
+        & & & \ddots & & & \\
+        & & 0 & & 1 & & \\
+        & 1 & & & & 0 & \\
+        0 & & & & & & 1
+      \end{pmatrix}$$
+\end{itemize} 
+Les opérations élémentaires que l'un peut effectuer sur les lignes d'une matrice peuvent s'interpréter en termes de multiplications de cette par les matrices précédantes.
+
+\paragraph{Théorème} Soit $A$ une matrice de taille $n\times m$
+\begin{enumerate}[a)]
+  \item Multiplier la $i^{ème}$ ligne de $A$ par un réel $c$ non nul est équvalent à multiplier $A$ à gauche par la matrice $E_i(c)$ de taille $n \times n$
+  
+  \item Ajouter à la $i^{ème}$ ligne de $A$ $c$-fois la ligne $j$ de $A$ où $i\neq j$ et $c\in \R$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}(c)$.
+  
+  \item Permuter la $i^{ème}$ ligne et la $ĵ^{ème}$ ligne de $A$ où $i\neq j$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}$.
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}[a)]
+  \item $$E_i(c) A = \left( \sum_{l=1, l\neq i}^n F_{ll} \right) A +  c F_{ii} A$$
+    Si $l\neq i$ on a
+    $$F_{ll} A =
+      \begin{pmatrix}
+        \\
+        l^{ème} \text{ ligne de } A \\
+        \\
+      \end{pmatrix} \begin{array}{c} 1, \ldots, l-1 \\ l \\ l+1, \ldots, n \end{array}$$
+    sinon, on a
+    $$c F_{ii} A =
+      \begin{pmatrix}
+        \\
+        c\text{-fois } i^{ème} \text{ ligne de } A \\
+        \\
+      \end{pmatrix} \begin{array}{c} 1, \ldots, i-1 \\ i \\ i+1, \ldots, n \end{array}$$
+    On voit alors que $\left( \sum_{l=1, l\neq i}^n F_{ll} \right) A +  c F_{ii} A$ est la matrice cherchée.
+    
+  \item $$E_{ij}(c) A = (I_n + c F_{ij}) A = E_{ij}(c) = A + c F_{ij} A$$
+    Où on a
+      $$c F_{ij} A =
+    \begin{pmatrix}
+      \\
+      c\text{-fois } j^{ème} \text{ ligne de } A \\
+      \\
+    \end{pmatrix} \begin{array}{c} 1, \ldots, i-1 \\ i \\ i+1, \ldots, n \end{array}$$
+    Donc $A + c F_{ij} A$ est bien la matrice cherchée.
+    
+  \item $$E_{ij} A = \left( \sum_{l=1, l \notin {i; j}}^n F_{ll} A \right) + F_{ij} A + F_{ji} A$$
+    Si $l\neq i$ et $l\neq j$ 
+    $$F_{ll} A =
+      \begin{pmatrix}
+        \\
+        l^{ème} \text{ ligne de } A \\
+        \\
+      \end{pmatrix} \begin{array}{c} 1, \ldots, l-1 \\ l \\ l+1, \ldots, n \end{array}$$
+    sinon
+      $$F_{ij} A =
+      \begin{pmatrix}
+        \\
+        j^{ème} \text{ ligne de } A \\
+        \\
+      \end{pmatrix} \begin{array}{c} 1, \ldots, i-1 \\ i \\ i+1, \ldots, n \end{array}$$
+      $$F_{ji} A =
+      \begin{pmatrix}
+        \\
+        i^{ème} \text{ ligne de } A \\
+        \\
+      \end{pmatrix} \begin{array}{c} 1, \ldots, j-1 \\ j \\ j+1, \ldots, n \end{array}$$
+    Ainsi $\left( \sum_{l=1, l \notin {i; j}}^n F_{ll} A \right) + F_{ij} A + F_{ji} A$ est la matrice cherchée.
+\end{enumerate}
+
+%
+\subsection{Calculer l'inverse d'une matrice}
+%
+\paragraph{} $A$ matrice carrée de taille $n\times n$. \\
+On prends la matrice $(A \vert I_m)$. En utilisant les opérations élémentaires on met la matrice $E$ en forme échlonné réduite et on éffectue parallelement les mêmes opérations éLémentaires sur les lignes de $I_n$. Si $A$ sous la forme échelonnée réduite est àgal à $I_n$ $A$ est inversible. La matrice inverse de $A$ est alors la partie $I_n$ où on a éffectue les opérations élémentaires. \\
+$E_1, E_2, \ldots, E_l$ sont des matrices élémentaires.
+\begin{eqnarray*}
+  A \cdot E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = I_n \\
+  &\Downarrow& \\
+  I_n \cdot E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = A^{-1} \\
+  &\Downarrow& \\
+  E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = A^{-1}
+\end{eqnarray*}
+De la même manière on peut calculer $A^{-1} B$.
+$$A^{-1} B = E_1 \cdot E_2 \cdot \ldots \cdot E_l \cdot B$$
+où $E_1, E_2, \ldots, E_l$ sont les opérations élémentaires dont on à besoin pour mettre $A$ sous forme échelonnée réduite égal à $I_n$.
+
+%
+%
+\section{Matrices triangulaires, matrice diagonales}
+%
+%
+\paragraph{} Soient $n \geq 1$ un entier naturel et $A_ij$ une matrice carrée de taille $n\times n$.
+
+%
+\subsection{Matrice triangulaire supérieure}
+%
+\paragraph{Définition} On dit que $A$ est triangulaire supérieure si les coefficients de $A$ en-dessous de la diagonale sont nuls, autrement dit si $i > j \Rightarrow a_{ij} = 0$
+
+%
+\subsection{Matrice triangulaire inférieure}
+%
+\paragraph{Définition} On dit que $A$ est triangulaire inférieure si tous les ocefficients de $A$ au-dessus de la diagonale sont nuls, autrement dit si $i < j \Rightarrow a_{ij} = 0$
+
+%
+\subsection{Matrice diagonale}
+%
+\paragraph{Définition} On dit que $A$ est diagonale si les coefficients de $A$ en dehors de la diagonale sont nuls, autrement dit si $i\neq j \Rightarrow a_{ij} = 0$
+
+\paragraph{Théorème} Soit $A$ une matrice triangulaire supérieure de taille $n\times n$. Alors $A$ est inversible si et seulement si tous ses coefficients diagonaux sont nun nuls. Si $A$ est inversible, alors $A^{-1}$ est encore une matrice triangulaire supérieure.
+\\\\
+On applique le même pour les matrices triangulaires inférieures et les matrices diagonaux.
+
+\paragraph{Démonstration} Comme $A$ est triangulaire supérieure, elle est échelonnée. Alors $A$ est inversible si et seuelement si sa form échelonnée réduit est $I_n$, si et seulement si chaque coefficient diagonal de $A$ donne un coefficicent pivot, autrement di si et seuelement si chacun de ces coefficients diagonaux est non nul. \\
+Montrons par récurence sur $n \geq 1$ que l'inverse d'une matrice triangulaire supérieure inversible de taille $n\times n$ est encore triangulaire supérieure.
+\begin{enumerate}[(1)]
+  \item Si $n=1$, alors $A$ est de forme $A = ( a )$, pour un certain $a \in \R$. Puisque $A$ est inversible, $a \neq 0$ donc $a$ est inversible dans $\R$. On a alors 
+    $$(a) (a^{-1}) = I_n = (a^{-1})(a)$$
+    et donc $A^{-1} = (a^{-1})$ est triangulaire supérieure.
+    
+  \item On suppose que l'inverse de toute matrice triangulaire supérieure inversible de taille $(n-1) \times (n-1)$ est encore triangulaire supérieure.
+  
+  \item Soit $A$ une matrice triangulaire supérieure inversible de taille $n\times n$. Présentons $A$ par blocs de la façon suivante
+    $$A = \begin{pmatrix}
+      a &   & L &   \\
+        & * & * & * \\
+      0 & 0 & T & * \\
+        & 0 & 0 & * \\
+    \end{pmatrix}$$
+    où $a \in \R$, $L$ est une matrice ligne de taille $1 \times (n-1)$ et $T$ est une matrice triangulaire supérieure de taille $(n-1)\times(n-1)$. Du fait que $A$ est inversible, tous ses coefficients diagonaux sont non nuls. Cela implique que $a \neq 0$ et que les coefficients diagonaux de $T$ sont non nuls, donc $T$ est inversible. Par hypothèse de récurence, l'inverse $T^{-1}$ de $T$ est une matrice triangulaire supérieure. \\
+    Calculons de façon géNérale le produi de deux matrices triangulaires supérieure décombosées pa blocs:
+    $$\begin{pmatrix}
+        a' &   & L' & ~ \\
+          &   &   &  ~  \\
+        0 &   & T' & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix}
+      \begin{pmatrix}
+        a &   & L &  ~ \\
+          &   &   &  ~ \\
+        0 &   & T &  ~ \\
+          &   &   &  ~ \\
+      \end{pmatrix}
+      =\begin{pmatrix}
+        a' a &   & a' L + L' T & ~ \\
+          &   &   & ~ \\
+        0 &   & T' T & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}$$
+    On veut que $T' T = I_{n-1}$ et que $a' L + L' T = 0$; posons $a' = a^{-1}$, $T' = T^-{1}$ et $L' = - a^{-1} L T^{-1}$. Il vient
+    \begin{eqnarray*}
+      \begin{pmatrix}
+        a^{-1} &   & -a^{-1} L T^{-1} & ~ \\
+          &   &   &  ~  \\
+        0 &   & T^{-1} & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix} &\cdot&
+      \begin{pmatrix}
+        a &   & L &  ~ \\
+          &   &   &  ~ \\
+        0 &   & T &  ~ \\
+          &   &   &  ~ \\
+      \end{pmatrix} \\
+      &=&\begin{pmatrix}
+        a^{-1} a &   & a^{-1} L - a^{-1} L T^{-1} T & ~ \\
+          &   &   & ~ \\
+        0 &   & T^{-1} T & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}  \\
+      &=&\begin{pmatrix}
+        1 &   & 0 & ~ \\
+          &   &   & ~ \\
+        0 &   & I_{n-1} & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}
+      = I_n
+    \end{eqnarray*}
+    On a également
+    \begin{eqnarray*}
+      \begin{pmatrix}
+        a &   & L &  ~ \\
+          &   &   &  ~ \\
+        0 &   & T &  ~ \\
+          &   &   &  ~ \\
+      \end{pmatrix} &\cdot&
+      \begin{pmatrix}
+        a^{-1} &   & a^{-1} L T^{-1} & ~ \\
+          &   &   &  ~  \\
+        0 &   & T^{-1} & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix}\\
+      &=&\begin{pmatrix}
+        a a^{-1} &   & - a^{-1} L T^{-1} T + a^{-1} L & ~ \\
+          &   &   & ~ \\
+        0 &   & T T^{-1} & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}  \\ 
+      &=&\begin{pmatrix}
+        1 &   & 0 & ~ \\
+          &   &   & ~ \\
+        0 &   & I_{n-1} & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}
+      = I_n
+    \end{eqnarray*}
+    donc
+    $$A^{-1} = 
+      \begin{pmatrix}
+        a^{-1} &   & a^{-1} L T^{-1} & ~ \\
+          &   &   &  ~  \\
+        0 &   & T^{-1} & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix}$$
+    est triangulaire supérieure. Par principe de récurence, la propriété est vrai pour tout $n \geq 1$
+\end{enumerate} 
+    
+
+%
+%
+\section{Transposition}
+%
+%
+%
+\subsection{Matrice transposée}
+%
+\paragraph{Définition} Soit $A$ une matrice de taille $n\times m$. On appelle transposée de $A$ la matrice de taille $m\times n$ notée $A^T$, définie par
+\begin{itemize}
+  \item la colonne $i$ de $A$ deviens la ligne $i$ de $A^T$
+  \item la ligne $i$ de $A$ deivens la colonne $i$ de $A^T$
+\end{itemize}
+
+\paragraph*{Proposition}
+\begin{enumerate}[1)]
+  \item $\forall A, B \in M_{n\times m}(\R)$ on a
+    $$(A + B)^{T} = A^{T} + B^{T}$$
+  \item $\forall A \in M_{n\times m}(\R), \lambda \in \R$ on a
+    $$(\lambda A)^{T} = \lambda A^{T}$$
+  \item $\forall A \in M_{n\times m}(\R), B \in M_{m\times n}(\R)$ on a
+    $$(A \cdot B)^{T} = B^{T} \codt A^{T}$$
+  \item $\forall A \in M_{n\times m}(\R)$ on a
+    $$(A^{T})^{T} = A$$
+  \item $\forall A \in M_{n}(\R)$ si $A$ est inversible, alors $A^{T}$ est inversible et 
+    $$(A^{-1})^{T} = (A^{T})^{-1}$$
+\end{enumerate}
+
+%
+%
+\section{Matrices symétriques, matrices antisymétriques}
+%
+%
+%
+\subsection{Matrice symétrique}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On dit que $A$ est symétrique si $A^{T} = A$.
+
+%
+\subsection{Matrice antisymétrique}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On dit que $A$ est antisymétrique si $A^{T} = -A$
+\paragraph{Remarque} Si $A$ est antisymétrique $a_{ij}$ pour $i=j$ sont nuls.
+
+\paragraph{Théorème} Soit $A$ une matrice carrée. Alors $A$ peut s'écrire comme la somme d'une matrice symétrique et d'une matrice antisymétrique.
+
+\paragraph{Démonstration}  On pose $C = \frac{1}{2} ( A + A^{T})$ et $D = \frac{1}{2} ( A - A^{T})$ et alors on a
+$$ C + D = \frac{1}{2} ( A + A^{T}) + \frac{1}{2} ( A - A^{T}) = A$$
+On a 
+\begin{eqnarray*} 
+  C^{T} = (\frac{1}{2} ( A + A^{T}))^{T} &=& \frac{1}{2} ( A^{T} + A) \\
+    &=& \frac{1}{2} ( A + A^{T}) = C
+\end{eqnarray*}
+donc $C$ est symétrique. On a également
+\begin{eqnarray*}
+  D^{T} = (\frac{1}{2} ( A - A^{T}))^{T} &=& \frac{1}{2} ( A^{T} - A) \\
+    &=& -\frac{1}{2} ( A - A^{T}) = -C
+\end{eqnarray*}
+donc $D$ est antisymétrique. Ainsi $A = C + D$ est une composition de la forme cherché.
+
+%
+%
+\section{La trace}
+%
+%
+%
+\subsection{Trace d'une matrice}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On appelle trace de $A$ le nombre réel noté $tr(a)$ défini par
+$$tr(a) = a_{11} + a_{22} + \ldots + a_{nn}$$
+La trace de $A$ est donc la somme des coefficients diagonaux de $A$.
+
+\paragraph{Proposition}
+\begin{enumerate}[1)]
+  \item Soient $A, B \in M_{n}(\R)$. Alors
+    $$tr(A + B) = tr(A) + tr(B)$$
+  \item Soient $A \in M_{n}(\R)$ et $\lambda \in \R$. Alors
+    $$tr(\lambda A) = \lambda \cdot tr(A)$$
+  \item Soient $A, B \in M_{n}(\R)$. Alors
+    $$tr(A \cdot B) = tr(B \cdot A)$$
+  \item Soient $A \in M_{n}(\R)$ . Alors
+    $$tr(A^{T}) = tr(A)$$
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}[1)]
+  \item 
+    \begin{eqnarray*}
+      tr(A + B) = \sum_{k=1}^{n}(A + B)_{kk} &=& \sum_{k=1}^{n}(A)_{kk} + (B)_{kk} \\
+        &=& \sum_{k=1}^{n}(A)_{kk} + \sum_{k=1}^{n}(B)_{kk} \\
+        &=& tr(A) + tr(B)
+    \end{eqnarray*}
+    
+  \item
+    \begin{eqnarray*}
+      tr(\lambda A) = \sum_{k=1}^{n}(\lambda A)_{kk} &=& \sum_{k=1}^{n} \lambda \cdot (A)_{kk} \\
+        &=& \lambda \sum_{k=1}^{n}(A)_{kk} \\
+        &=& \lambda \cdot tr(A)
+    \end{eqnarray*}
+  
+  \item 
+    \begin{eqnarray*}
+      tr(A \cdot B) = \sum_{k=1}^{n} (A B)_{kk} &=& \sum_{k=1}^{n} \left( \sum_{l=1}^{n} A_{kl} B_{lk} \right) \\
+        &=& \sum_{l=1}^{n} \left( \sum_{k=1}^{n} A_{kl} B_{lk} \right) \\
+        &=& \sum_{l=1}^{n} \left( \sum_{k=1}^{n} B_{lk} A_{kl} \right) \\
+        &=& \sum_{l=1}^{n} (B A)_{ll} = tr(B \cdot A)
+    \end{eqnarray*}
+    
+  \item
+    $$tr(A^{T}) = \sum_{k=1}^{n} (A^{T})_{kk} = \sum_{k=1}^{n} (A)_{kk} = tr(A)$$
+\end{enumerate}
