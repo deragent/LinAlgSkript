@@ -1,1 +1,138 @@
 \chapter{Le déterminant}
+
+%
+%
+\section{Groupes symétriques}
+%
+%
+%
+\subsection{Permutation}
+%
+\paragraph{Définition} Soit $E$ un ensemble. On appelle permutation de $E$ un bijection  de $E$ dans $D$. On note $Sym(e)$ l'ensemble de permutations de $E$
+
+\paragraph{Définition} On munit $Sym(E)$ de la composition
+\begin{eqnarray*}
+  \circ: Sym(E) \times Sym(E) &\rightarrow& Sym(E) \\
+  (\sigma , \tau) &\mapsto& \sigma \circ \tau
+\end{eqnarray*}
+Par définition, pour tout $x\in E$
+$$(\sigma \circ \tau)(x) = \sigma(\tau(x))$$
+La composée de deux biijections étant encore une bijection, la composée de deux permutations de $E$ est encore une permutation de $E$.
+
+%
+\subsection{Groupe symétrique}
+%
+Alors $(Sym(E), \circ)$ est un groupe. En effet
+\begin{itemize}
+  \item la composition des permutations est associative
+    $$\alpha \circ (\beta \circ \gamma) = (\alpha \circ \beta) \circ \gamma ~ \forall \alpha, \beta, \gamma \in Sym(E)$$
+  
+  \item l'application
+    \begin{eqnarray*}
+      id_E: E &\rightarrow& E \\
+      x &\mapsto& id_E(x) = x 
+    \end{eqnarray*}
+    est une permutation de $E$ qui est élément neuter pour $circ$
+    
+  \item si $\sigma \in Sym(E)$, alors la permutation inverse de $\sigma$ est la bijection réciproque $\sigma^{-1}: E \rightarrow E$ de $\sigma$
+\end{itemize}
+On appelle ce groupe le groupe symétrique de $E$.
+
+\paragraph{Remarque} Dans la suite nous nous concentrons sur le cas où $E = \{1; 2; \ldots; n\}$ pour un certain entier naturel $n\geq 1$. On note alors
+$$S_n = Sym(\{1; 2; \ldots; n\})$$
+Si $\sigma \in S_n$, on pourra écrire
+$$\sigma = \begin{pmatrix} 1 & 2 & \ldots & n \\ \sigma(1) & \sigma(2) & \ldots & \sigma(n) \end{pmatrix}$$
+
+%
+\subsection{Support}
+%
+\paragraph{Définition} Pour tout $\sigma \in S_n$, on appelle support de $\sigma$ et on note $supp(\sigma)$ l'ensemble
+$$supp(\sigma) = \{i \in \{1; 2; \ldots; n\} \vert \sigma(i) \neq i\}$$
+
+%
+\subsection{Cycle}
+%
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel et soit $k \in \{1; 2; \ldots; n\}$. On dit qu'une permutation $\sigma \in S_n$ est un cycle de longeur $k$ ou $k$-cycle, s'il existe $i_1, i_2, \ldots, i_k \in  \{1; 2; \ldots; n\}$ tels que
+$$\sigma(i_1) = i_2 \rightarrow \sigma(i_2) = i_3 \rightarrow \ldots \rightarrow \sigma(i_{k-1}) = i_k \rightarrow \sigma(i_k) = i_1$$
+et $\sigma(i) = i$ si $i \notin \{i_1; i_2; \ldots; i_k\}$
+
+\paragraph{Remarque} L'ensemble $\{i_1; i_2; \ldots; i_k\}$ est le support du $k$-cycle.
+
+\paragraph{Notation} Soit $\sigma$ un $k$-cycle, on note $\sigma = (i_1 ~ i_2 ~ \ldots ~ i_k)$
+
+
+%
+\subsection{Transposition}
+%
+\paragraph{Définition} Les 2-cycles de $S_n$ s'appellent les transpositions de $S_n$
+
+\paragraph{Proposition} Soit $m \geq 2$ un entier naturel. Alors toute permutation de $S_n$ peut sếcrire comme composée de transpositions.
+
+\paragraph{Démonstration}  On raisonne par récurence sur le cardinal\footnote{Le cardinal d'un ensemble fini est le nombre de ses éléments} de $supp(\sigma)$.
+\subparagraph{Annonce de la récurence} Soit $\sigma \in S_n$ telle que $supp(\sigma)$ soit de cardinal égal à $0$. Donc $supp(\sigma)$ est vide (on note $supp(\sigma) = \emptyset$). Autrement, $\sigma$ fixe tous les éléments de $\{1; 2; \ldots; n\}$. Par conséquent, $\sigma = id$. \\
+On peut écrire $\sigma = id = (1 ~ 2)\circ(1 ~ 2)$, ce qui est une écriture de $\sigma$ comme composée de transpositions.
+
+\subparagraph{Hypothése de récurence} Soit $k \in \{1; 2; \ldots; n\}$. On suppose que pour tout $\tau \in S_n$, telle que $card(supp(\tau)) \leq k-1$, $\tau$ s'écrit comme composée de transposition.
+
+\subparagraph{Pas de récurence} Soit $\sigma \in S_n$ telle que le cardinal de $supp(\sigma)$ soit égal à $k$.
+$$supp(\sigma) = \{i_1; i_2; \ldots; i_k\} \text{ avec } 1 \leq i_1 \leq i_2 \leq \ldots \leq i_k \leq n$$
+On forme la permutation $\tau = (i_k ~ \sigma(i_k)) \circ \sigma$. La permutation $\tau$ a un support de cardinal $< k$. En effet, on verifi que $supp(\tau)$ est contenue dans $supp(\sigma)$. Or on a
+\paragraph{[TO CHECK]}
+$$\tau(i_k) = (i_k ~ \sigma(i_k)) \circ \sigma) (i_k) = (i_k ~ \sigma(i_k))(\sigma(i_k)) = i_k$$
+Donc $supp(\tau)$ est contenue dans $\{i_1; i_2; \ldots; i_k-1\}$, donc est de cardinal $\leq k-1 < k$. Par hypothèse de récurence, $\tau$ s'écrit comme composée de transpositions
+$$\tau = \tau_1 \circ \tau_2 \circ \ldots \circ \tau_n$$
+On en déduit que 
+\begin{eqnarray*}
+  \sigma &=& (i_k ~ \sigma(i_k))^{-1} \circ \tau \\
+    &=& (i_k ~ \sigma(i_k)) \circ \tau_1 \circ \tau_2 \circ \ldots \circ \tau_n
+\end{eqnarray*}
+\\
+Par principe de récurence, la propriété est vraie pour toute permutation de $S_n$.
+
+\paragraph{Proposition} Soit $n \geq 1$ un entier naturel. Alors $S_n$ est de cardinal $n! = 1 \cdot 2 \codt \ldots \cdot n$.
+
+\paragraph{Démonstration} Pour construire une permutation $\sigma$ de $S_n$,
+\begin{itemize}
+  \item on choisit l'image $\sigma(1)$ de $1$ pour $\sigma$, il y a $n$ choix possibles.
+  \item puis on choisit $\sigma(2)$ qui est l'image de $2$ par $\sigma$, il y a $n-1$ choix possile dans $\{1; 2; \ldots; n\} \backslash \{\sigma(1)\}$.
+  \item puis on choisit $\sigma(3)$; il y a $n-1$ choix possibles dans $\{1; 2; \ldots; n\} \backslash \{\sigma(1); \sigma(2)\}$.
+  \item ainsi de suite
+\end{itemize}
+Par conséquent, le nombre de permutations que l'on peut construire est 
+$$n \cdot (n-1) \cdot \ldots \cdot 2 \cdot 1 = n!$$
+
+\paragraph{Example} Décrivons $S_2$ et $S_3$
+\begin{itemize}
+  \item $S_2$ est de cardinal $2! = 2$. On a 
+    $$S_2 = \{id; (1 ~ 2)\}$$
+  \item $S_3$ est de cardinal $3! = 6$. On a
+    $$S_3 = \{id; (1 ~ 2); (1 ~ 3); (2 ~ 3); (1 ~ 2 ~ 3); (1 ~ 3 ~ 2)\}$$
+\end{itemize}
+
+%
+\subsection{Inversion de paire}
+%
+\paragraph{Définition} Soient $i, j \in \{1; 2; \ldots; n\}$, $i < j$, $est \sigma \in S_n$. On dit que $\sigma$ présente une inversion en la paire $(i, j)$ si 
+$$\sigma(i) > \sigma(j)$$
+
+%
+\subsection{Permutation paire}
+%
+\paragraph{Définition} Soit $\sigma \in S_n$. On dit que $\sigma$ est une permutation paire si elle présente un nombre paire d'inversions, et une permutation impaire sinon.
+
+%
+\subsection{Signature}
+%
+\paragraph{Définition} On appelle signature de $\sigma$, et on note $\epsilon(\sigma)$ le nombre
+$$\epsilon(\sigma) \left\{ \begin{array}{lr} 1 & \text{si } \sigma \text{ est une permutation paire} \\ -1 & \text{si } \sigma \text{ est une permutation impaire} \end{array}$$
+Autrement dit, si $n_{\sigma}$ est le nombre d'inversions de $\sigma$ on a
+$$\epsilon(\sigma) = (-1)^{n_{\sigma}} \in \{-1; 1\}$$
+
+\paragraph{Example}
+$$\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 3 & 1 & 5 & 2 & 4 \end{pmatrix} \in S_5$$
+Paires d'inversions
+$$(1, 2), (1, 4), (3, 4), (3, 5)$$
+$\sigma$ presente $4$ inversion, $\sigma$ est donc paire et $\epsilon(\sigma) = 1$
+
+\paragraph{Théorème} Soient $\sigma, \tau \in S_n$. Alors
+$$\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$$
