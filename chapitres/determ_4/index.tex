@@ -319,3 +319,147 @@ Comme $\sigma^{-1}: \{1; \ldots; n\} \rightarrow \{1; \ldots; n\}$ est bijective
 \end{eqnarray*}
 Donc $p_{\sigma^{-1}}(A^{T}) = p_{\sigma}(A)$. Par suite
 $$det(A^{T}) = \sum_{\sigma \in S_n} p_{\sigma}(A) = det(A)$$
+
+\paragraph{Lemme} Soit $\sigma \in S_n$ telle que pour tout $i \in \{1; \ldots; n\}$, $\sigma(i) \leq i$. Alors $\sigma  = id$. En effet on a
+\begin{itemize}
+  \item $1 \leq \sigma(1) \leq 1$ (par hypothèse), donc $\sigma(1) = 1$.
+  \item on a $\sigma(2) \neq \sigma(1) = 1$, donc $\sigma(2) \geq 2$, et par hypothèse $\sigma(2) \leq 2$. Par suite $\sigma(2) = 2$.
+  \item Ainsi de suite.
+\end{itemize}
+Il est équivalent de dire que si une permutations $\sigma \in S_n$ est différendte de $id$, alors il existe $i \in \{1; \ldots; n\}$ tel que $\sigma(i) > i$.
+
+\paragraph{Théorème} Le déterminant d'une matrice carré triangulaire supérieure (resp. triangulaire inférieure) est àgal au produit des ses coefficients diagonaux.
+
+\paragraph{Démonstration}  Soit $A = (a_ij)$ une matrice carrée de taille $n \times n$ triangulaire supérieure. Il vient 
+$$det(A) = p_{id}(A) + \sum_{\sigma \in S_n, \sigma \neq id} p_{\sigma}(A)$$
+Si $\sigma \neq id$, alors, d'après le lemme, il existe $j \in \{1; \ldots; n \}$ tel que $\sigma(j) > j$. Puisque $A$ est triangulaire supérieure, $a_{\sigma(j) j} = 0$. Par suite $p_{\sigma}(A) = 0$ et donc 
+$$\sum_{\sigma \in S_n, \sigma \neq id} p_{\sigma}(A) = 0$$
+Il reste
+$$det(A) = p_{id}(A) = a_{11} \cdot a_{22} \cdot \ldots \cdot a_{nn}$$
+Le cas "triangulaire inférieure" se déduit du cas "triangulaire supérieure" par transposition.
+
+%
+\subsection{Le déterminant sous l'effet des opérations élémentaires}
+%
+Les résultats précédents indiquent comment se comporte le déterminant sous l'effet des opörations élémentaires sur les lignes d'une matrice:
+\begin{itemize}
+  \item Le déterminant ne change pa si on ajout à une ligne un multiple d'une autre ligne
+    $$\begin{vmatrix} L_1 \\ L_2 + 4 L_3 \\ L_3 \end{vmatrix} 
+      = \begin{vmatrix} L_1 \\ L_2 \\ L_3 \end{vmatrix} + 4 \cdot \begin{vmatrix} L_1 \\ L_3 \\ L_3 \end{vmatrix}
+      = \begin{vmatrix} L_1 \\ L_2 \\ L_3 \end{vmatrix} + 0
+      = \begin{vmatrix} L_1 \\ L_2 \\ L_3 \end{vmatrix}$$
+      
+  \item Lorsque on multiplie une ligne par un réel, le déterminant est multiplié par ce réel
+    $$\begin{vmatrix} 5 L_1 \\ L_2 \\ L_3 \end{vmatrix} = 5 \cdot \begin{vmatrix} L_1 \\ L_2 \\ L_3 \end{vmatrix}$$
+    
+  \item Lorsque on permute deux lignes, le déterminant est multiplié par $-1$
+    $$\begin{vmatrix} L_1 \\ L_3 \\ L_2 \end{vmatrix} = -1 \cdot \begin{vmatrix} L_1 \\ L_2 \\ L_3 \end{vmatrix}$$
+\end{itemize}
+
+\paragraph{Remarque} Le deux premières propriétés découlent de la multilinéarité du détérminant.
+
+\paragraph{} On peut donc calculre un déterminant un utilisant l'algorithme d'élimination de Gauss. Par des opérations élémentaires sur les lignes ou sur les colonnes, on met la matrice sous la forme triangulaire. On applique à chaque étape les régles du calcul du déterminant. Le déterminant est alors égal au produit des coefficients diagonaux de cette matrice triangulaire.
+
+%
+%
+\section{Inversibilité des matrices et déterminant}
+%
+%
+\paragraph{Théorème} Soient $A$ et $B$ deux matrices carrées de même taille. Alors 
+$$det(A B) = det(A) \cdot det(B)$$
+
+\paragraph{Démonstration} Nous nous contentans ici de montros cette formule dasn le cas de matrices de taille $3 \times 3$, le cas général se traite de façon analogue. \\
+Soient $A$ et $B$ deux matrices de taille $3 \times 3$. On note $C_1, C_2, C_3$ les colonnes de $A$
+$$A = (C_1, C_2, C_3) \text{ et } B=(b_{ij})_{1 \leq i, j \leq n}$$
+On observe que
+$$A B = \left(
+  A \begin{pmatrix} b_{11} \\ b_{21} \\ b_{31} \end{pmatrix} ~ 
+  A \begin{pmatrix} b_{12} \\ b_{22} \\ b_{32} \end{pmatrix} ~ 
+  A \begin{pmatrix} b_{13} \\ b_{23} \\ b_{33} \end{pmatrix}
+\right)$$
+Pour $i \in \{1; 2; 3\}$, on a également
+\begin{eqnarray*}
+  A \begin{pmatrix} b_{1i} \\ b_{2i} \\ b_{3i} \end{pmatrix}
+  &=& A \left( b_{1i} \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + b_{2i} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + b_{3i} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \right) \\
+    &=& b_{1i} A \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + b_{2i} A \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + b_{3i} A \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \\
+    &=& b_{1i} C_1 + b_{2i} C_2 + b_{3i} C_3
+\end{eqnarray*}
+Il vient
+$$det(A B) = \begin{vmatrix} \\ b_{11} C_1 + b_{21} C_2 + b_{31} C_3 + b_{12} C_1 + b_{22} C_2 + b_{32} C_3 + b_{13} C_1 + b_{23} C_2 + b_{33} C_3 \\ \\ \end{vmatrix}$$
+On dévelippe ce déterminant par multilinéairté. On obtient $3^3 = 27$ termes. Deux sortes de termes:
+\begin{itemize}
+  \item Ceux qui correspondent au choix d'une permutations $\sigma \in S_3$ des colonnes $C_1, C_2, C_3$:
+    $$b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \cdot \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}$$
+    
+  \item Les autres pour lesquels au moins deux retenues sur les trois sont égales. Alors le déterminant correspondant est nul, et donc le terme lui-même est nul.
+\end{itemize}
+On obtient donc
+$$det(A B) = \sum_{\sigma \in S_3} b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \cdot \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}$$
+où pour tout $\sigma \in S_3$,
+\begin{eqnarray*}
+  \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}
+  &=& \epsilon(\sigma) \begin{vmatrix} C_1 & C_2 & C_ 3 \end{vmatrix} \\
+    &=& \epsilon(\sigma) \cdot det(A)
+\end{eqnarray*}
+D'où
+\begin{eqnarray*}
+  det(A B) &=& \sum_{\sigma \in S_3} \epsilon(\sigma) \cdot b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \cdot det(A) \\
+    &=& det(A) \left( \sum_{\sigma \in S_3} \epsilon(\sigma) \cdot b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \right) \\
+    &=& det(A) \cdot det(B)
+\end{eqnarray*}
+
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n \times n$, alors 
+$$A \text{ est inversible } \Leftrightarrow det(A) \neq 0$$
+
+\paragraph{Démonstration} 
+\begin{itemize}
+  \item [$\Rightarrow$] Supposons que $A$ est inversible. On a donc
+    $$A A^{-1} = I_n$$
+    Il vient
+    $$det(A) \cdot det(A^{-1}) = det(AA^{-1}) = det(I_n) = 1 \neq 0$$
+    Cela implqiue que $det(A) \neq 0$
+  
+  \item [$\Leftarrow$] Réciproquement, montrons que si $A$ n'est pas inversible, alors $det(A) = 0$. Supposons docn que $A$ ne soit pas inversible. Considérons le système 
+    $$A \cdot X = 0$$
+    Puisque $A$ n'est pas inversible et que $0$ est solution de cesystème, ce système admet une infinité de solutions. Il existe donc des réels $\alpha_1, \ldots, \alpha_n$ non tous nuls tels que
+    $$A \begin{pmatrix} \alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix} = 0$$
+    Soient $C_1, \ldots, C_n$ les colonnes de $A$. On a 
+    $$0 = A \begin{pmatrix} \alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix} = \alpha_1 \cdot C_1 + \ldots + \alpha_n \cdot C_n$$
+    Soit $i_0 \in \{1; \ldots; n \}$ tel que $\alpha_{i_0} \neq 0$. On obtient 
+    $$C_{i_0} = - \sum_{i=1, i\neq i_0}^n \frac{\alpha_i}{\alpha_{i_0}} C_i$$
+    Cela entraîne que
+    \begin{eqnarray*}
+      det(A) &=& \begin{vmatrix} \\
+        C_1 & \ldots & C_{i_0} & \ldots & C_i & \ldots & C_n 
+      \\ \\ \end{vmatrix} \\
+        &=& \begin{vmatrix} \\
+          C_1 & \ldots & - \sum_{i=1, i\neq i_0}^n \frac{\alpha_i}{\alpha_{i_0}} C_i & \ldots & C_i & \ldots & C_n 
+        \\ \\\end{vmatrix} \\
+        &=& - \sum_{i=1, i\neq i_0}^n \frac{\alpha_i}{\alpha_{i_0}} \begin{vmatrix} \\
+          C_1 & \ldots & C_{i} & \ldots & C_i & \ldots & C_n 
+        \\ \\ \end{vmatrix}
+    \end{eqnarray*}
+    Dans le $i^{ème}$ terme de cette somme la colonne $C_i$ apparaît en position $i$ et $i_0$ donc
+    $$\begin{vmatrix} \\ C_1 & \ldots & C_{i_0} & \ldots & C_i & \ldots & C_n \\ \\ \end{vmatrix} = 0$$
+    Par suite
+    $$det(A) = 0$$
+\end{itemize}
+
+%
+\subsection{Cofacteur d'une matrice}
+%
+\paragraph{Définition} Soit $A = (a_{ij})$ une matrice carrée de taille $n\times n$. Soit $(i ~ j) \in \{1; \ldots; n\} \times \{1; \ldots; n \}$. On appelle cofacteur de $A$ associé à $(i ~ j)$ le nombre réel défini par
+$$A_{ij} = (-1)^{i+j} \begin{vmatrix}
+  a_{11} & \ldots & a_{1 j-1} & a_{1 j+1} & \ldots & a_{1n} \\
+  \vdots &  & \vdots & \vdots &  & \vdots \\
+  a_{i-1 1} & \ldots & a_{i-1 j-1} & a_{i-1 j+1} & \ldots & a_{i-1 n} \\
+  a_{i+1 1} & \ldots & a_{i+1 j-1} & a_{i+1 j+1} & \ldots & a_{i+1 n} \\
+  \vdots &  & \vdots & \vdots &  & \vdots \\
+  a_{n 1} & \ldots & a_{n j-1} & a_{n j+1} & \ldots & a_{nn}
+\end{vmatrix}$$
+Ce déterminant (de matrice de taille $(n-1) \times (n-1)$) est obtenu à partir de celui de $A$ en supprimant le $i^{ème}$ ligne et la $j^{ème}$ colonne.
+
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $j \in \{1; \ldots; n\}$. Alors
+$$det(A) = \sum_{i=1}^{n} a_{ij} A_{ij}$$
+On dit que l'on développe $det(A)$ par rapport à la $j^{ème}$ colonne.
+  
