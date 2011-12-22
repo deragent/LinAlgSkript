@@ -66,17 +66,17 @@ et $\sigma(i) = i$ si $i \notin \{i_1; i_2; \ldots; i_k\}$
 %
 \paragraph{Définition} Les 2-cycles de $S_n$ s'appellent les transpositions de $S_n$
 
-\paragraph{Proposition} Soit $m \geq 2$ un entier naturel. Alors toute permutation de $S_n$ peut sếcrire comme composée de transpositions.
+\paragraph{Proposition} Soit $m \geq 2$ un entier naturel. Alors toute permutation de $S_n$ peut sécrire comme composée de transpositions.
 
-\paragraph{Démonstration}  On raisonne par récurence sur le cardinal\footnote{Le cardinal d'un ensemble fini est le nombre de ses éléments} de $supp(\sigma)$.
-\subparagraph{Annonce de la récurence} Soit $\sigma \in S_n$ telle que $supp(\sigma)$ soit de cardinal égal à $0$. Donc $supp(\sigma)$ est vide (on note $supp(\sigma) = \emptyset$). Autrement, $\sigma$ fixe tous les éléments de $\{1; 2; \ldots; n\}$. Par conséquent, $\sigma = id$. \\
+\paragraph{Démonstration}  On raisonne par récurence sur le cardinal\footnote{Le cardinal d'un ensemble fini est le nombre de ses éléments.} de $supp(\sigma)$.
+\subparagraph{Annonce de la récurence} Soit $\sigma \in S_n$ telle que $supp(\sigma)$ soit de cardinal égal à $0$. Donc $supp(\sigma)$ est vide (on note $supp(\sigma) = \emptyset$). Autrement dit, $\sigma$ fixe tous les éléments de $\{1; 2; \ldots; n\}$. Par conséquent, $\sigma = id$. \\
 On peut écrire $\sigma = id = (1 ~ 2)\circ(1 ~ 2)$, ce qui est une écriture de $\sigma$ comme composée de transpositions.
 
 \subparagraph{Hypothése de récurence} Soit $k \in \{1; 2; \ldots; n\}$. On suppose que pour tout $\tau \in S_n$, telle que $card(supp(\tau)) \leq k-1$, $\tau$ s'écrit comme composée de transposition.
 
 \subparagraph{Pas de récurence} Soit $\sigma \in S_n$ telle que le cardinal de $supp(\sigma)$ soit égal à $k$.
 $$supp(\sigma) = \{i_1; i_2; \ldots; i_k\} \text{ avec } 1 \leq i_1 \leq i_2 \leq \ldots \leq i_k \leq n$$
-On forme la permutation $\tau = (i_k ~ \sigma(i_k)) \circ \sigma$. La permutation $\tau$ a un support de cardinal $< k$. En effet, on verifi que $supp(\tau)$ est contenue dans $supp(\sigma)$. Or on a
+On forme la permutation $\tau = (i_k ~ \sigma(i_k)) \circ \sigma$. La permutation $\tau$ a un support de cardinal $< k$. En effet, on verifie que $supp(\tau)$ est contenue dans $supp(\sigma)$. Or on a
 \paragraph{[TO CHECK]}
 $$\tau(i_k) = (i_k ~ \sigma(i_k)) \circ \sigma) (i_k) = (i_k ~ \sigma(i_k))(\sigma(i_k)) = i_k$$
 Donc $supp(\tau)$ est contenue dans $\{i_1; i_2; \ldots; i_k-1\}$, donc est de cardinal $\leq k-1 < k$. Par hypothèse de récurence, $\tau$ s'écrit comme composée de transpositions
@@ -112,7 +112,7 @@ $$n \cdot (n-1) \cdot \ldots \cdot 2 \cdot 1 = n!$$
 %
 \subsection{Inversion de paire}
 %
-\paragraph{Définition} Soient $i, j \in \{1; 2; \ldots; n\}$, $i < j$, $est \sigma \in S_n$. On dit que $\sigma$ présente une inversion en la paire $(i, j)$ si 
+\paragraph{Définition} Soient $i, j \in \{1; 2; \ldots; n\}$, $i < j$, et $\sigma \in S_n$. On dit que $\sigma$ présente une inversion en la paire $(i, j)$ si 
 $$\sigma(i) > \sigma(j)$$
 
 %
@@ -136,3 +136,186 @@ $\sigma$ presente $4$ inversion, $\sigma$ est donc paire et $\epsilon(\sigma) = 
 
 \paragraph{Théorème} Soient $\sigma, \tau \in S_n$. Alors
 $$\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$$
+
+%
+\subsection{Produit élémentaire}
+%
+\paragraph{Définition} Soit $A = (a_{ij})$ une matrice carrée de taille $n\times n$. Soit $\sigma in S_n$. On appelle produit élémentaire associé à $\sigma$ le nombre
+$$a_{\sigma(1) 1} \cdot a_{\sigma(2) 2} \cdot \ldots \cdot a_{\sigma(n) n} = \prod_{i=1}^{n} a_{\sigma(i) i}$$
+%
+\subsection{Produit signé}
+%
+\paragraph{Définition} On appelle produit signé associé à $\sigma$ le nombre 
+$$p_{\sigma}(A) = \epsilon(\sigma) \cdot a_{\sigma(1) 1} \cdot a_{\sigma(2) 2} \cdot \ldots \cdot a_{\sigma(n) n} = \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) i}$$
+
+%
+\subsection{Déterminant}
+%
+\paragraph{Définition} Soit $A = (a_{ij})_{1 \leq i, j \leq n}$ une matrice carrée de taille $n \times n$. On appelle déterminant de $A$ le nombre
+$$det(A) = \sum_{\sigma \in S_n} p_{\sigma}(A) = \sum_{\sigma \in S_n} \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) i}$$
+
+\paragraph{Example} Soit $A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 5 & 1 \\ -7 & 4 & -2 \end{pmatrix} \in M_{3}(\R)$.
+$$S_3 = \{id; (1 ~ 2); (1 ~ 3); (2 ~ 3); (1 ~ 2 ~ 3); (1 ~ 3 ~ 2)\}$$
+On a 
+\begin{eqnarray*}
+  \sigma = id           &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{22} \cdot A_{33} \\
+  \sigma = (1 ~ 2)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{21} \cdot A_{21} \cdot A_{33} \\
+  \sigma = (1 ~ 3)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{22} \cdot A_{13} \\
+  \sigma = (2 ~ 3)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{32} \cdot A_{23} \\
+  \sigma = (1 ~ 2 ~ 3)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{21} \cdot A_{32} \cdot A_{13} \\
+  \sigma = (1 ~ 3 ~ 2)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{12} \cdot A_{23}
+\end{eqnarray*}
+
+\paragraph{Notation} Si $A = (a_{ij})_{1 \leq i, j\leq n}$ est une matrice carrée de taille $n\times n$ on note
+$$\vert a_{ij} \vert _{1 \leq i, j \leq n} = det(A)$$
+
+%
+\subsection{Déterminant d'un système des matrices colonnes}
+%
+\paragraph{Définition} On peut aussi parler du döterminant d'un système de $n$ matrices colonnes $m$-lignes
+$$C_1, C_2, \ldots, C_n  \in M_{n\times 1}(\R)$$
+Suivant
+$$C_{j} = \begin{pmatrix} c_{1j} \\ c_{2j} \\ \vdots \\ c_{nj} \end{pmatrix} \text{ pour tout } j \in \{1; \ldots ; n\}$$
+on définit le déterminant du système $(C_1, C_2, \ldots, C_n)$ par
+$$det(C_1, C_2, \ldots, C_n) = \sum_{\sigma \in S_n} \epsilon(\sigma) \cdot c_{\sigma(1) 1} \cdot \ldots \cdot c_{\sigma(n) n} \in \R$$
+Si $C$ est la matrice de taille $n \times n$ dont les colonnes sont les $C_j$, $C = (C_1, C_2, \ldots, C_n)$ alors on a
+$$det(C_1, C_2, \ldots, C_n) = det(C)$$
+\paragraph{Remarque} Le point de vue adopté, matrice ou système de matrices colonnes sera clair d'après la notation et le contexte.
+
+\paragraph{Théorème} Soit $n\geq 1$ un entier naturel. Alors l'application $n$ fois
+\begin{eqnarray*}
+  det: M_{n\times 1}(\R) \times M_{n\times 1}(\R) \times \ldots \times M_{n\times 1}(\R) &\rightarrow& \R \\
+  (C_1, C_2, \ldots, C_n) &\mapsto& det(C_1, C_2, \ldots, C_n)
+\end{eqnarray*}
+posséde les propriétés suivantes
+\begin{enumerate}
+  \item Pour tout $j \in \{1; \ldots; n \}$, pour tous $C_1, \ldots, C_j, C_j', \ldots, C_n \in M_{n\times 1}(\R)$
+    \begin{eqnarray*}
+      det(C_1, \ldots, C_j + C_j', \ldots, C_n) =& det(C_1, \ldots, C_j, \ldots, C_n) \\
+        &+ det(C_1, \ldots, C_j', \ldots, C_n)
+    \end{eqnarray*}
+    
+  \item Pour tout $j \in \{1; \ldots; n\}$, pour tous $C_1, C_2, \ldots, C_n \in M_{n\times 1}(\R)$, pour tout $\lambda \in \R$
+    $$det(C_1, \ldots, \lambda C_j, \ldots, C_n) = \lambda \cdot det(C_1, \ldots, C_j, \ldots, C_n)$$
+    
+  \item Pour tous $C_1, C_2, \ldots, C_n \in M_{n\times 1}(\R)$, pour tous $i, j \in \{1; \ldots; n\}, i \neq j$, si $C_i = C_j$, alors
+    $$det(C_1, \ldots, C_i, \ldots, C_j(=C_i), \ldots, C_n) = 0$$
+\end{enumerate}
+
+\paragraph{Démonstration} 
+\begin{enumerate}
+  \item On a
+    $$det(C_1, \ldots, C_j + C_j', \ldots, C_n) = \sum_{\sigma \in S_n} p_\sigma(C_1, \ldots, C_j + C_j' , \ldots, C_n)$$
+    où
+    $$ p_{\sigma}(C_1, \ldots, C_j + C_j', \ldots, C_n) = \epsilon(\sigma) \cdot c_{\sigma(1) 1} \cdot \ldots \cdot (c_{\sigma(j) j} + c_{\sigma(j) j}') \cdot \ldots \cdot c_{\sigma(n) n}$$
+    $\Rightarrow$ distributivité de $\circ$ par rapport à $+$
+   
+  \item On a
+    $$det(C_1, \ldots, \lambda C_j', \ldots, C_n) = \sum_{\sigma \in S_n} p_\sigma(C_1, \ldots, \lambda C_j' , \ldots, C_n)$$
+    où
+    $$ p_{\sigma}(C_1, \ldots, \lambda C_j', \ldots, C_n) = \epsilon(\sigma) \cdot c_{\sigma(1) 1} \cdot \ldots \cdot \lambda \cdot c_{\sigma(j) j}  \cdot \ldots \cdot c_{\sigma(n) n}$$
+
+  \item Soit $\tau = (i ~ j) \in S_n$. On regroupe les permutations de $S_n$ par paires comme suit: Chaque $\sigma \in S_n$ avec $\sigma \circ \tau \in S_n$ \\
+    On a: si $\sigma = \sigma \circ \tau$ on aurait
+    \begin{eqnarray*}
+      id = \sigma^{-1} \circ \sigma &=& \sigma^{-1} \circ (\sigma \circ \tau) \\
+        &=& (\sigma^{-1} \circ \sigma) \circ \tau \\
+        &=& id \circ \tau = \tau \rightarrow\text{ impossibru}
+    \end{eqnarray*}
+    donc $\sigma \neq \sigma \circ \tau$. On a
+    \begin{eqnarray*}
+      (\sigma \circ \tau) \circ \tau &=& \sigma \circ (\tau \circ \tau) \\
+        &=& \sigma \circ (id) \\
+        &=& \sigma 
+    \end{eqnarray*}
+    %
+    On obtien aisni $\frac{n!}{2}$ paires de la forme $\{\sigma; \sigma  \circ \tau\}$. Dans chaque de ces paires on sélectionne une permutation $\sigma_n$ tout, on a donc sélectioné $\frac{n!}{2}$ permutations $\sigma_1, \sigma_2, \ldots, \sigma_{\frac{n!}{2}}$. On a donc
+    $$S_n = \{ \sigma_1; \sigma_1 \circ \tau; \sigma_2; \sigma_2 \circ \tau; \ldots; \sigma_{\frac{n!}{2}}; \sigma_{\frac{n!}{2}} \circ \tau \}$$
+    On obtient 
+    \begin{eqnarray*}
+      det(C_1, C_2, \ldots, C_n) &=& \sum_{\sigma \in S_n} p_{\sigma}(C_1, C_2, \ldots, C_n) \\
+       &=& \sum_{i=1}^{\frac{n!}{2}} p_{\sigma_i}(C_1, C_2, \ldots, C_n) + p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n)
+    \end{eqnarray*}
+    %
+    Montrons que pour tout $\sigma \in S_n$, on a
+    $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = -p_{\sigma}(C_1, C_2, \ldots, C_n)$$
+    Soit $\sigma \in S_n$. On a 
+    $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = \epsilon(\sigma \circ \tau) \cdot a_{(\sigma \circ\tau)(1) 1} \cdot a_{(\sigma \circ\tau)(2) 2} \cdot \ldots \cdot a_{(\sigma \circ\tau)(n) n}$$
+    Soit $k \in \{1; \ldots; n\}$
+    \begin{itemize}
+      \item si $k\notin \{i; j\}$, alors $\tau(k) = k$. Par suite 
+        $$a_{(\sigma \circ \tau)(k) k} = a_{\sigma(k) k}$$
+      
+      \item si $k = i$, alors $\tau(k) = j$. Par suite $a_{(\sigma \circ \tau)(k) k} = a_{\sigma(j) i}$. Puisque $C_i = C_j$ on a $a_{\sigma(j) i} = a_{\sigma(j) j}$. On a donc
+        $$a_{(\sigma \circ \tau)(k) k} = a_{(\sigma \circ \tau)(i) i} = a_{\sigma(j) j}$$
+        
+      \item si $k = j$, alors $\tau(k) = i$. Par suite $a_{(\sigma \circ \tau)(k) k} = a_{\sigma(i) j}$. Puisque $C_j = C_i$ on a $a_{\sigma(i) j} = a_{\sigma(i) i}$. On a donc
+        $$a_{(\sigma \circ \tau)(k) k} = a_{(\sigma \circ \tau)(j) j} = a_{\sigma(i) i}$$
+    \end{itemize}
+    On a donc
+    \begin{eqnarray*}
+      a_{(\sigma \circ \tau)(1) 1} \cdot \ldots \cdot a_{(\sigma \circ \tau)(i) i} \cdot \ldots \cdot a_{(\sigma \circ \tau)(j) j} \cdot \ldots \cdot a_{(\sigma \circ \tau)(n) n} \\
+        = a_{\sigma(1) 1} \cdot \ldots \cdot a_{\sigma(j) j} \cdot \ldots \cdot a_{\sigma(i) i} \cdot \ldots \cdot a_{\sigma(n) n} \\
+        = a_{\sigma(1) 1} \cdot \ldots \cdot a_{\sigma(i) i} \cdot \ldots \cdot a_{\sigma(j) j} \cdot \ldots \cdot a_{\sigma(n) n} \\
+    \end{eqnarray*}
+    %
+    De plus $\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$ où on a $\epsilon(\tau) = -1$, donc
+    $$\epsilon(\sigma \circ \tau) = -\epsilon(\sigma)$$
+    Par conéquent 
+    $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = -p_{\sigma}(C_1, C_2, \ldots, C_n)$$
+    Ainsi pour tout $i\in \{1; \ldots; \frac{n!}{2}\}$
+    \begin{eqnarray*}
+      p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n) &=& -p_{\sigma_i}(C_1, C_2, \ldots, C_n) \\
+      p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n) &+& p_{\sigma_i}(C_1, C_2, \ldots, C_n) ~=~ 0
+    \end{eqnarray*}
+    Il s'ensuit que $det(C_1, \ldots, C_i, \ldots, C_j(=C_i), \ldots, C_n) = 0$
+\end{enumerate}
+
+\paragraph{Corollaire} Soient $i, j \in \{1; \ldots; n\}$, $i\neq j$ et $C_1, C_2, \ldots, C_n$ $n$ matrices colonnes £ $n$ lignes. Alors
+$$det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) = -det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n)$$
+
+\paragraph{Démonstration} On a
+\begin{eqnarray*}
+  0 =& det(C_1, \ldots, C_i+C_j, \ldots, C_i+C_j, \ldots, C_n) \\
+    =& det(C_1, \ldots, C_i, \ldots, C_i+C_j, \ldots, C_n) \\
+    &+ det(C_1, \ldots, C_j, \ldots, C_i+C_j, \ldots, C_n) \\
+    =& det(C_1, \ldots, C_i, \ldots, C_i, \ldots, C_n) \\
+    &+ det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) \\
+    &+ det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) \\
+    &+ det(C_1, \ldots, C_j, \ldots, C_j, \ldots, C_n) \\
+    =& 0 \\
+    &+ det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) \\
+    &+ det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) \\
+    &+ 0 \\
+    =& det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) + det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) = 0
+\end{eqnarray*}
+On dit alors que l'application 
+$$det: M_{n \times 1}(\R) \times \ldots \times M_{n\times 1}(\R) \rightarrow \R$$
+est antisymétrique.
+
+\paragraph{Théorème} Soit $A =(a_{ij})$ une matrice carrée de taille $n\times n$. Alors
+$$det(A^{T}) = det(A)$$
+
+\paragraph{Démonstration} On observe que l'application
+\begin{eqnarray*}
+  S_n &\rightarrow& S_n \\
+  \sigma &\mapsto& \sigma^{-1}
+\end{eqnarray*}
+est bijective (elle est sa propre bijection réciproque). Il vient
+\begin{eqnarray*}
+  det(A^{T}) &=& \sum_{\sigma \in S_n} p_{\sigma}(A^{T}) \\
+    &=& \sum_{\sigma^{-1} \in S_n} p_{\sigma^{-1}}(A^{T})
+\end{eqnarray*}
+Soit $\sigma \in S_n$
+$$p_{\sigma^{-1}}(A^{T}) = \epsilon(\sigma^{-1}) \cdot (A^{T})_{\sigma^{-1}(1) 1} \cdot \ldots \cdot (A^{T})_{\sigma^{-1}(n) n}$$
+On a $\epsilon(\sigma) \epsilon(\sigma^{-1}) = \epsilon(\sigma \circ \sigma^{-1}) = \epsilon(id) = 1$. Puisque $\epsilon(\sigma) \pm 1$ et $\epsilon(\sigma^{-1}) \pm 1$, on a 
+$$\epsilon(\sigma) = \epsilon(\sigma^{-1})$$
+Maintenant
+$$(A^{T})_{\sigma^{-1}(1) 1} \cdot \ldots \cdot (A^{T})_{\sigma^{-1}(n) n} = A_{1 \sigma^{-1}(1)} \cdot \ldots \cdot A_{n \sigma^{-1}(n)}$$
+Comme $\sigma^{-1}: \{1; \ldots; n\} \rightarrow \{1; \ldots; n\}$ est bijective on a
+\begin{eqnarray*}
+  A_{1 \sigma^{-1}(1)} \cdot \ldots \cdot A_{n \sigma^{-1}(n)} &=& \prod_{j=1}^n A_{j \sigma^{-1}(j)} \\
+    &=& \prod_{k=1}^n A_{\sigma(k) k} ~~ (\text{on a posé } k = \sigma^{-1}(j))
+\end{eqnarray*}
+Donc $p_{\sigma^{-1}}(A^{T}) = p_{\sigma}(A)$. Par suite
+$$det(A^{T}) = \sum_{\sigma \in S_n} p_{\sigma}(A) = det(A)$$
