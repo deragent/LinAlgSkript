@@ -5,19 +5,19 @@
 \section{Rappels}
 %
 %
-\paragraph{Définition} Un $\R$-espace vectoriel est une ensemble non vide $V$ muni d'une addition
+\paragraph{Définition} Un $\R$-espace vectoriel est un ensemble non vide $V$ muni d'une addition
 \begin{eqnarray*}
   +: V\timesV &\rightarrow& V \\
   (\vec{u}, \vec{v}) &\mapsto& \vec{u}+\vec{v}
 \end{eqnarray*}
-et multiplication extérne
+et d'une multiplication externe
 \begin{eqnarray*}
   \cdot: V\timesV &\rightarrow& V \\
   (\vec{u}, \vec{v}) &\mapsto& \vec{u}\cdot\vec{v}
 \end{eqnarray*}
-satisfaisant conditions:
+satisfaisant auxconditions:
 \begin{itemize}
-  \item $(V, +)$ est un groupe obélion (associatif et commutatif).
+  \item $(V, +)$ est un groupe abélien (associatif et commutatif).
   \item $\forall \alpha, \beta \in \R \text{ et } \vec{u}, \vec{v} \in V$:
     \begin{eqnarray*}
       \alpha \cdot (\vec{u} + \vec{v}) &=& \alpha \cdot \vec{u} + \alpha \cdot \vec{v} \\
@@ -27,7 +27,7 @@ satisfaisant conditions:
     \end{eqnarray*}
 \end{itemize}
 
-\paragraph{Définition} Si $U$ et $V$ sont deux $\R$-espaces vectoriels, une applicaiton linéaire de $U$ dans $V$ est une application $b: U \rightarrow V$ telle que $\forall \vec{u}, \vec{v} \in U \text{et} \alpha \in \R$
+\paragraph{Définition} Si $U$ et $V$ sont deux $\R$-espaces vectoriels, une applicaiton linéaire de $U$ dans $V$ est une application $b: U \rightarrow V$ telle que $\forall \vec{u}, \vec{v} \in U \text{ et } \alpha \in \R$
 $$b(\alpha \cdot \vec{u} +\vec{v}) = \alpha \cdot b(\vec{u}) + b(\vec{v})$$
 
 %
@@ -39,9 +39,10 @@ $$b(\alpha \cdot \vec{u} +\vec{v}) = \alpha \cdot b(\vec{u}) + b(\vec{v})$$
 %
 \subsection{Combinaison linéaire}
 %
-\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} ~ (r\geq 1)$ des vecteurs de $V$. On dit qu'un vecteur $\vec{w}$ de $V$ est combinaison linéaire des $\vec{v_i}$ s'il existe des réels $\alpha_1, \ldots, \alpha_r$ tel que
+\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} ~ (r\geq 1)$ des vecteurs de $V$. On dit qu'un vecteur $\vec{w}$ de $V$ est combinaison linéaire des $\vec{v_i}$ s'il existe des réels $\alpha_1, \ldots, \alpha_r$ tels que
 $$\vec{w} = \alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r}$$
 
+\paragraph{Exemple} Soient $\vec{v_1}, \vec{v_2} \in \R^2$ données par $\vec{v_1}=(1,2), \vec{v_2}=(-3,7)$. Alors $\vec{w}=(-11,17) \in \R^2$ satisfait $\vec{w}=-2\vec{v_1}+3\vec{v_2}$ donc $\vec{w}$ est combinaison linéaire de $\vec{v_1}$ et $\vec{v_2}$. %TODO
 %
 \subsection{Sous-espace vectoriel}
 %
