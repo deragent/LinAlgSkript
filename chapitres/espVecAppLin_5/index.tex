@@ -42,35 +42,38 @@ $$b(\alpha \cdot \vec{u} +\vec{v}) = \alpha \cdot b(\vec{u}) + b(\vec{v})$$
 \paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} ~ (r\geq 1)$ des vecteurs de $V$. On dit qu'un vecteur $\vec{w}$ de $V$ est combinaison linéaire des $\vec{v_i}$ s'il existe des réels $\alpha_1, \ldots, \alpha_r$ tels que
 $$\vec{w} = \alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r}$$
 
-\paragraph{Exemple} Soient $\vec{v}_1, \vec{v}_2 \in \R^2$ données par $\vec{v}_1 = (1,2), \vec{v}_2 = (-3,7)$. Alors $\vec{w}=(-11,17) \in \R^2$ satisfait $\vec{w} = -2\vec{v}_1 + 3 \vec{v}_2$ donc $\vec{w}$ est combinaison linéaire de $\vec{v}_1$ et $\vec{v}_2$.
+\paragraph{Exemple} Soient $\vec{v}_1, \vec{v}_2 \in \R^2$ données par $\vec{v}_1 = (1,2), \vec{v}_2 = (-3,7)$. Alors $\vec{w}=(-11,17) \in \R^2$ satisfait $\vec{w} = -2\vec{v}_1 + 3\vec{v}_2$ donc $\vec{w}$ est combinaison linéaire de $\vec{v}_1$ et $\vec{v}_2$.
 
 %
 \subsection{Sous-espace vectoriel}
 %
-\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $W$ un sous-ensemble non vide de $V$. On dit que $W$ est un sous-espace vectoriel de $V$ si $W$ est stable par $+$ et $\cdot$, ce que signifie:
+\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $W$ un sous-ensemble non vide de $V$. On dit que $W$ est un sous-espace vectoriel de $V$ si $W$ est stable par $+$ et $\cdot$, ce qui signifie:
 \begin{eqnarray*}
   \forall \vec{u}, \vec{v} \in W, & \vec{u} + \vec{v} \in W \\
   \forall \vec{u} \in W, \alpha \in \R, & \alpha \cdot \vec{u} \in W \\
 \end{eqnarray*}
 et que $W$ (muni de ces deux lois) soit un $\R$-espace vectoriel.
 
-\paragraph{Théorème} Soient $V$ un $\R$-espace vectoriel et $W$ un sous-ensemble non vide de $V$. Alors $W$ est un sous-espace vectoriel de $V$ si $\forall \vec{u}, \vec{v} \in W, \alpha, \beta \in R$:
+\paragraph{Théorème} Soient $V$ un $\R$-espace vectoriel et $W$ un sous-ensemble non vide de $V$. Alors $W$ est un sous-espace vectoriel de $V$ si $\forall \vec{u}, \vec{v} \in W, \alpha, \beta \in \R$:
 $$\alpha \cdot \vec{u} + \beta \cdot \vec{v} \in W$$
 autrement dit, si $W$ est stable par combinaison linéaire.
+
+\paragraph{Exemple} Soit $V=\R[X]$ et $W=\lbrace P \in V | P(2)=0\rbrace$.
+On a pour tous $P, Q \in W$ et $\alpha, \beta \in \R$: $$(\alpha P + \beta Q)(2)=\alpha P(2) + \beta Q(2)=0$$ donc $\alpha P + \beta Q \in W$. Ainsi $W$ st un sous-espace vetoriel de $V$.
 
 \paragraph{Proposition} Soient V un $\R$-espace vectoriel et $(W_i)_{i \in I}$ une famille de sous-espaces vectoriels de $V$. Alors $\cap_{i \in I} W_i = \{ \vec{v} \in V | \forall i \in I, \vec{v} \in W_i\}$ est encore un sous-espace vectoriel de V.
 
 %
 \subsection{Sous-espace vectoriel engendré par un système de vecteurs}
 %
-\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} \in V$. On appelle sous-espace vectoriel de V engerdré par $\{\vec{v_1}, \ldots, \vec{v_r}\}$ le plus petit sous-espace vectoriel de $V$ (au sens de l'inclusion) contenant $\vec{v_1}, \ldots, \vec{v_r}$. C'est l'intérsection de tous les sous-espaces vectoriels de $V$ contenant $\vec{v_1}, \ldots, \vec{v_r}$. On le noté $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$.
+\paragraph{Définition} Soient $V$ un $\R$-espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r} \in V$. On appelle sous-espace vectoriel de V engerdré par $\{\vec{v_1}, \ldots, \vec{v_r}\}$ le plus petit sous-espace vectoriel de $V$ (au sens de l'inclusion) contenant $\vec{v_1}, \ldots, \vec{v_r}$. C'est l'intersection de tous les sous-espaces vectoriels de $V$ contenant $\vec{v_1}, \ldots, \vec{v_r}$. On le noté $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$.
 
 \paragraph{Théorème} On a $Vect\{\vec{v_1}, \ldots, \vec{v_r}\} = \{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \}$; c'est-à-dire: le sous-espace vectoriel de $V$ engerdré par $\vec{v_1}, \ldots, \vec{v_r}$ est constitué des combinaisons linéaires de $\vec{v_1}, \ldots, \vec{v_r}$.
 \paragraph{Démonstration} On procède par double inclusion.
 \begin{itemize}
-  \item Montrons que $\{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \} \subset Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$. $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$ est en particulier un sous-espace vectoriel de $V$, donc $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$ est stable par combinaison linéaire. Puisque $\vec{v_1}, \ldots, \vec{v_r} \in Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$, alors tout combinaison linéaire $\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r}$ appartient à $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$.
+  \item Montrons que $\{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \} \subset Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$. $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$ est en particulier un sous-espace vectoriel de $V$, donc $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$ est stable par combinaison linéaire. Puisque $\vec{v_1}, \ldots, \vec{v_r} \in Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$, alors tout combinaison linéaire $\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r}$ appartient à $Vect\{\vec{v_1}, \ldots, \vec{v_r}\}$.%TODO dans le cours on a écrit plus petit ou égale et pas sousensemble
   
-  \item Montrons que $Vect\{\vec{v_1}, \ldots, \vec{v_r}\} \subset \{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ $\{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \} \neq \emptyset$ (par example $\vec{v_1} = 1 \cdot \vec{v_1} + 0 \cdot \vec{v_2} + \ldots + 0 \cdot \vec{v_r} \in ensemble$) et stable par combinaison linéaire. En effet, si $\vec{u}$ et $\vec{w}$ sont des vecteurs dans cet ensemble et $\alpha$, $\beta$ deux réels, alors ils existent $\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_r \in \R$ tels que
+  \item Montrons que $Vect\{\vec{v_1}, \ldots, \vec{v_r}\} \subset \{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ $\{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \} \neq \emptyset$ (par Exemple $\vec{v_1} = 1 \cdot \vec{v_1} + 0 \cdot \vec{v_2} + \ldots + 0 \cdot \vec{v_r} \in ensemble$) et stable par combinaison linéaire. En effet, si $\vec{u}$ et $\vec{w}$ sont des vecteurs dans cet ensemble et $\alpha$, $\beta$ deux réels, alors ils existent $\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_r \in \R$ tels que
     \begin{eqnarray*}
       \vec{u} = \alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} \\
       \vec{w} = \beta_1 \cdot \vec{v_1} + \ldots + \beta_r \cdot \vec{v_r}
@@ -79,7 +82,7 @@ autrement dit, si $W$ est stable par combinaison linéaire.
     Puisque $\{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ qui contient $\vec{v_1}, \ldots, \vec{v_r}$ par définition de $Vect(\vec{v_1}, \ldots, \vec{v_r})$, on a $Vect\{\vec{v_1}, \ldots, \vec{v_r}\} \subset \{\alpha_1 \cdot \vec{v_1} + \ldots + \alpha_r \cdot \vec{v_r} | \alpha_1, \ldots, \alpha_r \in \R \}$
 \end{itemize}
 
-\paragraph{Théorème} Soient $V$ un espace-vectoriel et $S = (\vec{v_1}, \ldots, \vec{v_r})$ et $S' = (\vec{v_{1'}}, \ldots, \vec{v_{r'}})$ deux systèmes de vectuers de $V$. Alors $Vect(\vec{v_1}, \ldots, \vec{v_r}) = Vect(\vec{v_{1'}}, \ldots, \vec{v_{r'}})$ si tout vecteurs de $S$ est combinaison linéaire des vecteurs de $S'$ et vice-versa.
+\paragraph{Théorème} Soient $V$ un espace-vectoriel et $S = (\vec{v_1}, \ldots, \vec{v_r})$ et $S' = (\vec{v_{1'}}, \ldots, \vec{v_{r'}})$ deux systèmes de vecteurs de $V$. Alors $Vect(\vec{v_1}, \ldots, \vec{v_r}) = Vect(\vec{v_{1'}}, \ldots, \vec{v_{r'}})$ si et seulement si tout vecteurs de $S$ est combinaison linéaire des vecteurs de $S'$ et vice-versa.
 
 %
 %
@@ -93,22 +96,31 @@ autrement dit, si $W$ est stable par combinaison linéaire.
 %
 \paragraph{Définition} Soient $V$ un espace vectoriel et $\vec{v_1}, \ldots, \vec{v_r}$ des vecteurs de $V$. On dit que les $\vec{v}_i$ forment un système générateur de $V$ si $V = Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$, autrement di si tout vecteur de $V$ est combinaison linéaire des $\vec{v}_i$.
 
-\paragraph{Remarque} Lorsqu'un vetuer est combinaison linéaire d'un système de vecteurs donnés, la question de savoir si son écriture comme combinaison linéaire est unique conduit à la notion de systèm libre.
+\paragraph{Exemple} Dans $\R^3$, on a pour tout $(a,b,c) \in \R^3$ $$(a, b, c)=a(1,0,0)+b(0,1,0)+c(0,0,1)$$ donc les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système générateur de $\R^3$.
+
+\paragraph{Remarque} Lorsqu'un vecteur est combinaison linéaire d'un système de vecteurs donnés, la question de savoir si son écriture comme combinaison linéaire est unique conduit à la notion de systèm libre.
 
 
 %
 \subsection{Système libre}
 %
-\paragraph{Définition} Soit $V$ un espace vectoriel et $\vec{v}_1, \ldots , \vec{v}_r$ des vectuers de $V$. On dit que les $\vec{v}_i$ forment un system libre (ou linéaire indépendant) si:
+\paragraph{Définition} Soit $V$ un espace vectoriel et $\vec{v}_1, \ldots , \vec{v}_r$ des vecteurs de $V$. On dit que les $\vec{v}_i$ forment un system libre (ou encore linéaire indépendant) si:
 $$\forall \alpha_i \in \R, \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = \vec{0} ~ \Rightarrow ~ \alpha_i = 0$$
-\paragraph{Remarque} tout vecteur $\neq 0$ forme à lui seul un système libre ($\alpha \cdot \vec{v} = \vec{0} \Leftrightarrow \alpha = 0$).
+autrement dit si pour toute combinaison liéaire des $\vec{v}_i$ égale à $\vec{0}$, des coefficients de cette combinaison sont nuls.
+\paragraph{Remarque} Tout vecteur $\neq 0$ forme à lui seul un système libre. En effet, si $\vec{v}$ est un vecteur non nul de $V$, alor pour tout $\alpha \in \R,  \alpha \cdot \vec{v} = \vec{0} \Leftrightarrow \alpha = 0$.
 
 
 %
 \subsection{Système lié}
 %
-\paragraph{Définition} Soit $V$ un espace vectoriel. On dit qu'un système de vecteurs de $V$ est lié (ou encore linéaire dépentant) s'il n'est pas libre, c'est-à-dire le système $(\vec{v}_1, \ldots, \vec{v}_r)$ est lié s'il existe des réels $\alpha_1, \ldots, \alpha_r$ non tous nuls tel que $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = 0$.
-\paragraph{Ramarque} Tout système de vecteurs contenant $\vec{0}$ est lié.
+\paragraph{Définition} Soit $V$ un espace vectoriel. On dit qu'un système de vecteurs de $V$ est lié (ou encore linéairement dépentant) s'il n'est pas libre, c'est-à-dire le système $(\vec{v}_1, \ldots, \vec{v}_r)$ est lié s'il existe des réels $\alpha_1, \ldots, \alpha_r$ non tous nuls tel que $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = 0$.
+\paragraph{Ramarque} Tout système de vecteurs contenant $\vec{0}$ est lié. En effet, si ($\vec{v}_1, \dotsc, \vec{v}_r$) est un système des vecteurs de $V$ et si $\vec{v}_1=\vec{0}$, alors $1 \vec{v}_1+0 \vec{v}_2+\dotsc+0 \vec{v}_r=\vec{0}$ est une combinaison linéaire des $\vec{v}_i$ égale à $\vec{0}$ à coefficients non tous nuls.
+
+\paragraph{Exemple}\begin{itemize}
+	\item Dans $\R[X]$, les polynômes $p_1(X)=1-X, p_2(X)=5+3Y-2X^2$ et $ p_3(X)=1+3X-X^2$ forment un système lié puisque $$3p_1(X)-p_2(X)+2p_3(X)=(3-5+2)+(-3-3+6)X+(2-2)X^2=0$$
+	\item Dans $\R^3$, les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système libre. En effet, si $\alpha, \beta, \gamma \in \R$ tels que $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(0,0,0)$$ alors $\alpha=0,\beta=0,\gamma=0$, puisque $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(\alpha,\beta,\gamma)=(0,0,0)$$ d'où $\alpha=\beta=\gamma=0$.
+	\item Dans $M_{2*2}(\R)$ (espace vectoriel des matrices de taille $2*2$ à coefficients das $\R$), un raisonnement analogue motre que les quattres matrices $F_1, F_2, F_3$ et $F_4$ forment un système libre.%TODO remplacer F_1, etc
+\end{itemize}
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel et $\vec{v}_1, \ldots, \vec{v}_r$ des vecteurs de $V$. Alors $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié si et seulement si l'un des $\vec{v}_i$ est combinaison linéaire des autres.
 \paragraph{Démonstration} 
@@ -158,7 +170,7 @@ Dans l'espace $\R^3$, trois vecteurs sont liés s'ils sont coplanaires, c'est-à
 %
 \paragraph{Définition} Soit $V$ un espace vectoriel. On appelle base de $V$ tout système de vecteurs de $V$ libre et générateur.
 
-\paragraph{Example}
+\paragraph{Exemple}
 \begin{itemize}
   \item Dans $\R^3$, les vecteur $(1, 0, 0), (0, 1, 0) \text{ et } (0, 0, 1)$ forment une base.  De façon plus générale, dans $\R^n$, les n vecteurs:
     \begin{eqnarray*}
@@ -181,7 +193,7 @@ Dans l'espace $\R^3$, trois vecteurs sont liés s'ils sont coplanaires, c'est-à
 %
 \subsection{Prouver qu'un système de vecteurs est une base}
 %
-\paragraph{Example} Montrons que le système de vectuers de $\R^3$ 
+\paragraph{Exemple} Montrons que le système de vectuers de $\R^3$ 
 $$\left( (1, 2, 1), (2, 7, 0), (3, 1, -1) \right)$$
 est une base de $\R^3$. \\
 Voir que ce système est génératuer consiste à voire que tout $(a, b, c) \in \R^3$ est combinaison linéaire de ces 3 vecteurs, autrement dit que pour tout $(a, b, c) \in \R^3$ il existe $\lambda_1, \lambda_2, \lambda_3 \in \R$ tel que 
@@ -313,7 +325,7 @@ En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') 
 \subsection{Dimension}
 %
 \paragraph{Définition} Soit $V$ un epsace vectoriel de type fini. On appelle dimension de $V$ et on note $dim_\R(V)$ (ou simplement $dim(V)$) le cardinal d'une base quelconque de $V$.
-\paragraph{Examples}
+\paragraph{Exemples}
 \begin{itemize}
   \item L'espace vectoriel $\{\vec{0}\}$ réduit à $\vec{0}$ a pour dimension $0$.
   \item Pout toute entier $n \geq 1$, $\R^n$ est de dimension $n$.
@@ -437,7 +449,7 @@ Par conséquent, $\mS$ est un sous-espace vectoriel de $\R^m$.
 \paragraph{Définition} Soient $E$ et $F$ deux espaces vectoriels et $f: E \rightarrow F$ une application linéaire de $E$ dans $F$. On appelle noyau de $f$, et on note $Ker(f)$ le sous-ensemble de $E$ définit par
 $$Ker(f) = \left\{ x\in E \vert f(x) = 0_F \right\}$$
 
-\paragraph{Example} Si $f: \R^m \rightarrow \R$ est une application linéaire, l'ensemble des solutions de l'équation linéaire homogène
+\paragraph{Exemple} Si $f: \R^m \rightarrow \R$ est une application linéaire, l'ensemble des solutions de l'équation linéaire homogène
 $$f(x_1, \ldots, x_m) = 0$$
 est le noyau de $f$.
 
@@ -526,7 +538,7 @@ Ainsi, une application linéaire $f: E \rightarrow F$ est entièrement détermin
 %
 \paragraph{Rappel} On rappelle que si $S$ est un système linéaire homogène à $m$ inconnues, alors l'ensemble des solutions de $S$ est un sous-espace vectoriel de $\R^m$. On cherche à détéerminer une base et la dimension de cet espace.
 
-\paragraph{Example} Considérons le système linéaire homogène
+\paragraph{Exemple} Considérons le système linéaire homogène
 $$\left\{\begin{array}{cccc}
    x & + y & -3z & = 0\ \
   2x & +3y & +2z & = 0
@@ -572,7 +584,7 @@ On vérifie que:
 Par conséquent, $f$ est un isomorphisme de $\R$ dans $\mS$. \\
 Par suite l'image par $f$ d'une base de $\R$ est une base de $\mS$. Si l'on prend la base canonique $(1)$ de $\R$, alors $(f(1)) = ((11, -8, 1))$ est une base de $\mS$. On peut faire apparaître cette base en écrivant $(11t, -8t, t) = t (11, -8, 1)$. Ici, $\mS$ est donc de dimension $1$. C'est une droite vectorielle.
 
-\paragraph{Autre example}
+\paragraph{Autre Exemple}
 $$S = \left\{ x - 3y + 2z = 0$$
 $x$ est inconnue principale, et $y$ et $z$ sont inconnues seconaires. Alors l'ensemble $\mS$ des solutions de $S$ est $\mS = \{(3u - 2v, u, v) \in \R^3 \vert u, v \in \R \}$. \\
 L'application 
@@ -611,7 +623,7 @@ $$[\vec{v}]_{\B} =
 \end{pmatrix} 
 \in M_{n, 1}(\R)$$
 
-\paragraph{Example} Soient $(1, -2, 3) \in \R^3$ et $\T$ la base canonique de $\R^3$. Alors
+\paragraph{Exemple} Soient $(1, -2, 3) \in \R^3$ et $\T$ la base canonique de $\R^3$. Alors
 $$[\vec{v}]_{\B} = 
 \begin{pmatrix} 
   1 \\ 
@@ -639,7 +651,7 @@ $$M_{\B S} = \bigg( [\vec{v}_1]_\B, \ldots, [\vec{v}_m]_\B \bigg) \text{ de tail
 
 \paragraph{Théorème} Soit $V$ un espace vectoriel de dimension $n$. Soient $S = (\vec{v}_1, \ldots, \vec{v}_n)$ un système de $n$ vecteurs de $V$, et $\B$ une base de $V$. Alors $S$ est une base de $V$ si et seulement si la matrice carrée $M_{\B S}$ est inversible.
 
-\paragraph{Example} Soit $\mP_2$ l'espace vectoriel des polynômes de degré $\leq 2$. Soit le système
+\paragraph{Exemple} Soit $\mP_2$ l'espace vectoriel des polynômes de degré $\leq 2$. Soit le système
 $$S = (1, 1 + X, 1 + X + X^2)$$
 On a 
 $$M_{\T S} = \begin{pmatrix}
@@ -792,7 +804,7 @@ Cela implique en particulier que la forme échelonnée réduité de $M$ est uniq
 Soit $E$ un espace vectoriel de dimension finie $n$. Soient $W$ un sous-espace vectoriel de $E$ et $\B$ une base de $E$.
 \paragraph{Définition} On appelle système d'équations cartésiennes de $W$ dans la base $\B$ tout système d'équations à $n$ inconnues tel que, pour tout vecteur $\vec{w} \in E$ on ait $\vec{v} \in W \Leftrightarrow$ le n-uplet $(\alpha_1, \ldots, \alpha_n)$ des coordonnées de $\vec{w}$ dans la base $\B$ est solution de $S$.
 
-\paragraph{Example} Si $D$ est la droite vectorielle dans $\R^2$ engendrée par $\vec{u} = (2, 1)$, alors une équation cartésienne de $D$ (dnas la base canonique de $\R^2$) est
+\paragraph{Exemple} Si $D$ est la droite vectorielle dans $\R^2$ engendrée par $\vec{u} = (2, 1)$, alors une équation cartésienne de $D$ (dnas la base canonique de $\R^2$) est
 $$ - \frac{1}{2} x + y = 0$$
 On a, pour tout $\vec{v} = (\alpha, \beta) \in \R^2$ 
 $$\vec{v} \in D \Leftrightarrow -\frac{1}{2} \alpha + \beta = 0$$
@@ -802,7 +814,7 @@ $$\vec{v} \in D \Leftrightarrow -\frac{1}{2} \alpha + \beta = 0$$
 %
 \paragraph{Question} Comment déterminer un système d'équations cartésiennes d'un sous-espace vectoriel lorsque celui-ci est donné par un système générateur?
 
-\paragraph{Example} Dans $\R^3$, considérons le sous-espace vectorie engendré par $\vec{v}_1 = (1, 0, 0)$, $\vec{v}_2 = (1, 1, 1)$ et $\vec{v}_3 = (2, 1, 0)$. Déterminons un système d'équations cartésiennes du sous-espace $W = Vect(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ de $\R^3$. Soit $\vec{v} = (a, b, c) \in \R^3$. \\
+\paragraph{Exemple} Dans $\R^3$, considérons le sous-espace vectorie engendré par $\vec{v}_1 = (1, 0, 0)$, $\vec{v}_2 = (1, 1, 1)$ et $\vec{v}_3 = (2, 1, 0)$. Déterminons un système d'équations cartésiennes du sous-espace $W = Vect(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ de $\R^3$. Soit $\vec{v} = (a, b, c) \in \R^3$. \\
 Alors $\vec{v} \in W$ 
 \begin{itemize}
   \item[$\Leftrightarrow$] il existe $\lambda_1, \lambda_2, \lambda_3 \in \R$ tels que $\vec{v} = \lambda_1 \vec{v}_1 + \lambda_2, \vec{v}_2 + \lambda_3 \vec{v}_3$ 
@@ -875,7 +887,7 @@ Il vient
   &=& [f(\vec{u})]_\F
 \end{eqnarray*}
 
-\paragraph{Example} Soit $f: \R^3 \rightarrow \R^2$ définie par
+\paragraph{Exemple} Soit $f: \R^3 \rightarrow \R^2$ définie par
 $$f(x, y, z) = (2x + y - %z ,  x + 3y)$$
 f est linéaire. \\
 Soit $\cE = (\vec{e}_1, \vec{e}_2, \vec{e}3)$ la base canonique de $\R^3$ et $\cF$ la base canonique de $\R^2$. On a
