@@ -138,6 +138,12 @@ $\sigma$ presente $4$ inversion, $\sigma$ est donc paire et $\epsilon(\sigma) = 
 $$\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$$
 
 %
+%
+\section{Déterminant}
+%
+%
+
+%
 \subsection{Produit élémentaire}
 %
 \paragraph{Définition} Soit $A = (a_{ij})$ une matrice carrée de taille $n\times n$. Soit $\sigma in S_n$. On appelle produit élémentaire associé à $\sigma$ le nombre
@@ -172,7 +178,7 @@ $$\vert a_{ij} \vert _{1 \leq i, j \leq n} = det(A)$$
 %
 \subsection{Déterminant d'un système des matrices colonnes}
 %
-\paragraph{Définition} On peut aussi parler du döterminant d'un système de $n$ matrices colonnes $m$-lignes
+\paragraph{Définition} On peut aussi parler du déterminant d'un système de $n$ matrices colonnes $m$-lignes
 $$C_1, C_2, \ldots, C_n  \in M_{n\times 1}(\R)$$
 Suivant
 $$C_{j} = \begin{pmatrix} c_{1j} \\ c_{2j} \\ \vdots \\ c_{nj} \end{pmatrix} \text{ pour tout } j \in \{1; \ldots ; n\}$$
@@ -271,6 +277,13 @@ posséde les propriétés suivantes
     Il s'ensuit que $det(C_1, \ldots, C_i, \ldots, C_j(=C_i), \ldots, C_n) = 0$
 \end{enumerate}
 
+\paragraph{Remarque} Soient $A, B \in M_{n \times n}(\R)$, $\lambda \in \R$. En général,
+\begin{eqnarray*}
+  det(A + B) &\neq& det(A) + det(B) \\
+  det(\lambda A) &\neq& \lambda det(A)
+\end{eqnarray*}
+En fait, on a $det(\lambda A) = \lambda^{n} det(A)$.
+
 \paragraph{Corollaire} Soient $i, j \in \{1; \ldots; n\}$, $i\neq j$ et $C_1, C_2, \ldots, C_n$ $n$ matrices colonnes £ $n$ lignes. Alors
 $$det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) = -det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n)$$
 
@@ -358,7 +371,10 @@ Les résultats précédents indiquent comment se comporte le déterminant sous l
 
 \paragraph{Remarque} Le deux premières propriétés découlent de la multilinéarité du détérminant.
 
-\paragraph{} On peut donc calculre un déterminant un utilisant l'algorithme d'élimination de Gauss. Par des opérations élémentaires sur les lignes ou sur les colonnes, on met la matrice sous la forme triangulaire. On applique à chaque étape les régles du calcul du déterminant. Le déterminant est alors égal au produit des coefficients diagonaux de cette matrice triangulaire.
+%
+\subsection{Calculer un déterminant avec l'algorithme de Gauss}
+%
+\paragraph{Méthode de calcul} On peut donc calculer un déterminant un utilisant l'algorithme d'élimination de Gauss. Par des opérations élémentaires sur les lignes ou sur les colonnes, on met la matrice sous la forme triangulaire. On applique à chaque étape les régles du calcul du déterminant. Le déterminant est alors égal au produit des coefficients diagonaux de cette matrice triangulaire.
 
 %
 %
@@ -386,7 +402,7 @@ Pour $i \in \{1; 2; 3\}$, on a également
 \end{eqnarray*}
 Il vient
 $$det(A B) = \begin{vmatrix} \\ b_{11} C_1 + b_{21} C_2 + b_{31} C_3 + b_{12} C_1 + b_{22} C_2 + b_{32} C_3 + b_{13} C_1 + b_{23} C_2 + b_{33} C_3 \\ \\ \end{vmatrix}$$
-On dévelippe ce déterminant par multilinéairté. On obtient $3^3 = 27$ termes. Deux sortes de termes:
+On développe ce déterminant par multilinéairté. On obtient $3^3 = 27$ termes. Deux sortes de termes:
 \begin{itemize}
   \item Ceux qui correspondent au choix d'une permutations $\sigma \in S_3$ des colonnes $C_1, C_2, C_3$:
     $$b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \cdot \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}$$
@@ -449,7 +465,7 @@ $$A \text{ est inversible } \Leftrightarrow det(A) \neq 0$$
 \subsection{Cofacteur d'une matrice}
 %
 \paragraph{Définition} Soit $A = (a_{ij})$ une matrice carrée de taille $n\times n$. Soit $(i ~ j) \in \{1; \ldots; n\} \times \{1; \ldots; n \}$. On appelle cofacteur de $A$ associé à $(i ~ j)$ le nombre réel défini par
-$$A_{ij} = (-1)^{i+j} \begin{vmatrix}
+$$\Delta_{ij} = (-1)^{i+j} \begin{vmatrix}
   a_{11} & \ldots & a_{1 j-1} & a_{1 j+1} & \ldots & a_{1n} \\
   \vdots &  & \vdots & \vdots &  & \vdots \\
   a_{i-1 1} & \ldots & a_{i-1 j-1} & a_{i-1 j+1} & \ldots & a_{i-1 n} \\
@@ -459,7 +475,153 @@ $$A_{ij} = (-1)^{i+j} \begin{vmatrix}
 \end{vmatrix}$$
 Ce déterminant (de matrice de taille $(n-1) \times (n-1)$) est obtenu à partir de celui de $A$ en supprimant le $i^{ème}$ ligne et la $j^{ème}$ colonne.
 
+\paragraph{Exemple} Soit
+$$A = \begin{pmatrix}
+  1 & -5 & -1 & 0 \\
+  2 & 1 & 2 & 3 \\
+  3 & 7 & 3 & 1 \\
+  0 & 1 & 0 & 8
+\end{pmatrix}$$
+Alors on a
+\begin{eqnarray*}
+  \Delta_{23} &=& (-1)^{2+3} \begin{vmatrix} 1 & -5 & 0 \\ 3 & 7 & 1 \\ 0 & 1 & 8 \end{vmatrix}
+    = - \begin{vmatrix} 1 & -5 & 0 \\ 3 & 7 & 1 \\ 0 & 1 & 8 \end{vmatrix} \\
+  \Delta_{42} &=& (-1)^{4 + 2} \begin{vmatrix} 1 & -1 & 0 \\ 2 & 2 & 3 \\ 3 & 3 & 1 \end{vmatrix}
+    = - \begin{vmatrix} 1 & -1 & 0 \\ 2 & 2 & 3 \\ 3 & 3 & 1 \end{vmatrix}
+\end{eqnarray*}
+
+%
+\subsection{Calculer un déterminant par développement}
+%
 \paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $j \in \{1; \ldots; n\}$. Alors
-$$det(A) = \sum_{i=1}^{n} a_{ij} A_{ij}$$
+$$det(A) = \sum_{i=1}^{n} a_{ij} \Delta_{ij}$$
 On dit que l'on développe $det(A)$ par rapport à la $j^{ème}$ colonne.
-  
+
+\paragraph{Exemple} Développons $\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix}$ par rapport à la $3^{ème}$ ligne
+$$\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix} = 
+  0 \cdot \begin{vmatrix} 7 & 1 \\ 3 & 5 \end{vmatrix} 
+  - 2 \cdot \begin{vmatrix} 1 & -2 \\ 3 & 5 \end{vmatrix} 
+  + 3 \cdot \begin{vmatrix} 1 & -2 \\ 7 & 1 \end{vmatrix} 
+= 23$$
+
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $i \in \{1; \ldots; n\}$. Alors
+$$det(A) = \sum_{j=1}^{n} a_{ij} \Delta_{ij}$$
+On dit que l'on développe $det(A)$ par rapport à la $i^{ème}$ ligne.
+
+\paragraph{Démonstration} On démontre la formule de développememt du déterminant suivant une colonne, la formule de développement suivant une ligne s'en déduisant par transposition. \\
+Soit $A = (a_{j})$ une matrice de taille $n \times n$.
+$$det(A) = \sum_{\tau \in S_n} p_{\tau}(A)$$
+Soit $j \in \{1; \ldots; n \}$, pour tout couple $(k, l) \in  \{1; \ldots; n \}\times\{1; \ldots; n \}$ on note
+$$T_{kl} = \{\tau \in S_n \vert k = \tau(l) \}$$
+On a $S_n = T_{1j} \cup T_{2j} \cup \ldots \cup T_{nj}$ (union disjointe). Il vient
+$$det(A) = \sum_{\tau \in T_{1j}} p_{\tau}(A) + \sum_{\tau \in T_{2j}} p_{\tau}(A) + \ldots + \sum_{\tau \in T_{nj}} p_{\tau}(A)$$
+Soit $i \in \{1; \ldots; n\}$. Montrons que $\sum_{\tau \in T_{ij}} p_{\tau}(A) = a_{ij} \Delta_{ij}$. On considère la matrice $B$ construite à partir de $A$ en permutant la $j^{ème}$ colonne de $A$ avec les colonnes uivantes de façon à l'amener à la place de la $n^{ème}$ colonne et en fasant une démarche analoque avec la $i^{ème}$ ligne. On fait donc subir aux colonnes de $A$ la permutation
+$$d^{-1} = (n-1 ~~ n) \circ \ldots \circ (j+ 1 ~~ j + 2) \circ (j ~~ j+1) = \begin{pmatrix}j & n & n-1 & \ldots & j + 2 & j + 1\end{pmatrix}$$
+et aux lignes de $A$ la permutation
+$$c^{-1} = (n-1 ~~ n) \circ \ldots \circ (i+ 1 ~~ i + 2) \circ (i ~~ i+1) = \begin{pmatrix}i & n & n-1 & \ldots & i + 2 & i + 1\end{pmatrix}$$
+On a pour tout $(k, l) \in \{1; \ldots; n \}\times\{1; \ldots; n \}$
+$$b_{kl} = a_{c(k)d(l)}$$
+On observe que l'application
+\begin{eqnarray*}
+  \phi: T_{n n} &\rightarrow& T_{ij} \\
+  \tau &\mapsto& c \circ \tau \circ d^{-1}
+\end{eqnarray*}
+est bijective. \footnote{Sa bijections réciproque est
+\begin{eqnarray*}
+  \psi: T_{ij} &\rightarrow& T_{n n} \\
+  \tau &\mapsto& c^{-1} \circ \tau \circ d
+\end{eqnarray*}
+On a
+$$\phi \circ \psi = id_{T_{ij}} \text{ et } \psi \circ \phi = id_{T_{n n}}$$}
+Il vient
+\begin{eqnarray*}
+  \sum_{\tau \in T_{ij}} p_{\tau}(A) &=& \sum_{\tau \in T_{ij}} \epsilon(\tau) \prod_{l=1}^{n} a_{\tau(l) l} \\
+    &=& \sum_{\tau \in T_{ij}} \epsilon(\phi(\tau)) \prod_{l=1}^{n} a_{\phi(\tau(l)) l} \\
+    &=& \sum_{\tau \in T_{n n}} \epsilon(c \circ \tau \circ d^{-1}) \prod_{l=1}^{n} a_{(c \circ \tau \circ d^{-1})(l) l} \\
+    &=& \sum_{\tau \in T_{n n}} \epsilon(c) \epsilon(d^{-1}) \epsilon(\tau) \prod_{l=1}^{n} a_{c(\tau(l')) ~ d(l')} ~ (\text{on pose } l' = d^{-1}(l))\\
+\end{eqnarray*}
+On a $\epsilon(c) = \epsilon(c^{-1}) = (-1)^{n-i}$ car $c^{-1}$ est le produit de $n-i$ transpositions et $\epsilon(d^{-1}) = (-1)^{n-j}$ car $d^{-1}$ est le produit de $n-j$ transpositions, d'où $\epsilon(c) \epsilon(d^{-1}) = (-1)^{2n - (i+j)}$. Comme $(2n - (i+j)) + (i+j) = 2n$, on a $2n - (i+j)$ et $i+j$ ont mêm parité donc $(-1)^{2n - (i+j)} = (-1)^{i+j}$. Par suite
+$$\epsilon(c) \epsilon(d^{-1}) = (-1)^{i+j}$$
+Pour tout $l' \in \{1; \ldots; \n\}$, $a_{c(\tau(l')) ~ d(l')} = b_{\tau(l') ~ l'}$. On obtient donc
+\begin{eqnarray*}
+  \sum_{\tau \in T_{ij}} p_{\tau}(A) &=& (-1)^{i+j} \sum_{\tau \in T_{nn}} \epsilon(\tau) \prod_{l'=1}^{n} b_{\tau(l') ~ l'} \\
+    &=& (-1)^{i+j} b_{nn} \sum_{\tau \in T_{nn}} \epsilon(\tau) \prod_{l' = 1}^{n-1} b_{\tau(l') ~ l'} \\
+    &=& a_{ij} \Delta_{ij}
+\end{eqnarray*}
+
+%
+\subsection{Comatrice}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n \times n$. On appelle comatrice de $A$ et on note $com(A)$ la matrice carrée de taille $n \times n$ dont les coefficients sont les cofacteurs de $A$, c'est-à-dire pour tous $1 \leq i, j \leq n$
+$$(com(A))_{ij} = \Delta_{ij}$$
+
+\paragraph{Exemple} Soit $A = \begin{pmatrix} 1 & -4 & 2 \\ 0 & 3 & -1 \\ 2 & 5 & 0 \end{pmatrix}$. On a
+$$com(a) = \begin{pmatrix}
+  \begin{vmatrix} 3 & -1 \\ 5 & 0 \end{vmatrix} & -\begin{vmatrix} 0 & -1 \\ 2 & 0 \end{vmatrix} & \begin{vmatrix} 0 & 3 \\ 2 & 5 \end{vmatrix} \\
+  -\begin{vmatrix} -4 & 2 \\ 5 & 0 \end{vmatrix} & \begin{vmatrix} 1 & 2 \\ 2 & 0 \end{vmatrix} & -\begin{vmatrix} 1 & -4 \\ 2 & 5 \end{vmatrix} \\
+  \begin{vmatrix} -4 & 2 \\ 3 & -1 \end{vmatrix} & -\begin{vmatrix} 1 & 2 \\ 0 & -1 \end{vmatrix} & \begin{vmatrix} 1 & -4 \\ 0 & 3 \end{vmatrix}
+\end{pmatrix} = \begin{pmatrix}
+  5 & -2 & -6 \\
+  10 & -4 & -13 \\
+  -2 & 1 & 3
+\end{pmatrix}$$
+
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n \times n$. On a
+$$A \cdot com(A)^{T} = com(A)^{T} \cdot A = det(A) \cdot I_n$$
+
+\paragraph{Théorème} Si $A$ est inversible, alors $det(A) \neq 0$ et 
+$$A^{-1} = \frac{1}{det(a)} com(A)^{T}$$
+
+\paragraph{Remarque} Cette formule généralise celle qui a été vue dans le cas des matrices de taille $2 \times 2$.
+
+%
+%
+\section{Systèmes de cramer}
+%
+%
+\paragraph{Définition} On dit qu'un système linéaire $A \cdot X = B$ à $n$ équations et $n$ inconnues, $A$ matrice carrée de taille $n \times n$, $B$ matrice colonée de taille $n\times 1$ est un système de cramer si la matrice $A$ du système est inversible. \\
+Dans ce cas le système admet une solution unique $(a_1, \ldots, a_n) \in \R^n$ et les $a_i \in \R$ sont donnés par les formules suivantes. Si on désigne par $C_1, \ldots, C_n$ les colonnes de $A$\footnote{$A = (C_1, \ldots, C_n)$}, on a
+$$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix}}{det(A)} ~ (\text{on remplace } C_i \text{ avec } B)$$
+Comme $A$ est inversible, $det(A) \neq 0$.
+
+\paragraph{Démonstration} On a $B = A \begin{pmatrix} a_1 \\ \vdots \\ a_n \end{pmatrix} = a_1 C_1 + \ldots + a_n C_n$. Il vient
+\begin{eqnarray*}
+  \begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix} &=& \begin{vmatrix} C_1 & \ldots &  a_1 C_1 + \ldots + a_n C_n & \ldots & C_n \end{vmatrix} \\
+    &=& a_1 \begin{vmatrix} C_1 & \ldots & C_1 & \ldots & C_n \end{vmatrix} \\
+    &&+ \ldots \\
+    &&+ a_i \begin{vmatrix} C_1 & \ldots & C_i & \ldots & C_n \end{vmatrix} \\
+    &&+ \ldots \\
+    &&+ a_n \begin{vmatrix} C_1 & \ldots & C_n & \ldots & C_n \end{vmatrix}
+\end{eqnarray*}
+On a 
+$$a_i \begin{vmatrix} C_1 & \ldots & C_i & \ldots & C_n \end{vmatrix} = a_i det(A)$$
+Pour $j \in \{1; \ldots; n\}$, $j\neq i$
+$$a_i \begin{vmatrix} C_1 & \ldots & C_j & \ldots & C_n \end{vmatrix} = 0$$
+car la matrice colonne $C_j$ apparaît deux fois , en positions $i$ et $j$. On obtient donc 
+$$\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix} = a_i det(A)$$
+d'où
+$$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix}}{det(A)}$$
+
+%
+%
+\section{Récapitulatif}
+%
+%
+
+%
+\subsection{Méthodes de calcul du déterminant}
+%
+Pour calculer le déterminant d'une matrice, on peut:
+\begin{itemize}
+  \item utilise la définition du déterminant comme somme des produits élémentaires singés convient pour les matrices de taille $1 \times 1$ ou $2 \times 2$
+    $$\begin{array}{lmr} det\big((a)\big) = a & & det\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = ad - bc \end{array}$$
+  \item développer suivant une ligne ou une colonne convient pour les matrice de taille $3 \times 3$, éventuellement aussi pour une taille de $4 \times 4$
+  \item utiliser l'algorithme d'élimination de Gauss convient pour les matrices de taille $2 \times 2$ et plus.
+\end{itemize}
+
+%
+\subsection{Méthodes de calcul de l'inverse d'une matrice}
+Pour calculer  l'inverse d'une matrice\footnote{si l'inverse existe}, on peut
+\begin{itemize}
+  \item calculer la comatrice de cette matruce convient pour des matrices de taille $2 \times 2$ et $3 \times 3$.
+  \item utiliser l'algorithme d'élimination de Gauss convient pour des matrice de taille $3 \times 3$ et plus.
