@@ -7,7 +7,7 @@
 %
 %
 %
-\subsection{La groupe $(\R, +)$}
+\subsection{Le groupe $(\R, +)$}
 %
 \paragraph{Définition} On rappelle que l'ensemble $\R$ des nombres réels est muni des deux lois de composition internes
 \begin{itemize}
@@ -26,7 +26,7 @@
         $$x + (-x) = 0 = (-x) + x \text{ (symétrie) }$$
     \end{itemize}
 \end{itemize}
-On dit alors que $(\R, +)$ est une groupe. De plus on a
+On dit alors que $(\R, +)$ est un groupe. De plus on a
 \begin{itemize}
   \item Pour tous $x, y \in \R$
     $$x + y = y + x \text{ (commutivité) }$$
@@ -43,7 +43,7 @@ On dit alors que $(\R, +)$ est une groupe commutatif.
       \cdot: \R \times \R &\rightarrow& \R \\
       (x, y) &\mapsto& x \cdot y = x y
     \end{eqnarray*}
-    qui possède les propriétes suivantes
+    qui possède les propriétés suivantes
     \begin{itemize}
       \item pour tous $x, y, z \in \R$
         $$(x \cdot y) \cdot z = x \cdot (y \cdot z) \text{ (associativité) }$$
@@ -65,7 +65,7 @@ On dit alors que $(\R, + , \cdot)$ est un anneau commutatif.
 %
 \subsection{Le corps $(\R, +, \cdot)$}
 %
-\paragraph{Définition} On sait que $(\R, + , \cdot)$ est un anneau commutatif. Des plus on a
+\paragraph{Définition} On sait que $(\R, + , \cdot)$ est un anneau commutatif. De plus on a
 \begin{itemize}
   \item Pour tous $x \in \R \backslash \{0\}$ il existe $x^{-1} \in \R$ tel que 
     $$x \cdot (x^{-1}) = 1 = (x^{-1}) \cdot x$$
@@ -75,7 +75,7 @@ On dit alors que $(\R, +, \cdot)$ est un corps commutatif.
 %
 \subsection{L'ensemble des $n$-tuplets $\R^n$}
 %
-\paragraph{Définition} On note $\R^2$ le produit cartésien $\R \times \R$, c'est-à-dire l'ensemble des couples $(x, y)$ a coordonnés $, y \in \R$. De même, on note $\R^3$ le produit cartésienne $\R \times \R \times \R$, c'est-à-dire des triplets $(x, y, z)$ à coordonnés $x, y, z \in \R$. \\
+\paragraph{Définition} On note $\R^2$ le produit cartésien $\R \times \R$, c'est-à-dire l'ensemble des couples $(x, y)$ a coordonnés $x, y \in \R$. De même, on note $\R^3$ le produit cartésienne $\R \times \R \times \R$, c'est-à-dire des triplets $(x, y, z)$ à coordonnés $x, y, z \in \R$. \\
 Plus généralement, si $n \geq 1$ est un entier naturel, $\R^n$ designe l'ensemble $\R \times \R \times \ldots \times \R$ des $n$-couples $(x_1, x_2, \ldots, x_n)$ à coordonnées $x_1, x_2, \ldots, x_n \in \R$.
         
 %
@@ -119,7 +119,7 @@ est un système à $3$ équations et $4$ inconnues à coefficients dans $\R$.
 %
 \paragraph{Définition} Soit $S$ un système d'équations linéaires à $n$ équations et $m$ inconnues. Une solution du système dans $\R^m$ est un $m$-uplet $(t_1, t_1, \ldots, t_m) \in \R^m$ tel que les $n$ égalités soient vérifiés, en prenant $x_i = t_i$. Résoudre dans $\R^m$ le système $S$ consiste à déterminer l'ensemble des solutions de $S$ dans $\R^m$.
 
-\paragraph{Exemple} On considère le système de l'Exemple précédent. Alors $(2, -1, 0, 1) \in \R^n$ est une solutions (dans $\R^n$) de ce système. En effet on a
+\paragraph{Exemple} On considère le système de l'exemple précédent. Alors $(2, -1, 0, 1) \in \R^n$ est une solutions (dans $\R^n$) de ce système. En effet on a
 $$\left\vert \begin{array}{rcl}
   7 \cdot (-1) + 0 + 8 \cdot 1 & = & 1 \\
   3 \cdot 2 + 2 \cdot (-1) + 5 \cdot 0 + 1 & = & 5 \\
@@ -131,7 +131,7 @@ $$\left\vert \begin{array}{rcl}
 \paragraph{} Pour résoudre un système d'équations linéaires, on va effectuer des opérations élémentaires sur les équations du système à fin de se ramener à un système plus simple. Ces opérations sont de 3 types:
 \begin{enumerate}[ a)]
   \item multiplier une équation par un réel non nul
-  \item ajuter à une équation un multiple d'un autre équation
+  \item ajuter à une équation un multiple d'une autre équation
   \item permuter deux équations
 \end{enumerate}
 
@@ -221,7 +221,7 @@ $$\begin{pmatrix}
 %
 \subsection{Algorithme de Gauss}
 %
-\paragraph{} On peut mettre une matrice quelconque sous forme échelonnée ou échelonnée réduite eu effectuant des opérations élémentaires. C'est l'algorithme de Gauss. \\
+\paragraph{} On peut mettre une matrice quelconque sous forme échelonnée ou échelonnée réduite en effectuant des opérations élémentaires. C'est l'algorithme de Gauss. \\
 On procède comme suit:
 \begin{enumerate}
   \item On repère la première colonne non nulle.
@@ -232,7 +232,7 @@ On procède comme suit:
 \end{enumerate}
 La première partie de l'algorithme est faite. Pour mettre la matrice sous forme échelonnée réduite, on commence par le dernier pivot placé. On cherche les lignes audessus du pivot qui ne sont pas nulles, et on ajoute un multiple de la ligne avec le pivot choisi. Quand tous les coefficients audessus du dernier pivot sont nuls, on fait le même avec tout les autres pivot en direction de droit à gauche. On est fini si on a une matrice échelonnée réduite selon la définition audessus.
 
-%
+%BSP 23.9.11 & 29.9.11
 %
 \section{Résolution d'un système linéaire}
 %

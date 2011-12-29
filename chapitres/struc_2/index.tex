@@ -1,6 +1,6 @@
 \chapter{Structures}
 \section{Lois de composition internes}
-\paragraph{Rappels} On rapelle que si $E$ est un ensemble, une loi de composition interne $\star$ sur $E$ est une application:
+\paragraph{Rappels} On rappelle que si $E$ est un ensemble, une loi de composition interne $\star$ sur $E$ est une application:
 \begin{eqnarray*}
 \star{}: & E \times E \rightarrow E \\
 & (x, y) \mapsto x \star y
@@ -21,7 +21,7 @@ On peut alors écrire $x_1 \star x_2 \star \ldots \star x_n$
 $$ \forall x, y \in E, x \star y = y \star x$$
 
 %
-\subsection{Uniferité}
+\subsection{Unifèrité}
 %
 \paragraph{Définition} On dit que $\star$ est unifère si $E$ posséde un élément neutre pour $\star$, c'est-à-dire un élément tel que
 $$ \forall x \in E, e \star x = x = x \star e$$
@@ -35,7 +35,7 @@ Cet élément neutre, s'il existe, est unique.
 $$ x \star y = e = y \star x$$
 Le symétrique de $x$, s'il existe, est unique. Pour un $x \in E$. Si $\star$ est l'addition ($+$) le symétrique s'appelle l'opposé de $x$ et s'écrit $-x$. Si $\star$ est la multiplication ($\times$) le symétrique s'appelle l'inverse de x et s'écrit $x^{-1}$.
  
-\paragraph{Exemple} La soustraction ($-$) sur $\Z$ n'est ni associative ni commutative ni unifère. ($0$ est élément neutre à droit mais pas à gauche $\rightarrow$ $0 - x = x \neq x - 0$.)
+\paragraph{Exemple} La soustraction ($-$) sur $\Z$ n'est ni associative ni commutative ni unifère. ($0$ est élément neutre à droite mais pas à gauche $\rightarrow$ $0 - x = x \neq x - 0$.)
 
 %
 %
@@ -45,8 +45,8 @@ Le symétrique de $x$, s'il existe, est unique. Pour un $x \in E$. Si $\star$ es
 %
 \subsection{Groupe}
 %
-\paragraph{Définition} On appelle groupe un ensemble $E$ muni d'une loi de composition interne $\star$ associative et unifère et telle que tout élément de $E$ admette un symétrique pour $\star$. \\
-Si de plus $\star$ est commutative, on dit que le groupe est commutatif.
+\paragraph{Définition} On appelle groupe un ensemble $E$ muni d'une loi de composition interne $\star$ associative et unifère et tel que tout élément de $E$ admette un symétrique pour $\star$. \\
+Si de plus $\star$ est commutative, on dit que le groupe est commutatif ou un groupe abélien.
 
 \paragraph{Exemple}
 $(\Z, +)$ est un groupe commutatif. Mais $(\N, +)$ n'est pas un groupe (parce qu'il n'y a pas d'élément symétrique pour $+$).
@@ -167,11 +167,13 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
   \begin{eqnarray*}
     f(\alpha \vec{u} + \ve{v}) = \alpha f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U, \alpha \in \R \mbox{~ (linéarité)}
   \end{eqnarray*}
+%BSP 30.9.11
 
 %
 \subsection{Isomorphisme}
 %
-\paragraph{Définition} Soient $U$ et $V$ deux $\R$-espace vectoriels. Un isomorphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application $\R$-linéaire bijective de $U$ dans $V$. %TODO
+\paragraph{Définition} Soient $U$ et $V$ deux $\R$-espace vectoriels. Un isomorphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application $\R$-linéaire bijective de $U$ dans $V$. 
+%BSP 30.9.11
 
 \paragraph{Proposition} Soit $(V, +, \cdot)$ un $\R$-espace vectoriel. Alors on a:
 \begin{enumerate}[a)]
@@ -196,7 +198,7 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
           \vec{v} &\mapsto& id_{V}(\vec{v}) = \vec{v}
         \end{eqnarray*}
         est une application $\R$-linéaire.
-      \item Soient $(U, +, \cdot)$, $(V, +, \cdot)$ et $(W, +, \cdot)$  trois $\R$-espaces vectoriels, $f: U \rightarrow V$ et $g: V \rightarrow W$ deux applications $\R$-linéaires. Alors l'application composé
+      \item Soient $(U, +, \cdot)$, $(V, +, \cdot)$ et $(W, +, \cdot)$  trois $\R$-espaces vectoriels, $f: U \rightarrow V$ et $g: V \rightarrow W$ deux applications $\R$-linéaires. Alors l'application composée
         \begin{eqnarray*}
           g \circ f: U &\rightarrow& W \\
           \vec{u} &\mapsto& (g \circ f)(\vec{u}) = g(f(\vec{u}))
@@ -210,7 +212,7 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
   \item
     \begin{enumerate}[a)]
       \item $$f(\vec{0}_U) = f(\vec{0}_U + \vec{0}_U) = f(\vec{0}_U) + f(\vec{0}_U)$$
-        Ajoutons $-f(\vec{0}_V)$ (l'opposé de $f(\vec{0}_V)$.
+        Ajoutons $-f(\vec{0}_U)$ (l'opposé de $f(\vec{0}_U)$.
         \begin{eqnarray*}
           \vec{0}_V = f(\vev{0}_U) + (-f(\vev{0}_U)) &=& (f(\vec{0}_U) + f(\vec{0}_U)) + (-f(\vev{0}_U)) \\
             &=& f(\vec{0}_U) + (f(\vec{0}_U) + (-f(\vev{0}_U))) \\
@@ -221,15 +223,16 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
           f(-\vec{u}) + f(\vec{u}) &=& f((-\vev{u}) + \vec{u}) = f(\vec{0}_U) = \vec{0}_V \\
           f(-\vec{u}) + f(\vec{u}) &=& f(\vec{u}) + f(-\vec{u}) = \vec{0}_V ~ \text{(+ est commutative)}
         \end{eqnarray*}
-        Par conéquence, $f(-\vec{u}) = f(\vec{u})$.
+        Par conséquant, $f(-\vec{u}) = -f(\vec{u})$.
     \end{enumerate}
   \item
     \begin{enumerate}[a)]
       \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
         \begin{eqnarray*}
           id_V(\alpha \vec{u} + \vec{v}) &=& \alpha \vec{u} + \vec{v} \\
-            &=& \alpha f(\vec{u}) + f(\vec{v})
-        \end{eqnarray*}
+            &=& \alpha id_V(\vec{u}) + id_V(\vec{v})
+        \end{eqnarray*}$
+$Ainsi, $id_V$ est bien $\R$-linéaire.
       \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
         \begin{eqnarray*}
           (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
@@ -281,6 +284,7 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
         &=& \sum_{l=0}^{n+m} \left ( \sum_{(i, j), i+j=l} a_i b_j \right ) x^l
     \end{eqnarray*}
     On vérifie que $\times$ est associative, unifère et bilinéaire. Alors $(\R[X], + , \times, \cdot)$ est un $\R$-algèbre.
+%BSP 6.10.11
     
   \item Soit $(V, +, \cdot)$ und $\R$-espace vectoriel. On note $End_{\R}(V)$ l'ensemble des applications $\R$-linéaires de $V$ dans $V$; ce sont les endomorphismes du $\R$-espace vectoriel $V$. On définit sur $End_{\R}(V)$:
     \begin{itemize}
