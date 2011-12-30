@@ -167,13 +167,40 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
   \begin{eqnarray*}
     f(\alpha \vec{u} + \ve{v}) = \alpha f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U, \alpha \in \R \mbox{~ (linéarité)}
   \end{eqnarray*}
-%BSP 30.9.11
+
+\paragraph{Exemple} On considère l application 
+\begin{eqnarray*}
+f: \R^3 &\rightarrow &\R^2 \\
+(x_1, x_2, x_3)&\mapsto &f(x_1, x_2, x_3)=(2x_1-x_2+7x_3, 5x_1-x_3)
+\end{eqnarray*}
+Alors f est une application linéaire. En effet, soient $(x_1, x_2, x_3), (y_1, y_2, y_3) \in \R^3$ et $\alpha \in \R$. Il vient
+\begin{eqnarray*}
+f(\alpha(x_1, x_2, x_3)+ (y_1, y_2, y_3))&=&f(\alpha x_1+y_1, \alpha x_2+y_2, \alpha x_3+y_3)\\
+&=&(2(\alpha x_1+y_1)-( \alpha x_2+y_2)+7(\alpha x_3+y_3), 5(\alpha x_1+y_1)-( \alpha x_3+y_3))\\
+&=&(\alpha(2x_1-x_2+7x_3)+(2y_1-y_2+7y_3), \alpha(5x_1-x_3)-(5y_1-y_3))\\
+&=&\alpha(2x_1-x_2+7x_3, 5x_1-x_3)+(2y_1-y_2+7y_3,5 y_1-y_3)\\
+&=&\alpha f(x_1, x_2, x_3)+f (y_1, y_2, y_3)
+\end{eqnarray*}
+
 
 %
 \subsection{Isomorphisme}
 %
 \paragraph{Définition} Soient $U$ et $V$ deux $\R$-espace vectoriels. Un isomorphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application $\R$-linéaire bijective de $U$ dans $V$. 
-%BSP 30.9.11
+
+\paragraph{Exemple} Soit $n\geq 1$ un entier naturel. On note $P_n$ l'ensemble des plynômes à une indéterminée à coefficients dans $\R$ de degré au plus $n$. $P_n$ muni de l'addition + des polynômes et de la multiplication $\cdot$ par les réels est un $\R$-espace vectoriel. Montrons que $P_n$ est isomorphe à $R^{n+1}$. Soit
+\begin{eqnarray*}
+f: \R^{n+1} &\rightarrow &P_n \\
+(a_0, a_1, \dotsc, a_n)&\mapsto &(a_0+a_1X+\dotsc+a_nX^n)
+\end{eqnarray*}
+Alors $f$ est $\R$-linéaire. En effet, pour tous $(a_0, a_1, \dotsc, a_n),  (b_0, b_1, \dotsc, b_n)$ et $\alpha\in\R$
+\begin{eqnarray*}
+f(\alpha(a_0, a_1, \dotsc, a_n)+ (b_0, b_1, \dotsc, b_n))&=&f(\alpha a_0+b_0, \alpha a_1+b_1, \dotsc, \alpha a_n+b_n)\\
+&=&(\alpha a_0+b_0)+ (\alpha a_1+b_1)X+ \dotsc+ (\alpha a_n+b_n)X^n\\
+&=&\alpha(a_0+a_1X+\dotsc+a_nX^n)+(b_0+b_1X+\dotsc+b_nX^n)\\
+&=&\alpha f(a_0, a_1, \dotsc, a_n)+f (b_0, b_1, \dotsc, b_n)
+\end{eqnarray*}
+$f$ est clairement surjective et $f$ est unjective puisque deux polyn'omes sont égaux s'ils ont les mêmes coefficients, donc $f$ est bijective.
 
 \paragraph{Proposition} Soit $(V, +, \cdot)$ un $\R$-espace vectoriel. Alors on a:
 \begin{enumerate}[a)]
@@ -297,3 +324,10 @@ $Ainsi, $id_V$ est bien $\R$-linéaire.
     \end{itemize} 
     On vérifie que $(End_{\R}(V), +, \circ, \cdot)$ est un $\R$-algèbre.
 \end{enumerate}
+
+&TODO
+\paragraph{Exemple} Soient $P(X)=1-2X+3X^2$ et $Q(X)=-3+X+X^2-5X^3$. Alors
+\begin{eqnarray*}(P\cdot Q)(X)&=&(1\cdot(-3))+(1\cdot1+(-2)(-3))X+(1\cdot1+(-2)1+3(-3))X^2\\&&+(1(-5)+(-2)1+3\cdot1)X^3+((-2)(-5)+3\cdot1)X^4+(3(-5))X^5\\
+&=&-3+7X-10X^2-4X^3+13X^4-15X^5
+\end{eqnarray*}
+On vérifie que $X$ est associative, unifère et bilinéaire. Alors $(\R[X],+ ,\times ,\cdot)$ est un $\R$-algèbre.
