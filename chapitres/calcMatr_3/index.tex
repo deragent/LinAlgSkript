@@ -16,18 +16,23 @@ $$\begin{pmatrix}
   \vdots & \vdots & \ddots & \vdots \\
   a_{n1} & a_{n2} & \ldots & a_{nm}
 \end{pmatrix} \text{ avec } a_{ij} \in \R$$
-On peut noter la matrice $A = (a_{ij})_{1 \leq i \leq n, 1 \leq j \leq m}$ ou simplement $A = (a_{ij})$.
 
 %
 \subsection{Ensemble des matrices}
 %
 \paragraph{Définition} On note $M_{n, m}(\R)$ l'ensemble des matrices de taille $n\times m$ à coefficients dans $\R$.
 
+\paragraph{Exemple}
+$\begin{pmatrix}
+  2 & -5 & \sqrt{2} \\
+ 3 &0 & 1 \\
+\end{pmatrix}$ est une matrice de taille $2\times 3$ à coefficients dans $\R$. Le coefficient $a_{12}$ est -5.
+
 %
 \subsection{Matrice carrée}
 %
 \paragraph{Définition} Soit $n \geq 1$ un entier naturel et $A$ une matrice de taille $n\times n$. On dit alors que $A$ est une matrice carrée. \\ 
-On note $M_{n}(\R)$ l'ensemble des matrices carrées de taille $n\times m$ à coefficients dans $\R$. Les coefficients $a_{ii}$ pour $1 \leq i \leq n$ sont appellés coefficients diagonaux de $A$.
+On note $M_{n}(\R)$ l'ensemble des matrices carrées de taille $n\times n$ à coefficients dans $\R$. Les coefficients $a_{ii}$ pour $1 \leq i \leq n$ sont appellés coefficients diagonaux de $A$.
 
 %
 %
@@ -43,7 +48,7 @@ $$s_{ij} = a_{ij} + b_{ij} ~ \forall ~ 1 \leq i \leq n, 1 \leq j \leq m$$
 
 \paragraph{Proposition} Soient $m \geq 1$ et $n\geq 1$ des entiers naturels.
 \begin{enumerate}
-  \item Soient $a, B, C \in M_{n, m}(\R)$. Alors
+  \item Soient $A, B, C \in M_{n, m}(\R)$. Alors
     $$(A + B) + C = A + (B + C)$$
   \item On note $0$ la matrice nulle dans $M_{n, m}(\R)$, c'est-à-dire la matrice dont tous les coefficients sont nuls. Alors pour tout $A \in M_{n, m}(\R)$ on a
     $$A + 0 = A = 0 + A$$
@@ -54,6 +59,12 @@ Ainsi, l'addition $+$ dans $M_{n, m}(\R)$ est associative, unifère et tout $A \
 De plus, comme $+$ dans $\R$ est commutative, l'addition dans $M_{n,m}(\R)$ est commutative:
 $$\forall A, B \in M_{n, m}(\R), ~ A + B = B + A$$
 En conclusion, $(M_{n, m}(\R)$ est un groupe commutatif.
+
+\paragraph{Démonstration} \begin{enumerate}
+\item Cela découle de l'associativié de l'addition dans $\R$.
+\item Cela découle de la propriété de l'élément $0$ dans $\R$.
+\item Cela résulte des propriétés de l'opposé d'un réel.
+\end{enumerate}
 
 %
 \subsection{Produit avec un réel}
@@ -84,6 +95,18 @@ On peut donc dire, que $M_{n, m}(\R)$ muni de l'addition des matrices et de la m
 Si $A = (a_{ij}) \in M_{n, m}(\R)$ et $B = (b_{ij}) \in M_{m, p}(\R)$, alors on définit $C = A \times B \in M_{n, p}(\R)$
 $$c_{ij} = \sum_{l=1}^{m} {a_{il} * b_{lj} = a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + \ldots + a_{im} \cdot b_{mj}$$
 
+\paragraph{Exemple} Soient $A=\begin{pmatrix}
+  2 & -5 & 1} \\
+ 0 & 4 & 7 \\
+\end{pmatrix}\in M_{2,3}(\R)$ et $B=\begin{pmatrix}
+  1 & -5 & 2 & 4} \\
+2 & 4 & -7 & 3\\
+ 0 & 1 & 0 & 1 \\
+\end{pmatrix}\in M_{3,4}(\R)$. Le nombre de colonnes de $A$ est égal au nombre de ligne de $B$. Le produit est donc défini. $AB=\begin{pmatrix}
+  -8 & -29 & 39 & -6} \\
+8 & 23 & -28 & 19\\
+\end{pmatrix}\in~ M_{2,4}(\R)$
+
 \paragraph{Proposition} A conditions que les produits et les sommes considerés soient bien définit, on a
 \begin{enumerate}
   \item $$A \times (B \times C) = (A \times B) \times C$$
@@ -94,6 +117,20 @@ $$c_{ij} = \sum_{l=1}^{m} {a_{il} * b_{lj} = a_{i1} \cdot b_{1j} + a_{i2} \cdot 
 \end{enumerate}
 
 \paragraph{Attention} Deux matrices quelconques ne commutent pas nécessairement.
+
+\paragraph{Exemple} Soient $A=\begin{pmatrix}
+  1 & 3 \\
+ 2 & 7 \\
+\end{pmatrix}$ et $B=\begin{pmatrix}
+  -3 & 0 \\
+ 4 & 1 \\
+\end{pmatrix}$. Alors $AB=\begin{pmatrix}
+  9 & 3 \\
+ 22 & 7 \\
+\end{pmatrix}$ et $BA=\begin{pmatrix}
+  -3 & -9 \\
+ 6 & 19 \\
+\end{pmatrix}$. Donc $AB\neq BA$.
 
 \paragraph{Attention}
 \begin{itemize}
@@ -122,15 +159,32 @@ d'où $B = C$.
 \paragraph{Notation} Si $A$ est inversible, on note $A^{-1}$ son inverse. On a donc
 $$A A^{-1} = I_n = A^{-1} A$$
 
+\paragraph{Exemple} La matrice
+\begin{pmatrix}2& 1\\7& 4\end{pmatrix}est inversible d'inverse\begin{pmatrix}4& -1\\-7& 2\end{pmatrix}.\\\begin{pmatrix}2& 1\\7& 4\end{pmatrix}\begin{pmatrix}4& -1\\-7& 2\end{pmatrix}=\begin{pmatrix}1& 0\\0& 1\end{pmatrix}=$I_2$ et \begin{pmatrix}4& -1\\-7& 2\end{pmatrix}\begin{pmatrix}2& 1\\7& 4\end{pmatrix}=\begin{pmatrix}1& 0\\0& 1\end{pmatrix}=$I_2$\\On vérifie que $A A^{-1} = I_n = A^{-1} A$.
 
 %
 \subsection{Matrice de taille $2\times 2$}
 %
 \paragraph{Lemme} Soient $a, b, c, d \in \R, A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$ et $B = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \in M_{2}(\R)$. Alors $A B = (a d - b c) I_n = B A$.
 
+\paragraph{Démonstration} $$AB=\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}=\begin{pmatrix}ad-bc &0\\0 &ad-bc\end{pmatrix}=(ad-bc)\begin{pmatrix}1& 0\\0& 1\end{pmatrix}=(ad-bc)I_2$$
+et $$BA= \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\begin{pmatrix} a & b \\ c & d \end{pmatrix}=\begin{pmatrix}ad-bc &0\\0 &ad-bc\end{pmatrix}=(ad-bc)I_2$$
+
 \paragraph{Proposition} Soit $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$. Alors $A$ est inversible si et seuelement si $a d - b c \neq 0$, et dans ce cas
 $$A^{-1} = \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
-On suppose que $a d - b c = 0$. On raisonne par l'absurde. Si $A$ est inversible, on obtient: D'après le lemme on a
+
+\paragraph{Démonstration} Cet énoncé est une équicalence constituée de deux implications:
+\begin{enumerate}
+\item si $ad-bc\neq 0$, alors $A$ est inversible et $A^{-1}=\frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a\end{pmatrix}$
+\item si $ad-bc=0$, alors $A$ n'est pas inversible.
+\end{enumerate}
+\begin{enumerate}
+\item On suppose que $a d - b c \neq 0$. Par suite, $a d - b c$ est inversible dans $\R$. D'après le lemme, on a
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} = (a d - b c) I_2 =  \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
+d'où
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}\left( \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\right)=I_2=\left( \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\right)\begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
+Par conséquent, $A$ est inversible d'inverse $A^{-1}=\frac{1}{a d - b c}\begin{pmatrix} d & -b \\ -c & a\end{pmatrix}$.
+\item On suppose que $a d - b c = 0$. On raisonne par l'absurde. Si $A$ est inversible, on obtient: D'après le lemme on a
 $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} = (a d - b c) I_2 = 0$$
 d'où
 \begin{eqnarray*}
@@ -139,6 +193,7 @@ d'où
   0 &=& \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
 \end{eqnarray*}
 Par conséquent $a = b = c = d = 0$, donc $A = 0$ donc $A$ n'est pas inversible, ce qui donn lien à une contradiction. Ainsi $A$ n'est pas inversible si $a d - b c = 0$.
+\end{enumerate}
 
 \paragraph{Proposition} Soient $A$ et $B$ des matrices inversibles de taille $n \times n$. Alors
 \begin{enumerate}
@@ -170,6 +225,15 @@ Par conséquent $a = b = c = d = 0$, donc $A = 0$ donc $A$ n'est pas inversible,
   \item L'assertion $1.$ de la proposition assure que l'inverse d'une matrice inversible est bien inversible.
 \end{itemize}
 On note $(GL_{n}(\R), \times)$ le groupe des matrices inversibles de taille $n$ ($GL$ est mis pour "groupe linéaire").
+
+\paragraph{Exemple} Soient $A=\begin{pmatrix}2&7\\1&4\end{pmatrix}$ et B=\begin{pmatrix}5&3\\3&2\end{pmatrix}.\\
+$A$ est inversible car $2\cdot 4-1\cdot 7=1\neq 0$ , et
+$$A^{-1}= \frac{1}{1} \begin{pmatrix}2&-7\\-1&4\end{pmatrix}= \begin{pmatrix}2&-7\\-1&4\end{pmatrix}$$
+$B$ est inversible car $5\cdot2-3\cdot3=1\neq 0$, et 
+$$B^{-1}=\frac{1}{1}\begin{pmatrix}2&-3\\-3&5\end{pmatrix}= \begin{pmatrix}2&-3\\-3&5\end{pmatrix}$$
+On a $$AB=\begin{pmatrix}2&7\\1&4\end{pmatrix}\begin{pmatrix}5&3\\3&2\end{pmatrix}=\begin{pmatrix}31&20\\17&11\end{pmatrix}$$ et
+$$B^{-1}A^{-1}=\begin{pmatrix}31&20\\17&11\end{pmatrix} \begin{pmatrix}2&-7\\-1&4\end{pmatrix}= \begin{pmatrix}11&-20\\-17&31\end{pmatrix}$$
+On a $(31\cdot11)-(17\cdot20)=341-340=0\neq0$. Donc $AB$ est inversible $$\frac{1}{1} \begin{pmatrix}11&-20\\-17&31\end{pmatrix}= \begin{pmatrix}11&-20\\-17&31\end{pmatrix}$$ qui est bien égale à $B^{-1}A^{-1}$.
 
 %
 %
