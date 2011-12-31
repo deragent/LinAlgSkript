@@ -183,13 +183,26 @@ Chaque de ces opérations admet une opération inverse. Par suite, effectuer une
     y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
     0 & = & 0
   \end{array} \right.
-\end{eqnarray*}s
+\end{eqnarray*} \\
+Comme $x$ et $y$ sont des coefficients pivot, ils représentent les inconnues principales. De l'autre côté, $z$ et $t$ sont les inconnues sécondaires. On a alors
+$$\left\{ \begin{array}{rcl}
+  x & = & -\frac{11}{7} z + \frac{3}{7} t + \frac{11}{7} \\
+  y & = & -\frac{1}{7} z - \frac{8}{7} t + \frac{1}{7}
+\end{array} \right.$$
+On pose $z=u$ et $t=v$. L'ensemble des solutions du système est alors
+$$\cL = \left\{ \left(-\frac{11}{7} u + \frac{3}{7} v + \frac{11}{7}, -\frac{1}{7} u - \frac{8}{7} v + \frac{1}{7}, u, v \right) \in \R^4 \vert u, v \in \R \right\}$$
 %
 %
 \section{L'algorithme d'elimination de Gauss}
 %
 %
-Il s'agit d'une méthode permettant de résoudre un système linéaire quelconque en le mettant sous une forme plus simple, dite échelonnée réduite, à l'aide d'opérations élémentaires.
+Il s'agit d'une méthode permettant de résoudre un système linéaire quelconque en le mettant sous une forme plus simple, dite échelonnée réduite, à l'aide d'opérations élémentaires. Le système
+$$\left\{\begin{array}{rcl}
+  7 y + z + 8 t & = & 1 \\
+  3 x + 2 y + 5 z + t & = & 5 \\
+  2 x - y + 3 z - 2 t & = & 3
+\end{array} \right.$$
+a été résolu en utilisant cet algorithme. \\
 On observe que les opérations élémentaires effectuées sur les équations du système portant sur les coefficients et rien sur les inconnues. Il serve donc au même d'effectuer ces mêmes opérations sur les lignes du tableau des coéfficiants du système.
 
 %
@@ -204,10 +217,10 @@ $$\begin{pmatrix}
  \end{pmatrix}$$
 La matric augmentée associée au système est le tableau
 $$\begin{pmatrix}
-  a_{11} & a_{12} & \cdots & a_{1m} & b_{1} \\
-  a_{21} & a_{22} & \cdots & a_{2m} & b_{2} \\
-  \vdots  & \vdots  & \ddots & \vdots & \vdots  \\
-  a_{n1} & a_{n2} & \cdots & a_{nm} & b_{n}
+  a_{11} & a_{12} & \cdots & a_{1m} & \vert & b_{1} \\
+  a_{21} & a_{22} & \cdots & a_{2m} & \vert & b_{2} \\
+  \vdots  & \vdots  & \ddots & \vdots& \vert & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nm} & \vert & b_{n}
  \end{pmatrix}$$
  
 \paragraph{Définition} Une matrice est dit échelonnée si elle se présente sous la forme suivante:
@@ -216,6 +229,31 @@ $$\begin{pmatrix}
   \item Les lignes nulles sont regroupées en bas de la matrice.
   \item Pour deux lignes non nulles consécutives, le pivot de la ligne inférieure se trouve en bas à droit du pivot de la ligne supérieure.
   \item Une matrice échelonnée est dite \underline{échelonnée réduite} si de plus les colonnes contenant un coefficient pivot ont des zéros partout ailleurs.
+\end{itemize}
+
+\paragraph{Exemple}
+\begin{itemize}
+  \item $$\begin{pmatrix}
+      0 & 7 & 1 & 8 \\
+      3 & 2 & 5 & 1 \\
+      2 & -1 & 3 & -2 
+    \end{pmatrix}$$
+    n'est pas échelonné. Le premier coefficient non nut de la première ligne vaut $7$ et pas $1$.
+    
+  \item $$\begin{pmatrix}
+      1 & 3 & 2 & 8 \\
+      0 & 1 & \frac{1}{7} & \frac{8}{7} \\
+      0 & 0 & 0 & 0 \\
+    \end{pmatrix}$$
+    est échelonné, mais pas échelonné réduite, car la deuxième colonne contient un coefficient non nul $3$ en dehors du pivot.
+    
+  \item Enfin
+    $$\begin{pmatrix}
+      1 & 0 & \frac{11}{7} & \frac{3}{2} \\
+      0 & 1 & \frac{1}{7} & \frac{8}{7} \\
+      0 & 0 & 0 & 0 
+    \end{pmatrix}$$
+    est écehelonnée réduite.
 \end{itemize}
 
 %
@@ -237,7 +275,7 @@ La première partie de l'algorithme est faite. Pour mettre la matrice sous forme
 \section{Résolution d'un système linéaire}
 %
 %
-\paragraph{} Pour résoudre un système linéaire on commence par mettre la matrice augmentée du système sous forme échelonnée réduite, en limitant la recherche des pivots aux colonnes de la matrice du système.
+\paragraph{} Pour résoudre un système linéaire on commence par mettre la matrice augmentée du système sous forme échelonnée réduite, en limitant la recherche des pivots aux colonnes de la matrice du système\footnote{Colonnes correspendantes aux inconnues.}.
 Si la dernière ligne de la matrice totale est entièrement nulle: Le système est compatible; il admit au moins une solution.
 \paragraph{}On procède alors aux trois étapes suivantes:
 \begin{enumerate}
