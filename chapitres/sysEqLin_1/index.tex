@@ -137,6 +137,8 @@ $$\left\vert \begin{array}{rcl}
 
 Chaque de ces opérations admet une opération inverse. Par suite, effectuer une opération élémentaire donne lieu à un système équivalent. Au terme du processus, le système obtenue aura donc le même ensemble de solutions que le système initial.
 
+%[TODO]: xleftrightarrow ?!?
+
 \paragraph{Exemple}
 \begin{eqnarray*}
   \begin{array}{lrcl}
@@ -144,40 +146,40 @@ Chaque de ces opérations admet une opération inverse. Par suite, effectuer une
     L_2 & 3 x + 2 y + 5 z + t & = & 5 \\
     L_3 & 2 x - y + 3 z - 2 t & = & 3
   \end{array}
-  \leftrightarrow^{L_2 \leftarrow L_2 - L_3}
+  \xleftrightarrow{L_2 \leftarrow L_2 - L_3}
   \left\vert \begin{array}{rcl}
     7 y + z + 8 t & = & 1 \\
     x + 3 y + 2 z + 3 t & = & 2 \\
     2 x - y + 3 z - 2 t & = & 3
   \end{array} \right. \\
   
-  \leftrightarrow^{L_1 \leftrightarrow L_2}
+  \xleftrightarrow{L_1 \leftrightarrow L_2}
   \left\vert \begin{array}{rcl}
     x + 3 y + 2 z + 3 t & = & 2 \\
     7 y + z + 8 t & = & 1 \\
     2 x - y + 3 z - 2 t & = & 3
   \end{array} \right.
-  \leftrightarrow^{L_3 \leftarrow L_3 - 2 L_1}
+  \xleftrightarrow{L_3 \leftarrow L_3 - 2 L_1}
   \left\vert \begin{array}{rcl}
     x + 3 y + 2 z + 3 t & = & 2 \\
     7 y + z + 8 t & = & 1 \\
     -7 y - z - 8 t & = & -1
   \end{array} \right. \\
   
-  \leftrightarrow^{L_2 \leftarrow \frac{1}{7} L_2}
+  \xleftrightarrow{L_2 \leftarrow \frac{1}{7} L_2}
   \left\vert \begin{array}{rcl}
     x + 3 y + 2 z + 3 t & = & 2 \\
     y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
     -7 y - z - 8 t & = & -1
   \end{array} \right. 
-  \leftrightarrow^{L_3 \leftarrow L_3 + 7 L_2}
+  \xleftrightarrow{L_3 \leftarrow L_3 + 7 L_2}
   \left\vert \begin{array}{rcl}
     x + 3 y + 2 z + 3 t & = & 2 \\
     y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
     0 y - 0 z - 0 t & = & 0
   \end{array} \right. \\
   
-  \leftrightarrow^{L_1 \leftarrow L_1 - 3 L_2}
+  \xleftrightarrow{L_1 \leftarrow L_1 - 3 L_2}
   \left\vert \begin{array}{rcl}
     x + \frac{12}{7} z - \frac{3}{7} t & = & \frac{12}{7} \\
     y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
