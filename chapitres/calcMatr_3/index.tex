@@ -246,6 +246,8 @@ On a $(31\cdot11)-(17\cdot20)=341-340=0\neq0$. Donc $AB$ est inversible $$\frac{
 %
 \paragraph{Définition} Soient $n \geq 1$ un entier naturel et $(i, j) \in \{1; \ldots; n\} \times \{1; \ldots; n\}$. On note $F_{i, j}$ la matrice carrée de taille $n \times n$ contenant un $1$ en $i^{ème}$ ligne et $j^{ème}$ colonne et des $0$ partout ailleurs. On dit que $F_{i, j}$ est une matrice standard.
 
+\paragraph{Exemple} $$n=3 \rightarrow F_{2,3}=\begin{pmatrix}0&0&0\\0&0&1\\0&0&0\end{pmatrix}\text{ ou  } n=4\rightarrow F_{4,1}\begin{pmatrix}0&0&0&0\\0&0&0&0\\0&0&0&0\\1&0&0&0\\\end{pmatrix}$$
+
 \paragraph{Proposition} Toute matrice carrée de taille $\times n$ peut s'exprimer à l'aide des matrices standard de taille $n\times n$
 $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
 
@@ -254,6 +256,31 @@ $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
   \item Soit $F_{ij}$ une matrice standard de taille $n\times n$. Alors $F_{ij} A$ est la matrice de taille $n \times m$ dont la $i^{ème}$ ligne est la $j^{ème}$ ligne de $A$ et dont les autres sont nulles.
   \item Soit $F_{ij}$ une matrice standard de taille $m\times m$. Alors $A F_{ij}$ est la matrice de taille $n\times m$ dont la $j^{ème}$ colonne est la $i^{ème}$ de $A$ et dont les autres colonnes sont nulles.
 \end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}[a)]
+  \item Soit $k\in\{1,\cdots,n\}$ et $l\in\{1,\cdots,n\}$. On a
+$$(F_{ij}A)_{k l}=\sum\limits_{r}^n{(F_{i j})_{k r}A_{r l}}$$
+si $k\neq i$, alors la $k$-ième ligne de $F_{i j}$ est nulle, donc
+$$(F_{i j})_{k l}=0 \text{ pour tout } l \text{.}$$
+On obtient alors
+$$(F_{i j})_{k l}=0 \text{ si } k\neq i$$
+si $k=i$, alors 
+$$(F_{i j}A)_{i l}= \sum\limits_{r=1}^n{(F_{i j})_{i r}A_{r l}}$$
+si $\neq j$, alors la $r$-ième colonne de $F_{i j}$ est nulle, donc
+$$(F_{ij})_{i r}=0$$
+il suit donc
+$$(F_{i j}A)_{i l}= (F_{i j})_{i j}A_{j l}=A_{j l}$$
+D'après ce qui procède, si $k\neq i$, alors la $k$-ième ligne de $F_{i j}A$ est nulle. Si $k=i$, alors al $i$-ième ligne de $F_{i j}A$ est $(A_{j 1}A_{j 2}\cdots A_{j m})$ qui est la $j$-ième ligne de $A$.
+  \item Ceci se montre de façon similaire.
+\end{enumerate}
+
+\paragraph{Exemple} Soient A=\begin{pmatrix}1&-7&5\\0&3&4\end{pmatrix}\in M_{2\times3}(\R)$ et $F_{1 2}=\begin{pmatrix}0&1\\0&0\end{pmatrix}\in M_{2\times 2}(\R)$. Alors
+$$F_{1 2}A=\begin{pmatrix}0&1\\0&0\end{pmatrix}\begin{pmatrix}1&-7&5\\0&3&4\end{pmatrix}=\begin{pmatrix}0&3&3\\0&0&0\end{pmatrix}$$
+Soient $A=\begin{pmatrix}1&5\\0&4\\-7&2\end{pmatrix}\in  M_{3\times2}(\R)$  et $F_{3 1}=\begin{pmatrix}0&0&0\\0&0&0\\1&0&0\end{pmatrix}\in M_{3\times3}(\R)$. Alors
+$$F_{3 1}A=\begin{pmatrix}0&0&0\\0&0&0\\1&0&0\end{pmatrix}\begin{pmatrix}1&5\\0&4\\-7&2\end{pmatrix}= \begin{pmatrix}0&0\\0&0\\1&5\end{pmatrix}$$
+Soient $A=\begin{pmatrix}1&5\\0&4\\-7&2\end{pmatrix}\in  M_{3\times2}(\R)$  et $F_{1 2}=\begin{pmatrix}0&1\\0&0\end{pmatrix}\in M_{2\times2}(\R)$. Alors
+$$AF_{1 2}=\begin{pmatrix}1&5\\0&4\\-7&2\end{pmatrix}\begin{pmatrix}0&1\\0&0\end{pmatrix}=\begin{pmatrix}0&1\\0&0\\0&-7\end{pmatrix}$$
 
 %
 \subsection{Symbole de Kronecker}
@@ -328,6 +355,11 @@ On introdiut les matrices suivantes ($n \geq 1$ entier naturel)
 \end{itemize} 
 Les opérations élémentaires que l'un peut effectuer sur les lignes d'une matrice peuvent s'interpréter en termes de multiplications de cette par les matrices précédantes.
 
+\paragraph{Exemple} Pour $n=2$ on a
+$$E_1(-3)=\begin{pmatrix}-3&0\\0&1\end{pmatrix} \text{  } E_{1 2}=\begin{pmatrix}0&1\\1&0\end{pmatrix} \text{  } E_{2 1}(5)=\begin{pmatrix}1&5\\0&1\end{pmatrix}$$
+ Pour $n=3$ on a
+$$E_2(-4)=\begin{pmatrix}1&0&0\\0&-4&0\\0&0&1\end{pmatrix} \text{  } E_{2 1}=\begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix} \text{  } E_{2 3}(7)=\begin{pmatrix}1&0&0\\0&1&7\\0&0&1\end{pmatrix}$$
+
 \paragraph{Théorème} Soit $A$ une matrice de taille $n\times m$
 \begin{enumerate}[a)]
   \item Multiplier la $i^{ème}$ ligne de $A$ par un réel $c$ non nul est équvalent à multiplier $A$ à gauche par la matrice $E_i(c)$ de taille $n \times n$
@@ -390,10 +422,61 @@ Les opérations élémentaires que l'un peut effectuer sur les lignes d'une matr
     Ainsi $\left( \sum_{l=1, l \notin {i; j}}^n F_{ll} A \right) + F_{ij} A + F_{ji} A$ est la matrice cherchée.
 \end{enumerate}
 
+\paragraph{Exemple} Soit $A=\begin{pmatrix}5&-3&0\\4&2&7\end{pmatrix}\in M_{2\times3}(\R)$. On veut multiplier la première ligne par $-7$.
+$$A\xrightarrow{L_1\leftarrow L_1(-7)}\begin{pmatrix}-35&21&0\\4&2&7\end{pmatrix}$$
+On calcule
+$$E_1(-7)A=\begin{pmatrix}-7&0\\0&1\end{pmatrix}\begin{pmatrix}5&-3&0\\4&2&7\end{pmatrix}=\begin{pmatrix}-35&21&0\\4&2&7\end{pmatrix}$$
+Ajouter à la première ligne de $A$ $3$ fois la deuxième ligne.
+$$A\xrightarrow{L_1\leftarrow L_1+3L_2}\begin{pmatrix}17&3&21\\4&2&7\end{pmatrix}$$
+On calcule
+$$E_{1 2}(3)A=\begin{pmatrix}1&3\\0&1\end{pmatrix}\begin{pmatrix}5&-3&0\\4&2&7\end{pmatrix}=\begin{pmatrix}17&3&21\\4&2&7\end{pmatrix}$$
+
+\paragraph{Théorème} Soit $n\in\N$ et $n\ge1$. Alors les matrices élémentaires de taille $n\times n$ sont inversibles, et l'on a:
+$$E_i(C)^{-1}=E_i(\frac{1}{C}) \text{ avec }C\in\R\backslash\{0\}$$
+$$E_{i j}(C)^{-1}=E_{i j}(-C) \text{ avec }C\in\R$$
+$$E_{i j}^{-1}=E_{j i}$$
+
+\paragraph{Démonstration}
+$$E_i(C)E_i(\frac{1}{C})= \begin{pmatrix}
+        1&0&\dots&&0\\
+        0& \ddots&&&\vdots\\
+        \vdots& & c\\
+        & & & \ddots&0\\
+       0 &\dots & & 0& 1
+      \end{pmatrix} \begin{pmatrix}
+        1&0&\dots&&0\\
+        0& \ddots&&&\vdots\\
+        \vdots& & \frac{1}{c}\\
+        & & & \ddots&0\\
+       0 &\dots & & 0& 1
+      \end{pmatrix}= \begin{pmatrix}
+        1&0&\dots&&0\\
+        0& \ddots&&&\vdots\\
+        \vdots& & 1\\
+        & & & \ddots&0\\
+       0 &\dots & & 0& 1
+      \end{pmatrix}}=I_n$$
+On vérifie de même que $}E_i(\frac{1}{C})E_i(C)$.
+$$E_{i j}(C)E_{i j}(-C)=(I_n+CF_{i j})(I_n-CF_{i j})=I_n+CF_{i j}-CF_{i j}-C^2F_{i j}F_{i j}$$
+puisque $i\neq j$, on a $F_{i j}F_{i j}=0$. Donc
+$$E_{i j}(C)E_{i j}(-C)=I_n$$
+On vérifie de même que $E_{i j}(-C)E_{i j}(C)=I_n$.
+\begin{eqnarray*}
+E_{i j}E_{j i}&=&\left( \sum\limits_{r=1, r\neq i, r\neq j}^n{\left( F_{r r}+F_{i j}+F_{j i}\right) }\right) \left( \sum\limits_{s=1, s\neq i, s\neq j}^n{(F_{s s}+F_{i j}+F_{j i}) }\right)\\
+&=&(I_n-F_{i i}-F_{j j}+F_{i j}+F_{j i})(I_n-F_{i i}-F_{j j}+F_{i j}+F_{j i})\\
+&=&I_n-F_{i i}-F_{j j}+F_{i j}+F_{j i}-F_{j j}+F_{i i}F_{i i}+F_{j j}F_{i i}-F_{i j}F_{i i}-F_{j i}F_{i i}\\&&-F_{j j}+F_{i i}F_{j j}+F_{j j}F_{j j}-F_{i j}F_{j j}-F_{j i}F_{j j}+F_{i j}-F_{i i}F_{i j}-F_{j j}F_{i j}\\&&+F_{i j}F_{i j}+F_{j i}F_{i j}+F_{j i}-F_{i i}F_{i i}-F_{j j}F_{j i}+F_{i j}F_{j i}+F_{j i}F_{j i}\\
+&=&I_n-F_{i i}-F_{j j}+F_{i j}+F_{j i}-F_{i i}+F_{i i}-F_{j i}-F_{j j}\\
+&&+F_{j j}-F_{i j}+F_{i j}-F_{i j}+F_{j j}+F_{j i}-F_{j i}+F_{i i}\\
+&=&I_n
+\end{eqnarray*}
+Le fait que les matrices élémentaires soient inversibles confirme le fait que les opérations élémentaires soient réversibles.
+
+\subsection{Écriture matricielle des systèmes linéaires}
+
 %
 \subsection{Calculer l'inverse d'une matrice}
 %
-\paragraph{} $A$ matrice carrée de taille $n\times n$. \\
+\paragraph{} Soit $A$ matrice carrée de taille $n\times n$. \\
 On prends la matrice $(A \vert I_m)$. En utilisant les opérations élémentaires on met la matrice $E$ en forme échlonné réduite et on éffectue parallelement les mêmes opérations éLémentaires sur les lignes de $I_n$. Si $A$ sous la forme échelonnée réduite est àgal à $I_n$ $A$ est inversible. La matrice inverse de $A$ est alors la partie $I_n$ où on a éffectue les opérations élémentaires. \\
 $E_1, E_2, \ldots, E_l$ sont des matrices élémentaires.
 \begin{eqnarray*}
