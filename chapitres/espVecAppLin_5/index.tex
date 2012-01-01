@@ -117,9 +117,23 @@ autrement dit si pour toute combinaison liéaire des $\vec{v}_i$ égale à $\vec
 \paragraph{Ramarque} Tout système de vecteurs contenant $\vec{0}$ est lié. En effet, si ($\vec{v}_1, \dotsc, \vec{v}_r$) est un système des vecteurs de $V$ et si $\vec{v}_1=\vec{0}$, alors $1 \vec{v}_1+0 \vec{v}_2+\dotsc+0 \vec{v}_r=\vec{0}$ est une combinaison linéaire des $\vec{v}_i$ égale à $\vec{0}$ à coefficients non tous nuls.
 
 \paragraph{Exemple}\begin{itemize}
-	\item Dans $\R[X]$, les polynômes $p_1(X)=1-X, p_2(X)=5+3Y-2X^2$ et $ p_3(X)=1+3X-X^2$ forment un système lié puisque $$3p_1(X)-p_2(X)+2p_3(X)=(3-5+2)+(-3-3+6)X+(2-2)X^2=0$$
-	\item Dans $\R^3$, les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système libre. En effet, si $\alpha, \beta, \gamma \in \R$ tels que $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(0,0,0)$$ alors $\alpha=0,\beta=0,\gamma=0$, puisque $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(\alpha,\beta,\gamma)=(0,0,0)$$ d'où $\alpha=\beta=\gamma=0$.
-	\item Dans $M_{2*2}(\R)$ (espace vectoriel des matrices de taille $2*2$ à coefficients das $\R$), un raisonnement analogue motre que les quattres matrices $\begin{pmatrix}1&0\\0&0\end{pmatrix}, \begin{pmatrix}0&1\\0&0\end{pmatrix},\begin{pmatrix}0&0\\1&0\end{pmatrix}$ et $ \begin{pmatrix}0&0\\0&1\end{pmatrix}$ forment un système libre.
+	\item Dans $\R[X]$, les polynômes $P_1(X) = 1 - X, P_2(X) = 5 + 3 X - 2 X^2$ et $ P_3(X) = 1 + 3 X - X^2$ forment un système lié puisque 
+	  $$3 P_1(X) - P_2(X) + 2 P_3(X) = (3 - 5 + 2) + (-3 - 3 + 6) X + (2 - 2) X^2 =0$$
+	  
+	\item Dans $\R^3$, les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système libre. En effet, si $\alpha, \beta, \gamma \in \R$ tels que 
+	  $$\alpha \cdot (1,0,0)+ \beta \cdot (0,1,0)+ \gamma \cdot (0,0,1) = (0,0,0)$$ 
+	  alors $\alpha = 0$, $\beta = 0$, $\gamma = 0$, puisque 
+	  $$\alpha \cdot (1,0,0)+ \beta \cdot (0,1,0) + \gamma \cdot (0,0,1)
+	    =(\alpha,\beta,\gamma)
+	    =(0,0,0)$$ 
+	  d'où $\alpha = \beta = \gamma = 0$.
+	  
+	\item Dans $M_{2 \times 2}(\R)$ \footnote{$M_{2 \times 2}(\R)$ est l'espace vectoriel des matrices de taille $2 \times 2$ à coefficients das $\R$}, un raisonnement analogue motre que les quattres matrices 
+	  $$\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} ~ ~ 
+	    \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} ~ ~
+	    \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} ~ ~
+	    \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}$$ 
+	  forment un système libre.
 \end{itemize}
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel et $\vec{v}_1, \ldots, \vec{v}_r$ des vecteurs de $V$. Alors $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié si et seulement si l'un des $\vec{v}_i$ est combinaison linéaire des autres.
