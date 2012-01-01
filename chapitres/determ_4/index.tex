@@ -111,7 +111,7 @@ On en déduit que
 \\
 Par principe de récurence, la propriété est vraie pour toute permutation de $S_n$.
 
-\paragraph{Proposition} Soit $n \geq 1$ un entier naturel. Alors $S_n$ est de cardinal $n! = 1 \cdot 2 \codt \ldots \cdot n$.
+\paragraph{Proposition} Soit $n \geq 1$ un entier naturel. Alors $S_n$ est de cardinal $n! = 1 \cdot 2 \cdot \ldots \cdot n$.
 
 \paragraph{Démonstration} Pour construire une permutation $\sigma$ de $S_n$,
 \begin{itemize}
@@ -146,7 +146,10 @@ $$\sigma(i) > \sigma(j)$$
 \subsection{Signature}
 %
 \paragraph{Définition} On appelle signature de $\sigma$, et on note $\epsilon(\sigma)$ le nombre
-$$\epsilon(\sigma) \left\{ \begin{array}{lr} 1 & \text{si } \sigma \text{ est une permutation paire} \\ -1 & \text{si } \sigma \text{ est une permutation impaire} \end{array}$$
+$$\epsilon(\sigma) \left\{ \begin{array}{lr} 
+  1 & \text{si } \sigma \text{ est une permutation paire} \\ 
+  -1 & \text{si } \sigma \text{ est une permutation impaire} 
+\end{array} \right.$$
 Autrement dit, si $n_{\sigma}$ est le nombre d'inversions de $\sigma$ on a
 $$\epsilon(\sigma) = (-1)^{n_{\sigma}} \in \{-1; 1\}$$
 
@@ -477,7 +480,7 @@ $$A \text{ est inversible } \Leftrightarrow det(A) \neq 0$$
           C_1 & \ldots & C_{i} & \ldots & C_i & \ldots & C_n 
         \\ \\ \end{vmatrix}
     \end{eqnarray*}
-    Dans le $i^{ème}$ terme de cette somme la colonne $C_i$ apparaît en position $i$ et $i_0$ donc
+    Dans le $i^{\text{ème}}$ terme de cette somme la colonne $C_i$ apparaît en position $i$ et $i_0$ donc
     $$\begin{vmatrix} \\ C_1 & \ldots & C_{i_0} & \ldots & C_i & \ldots & C_n \\ \\ \end{vmatrix} = 0$$
     Par suite
     $$det(A) = 0$$
@@ -495,7 +498,7 @@ $$\Delta_{ij} = (-1)^{i+j} \begin{vmatrix}
   \vdots &  & \vdots & \vdots &  & \vdots \\
   a_{n 1} & \ldots & a_{n j-1} & a_{n j+1} & \ldots & a_{nn}
 \end{vmatrix}$$
-Ce déterminant (de matrice de taille $(n-1) \times (n-1)$) est obtenu à partir de celui de $A$ en supprimant le $i^{ème}$ ligne et la $j^{ème}$ colonne.
+Ce déterminant (de matrice de taille $(n-1) \times (n-1)$) est obtenu à partir de celui de $A$ en supprimant le $i^{\text{ème}}$ ligne et la $j^{\text{ème}}$ colonne.
 
 \paragraph{Exemple} Soit
 $$A = \begin{pmatrix}
@@ -517,9 +520,9 @@ Alors on a
 %
 \paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $j \in \{1; \ldots; n\}$. Alors
 $$det(A) = \sum_{i=1}^{n} a_{ij} \Delta_{ij}$$
-On dit que l'on développe $det(A)$ par rapport à la $j^{ème}$ colonne.
+On dit que l'on développe $det(A)$ par rapport à la $j^{\text{ème}}$ colonne.
 
-\paragraph{Exemple} Développons $\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix}$ par rapport à la $3^{ème}$ ligne
+\paragraph{Exemple} Développons $\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix}$ par rapport à la $3^{\text{ème}}$ ligne
 $$\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix} = 
   0 \cdot \begin{vmatrix} 7 & 1 \\ 3 & 5 \end{vmatrix} 
   - 2 \cdot \begin{vmatrix} 1 & -2 \\ 3 & 5 \end{vmatrix} 
@@ -528,7 +531,7 @@ $$\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix} =
 
 \paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $i \in \{1; \ldots; n\}$. Alors
 $$det(A) = \sum_{j=1}^{n} a_{ij} \Delta_{ij}$$
-On dit que l'on développe $det(A)$ par rapport à la $i^{ème}$ ligne.
+On dit que l'on développe $det(A)$ par rapport à la $i^{\text{ème}}$ ligne.
 
 \paragraph{Démonstration} On démontre la formule de développememt du déterminant suivant une colonne, la formule de développement suivant une ligne s'en déduisant par transposition. \\
 Soit $A = (a_{j})$ une matrice de taille $n \times n$.
@@ -537,7 +540,7 @@ Soit $j \in \{1; \ldots; n \}$, pour tout couple $(k, l) \in  \{1; \ldots; n \}\
 $$T_{kl} = \{\tau \in S_n \vert k = \tau(l) \}$$
 On a $S_n = T_{1j} \cup T_{2j} \cup \ldots \cup T_{nj}$ (union disjointe). Il vient
 $$det(A) = \sum_{\tau \in T_{1j}} p_{\tau}(A) + \sum_{\tau \in T_{2j}} p_{\tau}(A) + \ldots + \sum_{\tau \in T_{nj}} p_{\tau}(A)$$
-Soit $i \in \{1; \ldots; n\}$. Montrons que $\sum_{\tau \in T_{ij}} p_{\tau}(A) = a_{ij} \Delta_{ij}$. On considère la matrice $B$ construite à partir de $A$ en permutant la $j^{ème}$ colonne de $A$ avec les colonnes uivantes de façon à l'amener à la place de la $n^{ème}$ colonne et en fasant une démarche analoque avec la $i^{ème}$ ligne. On fait donc subir aux colonnes de $A$ la permutation
+Soit $i \in \{1; \ldots; n\}$. Montrons que $\sum_{\tau \in T_{ij}} p_{\tau}(A) = a_{ij} \Delta_{ij}$. On considère la matrice $B$ construite à partir de $A$ en permutant la $j^{\text{ème}}$ colonne de $A$ avec les colonnes uivantes de façon à l'amener à la place de la $n^{\text{ème}}$ colonne et en fasant une démarche analoque avec la $i^{\text{ème}}$ ligne. On fait donc subir aux colonnes de $A$ la permutation
 $$d^{-1} = (n-1 ~~ n) \circ \ldots \circ (j+ 1 ~~ j + 2) \circ (j ~~ j+1) = \begin{pmatrix}j & n & n-1 & \ldots & j + 2 & j + 1\end{pmatrix}$$
 et aux lignes de $A$ la permutation
 $$c^{-1} = (n-1 ~~ n) \circ \ldots \circ (i+ 1 ~~ i + 2) \circ (i ~~ i+1) = \begin{pmatrix}i & n & n-1 & \ldots & i + 2 & i + 1\end{pmatrix}$$
@@ -564,7 +567,7 @@ Il vient
 \end{eqnarray*}
 On a $\epsilon(c) = \epsilon(c^{-1}) = (-1)^{n-i}$ car $c^{-1}$ est le produit de $n-i$ transpositions et $\epsilon(d^{-1}) = (-1)^{n-j}$ car $d^{-1}$ est le produit de $n-j$ transpositions, d'où $\epsilon(c) \epsilon(d^{-1}) = (-1)^{2n - (i+j)}$. Comme $(2n - (i+j)) + (i+j) = 2n$, on a $2n - (i+j)$ et $i+j$ ont mêm parité donc $(-1)^{2n - (i+j)} = (-1)^{i+j}$. Par suite
 $$\epsilon(c) \epsilon(d^{-1}) = (-1)^{i+j}$$
-Pour tout $l' \in \{1; \ldots; \n\}$, $a_{c(\tau(l')) ~ d(l')} = b_{\tau(l') ~ l'}$. On obtient donc
+Pour tout $l' \in \{1; \ldots; n \}$, $a_{c(\tau(l')) ~ d(l')} = b_{\tau(l') ~ l'}$. On obtient donc
 \begin{eqnarray*}
   \sum_{\tau \in T_{ij}} p_{\tau}(A) &=& (-1)^{i+j} \sum_{\tau \in T_{nn}} \epsilon(\tau) \prod_{l'=1}^{n} b_{\tau(l') ~ l'} \\
     &=& (-1)^{i+j} b_{nn} \sum_{\tau \in T_{nn}} \epsilon(\tau) \prod_{l' = 1}^{n-1} b_{\tau(l') ~ l'} \\
@@ -636,7 +639,7 @@ $$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix
 Pour calculer le déterminant d'une matrice, on peut:
 \begin{itemize}
   \item utilise la définition du déterminant comme somme des produits élémentaires singés convient pour les matrices de taille $1 \times 1$ ou $2 \times 2$
-    $$\begin{array}{lmr} det\big((a)\big) = a & & det\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = ad - bc \end{array}$$
+    $$\begin{array}{lcr} det\big((a)\big) = a & & det\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = ad - bc \end{array}$$
   \item développer suivant une ligne ou une colonne convient pour les matrice de taille $3 \times 3$, éventuellement aussi pour une taille de $4 \times 4$
   \item utiliser l'algorithme d'élimination de Gauss convient pour les matrices de taille $2 \times 2$ et plus.
 \end{itemize}
@@ -647,3 +650,4 @@ Pour calculer  l'inverse d'une matrice\footnote{si l'inverse existe}, on peut
 \begin{itemize}
   \item calculer la comatrice de cette matruce convient pour des matrices de taille $2 \times 2$ et $3 \times 3$.
   \item utiliser l'algorithme d'élimination de Gauss convient pour des matrice de taille $3 \times 3$ et plus.
+\end{itemize}
