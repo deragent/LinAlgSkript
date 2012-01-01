@@ -43,27 +43,32 @@ $$S_n = Sym(\{1; 2; \ldots; n\})$$
 Si $\sigma \in S_n$, on pourra écrire
 $$\sigma = \begin{pmatrix} 1 & 2 & \ldots & n \\ \sigma(1) & \sigma(2) & \ldots & \sigma(n) \end{pmatrix}$$
 
-\paragraph{Exemple} On considère la permutation $\sigma \in S_4$ suivante: $\sigma :\{1;2;3;4\}\rightarrow \{1;2;3;4\}$\\
-$$1\mapsto 2$$$$2\mapsto 4$$$$3\mapsto 1$$$$4\mapsto 3$$
-On a $$\sigma=\begin{pmatrix}1&2&3&4\\2&4&1&3\end{pmatrix}$$
-Quelle est la permutation inverse $\sigma^{-1}$ de $\sigma$?\\
-On a  $\sigma^{-1}:\{1;2;3;4\}\rightarrow \{1;2;3;4\}$
-$$1\mapsto 3$$$$2\mapsto 1$$$$3\mapsto 4$$$$4\mapsto 2$$
-d'où $$\sigma^{-1}=\begin{pmatrix}1&2&3&4\\3&1&4&2\end{pmatrix}$$
-Soit $\tau\in S_4$.
-$$\tau=\begin{pmatrix}1&2&3&4\\3&4&1&2\end{pmatrix}$$
-Calculons $\sigma \circ \tau \in S_4$. Par définition, pour tout $i\in \{1;2;3;4\}$,
-$$(\sigma \circ \tau)(i)=\sigma (\tau(i))$$
+\paragraph{Exemple} On considère la permutation $\sigma \in S_4$ suivante: $\sigma :\{1; 2; 3; 4\} \rightarrow \{1; 2; 3; 4\}$
+\begin{eqnarray*}
+  1 &\mapsto& 2 \\ 2 &\mapsto& 4 \\ 3 &\mapsto& 1 \\ 4 &\mapsto& 3
+\end{eqnarray*}
+On a 
+$$\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 4  & 1 & 3 \end{pmatrix}$$
+Calculons la permutation inverse $\sigma^{-1}$ de $\sigma$.\footnote{$\sigma^{-1}:\{1; 2; 3; 4\} \rightarrow \{1; 2; 3; 4\}$}
+\begin{eqnarray*}
+  1 &\mapsto& 3 \\ 2 &\mapsto& 1 \\ 3 &\mapsto& 4 \\ 4 &\mapsto& 2
+\end{eqnarray*}
+d'où 
+$$\sigma^{-1} = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 3 & 1 & 4 & 2 \end{pmatrix}$$
+Soit $\tau \in S_4$.
+$$\tau = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 3 & 4 & 1 & 2 \end{pmatrix}$$
+Calculons $\sigma \circ \tau \in S_4$. Par définition, pour tout $i \in \{1; 2; 3; 4\}$,
+$$(\sigma \circ \tau)(i) = \sigma(\tau(i))$$
 On obtient donc
-$$\sigma \circ \tau =\begin{pmatrix}1&2&3&4\\1&3&2&4\end{pmatrix}$$
-Calculons $\tau \circ \sigma^{-1}\in S_4$. Pour tout $i \in :\{1;2;3;4\}$,
-$$(\tau \circ \sigma)^{-1}(i)=\tau(\sigma^{-1}(i))$$
+$$\sigma \circ \tau =\begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 2 & 4 \end{pmatrix}$$
+Calculons $\tau \circ \sigma^{-1} \in S_4$. Pour tout $i \in :\{1; 2; 3; 4\}$,
+$$(\tau \circ \sigma)^{-1}(i) = \tau(\sigma^{-1}(i))$$
 On obtient
-$$\tau \circ \sigma^{-1}=\begin{pmatrix}1&2&3&4\\1&3&2&4\end{pmatrix}$$
+$$\tau \circ \sigma^{-1} = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 2 & 4 \end{pmatrix}$$
 La permutation inverse $\tau^{-1}$ de $\tau$ est
-$$\tau^{-1}=\begin{pmatrix}1&2&3&4\\3&4&1&2\end{pmatrix}$$
+$$\tau^{-1} = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 3 & 4 & 1 & 2 \end{pmatrix}$$
 On vérifie
-$$\tau \circ \tau^{-1}=\begin{pmatrix}1&2&3&4\\1&2&3&4\end{pmatrix}=id$$
+$$\tau \circ \tau^{-1} = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \end{pmatrix} = id$$
 de même, $\tau^{-1} \circ \tau=id$.
 
 %
