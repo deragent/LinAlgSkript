@@ -534,7 +534,7 @@ $$\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix} =
   + 3 \cdot \begin{vmatrix} 1 & -2 \\ 7 & 1 \end{vmatrix} 
 = 23$$
 
-\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $i \in \{1; \ldots; n\}$. Alors
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $i \in \{1; \ldots; n\}$. Alors on a
 $$det(A) = \sum_{j=1}^{n} a_{ij} \Delta_{ij}$$
 On dit que l'on développe $det(A)$ par rapport à la $i^{\text{ème}}$ ligne.
 
@@ -609,7 +609,7 @@ $$A^{-1} = \frac{1}{det(a)} com(A)^{T}$$
 \section{Systèmes de cramer}
 %
 %
-\paragraph{Définition} On dit qu'un système linéaire $A \cdot X = B$ à $n$ équations et $n$ inconnues, $A$ matrice carrée de taille $n \times n$, $B$ matrice colonée de taille $n\times 1$ est un système de cramer si la matrice $A$ du système est inversible. \\
+\paragraph{Définition} On dit qu'un système linéaire $A X = B$ à $n$ équations et $n$ inconnues, $A$ matrice carrée de taille $n \times n$, $B$ matrice colonée de taille $n\times 1$ est un système de cramer si la matrice $A$ du système est inversible. \\
 Dans ce cas le système admet une solution unique $(a_1, \ldots, a_n) \in \R^n$ et les $a_i \in \R$ sont donnés par les formules suivantes. Si on désigne par $C_1, \ldots, C_n$ les colonnes de $A$\footnote{$A = (C_1, \ldots, C_n)$}, on a
 $$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix}}{det(A)} ~ (\text{on remplace } C_i \text{ avec } B)$$
 Comme $A$ est inversible, $det(A) \neq 0$.
