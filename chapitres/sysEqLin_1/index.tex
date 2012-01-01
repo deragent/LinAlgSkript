@@ -1,0 +1,287 @@
+\chapter{Systèmes d'equations linéaires}
+
+\paragraph{Introduction} L'Object de ce chapitre est de présenter une méthode de résolution des systèmes d'équations dites linéaires. Les équations se rencontrent dans de nombreuses branches des sciences appliquées.
+%
+%
+\section{$\R$ (Le corps $\R$)}
+%
+%
+%
+\subsection{Le groupe $(\R, +)$}
+%
+\paragraph{Définition} On rappelle que l'ensemble $\R$ des nombres réels est muni des deux lois de composition internes
+\begin{itemize}
+  \item une addition 
+    \begin{eqnarray*}
+      +: \R \times \R &\rightarrow& \R \\
+      (x, y) &\mapsto& x+y
+    \end{eqnarray*}
+    qui possède les propriétes suivantes
+    \begin{itemize}
+      \item pour tous $x, y, z \in \R$
+        $$x + (y + z) = (x + y) + z \text{ (associativité) }$$
+      \item il existe $0 \in \R$ tel que pour tous $x \in \R$
+        $$x + 0 = x = 0 + x \text{ (neutralité) }$$
+      \item pour tous $x \in \R$, il existe $-x \in \R$ tel que
+        $$x + (-x) = 0 = (-x) + x \text{ (symétrie) }$$
+    \end{itemize}
+\end{itemize}
+On dit alors que $(\R, +)$ est un groupe. De plus on a
+\begin{itemize}
+  \item Pour tous $x, y \in \R$
+    $$x + y = y + x \text{ (commutivité) }$$
+\end{itemize}
+On dit alors que $(\R, +)$ est une groupe commutatif.
+
+%
+\subsection{L'anneau $(\R, +, \cdot)$ }
+%
+\paragraph{Définition} On sait que $(\R, +)$ est une groupe commutatif. De plus on a
+\begin{itemize}
+  \item une multiplication
+    \begin{eqnarray*}
+      \cdot: \R \times \R &\rightarrow& \R \\
+      (x, y) &\mapsto& x \cdot y = x y
+    \end{eqnarray*}
+    qui possède les propriétés suivantes
+    \begin{itemize}
+      \item pour tous $x, y, z \in \R$
+        $$(x \cdot y) \cdot z = x \cdot (y \cdot z) \text{ (associativité) }$$
+      \item il existe $1 \in \R$ tel que pour tout $x \in \R$
+        $$1 \cdot x = x = x \cdot 1 \text{ (neutralité) }$$
+      \item pour tous $x, y, z \in \R$
+        $$(x + y) \cdot z = x \cdot z + y \cdot z \text{ (distributivité à droite\footnote{De $\cdot$ par rapport à $+$}) }$$
+        $$x \cdot (y + z) = x \cdot y + x \cdot z \text{ (distributivité à gauche\footnote{De $\cdot$ par rapport à $+$}) }$$
+        Distributivité en générale.
+    \end{itemize}
+\end{itemize}
+On dit alors que $(\R, +, \cdot)$ est un anneau. De plus on a
+\begin{itemize}
+  \item pour tous $x, y \in \R$
+    $$x \cdot y = y \cdot x \text{ (commutativité) }$$
+\end{itemize}
+On dit alors que $(\R, + , \cdot)$ est un anneau commutatif.
+
+%
+\subsection{Le corps $(\R, +, \cdot)$}
+%
+\paragraph{Définition} On sait que $(\R, + , \cdot)$ est un anneau commutatif. De plus on a
+\begin{itemize}
+  \item Pour tous $x \in \R \backslash \{0\}$ il existe $x^{-1} \in \R$ tel que 
+    $$x \cdot (x^{-1}) = 1 = (x^{-1}) \cdot x$$
+\end{itemize}
+On dit alors que $(\R, +, \cdot)$ est un corps commutatif.
+
+%
+\subsection{L'ensemble des $n$-tuplets $\R^n$}
+%
+\paragraph{Définition} On note $\R^2$ le produit cartésien $\R \times \R$, c'est-à-dire l'ensemble des couples $(x, y)$ a coordonnés $x, y \in \R$. De même, on note $\R^3$ le produit cartésienne $\R \times \R \times \R$, c'est-à-dire des triplets $(x, y, z)$ à coordonnés $x, y, z \in \R$. \\
+Plus généralement, si $n \geq 1$ est un entier naturel, $\R^n$ designe l'ensemble $\R \times \R \times \ldots \times \R$ des $n$-couples $(x_1, x_2, \ldots, x_n)$ à coordonnées $x_1, x_2, \ldots, x_n \in \R$.
+        
+%
+%
+\section{Systèmes d'equations lineaires}
+%
+%
+
+%
+\subsection{Équation linéaire}
+%
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel. On appelle équation linéaire à coefficients dans $\R$ tout relation de la forme 
+$$a_1 x_1 + a_2 x_2 + \ldots + a_n x_n = b, ~ a_1, a_2, \ldots, a_n, b \in \R$$
+Les $x_i$ sont \underline{les inconnues} de l'équation et les $a_i$ sont \underline{les coefficients}.
+
+\paragraph{Exemple} $3 x + 2 y + 5 z + t = 5$ est une équation linéaire à $4$ inconnues\footnote{Les inconnues sont $x, y, z$ et $t$.} et à coefficients dans $\R$.
+
+%
+\subsection{Système d'équations linéaires}
+%
+\paragraph{Définition} Soient $n \geq 1$ et $m \leq 1$ deux entiers naturels; un système d'équations linéaires à $n$ équations et $m$ inconnues est de la forme:
+$$n \left\{ \begin{array}.
+  a_{11}x_{1} + a_{12}x_{2} + \ldots + a_{1m}x_{m} = b_{1} \\
+  a_{21}x_{1} + a_{22}x_{2} + \ldots + a_{2m}x_{m} = b_{2} \\
+  \vdots \\
+  a_{n1}x_{1} + a_{n2}x_{2} + \ldots + a_{nm}x_{m} = b_{n}
+\end{array} \right. (a_i, b_l \in \R)$$
+
+\paragraph{Exemple}
+$$\left\vert \begin{array}{rcl}
+  7 y + z + 8 t & = & 1 \\
+  3 x + 2 y + 5 z + t & = & 5 \\
+  2 x - y + 3 z - 2 t & = & 3
+\end{array} \right.$$
+est un système à $3$ équations et $4$ inconnues à coefficients dans $\R$.
+
+\paragraph{Remarque} Par la suite nous ne considerons que des systèmes à coefficients dans $\R$.
+
+%
+\subsection{Solution d'un système d'équations linéaires}
+%
+\paragraph{Définition} Soit $S$ un système d'équations linéaires à $n$ équations et $m$ inconnues. Une solution du système dans $\R^m$ est un $m$-uplet $(t_1, t_1, \ldots, t_m) \in \R^m$ tel que les $n$ égalités soient vérifiés, en prenant $x_i = t_i$. Résoudre dans $\R^m$ le système $S$ consiste à déterminer l'ensemble des solutions de $S$ dans $\R^m$.
+
+\paragraph{Exemple} On considère le système de l'exemple précédent. Alors $(2, -1, 0, 1) \in \R^n$ est une solutions (dans $\R^n$) de ce système. En effet on a
+$$\left\vert \begin{array}{rcl}
+  7 \cdot (-1) + 0 + 8 \cdot 1 & = & 1 \\
+  3 \cdot 2 + 2 \cdot (-1) + 5 \cdot 0 + 1 & = & 5 \\
+  2 \cdot 2 - (-1) + 3 \cdot 0 - 2 \cdot 1 & = & 3
+\end{array} \right.$$
+
+\paragraph{Définition} On dit que deux systèmes d'équations linéaires sont équivalents s'ils ont le même ensemble de solutions.
+
+\paragraph{} Pour résoudre un système d'équations linéaires, on va effectuer des opérations élémentaires sur les équations du système à fin de se ramener à un système plus simple. Ces opérations sont de 3 types:
+\begin{enumerate}[ a)]
+  \item multiplier une équation par un réel non nul
+  \item ajuter à une équation un multiple d'une autre équation
+  \item permuter deux équations
+\end{enumerate}
+
+Chaque de ces opérations admet une opération inverse. Par suite, effectuer une opération élémentaire donne lieu à un système équivalent. Au terme du processus, le système obtenue aura donc le même ensemble de solutions que le système initial.
+
+%[TODO]: xleftrightarrow ?!?
+
+\paragraph{Exemple}
+\begin{eqnarray*}
+  \begin{array}{lrcl}
+    L_1 & 7 y + z + 8 t & = & 1 \\
+    L_2 & 3 x + 2 y + 5 z + t & = & 5 \\
+    L_3 & 2 x - y + 3 z - 2 t & = & 3
+  \end{array}
+  \xleftrightarrow{L_2 \leftarrow L_2 - L_3}
+  \left\vert \begin{array}{rcl}
+    7 y + z + 8 t & = & 1 \\
+    x + 3 y + 2 z + 3 t & = & 2 \\
+    2 x - y + 3 z - 2 t & = & 3
+  \end{array} \right. \\
+  
+  \xleftrightarrow{L_1 \leftrightarrow L_2}
+  \left\vert \begin{array}{rcl}
+    x + 3 y + 2 z + 3 t & = & 2 \\
+    7 y + z + 8 t & = & 1 \\
+    2 x - y + 3 z - 2 t & = & 3
+  \end{array} \right.
+  \xleftrightarrow{L_3 \leftarrow L_3 - 2 L_1}
+  \left\vert \begin{array}{rcl}
+    x + 3 y + 2 z + 3 t & = & 2 \\
+    7 y + z + 8 t & = & 1 \\
+    -7 y - z - 8 t & = & -1
+  \end{array} \right. \\
+  
+  \xleftrightarrow{L_2 \leftarrow \frac{1}{7} L_2}
+  \left\vert \begin{array}{rcl}
+    x + 3 y + 2 z + 3 t & = & 2 \\
+    y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
+    -7 y - z - 8 t & = & -1
+  \end{array} \right. 
+  \xleftrightarrow{L_3 \leftarrow L_3 + 7 L_2}
+  \left\vert \begin{array}{rcl}
+    x + 3 y + 2 z + 3 t & = & 2 \\
+    y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
+    0 y - 0 z - 0 t & = & 0
+  \end{array} \right. \\
+  
+  \xleftrightarrow{L_1 \leftarrow L_1 - 3 L_2}
+  \left\vert \begin{array}{rcl}
+    x + \frac{12}{7} z - \frac{3}{7} t & = & \frac{12}{7} \\
+    y + \frac{1}{7} z + \frac{8}{7} t & = & \frac{1}{7} \\
+    0 & = & 0
+  \end{array} \right.
+\end{eqnarray*} \\
+Comme $x$ et $y$ sont des coefficients pivot, ils représentent les inconnues principales. De l'autre côté, $z$ et $t$ sont les inconnues sécondaires. On a alors
+$$\left\{ \begin{array}{rcl}
+  x & = & -\frac{11}{7} z + \frac{3}{7} t + \frac{11}{7} \\
+  y & = & -\frac{1}{7} z - \frac{8}{7} t + \frac{1}{7}
+\end{array} \right.$$
+On pose $z=u$ et $t=v$. L'ensemble des solutions du système est alors
+$$\cL = \left\{ \left(-\frac{11}{7} u + \frac{3}{7} v + \frac{11}{7}, -\frac{1}{7} u - \frac{8}{7} v + \frac{1}{7}, u, v \right) \in \R^4 \vert u, v \in \R \right\}$$
+%
+%
+\section{L'algorithme d'elimination de Gauss}
+%
+%
+Il s'agit d'une méthode permettant de résoudre un système linéaire quelconque en le mettant sous une forme plus simple, dite échelonnée réduite, à l'aide d'opérations élémentaires. Le système
+$$\left\{\begin{array}{rcl}
+  7 y + z + 8 t & = & 1 \\
+  3 x + 2 y + 5 z + t & = & 5 \\
+  2 x - y + 3 z - 2 t & = & 3
+\end{array} \right.$$
+a été résolu en utilisant cet algorithme. \\
+On observe que les opérations élémentaires effectuées sur les équations du système portant sur les coefficients et rien sur les inconnues. Il serve donc au même d'effectuer ces mêmes opérations sur les lignes du tableau des coéfficiants du système.
+
+%
+\subsection{Matrice augmentée d'un SEL}
+%
+\paragraph{Définition} Soit S un système linéaire à $n$ équations et $m$ inconnues. La matrice associée au système est le tableau
+$$\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1m} \\
+  a_{21} & a_{22} & \cdots & a_{2m} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nm}
+ \end{pmatrix}$$
+La matric augmentée associée au système est le tableau
+$$\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1m} & \vert & b_{1} \\
+  a_{21} & a_{22} & \cdots & a_{2m} & \vert & b_{2} \\
+  \vdots  & \vdots  & \ddots & \vdots& \vert & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nm} & \vert & b_{n}
+ \end{pmatrix}$$
+ 
+\paragraph{Définition} Une matrice est dit échelonnée si elle se présente sous la forme suivante:
+\begin{itemize}
+  \item Le premier coefficient non nul d'une ligne non nulle vaut 1, On l'appelle coefficient pivot.
+  \item Les lignes nulles sont regroupées en bas de la matrice.
+  \item Pour deux lignes non nulles consécutives, le pivot de la ligne inférieure se trouve en bas à droit du pivot de la ligne supérieure.
+  \item Une matrice échelonnée est dite \underline{échelonnée réduite} si de plus les colonnes contenant un coefficient pivot ont des zéros partout ailleurs.
+\end{itemize}
+
+\paragraph{Exemple}
+\begin{itemize}
+  \item $$\begin{pmatrix}
+      0 & 7 & 1 & 8 \\
+      3 & 2 & 5 & 1 \\
+      2 & -1 & 3 & -2 
+    \end{pmatrix}$$
+    n'est pas échelonné. Le premier coefficient non nut de la première ligne vaut $7$ et pas $1$.
+    
+  \item $$\begin{pmatrix}
+      1 & 3 & 2 & 8 \\
+      0 & 1 & \frac{1}{7} & \frac{8}{7} \\
+      0 & 0 & 0 & 0 \\
+    \end{pmatrix}$$
+    est échelonné, mais pas échelonné réduite, car la deuxième colonne contient un coefficient non nul $3$ en dehors du pivot.
+    
+  \item Enfin
+    $$\begin{pmatrix}
+      1 & 0 & \frac{11}{7} & \frac{3}{2} \\
+      0 & 1 & \frac{1}{7} & \frac{8}{7} \\
+      0 & 0 & 0 & 0 
+    \end{pmatrix}$$
+    est écehelonnée réduite.
+\end{itemize}
+
+%
+\subsection{Algorithme de Gauss}
+%
+\paragraph{} On peut mettre une matrice quelconque sous forme échelonnée ou échelonnée réduite en effectuant des opérations élémentaires. C'est l'algorithme de Gauss. \\
+On procède comme suit:
+\begin{enumerate}
+  \item On repère la première colonne non nulle.
+  \item On cherche à faire apparaître dans cette colonne un coefficient notant 1, soit en multipliant une ligne par un réel non nul, soit en ajoutant à une ligne un multiple d'une autre.
+  \item En permutant éventuellement deux lignes, on place ce coefficient 1 en première ligne. On l'appelle coefficient pivot.
+  \item En ajoutant aux lignes concernées un multiple de la première, on fait apparaître des zéros au dessous du pivot. 
+  \item On masque la première ligne contenant le pivot déjà placé, et on recommence avec la sous-matrice obtenue.
+\end{enumerate}
+La première partie de l'algorithme est faite. Pour mettre la matrice sous forme échelonnée réduite, on commence par le dernier pivot placé. On cherche les lignes audessus du pivot qui ne sont pas nulles, et on ajoute un multiple de la ligne avec le pivot choisi. Quand tous les coefficients audessus du dernier pivot sont nuls, on fait le même avec tout les autres pivot en direction de droit à gauche. On est fini si on a une matrice échelonnée réduite selon la définition audessus.
+
+%BSP 23.9.11 & 29.9.11
+%
+\section{Résolution d'un système linéaire}
+%
+%
+\paragraph{} Pour résoudre un système linéaire on commence par mettre la matrice augmentée du système sous forme échelonnée réduite, en limitant la recherche des pivots aux colonnes de la matrice du système\footnote{Colonnes correspendantes aux inconnues.}.
+Si la dernière ligne de la matrice totale est entièrement nulle: Le système est compatible; il admit au moins une solution.
+\paragraph{}On procède alors aux trois étapes suivantes:
+\begin{enumerate}
+  \item Les inconnues se trouvant dans le colonnes des coefficients pivot s'appellent les inconnues principales. Les autres s'appellent inconnues secondaires; ce sont elles qui vont paramétrer les solutions du système.
+  \item Exprimer les inconnues principales en fonction des inconnues secondaires.
+  \item Écrire l'ensemble des solutions du système.
+\end{enumerate}
