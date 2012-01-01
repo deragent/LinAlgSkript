@@ -280,9 +280,13 @@ Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\
 %
 \paragraph{Définition} Soit $V$ un espace vectoriel. Si $S$ est un système libre (resp. système générateur, base) de $V$, on appelle cardinal de $S$ et on note $card(S)$ le nombre de vecteurs de $S$.
 
-\paragraph{Remarque} Dans la suite, nous ne considérerons que des systèmes de cardinal fini.
+\paragraph{Exemple} 
+\begin{itemize}
+  \item Dans $\R^3$, $\vec{u} = (1, 0, 0)$, $\vec{v} = (0, 2, 3)$ $ ~ \Rightarrow ~ card((\vec{u}, \vec{v})) = 2$
+  \item Dans $\R^2$, $\vec{u} = (1, 0)$, $\vec{v} = (0, 1)$, $\vec{w} = (1, 0) = \vec{u}$ $ ~ \Rightarrow ~ card((\vec{u}, \vec{v}, \vec{w})) = 3$
+\end{itemize}
 
-%TODO BSP 25.11.2011
+\paragraph{Remarque} Dans la suite, nous ne considérerons que des systèmes de cardinal fini.
 
 \paragraph{Définition} On dit qu'un espace vectoriel $V$ est de type fini s'il admet un système générateur de cardinal fini.
 
@@ -422,12 +426,16 @@ $$f(x_1, \ldots, x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
 
 %
 \subsection{Équation linéaire homogène}
-
-%TODO proposition 2.12.2011
 %
-\paragraph{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$. \\
-On dit que ctte équation est homogène si $a=0$. \\
-Cela justice la terminologie d'équation linéaire et de système utilisée jusqu'ici.
+
+\paragraph{Proposition} Soit $f: \R^m \rightarrow \R$ une application. Alors $f$ est linéaire si et seulement s'il existe $a_1, \ldots, a_m \in \R$ tels que pour tout $(x_1, \ldots, x_m) \in \R^m$,
+$$f(x_1, \ldots, x_m) = a_1 x_1 + \ldots + a_m x_m$$
+
+\paragraph{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$.
+
+\paragraph{Définition} On dit une équation linéaire est homogène si elle est de la forme $f(x_1, \ldots, x_m) = 0$.\footnote{Alors $a = 0$.}
+
+\paragraph{Remarque} Cela justice la terminologie d'équation linéaire et de système utilisée jusqu'ici.
 
 \paragraph{Théorème} L'ensemble des solutions d'un système linéaire homogène (c'est-à-dire tel que toutes les équations du système soient linéaires homogènes) est un sous-espace vectoriel de $\R^m$.
 \paragraph{Démonstration} Écrivons ce système sous la forme:
