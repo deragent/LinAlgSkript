@@ -1,0 +1,321 @@
+\chapter{Diagonalisation des endomorphismes et des matrices}
+
+%
+\subsection{Réduction des endomorphismes}
+%
+\paragraph{Rappels} Si $E$ est un espace vectoriel, on rappelle qu'un \underline{endomorphisme de $E$} est une application linéaire de $E$ dans $E$.
+
+\paragraph{Définition} On appelle réduction des endomorphismes (d'un espavec vectoriel de dimension finie) la démarche consistant à chercher une base de l'espace dans laquelle la matrice de l'endomorphisme à une form relativement simple. La diagonalisation des endomorphisme, lorsqu'elle est possible, s'inscrit dans cette démarche.
+
+%
+%
+\section{Matrice d'une application linéaire et changement de bases}
+%
+%
+
+\paragraph{Théorème} Soient $E$ et $F$ deux espaces vectoriels de dimension finie, $f: E \rightarrow F$ une application linéaire, $\cE$ et $\cE'$ deux bases de $E$, et $\cF$ et $\cF'$ deux bases de $F$. On note $M = [f]_{\cF \cE}$ la matrice de $f$ dans les bases $\cE$ et $\cF$ et $M' = [f]_{\cF' \cE'}$ la matrice de $f$ dans les bases $\cE'$ et $\cF'$. On note également $P = P_{\cF \cF'}$ la matrice de passage de $\cF$ à $\cF'$ et $Q = P_{\cE \cE'}$ la matrice de passage de $\cE$ à $\cE'$. On a alors 
+\begin{eqnarray*}
+  M' &=& P^{-1} M Q \\
+  \left[f\right]_{\cF' \cE'} &=& P_{\cF \cF'}^{-1} [f]_{\cF \cE} P_{\cE \cE'}
+\end{eqnarray*}
+
+\paragraph{Démonstration} Pour tout $\vec{v} \in E$, on a:
+$$[f(\vec{v})]_{\cF} = M [\vec{v}]_{\cE}$$
+On a $[\vec{v}]_{\cE} = Q [\vec{v}]_{\cE'}$ et $[f(\vec{v})]_{\cF} = P [f(\vec{v})]_{\cF'}$ Il vient $P [f(\vec{v})]_{\cF'} = M Q [\vec{v}]_{\cE'}$, d'où $[f(\vec{v})]_{\cF'} = (P^{-1} M Q ) [\vec{v}]_{\cE'}.$ il s'ensuit que $M' = P^{-1} M Q$.
+
+\paragraph{Exemple} Considérons l'application linéaire
+\begin{eqnarray*}
+  f: \R^3 &\rightarrow& \R^2 \\
+  (x, y, z) &\mapsto& f(x, y, z) = (x + y, x - y + 2z)
+\end{eqnarray*}
+Soient $\cC_3$ la base canonique de $\R^3$ et $\cC_2$ celle de $\R^2$. Soient $\cE = ((1, 0, 0), (1, 1, 0), (1, 1, 1))$ une base de $\R^3$ et $\cF = ((1, 1), (1, 2))$ une base de $\R^2$. \\
+Calculons la matrice de $f$ dans les bases $\cE$ et $\cF$. On a
+$$\left[f\right]_{\cC_2 \cC_3} = 
+\begin{pmatrix}
+  1 & 1  & 0 \\
+  1 & -1 & 2
+\end{pmatrix}$$
+On a également $P = P_{\cC_2 \cF} = \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}$ et $Q = P_{\cC_3 \cE} = \begin{pmatrix} 1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$. Calculons $P^{-1}$. On a $det(P) = 2 - 1 = 1$, $com(P) = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix}$ d'où
+$$P^{-1} = \frac{1}{det(P)} com(P)^{T} = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix}$$
+On obtien alors
+\begin{eqnarray*}
+  \left[f\right]_{\cF \cE} &=& P^{-1}  [f]_{\cC_2 \cC_3} Q \\
+    &=& \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 & 0 \\ 1 & -1 & 2 \end{pmatrix} \begin{pmatrix} 1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} \\
+    &=& \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 & 2 \\ 1 & 0 & 2 \end{pmatrix} \\
+    &=& \begin{pmatrix} 1 & 4 & 2 \\ 0 & -2 & 0 \end{pmatrix}
+\end{eqnarray*}
+
+%
+%
+\section{Valeurs propres, vecteurs propres d'un endomorphisme}
+%
+%
+%
+\subsection{Valeur propre}
+%
+\paragraph{Définition} Soient $E$ un espace vectoriel et $f: E \rightarrow E$ un endomorphisme de $E$. On dit qu'un réel $\lambda$ est une valeur propre de $f$ s'il existe $\vec{v} \in E$, $\vec{v} \neq \vec{0}$, tel que 
+$$f(\vec{v}) = \lambda\vec{v}$$
+
+%
+\subsection{Vecteur propre}
+%
+\paragraph{Définition} Soit $\lambda$ une valeur propre de $f$. On appelle vecteur propre de $f$ pour $\lambda$ tout vecteur $\vec{v}$ de $E$ tel que 
+$$f(\vec{v}) = \lambda \vec{v}$$
+
+%
+\subsection{Sous-espace propre}
+%
+\paragraph{Définition} L'ensemble des vecteurs de $f$ associés à $\lambda$, noté généralement $E_\lambda$, s'appelle le sous-espace propre de $f$ associé à $\lambda$. On a
+\begin{eqnarray*}
+  E_{\lambda} &=& \{\vec{v} \in E \vert f(\vec{v} = \lambda\vec{v} \} \\
+    &=& \{\vec{v} \in E \vert (f-\lambda id_E)(\vec{v}) = \vec{0} \} \\
+    &=& Ker(f-id_E)
+\end{eqnarray*}
+Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
+
+\paragraph{Exemples}
+\begin{enumerate}
+  \item Soit 
+    \begin{eqnarray*}
+      f: \R^2 &\rightarrow& \R^2 \\
+      (x, y) &\mapsto& f(x, y) = (2x - 4 y, x -3 y)
+    \end{eqnarray*}
+    Alors, on a 
+    $$f(1, 1) = (-2, -2) = -2 \cdot (1, 1)$$
+    Par suite, $-2$ est valeur propre de $f$, et $(1, 1)$ est un vecteur propre de $f$ associé à $-2$. Déterminons 
+    \begin{eqnarray*}
+      E_{-2} &=& Ker(f-(-2)\cdot id_{\R^2} ) \\
+        &=& Ker(f + 2 \cdot id_{\R^2})
+    \end{eqnarray*}
+    On est conduit à résoudre le sytème linéaire.
+    $$\left(\begin{pmatrix}
+        2 & -4 \\
+        1 & -3
+      \end{pmatrix} + 2 \cdot
+      \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{pmatrix} \right) X = 0$$
+    c'est-à-dire $\begin{pmatrix} 4 & -4 \\ 1 & -1 \end{pmatrix} X = 0$ Il vient
+    $$\begin{pmatrix} 4 & -4 & \vert & 0 \\ 1 & 1 & \vert & 0 \end{pmatrix} \rightsquigarrow \begin{pmatrix} 1 & 0 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix}$$
+    Donc 
+    \begin{eqnarray*}
+      Ker(f + 2 \cdot id_E) &=& \{(t, t) \in \R^2 \vert \R \} \\
+        &=& \{t \cdot (1, 1) \in R^2 \vert t \in \R \} \\
+        &=& Vect((1, 1))
+    \end{eqnarray*}
+    
+  \item Soit 
+    \begin{eqnarray*}
+      f: \M_{3 \times 3}(\R) &\rightarrow& M_{3 \times 3}(\R) \\
+      A &\mapsto& f(A) = A^{T}
+    \end{eqnarray*}
+    On sait que $f$ est un endomorphisme de $M_{3 \times 3}(\R)$. Alors $1$ est valeur propre de $f$ et
+    $$E_{1} = \{A \in M_{3 \times 3}(\R) \vert A^{T} = A \}$$
+    est le sous-espace vectoriel de $M_{3 \times 3}(\R)$ consittué des matrices symétriques. \\
+    De même $-1$ est valeur propre de $f$, et
+    $$E_{-1} = \{A \in M_{3\times 3}(\R) \vert A^{T} = -A\}$$
+    est le sous-espace vectoriel de $M_{3\times 3}(\R)$ constitué des matrices antisymétriques.
+    
+\end{enumerate}
+
+\paragraph{Théorème} Soit $f: E \rightarrow E$ un endomorphisme de $E$. On suppose que $E$ est de dimension finie. Soit $\lambda \in \R$. \\
+Alors $\lambda$ est valeur propre de $f \Leftrightarrow f- \lambda \cdot id_E$ n'est pas bijectif.
+      
+\paragraph{Démonstration} $\lambda$ est valeur propre de $f$
+\begin{enumerate}[$\Leftrightarrow$]
+  \item il existe $\vec{v} \in E$, $\vec{v} \neq \vec{0}$, $(f - \lambda \cdot id_E)(\vec{v}) = \vec{0}$ 
+  \item $Ker(f-\lambda\cdot id_E) \neq \{\vec{0}\}$
+  \item $f-\lambda \cdot id_E$ n'est pas injectif 
+  \item $f-\lambda \cdot id_E$ n'est pas bijectif.
+\end{enumerate}
+
+%
+\subsection{Polynôme caractéristique d'un endomorphisme}
+%
+\paragraph{Définition} Soient $f: E \rightarrow E$ un endomorphisme ($E$ est de dimension finie $n$), $\cE$ une base $E$, et $M$ la matrice de $f$ dans les bases $\cE$ et $\cE$.\footnote{On dit simplement "dans la base $\cE$".} \\
+On appelle polynôme caractéristique de $f$ le polynôme
+$$P(x) = (-1)^{n} det(M - X I_n)$$
+
+\paragraph{Remarque importante} Le polynôme $P$ est indépendant de la base choisie. \\
+En effet, si $\cE'$ est une autre base de $E$, et si $P = P_{\cE \cE'}$ est la matrice de passe de $\cE$ à $\cE'$, alors:
+\begin{itemize}
+  \item la matrice de $f$ dans la base $\cE'$ est $M' = P^{-1} M P$
+  \item 
+    \begin{eqnarray*}
+      (-1)^{n} det(M' - X I_n) &=& (-1)^{n} det(P^{-1} M P - X I_n) \\
+        &=& (-1)^{n} det(P^{-1} (M - X I_n) P) \\
+        &=& (-1)^{n} det(P)^{-1} det(M - X I_n) det(P) \\
+        &=& (-1)^{n} det(M - X I_n) \\
+    \end{eqnarray*}
+\end{itemize}
+
+\paragraph{Exemple} Soit 
+\begin{eqnarray*}
+  f: \R^2 &\rightarrow& \R^2 \\
+  (x, y) &\mapsto& (x + 3y, -x + 2y)
+\end{eqnarray*}
+La matrice de $f$ dans la base canonique de $\R^2$ est 
+$$\begin{pmatrix} 1 & 3 \\ -1 & 2 \end{pmatrix}$$
+Le polynôme caracteristique de $f$ est
+\begin{eqnarray*}
+  P(X) &=& (-1)^2 det(M-X I_2) \\
+    &=& \begin{vmatrix} 1-X & 3 \\ -1 & 2-X \end{vmatrix} \\
+    &=& (1-X)(2-X) + 3 \\
+    &=& X^2 -3X + 5 
+\end{eqnarray*}
+
+\paragraph{Corrolaire} De façon générale le polynôme caracteristique $P(X)$ de $f$ est unitaire\footnote{Le coefficient du terme de plus haut degré de $P$ est égal à $1$.} de degré $n = dim(E)$. En effet,
+\begin{eqnarray*}
+  P(X) &=& (-1)^n det(M-X I_n) \\
+   &=& (-1)^n \sum_{\sigma \in S_n} p_{\sigma}(M- X I_n)
+\end{eqnarray*}
+La plus grand epuissance de $X$ dasn $P(X)$ est obtenue dans
+$$p_{id}(M - X I_n) = (a_{11} - X) \cdot \ldots \cdot (a_{nn} - X) = (-1)^n X^n \cdot \ldots$$
+Finalement, le monôme de plus haut degré dans $P(X)$ est 
+$$(-1)^n \big( (-1)^n X^n \big) = X^n$$
+
+%
+\subsection{Polynôme caractéristique d'une matrice}
+%
+\paragraph{Définition} Par extension si $A$ est une matrice carrée de taille $n\times n$, on définit le polynôme caractéristique de $A$ comme étant
+$$P(X) = (-1)^n det(A -X I_n)$$
+
+\paragraph{Théorème} Soit $f: E \rightarrow E$ un endomorphisme. Alors un réel $\lambda$ est valeur propre de $f$ si et seulement si $P(\lambda) = 0$, où $P$ est le polynôme caractéristique de $f$. Autrement dit, les valeurs propres de $f$ sont exactément les racines de $P$.
+
+\paragraph{Démonstration} Soit $\lambda \in \R$. $\lambda$ est valeur propre de $f$
+\begin{enumerate}[$\Leftrightarrow$]
+  \item $f - \lambda id_E$ n'est pas bijectif 
+  \item la matrice\footnote{$M$ désigne la matrice de $f$ dans une base de $E$.} $M- \lambda id_E$ de $f- \lambda id_E$ n'est pas inversible
+  \item $det(M - \lambda I_n) = 0$
+  \item $P(\lambda) = 0$.
+\end{enumerate}
+
+\paragraph{Exemple} 
+\begin{eqnarray*}
+  f: \R^2 &\rightarrow& \R^2 \\
+  (x, y) &\mapsto& (2x + y, 3x+ y)
+\end{eqnarray*}
+Calculons les valeurs propres de $f$.
+\begin{eqnarray*}
+  M = [f]_{\cC \cC} = \begin{pmatrix} 2 & 1 \\ 3 & -1 \end{pmatrix}
+\end{eqnarray*}
+Le polynôme caractéristique de $f$ est
+\begin{eqnarray*}
+  P(X) = \begin{vmatrix} 2-X & 1 \\ 3 & -1-X \end{vmatrix} &=& (2 -X)(-1 -X) -3 \\
+    &=& X^2 - X - 5 \\
+    &=& \left( X-\frac{1}{2} \right)^2 - \frac{21}{4} \\
+    &=& \left(X - \frac{1 + \sqrt{21}}{2} \right) \left(X - \frac{1 - \sqrt{21}}{2} \right)
+\end{eqnarray*}
+Les racines de $P$ sont $\frac{1 + \sqrt{21}}{2}$ et $\frac{1 - \sqrt{21}}{2}$. \\
+Le valeur propres de $f$ sont donc $\frac{1 + \sqrt{21}}{2}$ et $\frac{1 - \sqrt{21}}{2}$.
+
+%
+%
+\section{Endomorphismes et matrices diagonalisables}
+%
+%
+
+%
+\subsection{Endomorphisme diagonalisable}
+%
+\paragraph{Définition} Soit $f$ un endormorphisme d'un expace vectoriel $D$ de dimension finie $n$. On dit que $f$ est diagonalisable s'il existe une base de $E$ formée de vecteurs propres de $f$.
+
+\paragraph{} Interprétation matricielle de cette définition. Si $f$ est diagonalisable, consiérons une base de $E$ $\cB = (\vec{v}_1, \ldots, \vec{v}_n)$ formée de vecteurs propres de $f$.  Pour tout $i$ disons que $\vec{v}_i$ est vecteur propre de $f$ pour la valeur propre $\lambda_i$. La matrice de $f$ dans cette base est
+\begin{eqnarray*}
+  \begin{pmatrix} \\ [f(\vec{v}_1)]_{\cB} & \ldots & [f(\vec{v}_n)]_{\cB} \\ \\ \end{pmatrix} &=& 
+    \begin{pmatrix} \\ [\lambda \vec{v}_1]_{\cB} & \ldots & [\lambda \vec{v}_n)]_{\cB} \\ \\ \end{pmatrix} \\
+    &=& \begin{pmatrix} 
+      \lambda_1 & 0 & \ldots & 0 \\
+      0 & \lambda_2 & \ldots & 0 \\
+      \vdots & \vdots & \ddots & \vdots \\
+      0 & 0 & \ldots & \lambda_n \\
+    \end{pmatrix}
+\end{eqnarray*}
+Dans la base $\cB$, la matrice de $f$ est diagonale. \\
+Si $\cC$ est une base de $E$ dans laquelle on considère $f$ initalement, si $M$ est la matrice de $f$ dans $\cC$ et si $P = P_{\cC \cB}$ est la matrice de passage de $\cC$ à $\cB$, alors la matrice de $f$ dans la base $\cB$ 
+$$D = P^{-1} M P$$
+C'est donc une  matrce diagonale. De plus les coefficients diagonaux de cette matrice sont les valeurs propres de $f$, éventuellement répétées.
+
+\paragraph{Exemple}
+\begin{eqnarray*}
+  f: \R^2 &\rightarrow& \R^2 \\
+  (x, y) &\mapsto& (x + y, 2y)
+\end{eqnarray*}
+Déterminons si $f$ est diagonalisable ou non.
+\begin{enumerate}[(1)]
+  \item Formons la matrice de $f$ dans la base canonique de $\R^2$
+    $$M = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$$
+  
+  \item Calculons le polynôme caractéristique de $f$
+    $$P(x) = (-1)^2 det(M - X I_2) = \begin{vmatrix} 1-X & 1 \\ 0 & 2-X \end{vmatrix} = (1-X)(2-X)$$
+    
+  \item Déterminons les valeur propres de $f$ en cherchant les racines de $P$. Les racines de $P$ sont $1$ et $2$ donc les valeurs propres de $f$ sont $1$ et $2$.
+  
+  \item Pour chaque valeur propre $\lambda$ de $f$, déterminons le sous-espace propre associé à $E_\lambda$.
+    \begin{itemize}
+      \item pour $\lambda = 1$, 
+        $$E_1 = Ker(f - id_{\R^2})$$
+        Il s'agit de résoudre le système linéaire
+        $$(M - I_2) X = 0$$
+        c'est-à-dire $\begin{pmatrix} 0 & 1 \\ 0 & 1 \end{pmatrix} X = 0$
+        $$\begin{pmatrix} 0 & 1 & \vert & 0 \\ 0 & 1 & \vert & 0 \end{pmatrix} \rightsquigarrow
+          \begin{pmatrix} 0 & 1 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix}$$
+        L'ensemble de solutions de ce système est
+        $$\cL_1 = \left\{(t, 0) \in \R^2 \vert t \in \R \right\}$$
+        donc 
+        \begin{eqnarray*}
+          E_1 &=& \left\{(t, 0) \in \R^2 \vert t \in \R \right\} \\
+            &=& \left\{t(1, 0) \in \R^2 \vert t \in \R \right\} \\
+            &=& Vect\big((1, 0)\big)
+        \end{eqnarray*}
+        
+      \item pour $\lambda = 2$,
+        $$E_2 = Ker(f - 2 id_{\R^2})$$
+        Il s'agit de résoudre le système linéaire
+        $$\begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix} X = 0$$
+        $$\begin{pmatrix} -1 & 1 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix} \rightsquigarrow
+          \begin{pmatrix} 1 & -1 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix}$$
+        L'ensemble de solutions de ce système est
+        $$\cL_2 = \left\{(u, u) \in \R^2 \vert u \in \R \right\}$$
+        donc 
+        \begin{eqnarray*}
+          E_2 &=& \left\{(u, u) \in \R^2 \vert u \in \R \right\} \\
+            &=& \left\{u(1, 1) \in \R^2 \vert u \in \R \right\} \\
+            &=& Vect\big((1, 1)\big)
+        \end{eqnarray*}
+    \end{itemize}
+  
+  \item Examinons si l'on peut trouver une base de $\R^2$ fomrée de vecteurs propres de $f$ posons
+    $$\vec{v}_1 = (1, 0) ~ ~ \vec{v}_2 = (1, 1)$$
+    $\vec{v}_1$ et $\vec{v}_2$ sont vecteurs propres de $f$ associés aux valeurs propres $1$ et $2$ respectivement.
+    $$\begin{vmatrix} 1 & 1 \\ 0 & 1 \end{vmatrix} = 1 \neq 0$$
+    donc $(\vec{v}_1, \vec{v}_2)$ est une base de $\R^2$. Par conséquent, $f$ est diagonalisable.
+    
+  \item Déterminons une matrice inversible $P$ de taille $2 \times 2$ et une matrice diagonale $D$ de taille $2 \times 2$ telles que 
+    $$D = P^{-1} M P$$
+    On pose $P = P_{\cC \cB}$ matrice de passage de la base canonique $\cC$ à la base $\cB = (\vec{v}_2, \vec{v}_2)$.
+    $$P = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$$
+    Inversons $P$; $det(P) = 1$ et $com(P) = \begin{pmatrix} 1 & 0 \\ -1 & 1 \end{pmatrix}$, donc
+    $$P^{-1} = \frac{1}{det(P)} com(P)^{T} = \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}$$
+    Calculons
+    \begin{eqnarray*}
+      P^{-1} M P &=& \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \\
+        &=& \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 0 & 2 \end{pmatrix} \\
+        &=& \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} 
+    \end{eqnarray*}
+    on pose $D = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+\end{enumerate}
+
+\paragraph{Définition} Par extension, si $A$ est une matrice carrée de taille $n \times n$, on dit que $A$ est diagonalisable s'il ensuit une matrice inversible $P$ de taille $n \times n$ et une matrice diagonale $D$ de taille $n \times n$ tells que
+$$D = P^{-1} A P$$
+
+\paragraph{Théorème} Soit $f: E \rightarrow E$ un endomorphisme. Alors $f$ est diagonalisable si et seulement si
+$$dim(E_{\lambda_1}) + \ldots + dim(E_{\lambda_r}) = dim(E)$$
+où $\lambda_1, \ldots, \lambda_r$ sont les valeurs propres de $f$ deux à deux distinctes. On obtient alors une base de $E$ formée de vecteurs propres de $f$ en concatenant des bases des $E_{\lambda_i}$, c'est-à-dire si
+\begin{itemize}
+  \item $\cB_1$ est une base de $E_{\lambda_1}$
+  \item $\ldots$
+  \item $\cB_r$ est une base de $E_{\lambda_r}$
+\end{itemize}
+alors $\cB_1 \cup \ldots \cup \cB_r$ est une base de $E$.
