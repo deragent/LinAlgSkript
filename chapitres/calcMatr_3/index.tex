@@ -94,11 +94,11 @@ On peut donc dire, que $M_{n, m}(\R)$ muni de l'addition des matrices et de la m
 %
 \paragraph{Définition} Soient $n \geq 1, m \geq 1$ et $p \geq 1$ trois entiers naturels. On peut définir le produit $A \times B$ d'une matrice $A$ et d'une matrice $B$ dans cet ordre si le nombre de colonnes de $A$ est égal au nombre de lignes de $B$. \\
 Si $A = (a_{ij}) \in M_{n, m}(\R)$ et $B = (b_{ij}) \in M_{m, p}(\R)$, alors on définit $C = A \times B \in M_{n, p}(\R)$
-$$c_{ij} = \sum_{l=1}^{m} {a_{il} * b_{lj} = a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + \ldots + a_{im} \cdot b_{mj}$$
+$$c_{ij} = \sum_{l=1}^{m} a_{il} * b_{lj} = a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + \ldots + a_{im} \cdot b_{mj}$$
 
 \paragraph{Exemple} Soient $A = 
 \begin{pmatrix}
-  2 & -5 & 1} \\
+  2 & -5 & 1 \\
   0 & 4 & 7 \\
 \end{pmatrix} \in M_{2,3}(\R)$ et $B = 
 \begin{pmatrix}
@@ -118,7 +118,7 @@ $$AB =
   \item $$A \times (B + C) = A \times B + A \times C$$ 
     $$(B + C) \times A = B \times A + C \times A$$
   \item Pour tout entier $m \geq 1$ on appelle matrice identité de taille $n \times n$ la matrice carrée
-    $$I_n = (a_{ij}) ~ ~ a_{ij} = \left\{ \begin{array}{lr} 1, & i=j \\ 0, & i \neq j \end{array}$$
+    $$I_n = (a_{ij}) ~ ~ a_{ij} = \left\{ \begin{array}{lr} 1, & i=j \\ 0, & i \neq j \end{array} \right.$$
 \end{enumerate}
 
 \paragraph{Attention} Deux matrices quelconques ne commutent pas nécessairement.
@@ -287,7 +287,7 @@ qui est bien égale à $B^{-1} A^{-1}$.
 %
 \subsection{Matrice élémentaire}
 %
-\paragraph{Définition} Soient $n \geq 1$ un entier naturel et $(i, j) \in \{1; \ldots; n\} \times \{1; \ldots; n\}$. On note $F_{i, j}$ la matrice carrée de taille $n \times n$ contenant un $1$ en $i^{ème}$ ligne et $j^{ème}$ colonne et des $0$ partout ailleurs. On dit que $F_{i, j}$ est une matrice standard.
+\paragraph{Définition} Soient $n \geq 1$ un entier naturel et $(i, j) \in \{1; \ldots; n\} \times \{1; \ldots; n\}$. On note $F_{i, j}$ la matrice carrée de taille $n \times n$ contenant un $1$ en $i^{\text{ème}}$ ligne et $j^{\text{ème}}$ colonne et des $0$ partout ailleurs. On dit que $F_{i, j}$ est une matrice standard.
 
 \paragraph{Exemple} 
 $$n = 3 \rightarrow F_{2,3} = 
@@ -309,8 +309,8 @@ $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
 
 \paragraph{Proposition} Soit $A$ une matrice de taille $n\times m$.
 \begin{enumerate}[a)]
-  \item Soit $F_{ij}$ une matrice standard de taille $n\times n$. Alors $F_{ij} A$ est la matrice de taille $n \times m$ dont la $i^{ème}$ ligne est la $j^{ème}$ ligne de $A$ et dont les autres sont nulles.
-  \item Soit $F_{ij}$ une matrice standard de taille $m\times m$. Alors $A F_{ij}$ est la matrice de taille $n\times m$ dont la $j^{ème}$ colonne est la $i^{ème}$ de $A$ et dont les autres colonnes sont nulles.
+  \item Soit $F_{ij}$ une matrice standard de taille $n\times n$. Alors $F_{ij} A$ est la matrice de taille $n \times m$ dont la $i^{\text{ème}}$ ligne est la $j^{\text{ème}}$ ligne de $A$ et dont les autres sont nulles.
+  \item Soit $F_{ij}$ une matrice standard de taille $m\times m$. Alors $A F_{ij}$ est la matrice de taille $n\times m$ dont la $j^{\text{ème}}$ colonne est la $i^{\text{ème}}$ de $A$ et dont les autres colonnes sont nulles.
 \end{enumerate}
 
 \paragraph{Démonstration}
@@ -364,10 +364,10 @@ alors
 $$F_{ij}F_{kl} = \delta_{ik} F_{il} = 
   \left\{\begin{array}{lr} F_{il} & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$
 
-\paragraph{Démonstration} D'après la proposition, précédente, $F_{ij} F_{kl}$ est la matrice don la $i^{ème}$ ligne est la $j^{ème}$ ligne de $F_{kl}$ et dont les autres lignes sont nulles. Il vient
+\paragraph{Démonstration} D'après la proposition, précédente, $F_{ij} F_{kl}$ est la matrice don la $i^{\text{ème}}$ ligne est la $j^{\text{ème}}$ ligne de $F_{kl}$ et dont les autres lignes sont nulles. Il vient
 \begin{itemize}
-  \item si $j\neq k$, la $j^{ème}$ ligne de $F_{kl}$ est nulle
-  \item si $j = k$ la $j^{ème} = k^{ème}$ ligne de $F_{kl}$ est $(0_{1} \ldots 0_{l-1} ~ 1_{l} ~ 0_{l+1} \ldots 0_{n})$
+  \item si $j\neq k$, la $j^{\text{ème}}$ ligne de $F_{kl}$ est nulle
+  \item si $j = k$ la $j^{\text{ème}} = k^{\text{ème}}$ ligne de $F_{kl}$ est $(0_{1} \ldots 0_{l-1} ~ 1_{l} ~ 0_{l+1} \ldots 0_{n})$
 \end{itemize}
 Par conséquent, si $j\neq k$, toutes les lignes de $F_{ij} F_{kl}$ sont nulles donc $F_{ij} F_{kl} = 0$; si $j=k$, alors 
 $$F_{ij} F_{kl} = \begin{pmatrix} 
@@ -434,11 +434,11 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
 
 \paragraph{Théorème} Soit $A$ une matrice de taille $n\times m$
 \begin{enumerate}[a)]
-  \item Multiplier la $i^{ème}$ ligne de $A$ par un réel $c$ non nul est équvalent à multiplier $A$ à gauche par la matrice $E_i(c)$ de taille $n \times n$
+  \item Multiplier la $i^{\text{ème}}$ ligne de $A$ par un réel $c$ non nul est équvalent à multiplier $A$ à gauche par la matrice $E_i(c)$ de taille $n \times n$
   
-  \item Ajouter à la $i^{ème}$ ligne de $A$ $c$-fois la ligne $j$ de $A$ où $i\neq j$ et $c\in \R$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}(c)$.
+  \item Ajouter à la $i^{\text{ème}}$ ligne de $A$ $c$-fois la ligne $j$ de $A$ où $i\neq j$ et $c\in \R$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}(c)$.
   
-  \item Permuter la $i^{ème}$ ligne et la $ĵ^{ème}$ ligne de $A$ où $i\neq j$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}$.
+  \item Permuter la $i^{\text{ème}}$ ligne et la $j^{\text{ème}}$ ligne de $A$ où $i\neq j$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}$.
 \end{enumerate}
 
 \paragraph{Démonstration}
@@ -447,7 +447,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
     Si $l\neq i$ on a
     $$F_{ll} A =
       \begin{pmatrix} 
-        \\ l^{ème} \text{ ligne de } A \\ \\
+        \\ l^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
       \begin{array}{c} 
         1, \ldots, l-1 \\ l \\ l+1, \ldots, n 
@@ -455,7 +455,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
     sinon, on a
     $$c F_{ii} A =
       \begin{pmatrix}
-        \\ c\text{-fois } i^{ème} \text{ ligne de } A \\ \\
+        \\ c\text{-fois } i^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
       \begin{array}{c} 
         1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
@@ -466,7 +466,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
     Où on a
       $$c F_{ij} A =
         \begin{pmatrix}
-          \\ c\text{-fois } j^{ème} \text{ ligne de } A \\ \\
+          \\ c\text{-fois } j^{\text{ème}} \text{ ligne de } A \\ \\
         \end{pmatrix} 
         \begin{array}{c} 
           1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
@@ -477,7 +477,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
     Si $l\neq i$ et $l\neq j$ 
     $$F_{ll} A =
       \begin{pmatrix}
-        \\ l^{ème} \text{ ligne de } A \\ \\
+        \\ l^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
       \begin{array}{c} 
         1, \ldots, l-1 \\ l \\ l+1, \ldots, n 
@@ -485,14 +485,14 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
     sinon
       $$F_{ij} A =
       \begin{pmatrix}
-        \\ j^{ème} \text{ ligne de } A \\ \\
+        \\ j^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
       \begin{array}{c} 
         1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
       \end{array}$$
       $$F_{ji} A =
       \begin{pmatrix}
-        \\ i^{ème} \text{ ligne de } A \\ \\
+        \\ i^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
       \begin{array}{c} 
         1, \ldots, j-1 \\ j \\ j+1, \ldots, n 
@@ -585,7 +585,7 @@ $$\left\{ \begin{array}{rcl}
   a_{2 1} x_{1} + a_{2 2} x_2 + \ldots + a_{2 m} x_m & = & b_2 \\
   \vdots & & \vdots \\
   a_{n 1} x_{1} + a_{n 2} x_2 + \ldots + a_{n m} x_m & = & b_n
-\end{array}$$
+\end{array} \right.$$
 où les $a_{i j}$ et les $b_{i}$ sont des réels. Soit
 $$A = \begin{pmatrix}
   a_{1 1} & a_{1 2} & \dots & a_{1 m} \\
@@ -888,7 +888,7 @@ $$\text{Si } B = \begin{pmatrix} 4 & 1 & 7 \\ 0 & -5 & 3 \\ 1 & 2 & 6 \end{pmatr
   \item $\forall A \in M_{n\times m}(\R), \lambda \in \R$ on a
     $$(\lambda A)^{T} = \lambda A^{T}$$
   \item $\forall A \in M_{n\times m}(\R), B \in M_{m\times n}(\R)$ on a
-    $$(A \cdot B)^{T} = B^{T} \codt A^{T}$$
+    $$(A \cdot B)^{T} = B^{T} \cdot A^{T}$$
   \item $\forall A \in M_{n\times m}(\R)$ on a
     $$(A^{T})^{T} = A$$
   \item $\forall A \in M_{n}(\R)$ si $A$ est inversible, alors $A^{T}$ est inversible et 
