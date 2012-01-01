@@ -107,7 +107,7 @@ Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
     
   \item Soit 
     \begin{eqnarray*}
-      f: \M_{3 \times 3}(\R) &\rightarrow& M_{3 \times 3}(\R) \\
+      f: M_{3 \times 3}(\R) &\rightarrow& M_{3 \times 3}(\R) \\
       A &\mapsto& f(A) = A^{T}
     \end{eqnarray*}
     On sait que $f$ est un endomorphisme de $M_{3 \times 3}(\R)$. Alors $1$ est valeur propre de $f$ et
@@ -123,12 +123,12 @@ Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
 Alors $\lambda$ est valeur propre de $f \Leftrightarrow f- \lambda \cdot id_E$ n'est pas bijectif.
       
 \paragraph{Démonstration} $\lambda$ est valeur propre de $f$
-\begin{enumerate}[$\Leftrightarrow$]
-  \item il existe $\vec{v} \in E$, $\vec{v} \neq \vec{0}$, $(f - \lambda \cdot id_E)(\vec{v}) = \vec{0}$ 
-  \item $Ker(f-\lambda\cdot id_E) \neq \{\vec{0}\}$
-  \item $f-\lambda \cdot id_E$ n'est pas injectif 
-  \item $f-\lambda \cdot id_E$ n'est pas bijectif.
-\end{enumerate}
+\begin{itemize}
+  \item[$\Leftrightarrow$] il existe $\vec{v} \in E$, $\vec{v} \neq \vec{0}$, $(f - \lambda \cdot id_E)(\vec{v}) = \vec{0}$ 
+  \item[$\Leftrightarrow$] $Ker(f-\lambda\cdot id_E) \neq \{\vec{0}\}$
+  \item[$\Leftrightarrow$] $f-\lambda \cdot id_E$ n'est pas injectif 
+  \item[$\Leftrightarrow$] $f-\lambda \cdot id_E$ n'est pas bijectif.
+\end{itemize}
 
 %
 \subsection{Polynôme caractéristique d'un endomorphisme}
@@ -184,12 +184,12 @@ $$P(X) = (-1)^n det(A -X I_n)$$
 \paragraph{Théorème} Soit $f: E \rightarrow E$ un endomorphisme. Alors un réel $\lambda$ est valeur propre de $f$ si et seulement si $P(\lambda) = 0$, où $P$ est le polynôme caractéristique de $f$. Autrement dit, les valeurs propres de $f$ sont exactément les racines de $P$.
 
 \paragraph{Démonstration} Soit $\lambda \in \R$. $\lambda$ est valeur propre de $f$
-\begin{enumerate}[$\Leftrightarrow$]
-  \item $f - \lambda id_E$ n'est pas bijectif 
-  \item la matrice\footnote{$M$ désigne la matrice de $f$ dans une base de $E$.} $M- \lambda id_E$ de $f- \lambda id_E$ n'est pas inversible
-  \item $det(M - \lambda I_n) = 0$
-  \item $P(\lambda) = 0$.
-\end{enumerate}
+\begin{itemize}
+  \item[$\Leftrightarrow$] $f - \lambda id_E$ n'est pas bijectif 
+  \item[$\Leftrightarrow$] la matrice\footnote{$M$ désigne la matrice de $f$ dans une base de $E$.} $M- \lambda id_E$ de $f- \lambda id_E$ n'est pas inversible
+  \item[$\Leftrightarrow$] $det(M - \lambda I_n) = 0$
+  \item[$\Leftrightarrow$] $P(\lambda) = 0$.
+\end{itemize}
 
 \paragraph{Exemple} 
 \begin{eqnarray*}
