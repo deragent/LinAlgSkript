@@ -119,7 +119,7 @@ autrement dit si pour toute combinaison liéaire des $\vec{v}_i$ égale à $\vec
 \paragraph{Exemple}\begin{itemize}
 	\item Dans $\R[X]$, les polynômes $p_1(X)=1-X, p_2(X)=5+3Y-2X^2$ et $ p_3(X)=1+3X-X^2$ forment un système lié puisque $$3p_1(X)-p_2(X)+2p_3(X)=(3-5+2)+(-3-3+6)X+(2-2)X^2=0$$
 	\item Dans $\R^3$, les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système libre. En effet, si $\alpha, \beta, \gamma \in \R$ tels que $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(0,0,0)$$ alors $\alpha=0,\beta=0,\gamma=0$, puisque $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(\alpha,\beta,\gamma)=(0,0,0)$$ d'où $\alpha=\beta=\gamma=0$.
-	\item Dans $M_{2*2}(\R)$ (espace vectoriel des matrices de taille $2*2$ à coefficients das $\R$), un raisonnement analogue motre que les quattres matrices $F_1, F_2, F_3$ et $F_4$ forment un système libre.%TODO remplacer F_1, etc
+	\item Dans $M_{2*2}(\R)$ (espace vectoriel des matrices de taille $2*2$ à coefficients das $\R$), un raisonnement analogue motre que les quattres matrices $\begin{pmatrix}1&0\\0&0\end{pmatrix}, \begin{pmatrix}0&1\\0&0\end{pmatrix},\begin{pmatrix}0&0\\1&0\end{pmatrix}$ et $ \begin{pmatrix}0&0\\0&1\end{pmatrix}$ forment un système libre.
 \end{itemize}
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel et $\vec{v}_1, \ldots, \vec{v}_r$ des vecteurs de $V$. Alors $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié si et seulement si l'un des $\vec{v}_i$ est combinaison linéaire des autres.
@@ -268,6 +268,8 @@ Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\
 
 \paragraph{Remarque} Dans la suite, nous ne considérerons que des systèmes de cardinal fini.
 
+%TODO BSP 25.11.2011
+
 \paragraph{Définition} On dit qu'un espace vectoriel $V$ est de type fini s'il admet un système générateur de cardinal fini.
 
 \paragraph{Théorème} Soit $V$ un espace vectoriel de type fini. Alors
@@ -408,6 +410,8 @@ $$f(x_1, \ldots, \x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
 
 %
 \subsection{Équation linéaire homogène}
+
+%TODO proposition 2.12.2011
 %
 \paragraph{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$. \\
 On dit que ctte équation est homogène si $a=0$. \\
