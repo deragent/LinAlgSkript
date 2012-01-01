@@ -101,8 +101,9 @@ Si de plus $\times$ est commutative, on dit que $(A, +, \times)$ est un anneaux 
 telles que:
 \begin{itemize}
   \item $(V, +)$ est un groupe commutatif d'élément neutre noté $\vec{0}$.
-  \item \forall $\vec{v}, \vec{u} \in V, \alpha \in K$: $$\alpha \cdot (\vec{v}+\vec{u}) = \alpha \cdot \vec{v} + \alpha \cdot \vec{u}$$
-  \item \forall $\vec{v} \in V, \alpha, \beta \in K$:
+  \item $\forall \vec{v}, \vec{u} \in V, \alpha \in K$: 
+    $$\alpha \cdot (\vec{v}+\vec{u}) = \alpha \cdot \vec{v} + \alpha \cdot \vec{u}$$
+  \item $\forall \vec{v} \in V, \alpha, \beta \in K$:
     \begin{eqnarray*}
       (\alpha \beta) \cdot \vec{v} &=& \alpha \cdot (\beta \cdot \vec{v}) \\
       (\alpha + \beta) \cdot \vec{v} &=& \alpha \cdot \vec{v} + \beta \cdot \vec{v} \\
@@ -141,7 +142,7 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
     \end{eqnarray*}
     et 
     $$(\alpha P)(X) = \alpha a_0 + \alpha a_1 X + \alpha a_2 X^2 + \ldots + \alpha a_n X^{n} \in \R[X]$$
-    pour $a \in \R$ et $P(X) = a_0 + a_1 X + a_2 X^2 + \ldots + a_n X^{n} \in \R[X]$ on définit une structure de \R-espace vectoriel sur $\R[X]$.
+    pour $a \in \R$ et $P(X) = a_0 + a_1 X + a_2 X^2 + \ldots + a_n X^{n} \in \R[X]$ on définit une structure de $\R$-espace vectoriel sur $\R[X]$.
   \item Soit $X$ un ensemble. On note $\mathcal{A}(X, \R)$ l'ensemble des applications de $X$ dans $\R$. En posant
     $$(f + g)(x) = f(x) + g(x)$$
     pour tous $x \in X$ et $f, g \in \mathcal{A}(X, \R)$,
@@ -159,13 +160,13 @@ Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
   $$f: U \rightarrow V$$
   telle que
   \begin{eqnarray*}
-    f(\vec{u} + \ve{v}) = f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U \mbox{~ (additivité)}\\
+    f(\vec{u} + \vec{v}) = f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U \mbox{~ (additivité)}\\
     f(\alpha \vec{u} ) = \alpha f(\vec{u}) ~ &\forall&\vec{u} \in U, \alpha \in \R \mbox{~ (homogénéité)}
   \end{eqnarray*}
 
 \paragraph{Remarque} Les deux conditions peuvent se résumer en une seule
   \begin{eqnarray*}
-    f(\alpha \vec{u} + \ve{v}) = \alpha f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U, \alpha \in \R \mbox{~ (linéarité)}
+    f(\alpha \vec{u} + \vec{v}) = \alpha f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U, \alpha \in \R \mbox{~ (linéarité)}
   \end{eqnarray*}
 
 \paragraph{Exemple} On considère l'application 
@@ -241,13 +242,13 @@ $f$ est clairement surjective et $f$ est injective puisque deux polynômes sont 
       \item $$f(\vec{0}_U) = f(\vec{0}_U + \vec{0}_U) = f(\vec{0}_U) + f(\vec{0}_U)$$
         Ajoutons $-f(\vec{0}_U)$ (l'opposé de $f(\vec{0}_U)$.
         \begin{eqnarray*}
-          \vec{0}_V = f(\vev{0}_U) + (-f(\vev{0}_U)) &=& (f(\vec{0}_U) + f(\vec{0}_U)) + (-f(\vev{0}_U)) \\
-            &=& f(\vec{0}_U) + (f(\vec{0}_U) + (-f(\vev{0}_U))) \\
+          \vec{0}_V = f(\vec{0}_U) + (-f(\vec{0}_U)) &=& (f(\vec{0}_U) + f(\vec{0}_U)) + (-f(\vec{0}_U)) \\
+            &=& f(\vec{0}_U) + (f(\vec{0}_U) + (-f(\vec{0}_U))) \\
             &=& f(\vec{0}_U) + \vec{0}_V = f(\vec{0}_U)
         \end{eqnarray*}
       \item Soit $\vec{u} \in U$. On a
         \begin{eqnarray*}
-          f(-\vec{u}) + f(\vec{u}) &=& f((-\vev{u}) + \vec{u}) = f(\vec{0}_U) = \vec{0}_V \\
+          f(-\vec{u}) + f(\vec{u}) &=& f((-\vec{u}) + \vec{u}) = f(\vec{0}_U) = \vec{0}_V \\
           f(-\vec{u}) + f(\vec{u}) &=& f(\vec{u}) + f(-\vec{u}) = \vec{0}_V ~ \text{(+ est commutative)}
         \end{eqnarray*}
         Par conséquant, $f(-\vec{u}) = -f(\vec{u})$.
@@ -296,7 +297,7 @@ $Ainsi, $id_V$ est bien $\R$-linéaire.
       \begin{eqnarray*}
         \forall~ y \in A ~\forall~ x, x' \in A ~\text{et}~ \alpha \in \R \\
           (\alpha \cdot x + x') \times y &=& \alpha \cdot (x \times y) + (x' \times y) \\
-        \forall~ x \in A ~\forall~ y, y' \in A ~\tex{et}~ \alpha \in \R \\
+        \forall~ x \in A ~\forall~ y, y' \in A ~\text{et}~ \alpha \in \R \\
           x \times (\alpha \cdot y + y') &=& \alpha \cdot (x \times y) + (x \times y') \\
       \end{eqnarray*}
 \end{itemize}

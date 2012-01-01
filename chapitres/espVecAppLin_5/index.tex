@@ -7,13 +7,13 @@
 %
 \paragraph{Définition} Un $\R$-espace vectoriel est un ensemble non vide $V$ muni d'une addition
 \begin{eqnarray*}
-  +: V\timesV &\rightarrow& V \\
-  (\vec{u}, \vec{v}) &\mapsto& \vec{u}+\vec{v}
+  +: V \times V &\rightarrow& V \\
+  (\vec{u}, \vec{v}) &\mapsto& \vec{u} + \vec{v}
 \end{eqnarray*}
 et d'une multiplication externe
 \begin{eqnarray*}
-  \cdot: V\timesV &\rightarrow& V \\
-  (\vec{u}, \vec{v}) &\mapsto& \vec{u}\cdot\vec{v}
+  \cdot: V \times V &\rightarrow& V \\
+  (\vec{u}, \vec{v}) &\mapsto& \vec{u} \cdot \vec{v}
 \end{eqnarray*}
 satisfaisant auxconditions:
 \begin{itemize}
@@ -28,7 +28,7 @@ satisfaisant auxconditions:
 \end{itemize}
 
 \paragraph{Définition} Si $U$ et $V$ sont deux $\R$-espaces vectoriels, une applicaiton linéaire de $U$ dans $V$ est une application $b: U \rightarrow V$ telle que $\forall \vec{u}, \vec{v} \in U \text{ et } \alpha \in \R$
-$$b(\alpha \cdot \vec{u} +\vec{v}) = \alpha \cdot b(\vec{u}) + b(\vec{v})$$
+$$b(\alpha \cdot \vec{u} + \vec{v}) = \alpha \cdot b(\vec{u}) + b(\vec{v})$$
 
 %
 %
@@ -117,9 +117,23 @@ autrement dit si pour toute combinaison liéaire des $\vec{v}_i$ égale à $\vec
 \paragraph{Ramarque} Tout système de vecteurs contenant $\vec{0}$ est lié. En effet, si ($\vec{v}_1, \dotsc, \vec{v}_r$) est un système des vecteurs de $V$ et si $\vec{v}_1=\vec{0}$, alors $1 \vec{v}_1+0 \vec{v}_2+\dotsc+0 \vec{v}_r=\vec{0}$ est une combinaison linéaire des $\vec{v}_i$ égale à $\vec{0}$ à coefficients non tous nuls.
 
 \paragraph{Exemple}\begin{itemize}
-	\item Dans $\R[X]$, les polynômes $p_1(X)=1-X, p_2(X)=5+3Y-2X^2$ et $ p_3(X)=1+3X-X^2$ forment un système lié puisque $$3p_1(X)-p_2(X)+2p_3(X)=(3-5+2)+(-3-3+6)X+(2-2)X^2=0$$
-	\item Dans $\R^3$, les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système libre. En effet, si $\alpha, \beta, \gamma \in \R$ tels que $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(0,0,0)$$ alors $\alpha=0,\beta=0,\gamma=0$, puisque $$\alpha(1,0,0)+ \beta(0,1,0)+ \gamma(0,0,1)=(\alpha,\beta,\gamma)=(0,0,0)$$ d'où $\alpha=\beta=\gamma=0$.
-	\item Dans $M_{2*2}(\R)$ (espace vectoriel des matrices de taille $2*2$ à coefficients das $\R$), un raisonnement analogue motre que les quattres matrices $\begin{pmatrix}1&0\\0&0\end{pmatrix}, \begin{pmatrix}0&1\\0&0\end{pmatrix},\begin{pmatrix}0&0\\1&0\end{pmatrix}$ et $ \begin{pmatrix}0&0\\0&1\end{pmatrix}$ forment un système libre.
+	\item Dans $\R[X]$, les polynômes $P_1(X) = 1 - X, P_2(X) = 5 + 3 X - 2 X^2$ et $ P_3(X) = 1 + 3 X - X^2$ forment un système lié puisque 
+	  $$3 P_1(X) - P_2(X) + 2 P_3(X) = (3 - 5 + 2) + (-3 - 3 + 6) X + (2 - 2) X^2 =0$$
+	  
+	\item Dans $\R^3$, les vecteurs (1,0,0), (0,1,0) et (0,0,1) forment un système libre. En effet, si $\alpha, \beta, \gamma \in \R$ tels que 
+	  $$\alpha \cdot (1,0,0)+ \beta \cdot (0,1,0)+ \gamma \cdot (0,0,1) = (0,0,0)$$ 
+	  alors $\alpha = 0$, $\beta = 0$, $\gamma = 0$, puisque 
+	  $$\alpha \cdot (1,0,0)+ \beta \cdot (0,1,0) + \gamma \cdot (0,0,1)
+	    =(\alpha,\beta,\gamma)
+	    =(0,0,0)$$ 
+	  d'où $\alpha = \beta = \gamma = 0$.
+	  
+	\item Dans $M_{2 \times 2}(\R)$ \footnote{$M_{2 \times 2}(\R)$ est l'espace vectoriel des matrices de taille $2 \times 2$ à coefficients das $\R$}, un raisonnement analogue motre que les quattres matrices 
+	  $$\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} ~ ~ 
+	    \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} ~ ~
+	    \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} ~ ~
+	    \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}$$ 
+	  forment un système libre.
 \end{itemize}
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel et $\vec{v}_1, \ldots, \vec{v}_r$ des vecteurs de $V$. Alors $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié si et seulement si l'un des $\vec{v}_i$ est combinaison linéaire des autres.
@@ -266,9 +280,13 @@ Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\
 %
 \paragraph{Définition} Soit $V$ un espace vectoriel. Si $S$ est un système libre (resp. système générateur, base) de $V$, on appelle cardinal de $S$ et on note $card(S)$ le nombre de vecteurs de $S$.
 
-\paragraph{Remarque} Dans la suite, nous ne considérerons que des systèmes de cardinal fini.
+\paragraph{Exemple} 
+\begin{itemize}
+  \item Dans $\R^3$, $\vec{u} = (1, 0, 0)$, $\vec{v} = (0, 2, 3)$ $ ~ \Rightarrow ~ card((\vec{u}, \vec{v})) = 2$
+  \item Dans $\R^2$, $\vec{u} = (1, 0)$, $\vec{v} = (0, 1)$, $\vec{w} = (1, 0) = \vec{u}$ $ ~ \Rightarrow ~ card((\vec{u}, \vec{v}, \vec{w})) = 3$
+\end{itemize}
 
-%TODO BSP 25.11.2011
+\paragraph{Remarque} Dans la suite, nous ne considérerons que des systèmes de cardinal fini.
 
 \paragraph{Définition} On dit qu'un espace vectoriel $V$ est de type fini s'il admet un système générateur de cardinal fini.
 
@@ -302,14 +320,14 @@ Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\
     Raisonnons par l'absurde, et supposons que $s < r$. Pour tous $\lambda_1, \ldots, \lambda_r \in \R$, on a
     \begin{eqnarray*}
       \sum_{j=1}^r { \lambda_j \vec{u}_j} &=& \sum_{j=1}^r {\lambda_j \left( \sum_{i=1}^r {a_{ij}\vec{v}_i} \right)} \\
-        & =& \sum_{i=1}^s {\left( \sum_{j=1}^r {a_{ij}\lambda_j} \right) \vec{v}_i
+        &=& \sum_{i=1}^s {\left( \sum_{j=1}^r {a_{ij}\lambda_j} \right) \vec{v}_i }
     \end{eqnarray*}
     On a $\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$ si eut seulement si pour tout $i$, $\sum_{j=1}^r {a_{ij} \lambda_j } = 0$ car $T$ est en particulier un système libre. Puisque $s < r$, le nombre d'équations du système
     $$ \left\{ \begin{matrix}
       a_{11} \lambda_1 + \ldots + a_{1r} \lambda_r = 0 \\
       \vdots \\
       a_{s1} \lambda_1 + \ldots + a_{sr} \lambda_r = 0
-    \end{matrix} $$
+    \end{matrix} \right. $$
     est strictement inférieur au nombre d'inconnues. Puisque le système admet au moins une solution, à savoir $(0, \ldots, 0) \in \R^r$, il admet une infinité de solutions. \\
     Soit $(\lambda_1, \ldots, \lambda_r) \neq (0, \ldots, 0)$ une solution de ce système. On a alors
     $$\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$$
@@ -329,13 +347,11 @@ En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') 
 \paragraph{Définition} Soit $V$ un epsace vectoriel de type fini. On appelle dimension de $V$ et on note $dim_\R(V)$ (ou simplement $dim(V)$) le cardinal d'une base quelconque de $V$.
 \paragraph{Exemples}
 \begin{itemize}
-  \item L'espace vectoriel $\{\vec{0}\}$ réduit à $\vec{0}$ a pour dimension $0$.
+  \item L'espace vectoriel $\{ \vec{0} \}$ réduit à $\vec{0}$ a pour dimension $0$.
   \item Pout toute entier $n \geq 1$, $\R^n$ est de dimension $n$.
-  \item Pour tout entier $n \geq 1$, l'espace vectoriel $P_n$ des polynômes de degré $\leq n$ admet pour base le système $(1, X, X^2, \ldots, X^n)$. \\ 
-    Par conséquent, $dim(P_n) n+1$.
-  \item On a $dim(M_{2\times 2}(\R) ) =4$. \\
-    Plus généralement, si $n\leq 1$ et $n\leq 1$ sont deux entires naturels, on a $dim(M_{n\times m}(\R) ) = n\cdot m$
-  \item L'espace vectoriel$\R[X]$ n'est pas de dimension finie. Il admet pour base le système $(X^m)_{n\in \N$ que est de cardinal infini.
+  \item Pour tout entier $n \geq 1$, l'espace vectoriel $P_n$ des polynômes de degré $\leq n$ admet pour base le système $(1, X, X^2, \ldots, X^n)$. Par conséquent, $dim(P_n) = n+1$.
+  \item On a $dim(M_{2\times 2}(\R) ) = 4$. Plus généralement, si $n \leq 1$ et $m \leq 1$ sont deux entires naturels, on a $dim( M_{n\times m}(\R) ) = n\cdot m$
+  \item L'espace vectoriel $\R[X]$ n'est pas de dimension finie. Il admet pour base le système $(X^m)_{n \in \N}$ qui est de cardinal infini. %TODO: bitte hier mit den Notizen abgleichen
 \end{itemize}
 
 \paragraph{Théorème} Soit $V$ un espace vectoriel de dimension $n$. Alors 
@@ -386,8 +402,8 @@ $$W = Vect(\B) = V$$
 \section{Systèmes linéaires homogènes}
 %
 %
-\paragraph{Proposition} Soit $m \geq 1$ un entier naturel. Alors une application $f: \R^m \rightarrow \R$ est linéaire si et seulement s'il existe $a_1, \ldots, a_m \in \R$ tels que pour tout $(x_1, \ldots, \x_m) \in \R^m$, on a
-$$f(x_1, \ldots, \x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
+\paragraph{Proposition} Soit $m \geq 1$ un entier naturel. Alors une application $f: \R^m \rightarrow \R$ est linéaire si et seulement s'il existe $a_1, \ldots, a_m \in \R$ tels que pour tout $(x_1, \ldots, x_m) \in \R^m$, on a
+$$f(x_1, \ldots, x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
 
 \paragraph{Démonstration}
 \begin{itemize}
@@ -398,7 +414,7 @@ $$f(x_1, \ldots, \x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
         &=& \alpha (a_1 x_1 + \ldots + a_m x_m) + (a_1 y_1 + \ldots + a_m y_m) \\
         &=& \alpha f(x_1, \ldots, x_m) + f(y_1, \ldots, y_m).
     \end{eqnarray*}
-  \item Réciproquement, si $f: \R^m \righarrow \R$ est linéaire, pout tout i, on pose 
+  \item Réciproquement, si $f: \R^m \rightarrow \R$ est linéaire, pout tout i, on pose 
     $$a_i = f(0_1, \ldots, 0_{i-1}, 1_i, 0_{i+1}, \ldots, 0_m) \in \R$$
     Alors pout tout $(x_1, \ldots, x_m) \in \R^m$
     \begin{eqnarray*}
@@ -410,12 +426,16 @@ $$f(x_1, \ldots, \x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
 
 %
 \subsection{Équation linéaire homogène}
-
-%TODO proposition 2.12.2011
 %
-\paragraph{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$. \\
-On dit que ctte équation est homogène si $a=0$. \\
-Cela justice la terminologie d'équation linéaire et de système utilisée jusqu'ici.
+
+\paragraph{Proposition} Soit $f: \R^m \rightarrow \R$ une application. Alors $f$ est linéaire si et seulement s'il existe $a_1, \ldots, a_m \in \R$ tels que pour tout $(x_1, \ldots, x_m) \in \R^m$,
+$$f(x_1, \ldots, x_m) = a_1 x_1 + \ldots + a_m x_m$$
+
+\paragraph{Définition} On appelle équation linéaire à $m$ inconnues une équation de la forme $f(x_1, \ldots, x_m) = a$, où $f: \R^m \rightarrow \R$ est une application linéaire et $a \in \R$.
+
+\paragraph{Définition} On dit une équation linéaire est homogène si elle est de la forme $f(x_1, \ldots, x_m) = 0$.\footnote{Alors $a = 0$.}
+
+\paragraph{Remarque} Cela justice la terminologie d'équation linéaire et de système utilisée jusqu'ici.
 
 \paragraph{Théorème} L'ensemble des solutions d'un système linéaire homogène (c'est-à-dire tel que toutes les équations du système soient linéaires homogènes) est un sous-espace vectoriel de $\R^m$.
 \paragraph{Démonstration} Écrivons ce système sous la forme:
@@ -423,7 +443,7 @@ $$ \left\{ \begin{matrix}
   f_1(x_1, \ldots, x_m) = 0\\
   \vdots \\
   f_n(x_1, \ldots, x_m = 0
-\end{matrix}$$
+\end{matrix} \right. $$
 pour tout $i \in \{1; \ldots; n\}$, montrons que l'ensemble $\mS_i$ des solutions est un ssous-espace vectoriel de $\R^m$. \\
 Puisque $f_i$ est linéaire, $f_i(0, \ldots, 0) = 0$, donc $(0,  \ldots, 0) \in \mS_i$ et $\alpha \in \R$. Il vient 
 $$f_i(\alpha \cdot x + y) = \alpha f_i(x) + f_i(y) = \alpha \cdot 0 
@@ -484,7 +504,7 @@ Autrement dit, si $x \in E$, alors pour tout $x' \in E, f(x') = f(x) \Leftrighta
 $$Im(f) = \left\{ y \in F \vert \text{ il existe } x \in E \text{ tel que } y = f(x) \right\}$$
 
 \paragraph{Proposotion} Soit $f: E \rightarrow F$ une application linéaire. Alors $Im(f)$ est un sous-espace vectoriel de $F$.
-\paragraph{Démonstration} On a $\vec{0}_f = f(\vec{0}_E) \in Im(f)$, donc $Im(f) \neq \emptyset$. Soient $\vecy}, \vec{y}' \in Im(f)$ et $\alpha, \beta \in \R$. Il existe $\vec{x}, \vec{x}' \in E$ tels que $\vec{y} = f(\vec{x})$ et $\vec{y}' = f(\vec{x}')$. Il vient
+\paragraph{Démonstration} On a $\vec{0}_f = f(\vec{0}_E) \in Im(f)$, donc $Im(f) \neq \emptyset$. Soient $\vec{y}, \vec{y}' \in Im(f)$ et $\alpha, \beta \in \R$. Il existe $\vec{x}, \vec{x}' \in E$ tels que $\vec{y} = f(\vec{x})$ et $\vec{y}' = f(\vec{x}')$. Il vient
 $$\alpha \vec{y} + \beta \vec{y}' = \alpha f(\vec{x}) + \beta f(\vec{x}') = f(\alpha \vec{x} + \beta \vec{x}') \in Im(f)$$
 
 \paragraph{Théorème} Soit $f: E \rightarrow F$  une application linéaire. Alors $f$ est surjective si et seulement si $Im(f) = F$.
@@ -498,7 +518,7 @@ On dit que $F$ est \underline{isomorphe} à $E$ s'il existe un isomorphisme d'es
 
 \paragraph{Démonstration}
 \begin{itemize}
-  \item[Existence:] Soit $\vec{u} \in E$. Alors \vec{u} s'écrit de façon unique sous la forme
+  \item[Existence:] Soit $\vec{u} \in E$. Alors $\vec{u}$ s'écrit de façon unique sous la forme
     $$\vec{u} = \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n, \alpha_i \in \R$$
     On pose alors $f(\vec{u}) = \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n \in F$. On a donc défini une application $f: E \rightarrow F$ telle que pour tout $i$, $f(\vec{u}_i) = \vec{v}_i$ puisque
     $$\vec{u}_i = 0 \cdot \vec{u}_1 + \ldots + 1 \cdot \vec{u}_i + \ldots \vec{u}_n$$
@@ -567,6 +587,7 @@ Montros d'abord que $f$ est linéaire. Soient $(\alpha_1, \ldots, \alpha_n), (\b
   \item[$\Rightarrow$] Si $(\vec{v}_1, \ldots, \vec{v}_n)$ est une base de $E$, alors $f$ est une application linéaire de $\R^n$ dans $E$ qui envoie la base canonique de $\R^n$ sur la base $(\vec{v}_1, \ldots, \vec{v}_n)$ de $E$. C'est donc un ismorphisme.
   
   \item[$\Leftarrow$] Réciproquement, si $f$ est un isomorphisme, si $(\vec{e}_1, \ldots, \vec{e}_n)$ désigne la base canonique de $\R^n$. Alors $(f(\vec{e}_1), \ldots, f(\vec{e}_n))$ est une base de $E$. Or $(f(\vec{e}_1), \ldots, f(\vec{e}_n)) = (\vec{v}_1, \ldots, \vec{v}_n)$. Donc $(\vec{v}_1, \ldots, \vec{v}_n)$ est une base de $E$.
+\end{itemize}
 
 \paragraph{Corrolaire}
 \begin{enumerate}
@@ -583,9 +604,9 @@ Montros d'abord que $f$ est linéaire. Soient $(\alpha_1, \ldots, \alpha_n), (\b
 
 \paragraph{Exemple} Considérons le système linéaire homogène
 $$\left\{\begin{array}{cccc}
-   x & + y & -3z & = 0\ \
+   x & + y & -3z & = 0 \\
   2x & +3y & +2z & = 0
-\end{array}$$
+\end{array}\right. $$
 ce système. L matrice augmentée est
 $$\begin{pmatrix}
  1 & 1 & -3 \\
@@ -609,9 +630,9 @@ Il vient
   \end{pmatrix}
 \end{eqnarray*}
 On a 
-$$S \Leftrightarrow \left\{\begin{array}{cccc} x & & -11z & = 0 \\ & y & +8z & =0\end{array}$$
+$$S \Leftrightarrow \left\{\begin{array}{cccc} x & & -11 z & = 0 \\ & y & +8 z & = 0 \end{array} \right.$$
 $x$ et$y$ sont les inconnues principales, $z$ est inconnue secondaire. \\
-L'ensemble $\mS$ des solutions de $S$ est $\mS = {(11t, -8t, t) \in \R^3 \vert t \in \R \}$.\\
+L'ensemble $\mS$ des solutions de $S$ est $\mS = \{(11t, -8t, t) \in \R^3 \vert t \in \R \}$.\\
 Consideérons l'application
 \begin{eqnarray*}
   f: \R &\rightarrow& \mS \\
@@ -627,7 +648,7 @@ Par conséquent, $f$ est un isomorphisme de $\R$ dans $\mS$. \\
 Par suite l'image par $f$ d'une base de $\R$ est une base de $\mS$. Si l'on prend la base canonique $(1)$ de $\R$, alors $(f(1)) = ((11, -8, 1))$ est une base de $\mS$. On peut faire apparaître cette base en écrivant $(11t, -8t, t) = t (11, -8, 1)$. Ici, $\mS$ est donc de dimension $1$. C'est une droite vectorielle.
 
 \paragraph{Autre Exemple}
-$$S = \left\{ x - 3y + 2z = 0$$
+$$S = \left\{ x - 3y + 2z = 0 \right.$$
 $x$ est inconnue principale, et $y$ et $z$ sont inconnues seconaires. Alors l'ensemble $\mS$ des solutions de $S$ est $\mS = \{(3u - 2v, u, v) \in \R^3 \vert u, v \in \R \}$. \\
 L'application 
 \begin{eqnarray*}  
@@ -746,7 +767,7 @@ On passe ainsi en serve tous les vecteurs de $S$. Au terme du processus, on obti
 \\\\
 On peut trouver $S_m$ de la façon suivante:
 \begin{itemize}
-  \item on forme la matrice $M$ du système $S$ dans la base $\mB$.
+  \item on forme la matrice $M$ du système $S$ dans la base $\B$.
   \item on échelonne et on réduit $M$.
 \end{itemize}
 Soit $R$ la forme échelonnée réduite de $M$. Soit $P$ la matrice carrée de taille $n\times n$ produit des matrices élémentaires correspondant aux opérations élémentaires effectuées. On a 
@@ -818,10 +839,10 @@ R = \begin{pmatrix}
     &=& P \left([\vec{v}_1]_{\T} [\vec{v}_2]_{\T} [\vec{v}_3]_{\T}\right)
 \end{eqnarray*}
 on peut interpréter $P$ comme la matrice de passage de $\T$ à une base de $\R^3$ comprenant $(\vec{v}_1, \vec{v}_2)$ comme premiers vecteurs. En effet, on a
-$$[\vec{v}_1]_{\B} = \left( \begin{array}{m} 1 \\ 0 \\ 0 \end{array} \right) = P[\vec{v}_1]_{\T} \text{ et } 
-  [\vec{v}_2]_{\B} = \left( \begin{array}{m} 0 \\ 1 \\ 0 \end{array} \right) = P[\vec{v}_2]_{\T}$$
-Ces relations signifient que $\vec{v}_1$ est la premier vecteur de $\mB$ et $\vec{v_2}$ le deuxième. On a également
-$$[\vec{v}_3}]_{\B} = \left( \begin{array}{m} 1 \\ 2 \\ 0 \end{array}\right) = P [\vec{v}_3]_{\T}$$
+$$[\vec{v}_1]_{\B} = \left( \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right) = P[\vec{v}_1]_{\T} \text{ et } 
+  [\vec{v}_2]_{\B} = \left( \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right) = P[\vec{v}_2]_{\T}$$
+Ces relations signifient que $\vec{v}_1$ est la premier vecteur de $\B$ et $\vec{v_2}$ le deuxième. On a également
+$$[\vec{v}_3]_{\B} = \left( \begin{array}{c} 1 \\ 2 \\ 0 \end{array}\right) = P [\vec{v}_3]_{\T}$$
 d'où $\vec{v}_3 = \vec{v}_1 + 2 \vec{v}_2$. \\
 Le troisième vecteur de $\B$ est généré par les opération élémentaires effectuèes. Ce peut être n'importe quel vecteur de $\R^3$ qui complète $(\vec{v}_1, \vec{v}_2)$ en une base de $\R^3$. \\
 La forme échelonnée réduite $R$ de $M$ est donc la matrice du système $(\vec{v}_1, \vec{v}_2, \vec{v}_3)$ dans la base $\B$ dont les premiers vecteurs sont ceux de la base qu'on peut extraire du système en appliquant lâlgorithme défini précédemment. $R$ ne fait intervenir que les vecteurs de cette base extraite. \\
@@ -865,13 +886,13 @@ Alors $\vec{v} \in W$
        \lambda_1 & + \lambda_2 & + 2 \lambda_3 & = a \\
        & \lambda_2 & + \lambda_3 & = b \\
        &  & 0 & = c
-    \end{array}$
+    \end{array} \right. $
   \item [$\Leftrightarrow$] le système 
     $\left\{ \begin{array}{rrrc}
       x_1 & + x_2 & + 2 x_3 & = a \\
        & x_2 & + x_3 & = b \\
        &  & 0 & = c
-    \end{array}$ admet au moins une solution.
+    \end{array} \right. $ admet au moins une solution.
 \end{itemize}
 On cherche alors les conditions de compatibilité du système, c'est-à-dire les conditions sous lesquelles le système admet au moins une solution. Pour cela, on échelonne et réduit le système
 \begin{eqnarray*}
@@ -888,7 +909,7 @@ On cherche alors les conditions de compatibilité du système, c'est-à-dire les
   \end{pmatrix}
 \end{eqnarray*}
 Pour ce système, une seule condition de compatibilité:
-$$\left\{ c= 0$$
+$$\left\{ c = 0 \right.$$
 On a obtenu un système d'équations cartésiennes de $W$ (ici, on a une seule équation). Ainsi, on a $\vec{v} = (a, b, c) \in \R^3$
 $$\vec{v} \in W \Leftrightarrow c = 0$$
 Si maintenant $V$ est un sous-espace de $E$ donné par un système linéaire d'équations cartésiennes dans une base de $E$, pour déterminer une base et la dimension, on résout ce système. À partir de l'expression des solutions du système, on trouve une base de $V$, puis sa dimension.
@@ -907,7 +928,7 @@ Nous avons vu précédemment que $f$ est entièrement déterminée par la donné
 
 \paragraph{Définition} On appelle matrice de $f$ dans les bases $cE$ et $cF$ la  matrice
 $$[F]_{\cF \cE} = \bigg(
-  [f(\vec{u}_1]_{\cF}] & \ldots & [f(\vec{u}_1]_{\cF}]
+  [f(\vec{u}_1]_{\cF}] ~ \ldots ~ [f(\vec{u}_1]_{\cF}]
 \bigg)$$
 de taille $n \times m$.
 
@@ -921,19 +942,19 @@ Il vient
 \begin{eqnarray*}
   [f]_{\cF \cE}[\vec{u}]_{\cE}
   &=& 
-  \begin{pmatrix} \\ [f(\vec{u}_1]_\F & \ldots & [f(\vec{u}_m]_\F \\ \\ \end{pmatrix}
+  \begin{pmatrix} \\ [f(\vec{u}_1]_\cF & \ldots & [f(\vec{u}_m]_\cF \\ \\ \end{pmatrix}
   \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix} \\
-  &=& \lambda_1 [f(\vec{u}_1)]_\F + \ldots + [f(\vec{u}_m)]_\F \\
-  &=& [\lambda_1 f(\vec{u}_1) + \ldots + \lambda_m f(\vec{u}_m)]_\F \\
-  &=& [ f( \lambda_1 \vec{u}_1 + \ldots + \lambda_m \vec{u}_m]_\F \\
-  &=& [f(\vec{u})]_\F
+  &=& \lambda_1 [f(\vec{u}_1)]_\cF + \ldots + [f(\vec{u}_m)]_\cF \\
+  &=& [\lambda_1 f(\vec{u}_1) + \ldots + \lambda_m f(\vec{u}_m)]_\cF \\
+  &=& [ f( \lambda_1 \vec{u}_1 + \ldots + \lambda_m \vec{u}_m]_\cF \\
+  &=& [f(\vec{u})]_\cF
 \end{eqnarray*}
 
 \paragraph{Exemple} Soit $f: \R^3 \rightarrow \R^2$ définie par
-$$f(x, y, z) = (2x + y - %z ,  x + 3y)$$
-f est linéaire. \\
-Soit $\cE = (\vec{e}_1, \vec{e}_2, \vec{e}3)$ la base canonique de $\R^3$ et $\cF$ la base canonique de $\R^2$. On a
-$$[f]_{\cF \cE} = ([f(\vec{e}_1)]_\cF, [f(\vec{e}_2)]_\cF,[f(\vec{e}_3)]_\cF)$$ de taille $2\times 3$. Calculons
+$$f(x, y, z) = (2x + y - 5z ,  x + 3y)$$
+$f$ est linéaire. \\
+Soit $\cE = (\vec{e}_1, \vec{e}_2, \vec{e}_3)$ la base canonique de $\R^3$ et $\cF$ la base canonique de $\R^2$. On a
+$$[f]_{\cF \cE} = ([f(\vec{e}_1)]_\cF, [f(\vec{e}_2)]_\cF,[f(\vec{e}_3)]_\cF)$$ de taille $2 \times 3$. Calculons
 \begin{eqnarray*}
   f(\vec{e}_1) &=& f(1, 0, 0) = (2, 1) \\
   f(\vec{e}_2) &=& f(0, 1, 0) = (1, 3) \\
@@ -970,7 +991,7 @@ On observe que pour tout $\vec{u} = (x, y, z) \in \R^3$, on a
   \item pour tout $\lambda \in \R$, $[\lambda f]_{\cF \cE} = \lambda [f]_{\cF \cE}$.
   \item L'application\footnote{$Hom_\R(E, F)$ est l'ensemble des applications linéaires de $E$ dans $F$, c'est un $\R$-espace vectoriel.}
     \begin{eqnarray*}
-      Hom_\R(E, F) &\rightarrow& \M_{n\times m}(\R) \\
+      Hom_\R(E, F) &\rightarrow& M_{n\times m}(\R) \\
       f &\mapsto [f]_{\cF \cE}
     \end{eqnarray*}
     est un isomorphisme d'espace vectoriels.
@@ -1042,4 +1063,3 @@ Dans ce qui précède, nous avons en particulier appris à traiter les trois sit
   \item Déterminer un système d'équations cartésiennes de $W$ quand on connaît un système générateur de $W$: ces équations apparaissent comme les conditions de compabilité d'un certain système linéaire...
 \end{enumerate}
 À bien connaître!
-\end{enumerate}
