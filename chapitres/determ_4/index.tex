@@ -89,10 +89,10 @@ et $\sigma(i) = i$ si $i \notin \{i_1; i_2; \ldots; i_k\}$
 \paragraph{Notation} Soit $\sigma$ un $k$-cycle, on note $\sigma = (i_1 ~ i_2 ~ \ldots ~ i_k)$
 
 \paragraph{Exemples}\begin{eqnarray*}
- & n=3 & \hspace{50} (1\hspace{5}2)=\begin{pmatrix}1&2&3\\2&1&3\end{pmatrix}\in S_3 \text{ est un 2-cycle}\\
-&&\hspace{50} (1\hspace{5}2\hspace{5}3)=\begin{pmatrix}1&2&3\\3&1&2\end{pmatrix}\in S_3 \text{ est un 3-cycle}\\
-&n=4&\hspace{50} (1\hspace{5}4\hspace{5}3)=\begin{pmatrix}1&2&3&4\\4&2&1&3\end{pmatrix}\in S_4 \text{ est un 3-cycle}\\
-&n=5&\hspace{50} (4\hspace{5}2\hspace{5}1\hspace{5}5)=\begin{pmatrix}1&2&3&4&5\\5&1&3&2&4\end{pmatrix}\in S_5 \text{ est un 4-cycle}
+  & n = 3 & \hspace{50} (1 \hspace{5} 2) = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 3 \end{pmatrix} \in S_3 \text{ est un 2-cycle} \\
+  & &       \hspace{50} (1 \hspace{5} 2 \hspace{5} 3) = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \end{pmatrix}\in S_3 \text{ est un 3-cycle}\\
+  & n = 4 & \hspace{50} (1 \hspace{5} 4 \hspace{5} 3) = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 4 & 2 & 1 & 3 \end{pmatrix} \in S_4 \text{ est un 3-cycle}\\
+  & n = 5 & \hspace{50} (4 \hspace{5} 2 \hspace{5} 1 \hspace{5} 5) = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 5 & 1 & 3 & 2 & 4 \end{pmatrix} \in S_5 \text{ est un 4-cycle}
 \end{eqnarray*}
 
 %
@@ -100,7 +100,7 @@ et $\sigma(i) = i$ si $i \notin \{i_1; i_2; \ldots; i_k\}$
 %
 \paragraph{Définition} Les 2-cycles de $S_n$ s'appellent les transpositions de $S_n$
 
-\paragraph{Exemples}$(1\hspace{5}3), (2\hspace{5}4)\in S_4$ sont des transposition de $S_4$.
+\paragraph{Exemples} $(1 \hspace{5} 3), (2 \hspace{5} 4) \in S_4$ sont des transposition de $S_4$.
 
 \paragraph{Proposition} Soit $m \geq 2$ un entier naturel. Alors toute permutation de $S_n$ peut s'écrire comme composée de transpositions.
 
@@ -150,7 +150,7 @@ $$n \cdot (n-1) \cdot \ldots \cdot 2 \cdot 1 = n!$$
 \paragraph{Définition} Soient $i, j \in \{1; 2; \ldots; n\}$, $i < j$, et $\sigma \in S_n$. On dit que $\sigma$ présente une inversion en la paire $(i, j)$ si 
 $$\sigma(i) > \sigma(j)$$
 
-\paragraph{Exemple} Soit $\sigma=\begin{pmatrix}1&2&3&4&5\\3&4&1&5&2\end{pmatrix}\in S_5$. Alors $\sigma$ présente une inversion en la paire $\{2;3\}$. En effet, on a $2<3$ et $\sigma(2)=4>1=\sigma(3)$.
+\paragraph{Exemple} Soit $\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 3 & 4 & 1 & 5 & 2 \end{pmatrix} \in S_5$. Alors $\sigma$ présente une inversion en la paire $\{2; 3\}$. En effet, on a $2 < 3$ et $\sigma(2) = 4 > 1 = \sigma(3)$.
 
 %
 \subsection{Permutation paire}
@@ -172,10 +172,10 @@ $$\epsilon(\sigma) = (-1)^{n_{\sigma}} \in \{-1; 1\}$$
 $$\sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 3 & 1 & 5 & 2 & 4 \end{pmatrix} \in S_5$$
 Paires d'inversions
 $$(1, 2), (1, 4), (3, 4), (3, 5)$$
-$\sigma$ presente $4$ inversions, $\sigma$ est donc paire et $\epsilon(\sigma) = 1$\\
-Soit $(1\hspace{5}2)\in S_4$. On a
-$$(1\hspace{5}2)=\begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 1 & 3 & 4 \end{pmatrix}$$
-Les paires entre lesquelles $(1\hspace{5}2)$ présente une inversion sont: $\{1;2\}$, donc $(1\hspace{5}2)$ est impaire et $\epsilon((1\hspace{5}2)) = -1$
+$\sigma$ presente $4$ inversions, $\sigma$ est donc paire et $\epsilon(\sigma) = 1$ \\
+Soit $(1 \hspace{5} 2) \in S_4$. On a
+$$(1 \hspace{5} 2) = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 1 & 3 & 4 \end{pmatrix}$$
+Les paires entre lesquelles $(1 \hspace{5} 2)$ présente une inversion sont: $\{1; 2\}$, donc $(1 \hspace{5} 2)$ est impaire et $\epsilon((1 \hspace{5} 2)) = -1$
 
 \paragraph{Théorème} Soient $\sigma, \tau \in S_n$. Alors
 $$\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$$
@@ -231,9 +231,14 @@ Si $C$ est la matrice de taille $n \times n$ dont les colonnes sont les $C_j$, $
 $$det(C_1, C_2, \ldots, C_n) = det(C)$$
 \paragraph{Remarque} Le point de vue adopté, matrice ou système de matrices colonnes sera clair d'après la notation et le contexte.
 
-\paragraph{Exemple}$$A=\begin{pmatrix}2&7&-6\\0&-4&-1\\3&1&5\end{pmatrix}\in M_{3\times3}(\R)$$
+\paragraph{Exemple}
+$$A = \begin{pmatrix} 2 & 7 & -6 \\ 0 & -4 & -1 \\ 3 & 1 & 5 \end{pmatrix} \in M_{3 \times 3}(\R)$$
 On peut écrire:
-$$\begin{array}{|ccc|}2&7&-6\\0&-4&-1\\3&1&5\end{array}=det(A)=det\left(\begin{pmatrix}2\\0\\3\end{pmatrix},\begin{pmatrix}7\\-4\\1\end{pmatrix},\begin{pmatrix}-6\\-1\\5\end{pmatrix}\right)$$
+$$\begin{vmatrix} 
+  2 & 7 & -6 \\ 
+  0 & -4 & -1 \\ 
+  3 & 1 & 5 
+\end{vmatrix} = det(A) = det\left(\begin{pmatrix} 2 \\ 0 \\ 3 \end{pmatrix}, \begin{pmatrix} 7 \\ -4 \\ 1 \end{pmatrix}, \begin{pmatrix} -6 \\ -1 \\ 5 \end{pmatrix}\right)$$
 
 \paragraph{Théorème} Soit $n\geq 1$ un entier naturel. Alors l'application $n$ fois
 \begin{eqnarray*}
@@ -255,40 +260,6 @@ posséde les propriétés suivantes
     $$det(C_1, \ldots, C_i, \ldots, C_j(=C_i), \ldots, C_n) = 0$$
 \end{enumerate}
 Les propriétés $1.$ et $2.$ consistent à dire que l'application $det()$ est multilinéaire, et la propriété $3.$ qu'elle est alternée.
-
-\paragraph{Exemple}\begin{enumerate}
-\item Soient $n=3, j=2$ et $C_1=\begin{pmatrix}1\\0\\6\end{pmatrix},C_2=\begin{pmatrix}-7\\0\\4\end{pmatrix},C_2'=\begin{pmatrix}3\\0\\-5\end{pmatrix}, C_3=\begin{pmatrix}1\\4\\-2\end{pmatrix}$. Alors
-$$det\left(\begin{pmatrix}1\\0\\6\end{pmatrix},\begin{pmatrix}-7\\0\\4\end{pmatrix}+\begin{pmatrix}3\\0\\-5\end{pmatrix}, 	\begin{pmatrix}1\\4\\-2\end{pmatrix}\right)= 
-det\left(\begin{pmatrix}1\\0\\6\end{pmatrix},\begin{pmatrix}-7\\0\\4\end{pmatrix}, \begin{pmatrix}1\\4\\-2\end{pmatrix}\right)+ 
-det\left(\begin{pmatrix}1\\0\\6\end{pmatrix},\begin{pmatrix}3\\0\\-5\end{pmatrix}, \begin{pmatrix}1\\4\\-2\end{pmatrix}\right)$$
-ce qui peut aussi s'écrire:
-$$\begin{array}{|ccc|}
-1&-7+3&1\\0&1+0&4\\6&4-5&-2
-\end{array}=
-\begin{array}{|ccc|}
-1&-7&1\\0&1&4\\6&4&-2
-\end{array}+
-\begin{array}{|ccc|}
-1&3&1\\0&0&4\\6&-5&-2
-\end{array}$$
-\item Soient $n=3, j=1$ et $C_1=\begin{pmatrix}1\\0\\2\end{pmatrix},C_2=\begin{pmatrix}-7\\5\\4\end{pmatrix},C_3=\begin{pmatrix}3\\2\\-6\end{pmatrix}, \lambda=3$. Alors
-$$det\left( 3 \begin{pmatrix}1\\0\\2\end{pmatrix},\begin{pmatrix}-7\\5\\4\end{pmatrix},\begin{pmatrix}3\\2\\-6\end{pmatrix}\right)= 3 \cdot det\left(\begin{pmatrix}1\\0\\2\end{pmatrix},\begin{pmatrix}-7\\5\\4\end{pmatrix},\begin{pmatrix}3\\2\\-6\end{pmatrix}\right)$$
-ce qui peut aussi s'écrire:
-$$\begin{array}{|ccc|}
-3&-7&3\\0&5&2\\6&4&-6
-\end{array}=3 
-\begin{array}{|ccc|}
-1&-7&3\\0&5&2\\2&4&-6
-\end{array}$$
-\item Soient $n=3, i=1, j=3$ et $C_1=\begin{pmatrix}2\\-7\\4\end{pmatrix},C_2=\begin{pmatrix}3\\1\\5\end{pmatrix},C_3=\begin{pmatrix}2\\-7\\4\end{pmatrix}$. Alors
-$$det\left(\begin{pmatrix}2\\-7\\4\end{pmatrix},\begin{pmatrix}3\\1\\5\end{pmatrix},\begin{pmatrix}2\\-7\\4\end{pmatrix}\right)=0$$
-ce qui peut aussi s'écrire:
-$$
-\begin{array}{|ccc|}
-2&3&2\\-7&1&-7\\4&5&4
-\end{array}=0
-$$
-\end{enumerate}
 
 \paragraph{Démonstration} 
 \begin{enumerate}
@@ -353,10 +324,79 @@ $$
     $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = -p_{\sigma}(C_1, C_2, \ldots, C_n)$$
     Ainsi pour tout $i\in \{1; \ldots; \frac{n!}{2}\}$
     \begin{eqnarray*}
-      p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n) &=& -p_{\sigma_i}(C_1, C_2, \ldots, C_n) \\
-      p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n) &+& p_{\sigma_i}(C_1, C_2, \ldots, C_n) ~=~ 0
+      p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n) & = & -p_{\sigma_i}(C_1, C_2, \ldots, C_n) \\
+      p_{\sigma_i \circ \tau}(C_1, C_2, \ldots, C_n) & + & p_{\sigma_i}(C_1, C_2, \ldots, C_n) ~ = ~ 0
     \end{eqnarray*}
     Il s'ensuit que $det(C_1, \ldots, C_i, \ldots, C_j(=C_i), \ldots, C_n) = 0$
+\end{enumerate}
+
+\paragraph{Exemple}
+\begin{enumerate}
+  \item Soient $n = 3$, $j = 2$ et $C_1 = \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}$, $C_2 = \begin{pmatrix} -7 \\ 0 \\ 4 \end{pmatrix}$, $C_2' = \begin{pmatrix} 3 \\ 0 \\ -5 \end{pmatrix}$, $C_3 = \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix}$. Alors
+    $$det\left(
+        \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}, 
+        \begin{pmatrix} -7 \\ 0 \\ 4 \end{pmatrix} + \begin{pmatrix} 3 \\ 0 \\ -5 \end{pmatrix}, 
+        \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix} 
+      \right) = det\left(
+        \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}, 
+        \begin{pmatrix} -7 \\ 0 \\ 4 \end{pmatrix}, 
+        \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix}
+      \right) + det\left(
+        \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}, 
+        \begin{pmatrix} 3 \\ 0 \\ -5 \end{pmatrix}, 
+        \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix}
+      \right)$$
+    ce qui peut aussi s'écrire:
+    $$\begin{vmatrix}
+        1 & -7 + 3 & 1 \\
+        0 & 1 + 0 & 4 \\
+        6 & 4 - 5 & -2
+      \end{vmatrix}
+      = \begin{vmatrix}
+        1 & -7 & 1 \\
+        0 & 1 & 4 \\
+        6 & 4 & -2
+      \end{vmatrix}
+      + \begin{vmatrix}
+        1 & 3 & 1 \\
+        0 & 0 & 4  \\
+        6 & -5 & -2
+      \end{vmatrix}$$
+      
+  \item Soient $n = 3$, $j = 1$ et $C_1 = \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}$, $C_2 = \begin{pmatrix} -7 \\ 5 \\ 4 \end{pmatrix}$, $C_3 = \begin{pmatrix} 3 \\ 2 \\ -6 \end{pmatrix}$, $\lambda = 3$. Alors
+    $$det\left( 
+        3 \cdot \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}, 
+        \begin{pmatrix} -7 \\ 5 \\ 4 \end{pmatrix}, 
+        \begin{pmatrix} 3 \\ 2 \\ -6 \end{pmatrix}
+      \right)= 3 \cdot det\left(
+        \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}, 
+        \begin{pmatrix} -7 \\ 5 \\ 4 \end{pmatrix}, 
+        \begin{pmatrix} 3 \\ 2 \\ -6 \end{pmatrix} 
+      \right)$$
+    ce qui peut aussi s'écrire:
+    $$\begin{vmatrix}
+        3 & -7 & 3 \\
+        0 & 5 & 2 \\ 
+        6 & 4 & -6
+      \end{vmatrix} 
+      = 3 \cdot \begin{vmatrix}
+        1 & -7 & 3 \\
+        0 & 5 & 2 \\ 
+        2 & 4 & -6
+      \end{vmatrix}$$
+    
+  \item Soient $n = 3$, $i = 1$, $j = 3$ et $C_1 = \begin{pmatrix} 2 \\ -7 \\ 4 \end{pmatrix}$, $C_2 = \begin{pmatrix} 3 \\ 1 \\ 5 \end{pmatrix}$, $C_3 = \begin{pmatrix} 2 \\ -7 \\ 4 \end{pmatrix}$. Alors
+    $$det\left(
+        \begin{pmatrix} 2 \\ -7 \\ 4 \end{pmatrix}, 
+        \begin{pmatrix} 3 \\ 1 \\ 5 \end{pmatrix}, 
+        \begin{pmatrix} 2 \\ -7 \\ 4 \end{pmatrix}
+      \right) = 0$$
+    ce qui peut aussi s'écrire:
+    $$\begin{vmatrix}
+        2 & 3 & 2 \\
+        -7 & 1 & -7 \\
+        4 & 5 & 4
+      \end{vmatrix}=0$$
 \end{enumerate}
 
 \paragraph{Remarque} Soient $A, B \in M_{n \times n}(\R)$, $\lambda \in \R$. En général,
