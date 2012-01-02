@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[10pt,a4paper]{scrreprt}
 \usepackage{fullpage}
 
 \usepackage[utf8]{inputenc}
@@ -6,6 +6,8 @@
 \usepackage{enumerate}
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+\usepackage{hyperref}
 
 
 \renewcommand{\familydefault}{\sfdefault}
@@ -29,13 +31,31 @@
 \newcommand{\cL}{\mathcal{L}}
 
 \title{Algèbre Linéaire I}
-\author{Johannes Wüthrich (selon le cours de Prof. Lequeue)}
+\subtitle{selon le cours de Prof. Lequeue (Septembre - Décembre 2011) \\ Version BETA}
+\author{Johannes Wüthrich}
 \date{\today}
 
 
 \begin{document}
 
 \maketitle
+
+\setcounter{chapter}{-1}
+
+\chapter{Préface}
+%
+\section{Remerciement}
+%
+\paragraph{Nicola Gerber} Je remercie beaucoup Nicola Gerber pour son aide à corriger les nombreuses fautes que j'ai fait à recopier tout à l'ordinateur. Il a aussi pris beaucoup de temps pour recopier des divers exemples que je n'ai pas eu dans mes notés. Sans lui ce manuel ne serra pas près dès maintenant. Merci beaucoup!
+
+%
+\section{Notes importantes}
+%
+\paragraph{Version BETA} Bien qu'on a investi beaucoup de temps à corriger toutes les erreurs qu'on a trouvé je suis sûr qu'il y a encore des nombreuses fautes dans le texte. Sachant ça je mets à disposition ce document seulement en version BETA. Ça veut dire que je ne prends pas de responsabilité pour quelque-chose qui se passe à cause d'une erreur dans ce document. Mais ça ne veut pas dire qu'il y a des milles d'erreurs. Justement sois attentif en lisant ce manuel.
+
+\paragraph{Fautes et remarques} Si tu trouve une erreur où si tu a l'impression que quelque-chose manque, n'hésite pas à me envoyer un mail sous l'adresse \href{mailto:johannes.wuethrich@epfl.ch}{johannes.wuethrich@epfl.ch}. Je vais essayer de prendre en compte tous votres remarques dans la prochaine version.
+
+\paragraph{Version finale} Je vais sûrement faire une deuxième version BETA s'il y beaucoup des fautes qui m'ont été raconté. Je pense qu'il y a aussi la possibilité que Prof. Lequeue fais une controlle de tout le texte. Mais je ne suis pas encore sûr quand et si ça se passera. 
 
 \tableofcontents
 
