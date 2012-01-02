@@ -50,9 +50,9 @@ On dit alors que $(\R, +)$ est une groupe commutatif.
       \item il existe $1 \in \R$ tel que pour tout $x \in \R$
         $$1 \cdot x = x = x \cdot 1 \text{ (neutralité) }$$
       \item pour tous $x, y, z \in \R$
-        $$(x + y) \cdot z = x \cdot z + y \cdot z \text{ (distributivité à droite\footnote{De $\cdot$ par rapport à $+$}) }$$
-        $$x \cdot (y + z) = x \cdot y + x \cdot z \text{ (distributivité à gauche\footnote{De $\cdot$ par rapport à $+$}) }$$
-        Distributivité en générale.
+        $$(x + y) \cdot z = x \cdot z + y \cdot z \text{ (distributivité à droite) }$$
+        $$x \cdot (y + z) = x \cdot y + x \cdot z \text{ (distributivité à gauche) }$$
+        Distributivité de $\cdot$ par rapport à $+$ en générale.
     \end{itemize}
 \end{itemize}
 On dit alors que $(\R, +, \cdot)$ est un anneau. De plus on a
@@ -75,7 +75,7 @@ On dit alors que $(\R, +, \cdot)$ est un corps commutatif.
 %
 \subsection{L'ensemble des $n$-tuplets $\R^n$}
 %
-\paragraph{Définition} On note $\R^2$ le produit cartésien $\R \times \R$, c'est-à-dire l'ensemble des couples $(x, y)$ a coordonnés $x, y \in \R$. De même, on note $\R^3$ le produit cartésienne $\R \times \R \times \R$, c'est-à-dire des triplets $(x, y, z)$ à coordonnés $x, y, z \in \R$. \\
+\paragraph{Définition} On note $\R^2$ le produit cartésien $\R \times \R$, c'est-à-dire l'ensemble des couples $(x, y)$ à coordonnés $x, y \in \R$. De même, on note $\R^3$ le produit cartésienne $\R \times \R \times \R$, c'est-à-dire des triplets $(x, y, z)$ à coordonnés $x, y, z \in \R$. \\
 Plus généralement, si $n \geq 1$ est un entier naturel, $\R^n$ designe l'ensemble $\R \times \R \times \ldots \times \R$ des $n$-couples $(x_1, x_2, \ldots, x_n)$ à coordonnées $x_1, x_2, \ldots, x_n \in \R$.
         
 %
@@ -96,13 +96,13 @@ Les $x_i$ sont \underline{les inconnues} de l'équation et les $a_i$ sont \under
 %
 \subsection{Système d'équations linéaires}
 %
-\paragraph{Définition} Soient $n \geq 1$ et $m \leq 1$ deux entiers naturels; un système d'équations linéaires à $n$ équations et $m$ inconnues est de la forme:
+\paragraph{Définition} Soient $n \geq 1$ et $m \geq 1$ deux entiers naturels; un système d'équations linéaires à $n$ équations et $m$ inconnues est de la forme:
 $$n \left\{ \begin{array}{c}
   a_{11}x_{1} + a_{12}x_{2} + \ldots + a_{1m}x_{m} = b_{1} \\
   a_{21}x_{1} + a_{22}x_{2} + \ldots + a_{2m}x_{m} = b_{2} \\
   \vdots \\
   a_{n1}x_{1} + a_{n2}x_{2} + \ldots + a_{nm}x_{m} = b_{n}
-\end{array} \right. (a_i, b_l \in \R)$$
+\end{array} \right. (a_{il}, b_l \in \R)$$
 
 \paragraph{Exemple}
 $$\left\vert \begin{array}{rcl}
@@ -117,9 +117,9 @@ est un système à $3$ équations et $4$ inconnues à coefficients dans $\R$.
 %
 \subsection{Solution d'un système d'équations linéaires}
 %
-\paragraph{Définition} Soit $S$ un système d'équations linéaires à $n$ équations et $m$ inconnues. Une solution du système dans $\R^m$ est un $m$-uplet $(t_1, t_1, \ldots, t_m) \in \R^m$ tel que les $n$ égalités soient vérifiés, en prenant $x_i = t_i$. Résoudre dans $\R^m$ le système $S$ consiste à déterminer l'ensemble des solutions de $S$ dans $\R^m$.
+\paragraph{Définition} Soit $S$ un système d'équations linéaires à $n$ équations et $m$ inconnues. Une solution du système dans $\R^m$ est un $m$-uplet $(t_1, t_2, \ldots, t_m) \in \R^m$ tel que les $n$ égalités soient vérifiés, en prenant $x_i = t_i$. Résoudre dans $\R^m$ le système $S$ consiste à déterminer l'ensemble des solutions de $S$ dans $\R^m$.
 
-\paragraph{Exemple} On considère le système de l'exemple précédent. Alors $(2, -1, 0, 1) \in \R^n$ est une solutions (dans $\R^n$) de ce système. En effet on a
+\paragraph{Exemple} On considère le système de l'exemple précédent. Alors $(2, -1, 0, 1) \in \R^4$ est une solutions (dans $\R^4$) de ce système. En effet on a
 $$\left\vert \begin{array}{rcl}
   7 \cdot (-1) + 0 + 8 \cdot 1 & = & 1 \\
   3 \cdot 2 + 2 \cdot (-1) + 5 \cdot 0 + 1 & = & 5 \\
@@ -189,7 +189,7 @@ $$\left\{ \begin{array}{rcl}
   y & = & -\frac{1}{7} z - \frac{8}{7} t + \frac{1}{7}
 \end{array} \right.$$
 On pose $z=u$ et $t=v$. L'ensemble des solutions du système est alors
-$$\cL = \left\{ \left(-\frac{11}{7} u + \frac{3}{7} v + \frac{11}{7}, -\frac{1}{7} u - \frac{8}{7} v + \frac{1}{7}, u, v \right) \in \R^4 \vert u, v \in \R \right\}$$
+$$\cL = \left\{ \left(-\frac{11}{7} u + \frac{3}{7} v + \frac{11}{7}, -\frac{1}{7} u - \frac{8}{7} v + \frac{1}{7}, u, v \right) \in \R^4 ~ \vert ~ u, v \in \R \right\}$$
 %
 %
 \section{L'algorithme d'elimination de Gauss}
@@ -215,12 +215,12 @@ $$\begin{pmatrix}
   a_{n1} & a_{n2} & \cdots & a_{nm}
  \end{pmatrix}$$
 La matric augmentée associée au système est le tableau
-$$\begin{pmatrix}
-  a_{11} & a_{12} & \cdots & a_{1m} & \vert & b_{1} \\
-  a_{21} & a_{22} & \cdots & a_{2m} & \vert & b_{2} \\
-  \vdots  & \vdots  & \ddots & \vdots& \vert & \vdots  \\
-  a_{n1} & a_{n2} & \cdots & a_{nm} & \vert & b_{n}
- \end{pmatrix}$$
+$$\left( \begin{array}{cccc|c}
+  a_{11} & a_{12} & \cdots & a_{1m} & b_{1} \\
+  a_{21} & a_{22} & \cdots & a_{2m} & b_{2} \\
+  \vdots  & \vdots  & \ddots & \vdots & \vdots  \\
+  a_{n1} & a_{n2} & \cdots & a_{nm} & b_{n}
+ \end{array} \right) $$
  
 \paragraph{Définition} Une matrice est dit échelonnée si elle se présente sous la forme suivante:
 \begin{itemize}
