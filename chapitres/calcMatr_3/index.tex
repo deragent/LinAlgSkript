@@ -17,16 +17,16 @@ $$\begin{pmatrix}
   a_{n1} & a_{n2} & \ldots & a_{nm}
 \end{pmatrix} \text{ avec } a_{ij} \in \R$$
 
+\paragraph{Exemple}
+$$\begin{pmatrix}
+  2 & -5 & \sqrt{2} \\
+  3 &0 & 1 \\
+\end{pmatrix} \text{ est une matrice de taille $2\times 3$ à coefficients dans $\R$. Le coefficient $a_{12}$ est -5.} $$
+
 %
 \subsection{Ensemble des matrices}
 %
 \paragraph{Définition} On note $M_{n, m}(\R)$ l'ensemble des matrices de taille $n\times m$ à coefficients dans $\R$.
-
-\paragraph{Exemple}
-$$\begin{pmatrix}
-  2 & -5 & \sqrt{2} \\
- 3 &0 & 1 \\
-\end{pmatrix} \text{ est une matrice de taille $2\times 3$ à coefficients dans $\R$. Le coefficient $a_{12}$ est -5.} $$
 
 %
 \subsection{Matrice carrée}
@@ -58,7 +58,7 @@ $$s_{ij} = a_{ij} + b_{ij} ~ \forall ~ 1 \leq i \leq n, 1 \leq j \leq m$$
 Ainsi, l'addition $+$ dans $M_{n, m}(\R)$ est associative, unifère et tout $A \in M_{n, m}(\R)$ admet une matrice opposée. Par conséquence $(M_{n, m}(\R), +)$ est un groupe.\\
 De plus, comme $+$ dans $\R$ est commutative, l'addition dans $M_{n,m}(\R)$ est commutative:
 $$\forall A, B \in M_{n, m}(\R), ~ A + B = B + A$$
-En conclusion, $(M_{n, m}(\R)$ est un groupe commutatif.
+En conclusion, $(M_{n, m}(\R), +)$ est un groupe commutatif.
 
 \paragraph{Démonstration}
 \begin{enumerate}
@@ -87,7 +87,7 @@ $$\alpha A = (\alpha a_{ij}) \in M_{n, m}(\R)$$
   \item $\forall A \in M_{n, m}(\R)$
     $$1 \cdot A = A$$
 \end{enumerate}
-On peut donc dire, que $M_{n, m}(\R)$ muni de l'addition des matrices et de la multiplication par les réels est un $\R$-espace vectoriel.
+On peut donc dire, que $M_{n, m}(\R)$ muni de l'addition des matrices et de la multiplication par les réels $(M_{n, m}(\R), +, \cdot)$ est un $\R$-espace vectoriel.
 
 %
 \subsection{Produit matriciel}
@@ -117,8 +117,6 @@ $$AB =
   \item $$A \times (B \times C) = (A \times B) \times C$$
   \item $$A \times (B + C) = A \times B + A \times C$$ 
     $$(B + C) \times A = B \times A + C \times A$$
-  \item Pour tout entier $m \geq 1$ on appelle matrice identité de taille $n \times n$ la matrice carrée
-    $$I_n = (a_{ij}) ~ ~ a_{ij} = \left\{ \begin{array}{lr} 1, & i=j \\ 0, & i \neq j \end{array} \right.$$
 \end{enumerate}
 
 \paragraph{Attention} Deux matrices quelconques ne commutent pas nécessairement.
@@ -126,18 +124,6 @@ $$AB =
 $$A B = \begin{pmatrix} 9 & 3 \\ 22 & 7 \end{pmatrix}$$
 $$B A = \begin{pmatrix} -3 & -9 \\ 6 & 19 \end{pmatrix}$$
 On voit donc que $A B \neq B A$.
-
-\paragraph{Exemple} Soient $A=\begin{pmatrix} 1 & 3 \\ 2 & 7 \end{pmatrix}$ et $B=\begin{pmatrix} -3 & 0 \\ 4 & 1 \end{pmatrix}$. Alors 
-$$A B = 
-\begin{pmatrix}
-  9 & 3 \\
-  22 & 7
-\end{pmatrix} \text{ et } B A = 
-\begin{pmatrix}
-  -3 & -9 \\
-  6 & 19
-\end{pmatrix}$$ 
-Donc $A B\neq B A$.
 
 \paragraph{Attention}
 \begin{itemize}
@@ -152,6 +138,13 @@ Donc $A B\neq B A$.
 \section{Inversion des matrices}
 %
 %
+
+
+%
+\subsection{Matrice identité}
+%
+\paragraph{Définition} Pour tout entier $n \geq 1$ on appelle matrice identité de taille $n \times n$ la matrice carrée
+    $$I_n = (a_{ij}) ~ ~ a_{ij} = \left\{ \begin{array}{lr} 1, & i=j \\ 0, & i \neq j \end{array} \right.$$
 
 %
 \subsection{Matrice inversible}
@@ -181,7 +174,8 @@ On vérifie que $A A^{-1} = I_n = A^{-1} A$.
 %
 \subsection{Matrice de taille $2\times 2$}
 %
-\paragraph{Lemme} Soient $a, b, c, d \in \R, A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$ et $B = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \in M_{2}(\R)$. Alors $A B = (a d - b c) I_n = B A$.
+\paragraph{Lemme} Soient $a, b, c, d \in \R$, $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$ et $B = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \in M_{2}(\R)$. Alors 
+$$A B = (a d - b c) I_2 = B A$$
 
 \paragraph{Démonstration} 
 $$A B 
@@ -205,7 +199,7 @@ $$A^{-1} = \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
   
   \item si $a d - b c = 0$, alors $A$ n'est pas inversible.
 \end{enumerate}
-Démontrons les des implications:
+Démontrons les deux implications:
 \begin{enumerate}
   \item On suppose que $a d - b c \neq 0$. Par suite, $a d - b c$ est inversible dans $\R$. D'après le lemme, on a
     $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} 
@@ -246,7 +240,8 @@ Démontrons les des implications:
     Par conséquence, $A B$ est inversible d'inverse $(B^{-1} A^{-1})$
 \end{enumerate}
 
-\paragraph{Proposition} Plus généralement, si $A_1, A_2, \ldots, A_m$ sont des matrices inversibles on a $(A_1 A_2 \ldots A_m)^{-1} = A_m^{-1} A_{m-1}^{-1} \ldots A_1^{-1}$
+\paragraph{Proposition} Plus généralement, si $A_1, A_2, \ldots, A_m$ sont des matrices inversibles on a 
+$$(A_1 A_2 \ldots A_m)^{-1} = A_m^{-1} A_{m-1}^{-1} \ldots A_1^{-1}$$
 
 %
 \subsection{Groupe des matrices inversibles}
@@ -274,8 +269,8 @@ $$B^{-1} A^{-1} = \begin{pmatrix} 31 & 20 \\ 17 & 11 \end{pmatrix}
   \begin{pmatrix} 2 & -7 \\ -1 & 4 \end{pmatrix} 
   = \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix}$$
 On a $(31 \cdot 11) - (17 \cdot 20) = 341 - 340 = 1 \neq 0$. Donc $A B$ est inversible 
-$$\frac{1}{1} \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix} 
-  = \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix}$$
+$$(AB)^{-1} = \frac{1}{1} \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix} 
+  = \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix} = B^{-1} A^{-1}$$
 qui est bien égale à $B^{-1} A^{-1}$.
 
 %
@@ -337,7 +332,7 @@ $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
   \item Soient $A = \begin{pmatrix} 1 & -7 & 5 \\ 0 & 3 & 4 \end{pmatrix} \in M_{2\times 3}(\R)$ et $F_{1 2} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \in M_{2 \times 2}(\R)$. Alors
     $$F_{1 2} A 
       = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 1 & -7 & 5 \\ 0 & 3 & 4 \end{pmatrix} 
-      = \begin{pmatrix} 0 & 3 & 3 \\ 0 & 0 & 0 \end{pmatrix}$$
+      = \begin{pmatrix} 0 & 3 & 4 \\ 0 & 0 & 0 \end{pmatrix}$$
 
   \item Soient $A = \begin{pmatrix} 1 & 5 \\ 0 & 4 \\ -7 & 2 \end{pmatrix} \in  M_{3 \times 2}(\R)$ et $F_{3 1} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix} \in M_{3 \times 3}(\R)$. Alors
     $$F_{3 1} A 
@@ -354,7 +349,7 @@ $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
 \subsection{Symbole de Kronecker}
 %
 \paragraph{Définition} Soit $n \geq 1$ un entier naturel. On note
-$$\mS: \{1; \ldots; n\}\times\{1; \ldots; n \} \rightarrow {0; 1}$$
+$$\mS: \{1; \ldots; n\}\times\{1; \ldots; n \} \rightarrow \{0; 1\}$$
 L'application est défini par
 $$\delta_{ij} = \left\{\begin{array}{lr} 1 & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$ 
 
@@ -377,7 +372,7 @@ $$F_{ij} F_{kl} = \begin{pmatrix}
   0 & \ldots & 0 & 1 & 0 \\
   & & & 0 & \\
 \end{pmatrix} = F_{il}$$
-Ainsi $F_{ij} F{kl} = \delta_{ik} F_{il}$.
+Ainsi $F_{ij} F_{kl} = \delta_{ik} F_{il}$.
 
 %
 \subsection{Les opérations élémentaires}
@@ -410,7 +405,7 @@ On introdiut les matrices suivantes ($n \geq 1$ entier naturel)
       \end{pmatrix}$$
       
   \item $(i, j) \in \{1; \ldots; n\}\times\{1;\ldots; n\}, i\neq j$
-    $$E_{ij} = \left( \sum_{l=1, l \notin {i; j}}^n F_{ll} \right) + F_{ij} + F_{ji} = 
+    $$E_{ij} = \left( \sum_{l=1, l \notin \{i; j\}}^n F_{ll} \right) + F_{ij} + F_{ji} = 
       \begin{pmatrix}
         1 & & & & & & 0 \\
         & 0 & & & & 1 & \\
@@ -449,16 +444,16 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
       \begin{pmatrix} 
         \\ l^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
-      \begin{array}{c} 
-        1, \ldots, l-1 \\ l \\ l+1, \ldots, n 
+      \begin{array}{l} 
+        \leftarrow ~ 1, \ldots, l-1 \\ \leftarrow ~ l \\ \leftarrow ~ l+1, \ldots, n 
       \end{array}$$
     sinon, on a
     $$c F_{ii} A =
       \begin{pmatrix}
         \\ c\text{-fois } i^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
-      \begin{array}{c} 
-        1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
+      \begin{array}{l} 
+        \leftarrow ~ 1, \ldots, i-1 \\ \leftarrow ~ i \\ \leftarrow ~ i+1, \ldots, n 
       \end{array}$$
     On voit alors que $\left( \sum_{l=1, l\neq i}^n F_{ll} \right) A +  c F_{ii} A$ est la matrice cherchée.
     
@@ -468,8 +463,8 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
         \begin{pmatrix}
           \\ c\text{-fois } j^{\text{ème}} \text{ ligne de } A \\ \\
         \end{pmatrix} 
-        \begin{array}{c} 
-          1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
+        \begin{array}{l} 
+          \leftarrow ~ 1, \ldots, i-1 \\ \leftarrow ~ i \\ \leftarrow ~ i+1, \ldots, n 
         \end{array}$$
     Donc $A + c F_{ij} A$ est bien la matrice cherchée.
     
@@ -479,23 +474,23 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
       \begin{pmatrix}
         \\ l^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
-      \begin{array}{c} 
-        1, \ldots, l-1 \\ l \\ l+1, \ldots, n 
+      \begin{array}{l} 
+        \leftarrow ~ 1, \ldots, l-1 \\ \leftarrow ~ l \\ \leftarrow ~ l+1, \ldots, n 
       \end{array}$$
     sinon
       $$F_{ij} A =
       \begin{pmatrix}
         \\ j^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
-      \begin{array}{c} 
-        1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
+      \begin{array}{l} 
+        \leftarrow ~ 1, \ldots, i-1 \\ \leftarrow ~ i \\ \leftarrow ~ i+1, \ldots, n 
       \end{array}$$
       $$F_{ji} A =
       \begin{pmatrix}
         \\ i^{\text{ème}} \text{ ligne de } A \\ \\
       \end{pmatrix} 
-      \begin{array}{c} 
-        1, \ldots, j-1 \\ j \\ j+1, \ldots, n 
+      \begin{array}{l} 
+        \leftarrow ~ 1, \ldots, j-1 \\ \leftarrow ~ j \\ \leftarrow ~ j+1, \ldots, n 
       \end{array}$$
     Ainsi $\left( \sum_{l=1, l \notin {i; j}}^{n} F_{ll} A \right) + F_{ij} A + F_{ji} A$ est la matrice cherchée.
 \end{enumerate}
@@ -503,7 +498,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
 \paragraph{Exemple} Soit $A = \begin{pmatrix} 5 & -3 & 0 \\ 4 & 2 & 7 \end{pmatrix} \in M_{2 \times 3}(\R)$. 
 \begin{itemize}
   \item On veut multiplier la première ligne par $-7$.
-    $$A \xrightarrow {L_1 \leftarrow L_1(-7)} 
+    $$A \xrightarrow {L_1 \leftarrow (-7)L_1} 
     \begin{pmatrix} -35 & 21 & 0 \\ 4 & 2 & 7 \end{pmatrix}$$
     On calcule
     $$E_1(-7) A 
@@ -541,7 +536,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
         1 & 0 & \dots & & 0 \\
         0 & \ddots & & & \vdots \\
         \vdots & & \frac{1}{c} \\
-        & & & \ddot s & 0 \\
+        & & & \ddots & 0 \\
         0 & \dots & & 0 & 1
       \end{pmatrix} = 
       \begin{pmatrix}
@@ -590,7 +585,7 @@ où les $a_{i j}$ et les $b_{i}$ sont des réels. Soit
 $$A = \begin{pmatrix}
   a_{1 1} & a_{1 2} & \dots & a_{1 m} \\
   a_{2 1} & a_{2 2} & \dots & a_{2 m} \\
-  \vdots & \vdots & \vdots & \vdots \\
+  \vdots & \vdots & \ddots & \vdots \\
   a_{n 1} & a_{n 2} & \dots & a_{n m}
 \end{pmatrix}$$
 la matrice du système et soit
@@ -620,7 +615,7 @@ $$A X = B$$
     $$A \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} + \alpha \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} - \begin{pmatrix} t'_1 \\ \vdots \\ t'_m \end{pmatrix} \right) \right) 
       = A \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} + \alpha A \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} - \begin{pmatrix} t'_1 \\ \vdots \\ t'_m \end{pmatrix} \right) 
       = B + 0 = B$$
-    donc $(t_1, t_2, \ldots, t_m) + \alpha ((t_1, t_2, \ldots, t_m) - (t'_1, t'_2, \ldots, t'_m))$ est une solution du système. Lorsque $\alpha$ parcourt $\R$ tout entier, on obtien une infinité de solutions.
+    donc $(t_1, t_2, \ldots, t_m) + \alpha ((t_1, t_2, \ldots, t_m) - (t'_1, t'_2, \ldots, t'_m))$ est une solution du système. Lorsque $\alpha$ parcourt $\R$ tout entier, on obtient une infinité de solutions.
 \end{itemize}
 
 %
@@ -641,7 +636,7 @@ $$A X = B$$
 \begin{itemize}
   \item[$1. \Rightarrow 2.$] On suppose que $A$ est inversible. Soit $B \in M_{n, 1}(\R)$. On a
     $$A (A^{-1} B) = (A A^{-1}) B = I_n B = B$$
-    donc $A^{-1} B \in M_{n, 1}(\R)$ est une solution du système $A X = B$. Maintenant, si $T \in M_{n, 1}(\R)$ est une solutions de ce système, on a $A T = B$, d'où $A^{-1}(A T) = A^{-1} B$\footnote{avec $T = (A^{-1} A) T$} ce qui montre que $T$ est unique. Par conséquent, le système $A X = B$ a une unique solution.
+    donc $A^{-1} B \in M_{n, 1}(\R)$ est une solution du système $A X = B$. Maintenant, si $T \in M_{n, 1}(\R)$ est une solutions de ce système, on a $A T = B$, d'où\footnote{avec $T = (A^{-1} A) T$} $A^{-1}(A T) = A^{-1} B$ ce qui montre que $T$ est unique. Par conséquent, le système $A X = B$ a une unique solution.
     
   \item[$2. \Rightarrow 3.$] Supposons que pour tout $B \in M_{n, 1}(\R)$, le système $A X = B$ admet une unique solutions. Puisque ce système admet une unique solution, toutes les inconnues du système sont principale. En effet, si l'une\footnote{où plusieurs} des inconnues était sécondaire, on se trouverait dans l'un des cas suivants
     \begin{itemize}
@@ -741,17 +736,20 @@ $$A^{-1} B = \frac{1}{4} \begin{pmatrix}
 %
 \subsection{Matrice triangulaire supérieure}
 %
-\paragraph{Définition} On dit que $A$ est triangulaire supérieure si les coefficients de $A$ en-dessous de la diagonale sont nuls, autrement dit si $i > j \Rightarrow a_{ij} = 0$
+\paragraph{Définition} On dit que $A$ est triangulaire supérieure si les coefficients de $A$ en-dessous de la diagonale sont nuls, autrement dit si 
+$$i > j \Rightarrow a_{ij} = 0$$
 
 %
 \subsection{Matrice triangulaire inférieure}
 %
-\paragraph{Définition} On dit que $A$ est triangulaire inférieure si tous les coefficients de $A$ au-dessus de la diagonale sont nuls, autrement dit si $i < j \Rightarrow a_{ij} = 0$
+\paragraph{Définition} On dit que $A$ est triangulaire inférieure si tous les coefficients de $A$ au-dessus de la diagonale sont nuls, autrement dit si 
+$$i < j \Rightarrow a_{ij} = 0$$
 
 %
 \subsection{Matrice diagonale}
 %
-\paragraph{Définition} On dit que $A$ est diagonale si les coefficients de $A$ en dehors de la diagonale sont nuls, autrement dit si $i\neq j \Rightarrow a_{ij} = 0$
+\paragraph{Définition} On dit que $A$ est diagonale si les coefficients de $A$ en dehors de la diagonale sont nuls, autrement dit si 
+$$i\neq j \Rightarrow a_{ij} = 0$$
 
 \paragraph{Théorème} Soit $A$ une matrice triangulaire supérieure de taille $n\times n$. Alors $A$ est inversible si et seulement si tous ses coefficients diagonaux sont nun nuls. Si $A$ est inversible, alors $A^{-1}$ est encore une matrice triangulaire supérieure.
 \\\\
@@ -767,96 +765,96 @@ Montrons par récurence sur $n \geq 1$ que l'inverse d'une matrice triangulaire 
   \item On suppose que l'inverse de toute matrice triangulaire supérieure inversible de taille $(n-1) \times (n-1)$ est encore triangulaire supérieure.
   
   \item Soit $A$ une matrice triangulaire supérieure inversible de taille $n\times n$. Présentons $A$ par blocs de la façon suivante
-    $$A = \begin{pmatrix}
-      a &   & L &   \\
+    $$A = \left( \begin{array}{c|ccc}
+      a &   & L &   \\ \hline
         & * & * & * \\
       0 & 0 & T & * \\
         & 0 & 0 & * \\
-    \end{pmatrix}$$
+    \end{array} \right)$$
     où $a \in \R$, $L$ est une matrice ligne de taille $1 \times (n-1)$ et $T$ est une matrice triangulaire supérieure de taille $(n-1)\times(n-1)$. Du fait que $A$ est inversible, tous ses coefficients diagonaux sont non nuls. Cela implique que $a \neq 0$ et que les coefficients diagonaux de $T$ sont non nuls, donc $T$ est inversible. Par l'hypothèse de récurence, l'inverse $T^{-1}$ de $T$ est une matrice triangulaire supérieure. \\
     Calculons de façon générale le produit de deux matrices triangulaires supérieure décomposées par blocs:
-    $$\begin{pmatrix}
-        a' &   & L' & ~ \\
+    $$\left( \begin{array}{c|ccc}
+        a' &   & L' & ~ \\ \hline
           &   &   &  ~  \\
         0 &   & T' & ~  \\
           &   &   &  ~ \\
-      \end{pmatrix}
-      \begin{pmatrix}
-        a &   & L &  ~ \\
+      \end{array} \right)
+      \left( \begin{array}{c|ccc}
+        a &   & L &  ~ \\ \hline
           &   &   &  ~ \\
         0 &   & T &  ~ \\
           &   &   &  ~ \\
-      \end{pmatrix}
-      =\begin{pmatrix}
-        a' a &   & a' L + L' T & ~ \\
+      \end{array} \right)
+      =\left( \begin{array}{c|ccc}
+        a' a &   & a' L + L' T & ~ \\ \hline
           &   &   & ~ \\
         0 &   & T' T & ~ \\
           &   &   & ~ \\
-      \end{pmatrix}$$
+      \end{array} \right)$$
     On veut que $T' T = I_{n-1}$ et que $a' L + L' T = 0$; posons $a' = a^{-1}$, $T' = T^-{1}$ et $L' = - a^{-1} L T^{-1}$. Il vient
     \begin{eqnarray*}
-      \begin{pmatrix}
-        a^{-1} &   & -a^{-1} L T^{-1} & ~ \\
+      \left( \begin{array}{c|ccc}
+        a^{-1} &   & -a^{-1} L T^{-1} & ~ \\ \hline
           &   &   &  ~  \\
         0 &   & T^{-1} & ~  \\
           &   &   &  ~ \\
-      \end{pmatrix} &\cdot&
-      \begin{pmatrix}
-        a &   & L &  ~ \\
+      \end{array} \right) \cdot
+      \left( \begin{array}{c|ccc}
+        a &   & L &  ~ \\ \hline
           &   &   &  ~ \\
         0 &   & T &  ~ \\
           &   &   &  ~ \\
-      \end{pmatrix} \\
-      &=&\begin{pmatrix}
-        a^{-1} a &   & a^{-1} L - a^{-1} L T^{-1} T & ~ \\
+      \end{array} \right) &=& 
+      \left( \begin{array}{c|ccc}
+        a^{-1} a &   & a^{-1} L - a^{-1} L T^{-1} T & ~ \\ \hline
           &   &   & ~ \\
         0 &   & T^{-1} T & ~ \\
           &   &   & ~ \\
-      \end{pmatrix}  \\
-      &=&\begin{pmatrix}
-        1 &   & 0 & ~ \\
+      \end{array} \right)  \\
+      &=& \left( \begin{array}{c|ccc}
+        1 &   & 0 & ~ \\ \hline
           &   &   & ~ \\
         0 &   & I_{n-1} & ~ \\
           &   &   & ~ \\
-      \end{pmatrix}
+      \end{array} \right)
       = I_n
     \end{eqnarray*}
     On a également
     \begin{eqnarray*}
-      \begin{pmatrix}
-        a &   & L &  ~ \\
+      \left( \begin{array}{c|ccc}
+        a &   & L &  ~ \\ \hline
           &   &   &  ~ \\
         0 &   & T &  ~ \\
           &   &   &  ~ \\
-      \end{pmatrix} &\cdot&
-      \begin{pmatrix}
-        a^{-1} &   & a^{-1} L T^{-1} & ~ \\
+      \end{array} \right) \cdot
+      \left( \begin{array}{c|ccc}
+        a^{-1} &   & -a^{-1} L T^{-1} & ~ \\ \hline
           &   &   &  ~  \\
         0 &   & T^{-1} & ~  \\
           &   &   &  ~ \\
-      \end{pmatrix}\\
-      &=&\begin{pmatrix}
-        a a^{-1} &   & - a^{-1} L T^{-1} T + a^{-1} L & ~ \\
+      \end{array} \right) &=& 
+      \left( \begin{array}{c|ccc}
+        a a^{-1} &   & - a^{-1} L T^{-1} T + a^{-1} L & ~ \\ \hline
           &   &   & ~ \\
         0 &   & T T^{-1} & ~ \\
           &   &   & ~ \\
-      \end{pmatrix}  \\ 
-      &=&\begin{pmatrix}
-        1 &   & 0 & ~ \\
+      \end{array} \right)  \\ 
+      &=& \left( \begin{array}{c|ccc}
+        1 &   & 0 & ~ \\ \hline
           &   &   & ~ \\
         0 &   & I_{n-1} & ~ \\
           &   &   & ~ \\
-      \end{pmatrix}
+      \end{array} \right)
       = I_n
     \end{eqnarray*}
     donc
     $$A^{-1} = 
-      \begin{pmatrix}
-        a^{-1} &   & a^{-1} L T^{-1} & ~ \\
+      \left( \begin{array}{c|ccc}
+        a^{-1} &   & -a^{-1} L T^{-1} & ~ \\ \hline
           &   &   &  ~  \\
         0 &   & T^{-1} & ~  \\
           &   &   &  ~ \\
-      \end{pmatrix}$$
+      \end{array} \right)$$
     est triangulaire supérieure. Par principe de récurence, la propriété est vrai pour tout $n \geq 1$
 \end{enumerate} 
     
@@ -939,8 +937,8 @@ donc $D$ est antisymétrique. Ainsi $A = C + D$ est une composition de la forme 
 %
 \subsection{Trace d'une matrice}
 %
-\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On appelle trace de $A$ le nombre réel noté $tr(a)$ défini par
-$$tr(a) = a_{11} + a_{22} + \ldots + a_{nn}$$
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On appelle trace de $A$ le nombre réel noté $tr(A)$ défini par
+$$tr(A) = a_{11} + a_{22} + \ldots + a_{nn}$$
 La trace de $A$ est donc la somme des coefficients diagonaux de $A$.
 
 \paragraph{Exemple} 
