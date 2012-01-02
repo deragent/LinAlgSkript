@@ -25,7 +25,7 @@ La composée de deux bijections étant encore une bijection, la composée de deu
 Alors $(Sym(E), \circ)$ est un groupe. En effet
 \begin{itemize}
   \item la composition des permutations est associative
-    $$\alpha \circ (\beta \circ \gamma) = (\alpha \circ \beta) \circ \gamma ~ \forall \alpha, \beta, \gamma \in Sym(E)$$
+    $$\alpha \circ (\beta \circ \gamma) = (\alpha \circ \beta) \circ \gamma ~ \forall ~ \alpha, \beta, \gamma \in Sym(E)$$
   
   \item l'application
     \begin{eqnarray*}
@@ -75,7 +75,7 @@ de même, $\tau^{-1} \circ \tau=id$.
 \subsection{Support}
 %
 \paragraph{Définition} Pour tout $\sigma \in S_n$, on appelle support de $\sigma$ et on note $supp(\sigma)$ l'ensemble
-$$supp(\sigma) = \{i \in \{1; 2; \ldots; n\} \vert \sigma(i) \neq i\}$$
+$$supp(\sigma) = \{i \in \{1; 2; \ldots; n\} ~ \vert ~ \sigma(i) \neq i\}$$
 
 %
 \subsection{Cycle}
@@ -102,13 +102,14 @@ et $\sigma(i) = i$ si $i \notin \{i_1; i_2; \ldots; i_k\}$
 
 \paragraph{Exemple} $(1 \hspace{5} 3), (2 \hspace{5} 4) \in S_4$ sont des transposition de $S_4$.
 
-\paragraph{Proposition} Soit $m \geq 2$ un entier naturel. Alors toute permutation de $S_n$ peut s'écrire comme composée de transpositions.
+\paragraph{Proposition} Soit $n \geq 2$ un entier naturel. Alors toute permutation de $S_n$ peut s'écrire comme composée de transpositions.
 
 \paragraph{Démonstration}  On raisonne par récurence sur le cardinal\footnote{Le cardinal d'un ensemble fini est le nombre de ses éléments.} de $supp(\sigma)$.
 \subparagraph{Annonce de la récurence} Soit $\sigma \in S_n$ telle que $supp(\sigma)$ soit de cardinal égal à $0$. Donc $supp(\sigma)$ est vide (on note $supp(\sigma) = \emptyset$). Autrement dit, $\sigma$ fixe tous les éléments de $\{1; 2; \ldots; n\}$. Par conséquent, $\sigma = id$. \\
 On peut écrire $\sigma = id = (1 ~ 2)\circ(1 ~ 2)$, ce qui est une écriture de $\sigma$ comme composée de transpositions.
 
-\subparagraph{Hypothése de récurence} Soit $k \in \{1; 2; \ldots; n\}$. On suppose que pour tout $\tau \in S_n$, telle que $card(supp(\tau)) \leq k-1$, $\tau$ s'écrit comme composée de transposition.
+\subparagraph{Hypothése de récurence} Soit $k \in \{1; 2; \ldots; n\}$. \\
+On suppose que pour tout $\tau \in S_n$, telle que $card(supp(\tau)) \leq k-1$, $\tau$ s'écrit comme composée de transposition.
 
 \subparagraph{Pas de récurence} Soit $\sigma \in S_n$ telle que le cardinal de $supp(\sigma)$ soit égal à $k$.
 $$supp(\sigma) = \{i_1; i_2; \ldots; i_k\} \text{ avec } 1 \leq i_1 \leq i_2 \leq \ldots \leq i_k \leq n$$
@@ -161,7 +162,7 @@ $$\sigma(i) > \sigma(j)$$
 \subsection{Signature}
 %
 \paragraph{Définition} On appelle signature de $\sigma$, et on note $\epsilon(\sigma)$ le nombre
-$$\epsilon(\sigma) \left\{ \begin{array}{lr} 
+$$\epsilon(\sigma) \left\{ \begin{array}{rl} 
   1 & \text{si } \sigma \text{ est une permutation paire} \\ 
   -1 & \text{si } \sigma \text{ est une permutation impaire} 
 \end{array} \right.$$
@@ -175,7 +176,7 @@ $$(1, 2), (1, 4), (3, 4), (3, 5)$$
 $\sigma$ presente $4$ inversions, $\sigma$ est donc paire et $\epsilon(\sigma) = 1$ \\
 Soit $(1 \hspace{5} 2) \in S_4$. On a
 $$(1 \hspace{5} 2) = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 1 & 3 & 4 \end{pmatrix}$$
-Les paires entre lesquelles $(1 \hspace{5} 2)$ présente une inversion sont: $\{1; 2\}$, donc $(1 \hspace{5} 2)$ est impaire et $\epsilon((1 \hspace{5} 2)) = -1$
+Les paires entre lesquelles $(1 \hspace{5} 2)$ présente une inversion sont: $(1, 2)$, donc $(1 \hspace{5} 2)$ est impaire et $\epsilon((1 \hspace{5} 2)) = -1$
 
 \paragraph{Théorème} Soient $\sigma, \tau \in S_n$. Alors
 $$\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$$
@@ -190,18 +191,18 @@ $$\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$$
 \subsection{Produit élémentaire}
 %
 \paragraph{Définition} Soit $A = (a_{ij})$ une matrice carrée de taille $n\times n$. Soit $\sigma in S_n$. On appelle produit élémentaire associé à $\sigma$ le nombre
-$$a_{\sigma(1) 1} \cdot a_{\sigma(2) 2} \cdot \ldots \cdot a_{\sigma(n) n} = \prod_{i=1}^{n} a_{\sigma(i) i}$$
+$$a_{\sigma(1) ~ 1} \cdot a_{\sigma(2) ~ 2} \cdot \ldots \cdot a_{\sigma(n) ~ n} = \prod_{i=1}^{n} a_{\sigma(i) ~ i}$$
 %
 \subsection{Produit signé}
 %
 \paragraph{Définition} On appelle produit signé associé à $\sigma$ le nombre 
-$$p_{\sigma}(A) = \epsilon(\sigma) \cdot a_{\sigma(1) 1} \cdot a_{\sigma(2) 2} \cdot \ldots \cdot a_{\sigma(n) n} = \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) i}$$
+$$p_{\sigma}(A) = \epsilon(\sigma) \cdot a_{\sigma(1) ~ 1} \cdot a_{\sigma(2) ~ 2} \cdot \ldots \cdot a_{\sigma(n) ~ n} = \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) ~ i}$$
 
 %
 \subsection{Déterminant}
 %
 \paragraph{Définition} Soit $A = (a_{ij})_{1 \leq i, j \leq n}$ une matrice carrée de taille $n \times n$. On appelle déterminant de $A$ le nombre
-$$det(A) = \sum_{\sigma \in S_n} p_{\sigma}(A) = \sum_{\sigma \in S_n} \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) i}$$
+$$det(A) = \sum_{\sigma \in S_n} p_{\sigma}(A) = \sum_{\sigma \in S_n} \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) ~ i}$$
 
 \paragraph{Exemple} Soit $A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 5 & 1 \\ -7 & 4 & -2 \end{pmatrix} \in M_{3}(\R)$.
 $$S_3 = \{id; (1 ~ 2); (1 ~ 3); (2 ~ 3); (1 ~ 2 ~ 3); (1 ~ 3 ~ 2)\}$$
@@ -226,7 +227,7 @@ $$C_1, C_2, \ldots, C_n  \in M_{n\times 1}(\R)$$
 Suivant
 $$C_{j} = \begin{pmatrix} c_{1j} \\ c_{2j} \\ \vdots \\ c_{nj} \end{pmatrix} \text{ pour tout } j \in \{1; \ldots ; n\}$$
 on définit le déterminant du système $(C_1, C_2, \ldots, C_n)$ par
-$$det(C_1, C_2, \ldots, C_n) = \sum_{\sigma \in S_n} \epsilon(\sigma) \cdot c_{\sigma(1) 1} \cdot \ldots \cdot c_{\sigma(n) n} \in \R$$
+$$det(C_1, C_2, \ldots, C_n) = \sum_{\sigma \in S_n} \epsilon(\sigma) \cdot c_{\sigma(1) ~ 1} \cdot \ldots \cdot c_{\sigma(n) ~ n} \in \R$$
 Si $C$ est la matrice de taille $n \times n$ dont les colonnes sont les $C_j$, $C = (C_1, C_2, \ldots, C_n)$ alors on a
 $$det(C_1, C_2, \ldots, C_n) = det(C)$$
 \paragraph{Remarque} Le point de vue adopté, matrice ou système de matrices colonnes sera clair d'après la notation et le contexte.
@@ -266,13 +267,13 @@ Les propriétés $1.$ et $2.$ consistent à dire que l'application $det()$ est m
   \item On a
     $$det(C_1, \ldots, C_j + C_j', \ldots, C_n) = \sum_{\sigma \in S_n} p_\sigma(C_1, \ldots, C_j + C_j' , \ldots, C_n)$$
     où
-    $$ p_{\sigma}(C_1, \ldots, C_j + C_j', \ldots, C_n) = \epsilon(\sigma) \cdot c_{\sigma(1) 1} \cdot \ldots \cdot (c_{\sigma(j) j} + c_{\sigma(j) j}') \cdot \ldots \cdot c_{\sigma(n) n}$$
+    $$ p_{\sigma}(C_1, \ldots, C_j + C_j', \ldots, C_n) = \epsilon(\sigma) \cdot c_{\sigma(1) ~ 1} \cdot \ldots \cdot (c_{\sigma(j) ~ j} + c_{\sigma(j) ~ j}') \cdot \ldots \cdot c_{\sigma(n) ~ n}$$
     $\Rightarrow$ distributivité de $\circ$ par rapport à $+$
    
   \item On a
     $$det(C_1, \ldots, \lambda C_j', \ldots, C_n) = \sum_{\sigma \in S_n} p_\sigma(C_1, \ldots, \lambda C_j' , \ldots, C_n)$$
     où
-    $$ p_{\sigma}(C_1, \ldots, \lambda C_j', \ldots, C_n) = \epsilon(\sigma) \cdot c_{\sigma(1) 1} \cdot \ldots \cdot \lambda \cdot c_{\sigma(j) j}  \cdot \ldots \cdot c_{\sigma(n) n}$$
+    $$ p_{\sigma}(C_1, \ldots, \lambda C_j', \ldots, C_n) = \epsilon(\sigma) \cdot c_{\sigma(1) ~ 1} \cdot \ldots \cdot \lambda \cdot c_{\sigma(j) ~ j}  \cdot \ldots \cdot c_{\sigma(n) ~ n}$$
 
   \item Soit $\tau = (i ~ j) \in S_n$. On regroupe les permutations de $S_n$ par paires comme suit: Chaque $\sigma \in S_n$ avec $\sigma \circ \tau \in S_n$ \\
     On a: si $\sigma = \sigma \circ \tau$ on aurait
@@ -299,23 +300,23 @@ Les propriétés $1.$ et $2.$ consistent à dire que l'application $det()$ est m
     Montrons que pour tout $\sigma \in S_n$, on a
     $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = -p_{\sigma}(C_1, C_2, \ldots, C_n)$$
     Soit $\sigma \in S_n$. On a 
-    $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = \epsilon(\sigma \circ \tau) \cdot a_{(\sigma \circ\tau)(1) 1} \cdot a_{(\sigma \circ\tau)(2) 2} \cdot \ldots \cdot a_{(\sigma \circ\tau)(n) n}$$
+    $$p_{\sigma \circ \tau}(C_1, C_2, \ldots, C_n) = \epsilon(\sigma \circ \tau) \cdot a_{(\sigma \circ\tau)(1) ~ 1} \cdot a_{(\sigma \circ\tau)(2) ~ 2} \cdot \ldots \cdot a_{(\sigma \circ\tau)(n) ~ n}$$
     Soit $k \in \{1; \ldots; n\}$
     \begin{itemize}
       \item si $k\notin \{i; j\}$, alors $\tau(k) = k$. Par suite 
-        $$a_{(\sigma \circ \tau)(k) k} = a_{\sigma(k) k}$$
+        $$a_{(\sigma \circ \tau)(k) ~ k} = a_{\sigma(k) ~ k}$$
       
-      \item si $k = i$, alors $\tau(k) = j$. Par suite $a_{(\sigma \circ \tau)(k) k} = a_{\sigma(j) i}$. Puisque $C_i = C_j$ on a $a_{\sigma(j) i} = a_{\sigma(j) j}$. On a donc
-        $$a_{(\sigma \circ \tau)(k) k} = a_{(\sigma \circ \tau)(i) i} = a_{\sigma(j) j}$$
+      \item si $k = i$, alors $\tau(k) = j$. Par suite $a_{(\sigma \circ \tau)(k) ~ k} = a_{\sigma(j) ~ i}$. Puisque $C_i = C_j$ on a $a_{\sigma(j) ~ i} = a_{\sigma(j) ~ j}$. On a donc
+        $$a_{(\sigma \circ \tau)(k) ~ k} = a_{(\sigma \circ \tau)(i) ~ i} = a_{\sigma(j) ~ j}$$
         
-      \item si $k = j$, alors $\tau(k) = i$. Par suite $a_{(\sigma \circ \tau)(k) k} = a_{\sigma(i) j}$. Puisque $C_j = C_i$ on a $a_{\sigma(i) j} = a_{\sigma(i) i}$. On a donc
-        $$a_{(\sigma \circ \tau)(k) k} = a_{(\sigma \circ \tau)(j) j} = a_{\sigma(i) i}$$
+      \item si $k = j$, alors $\tau(k) = i$. Par suite $a_{(\sigma \circ \tau)(k) ~ k} = a_{\sigma(i) ~ j}$. Puisque $C_j = C_i$ on a $a_{\sigma(i) ~ j} = a_{\sigma(i) ~ i}$. On a donc
+        $$a_{(\sigma \circ \tau)(k) ~ k} = a_{(\sigma \circ \tau)(j) ~ j} = a_{\sigma(i) ~ i}$$
     \end{itemize}
     On a donc
     \begin{eqnarray*}
-      a_{(\sigma \circ \tau)(1) 1} \cdot \ldots \cdot a_{(\sigma \circ \tau)(i) i} \cdot \ldots \cdot a_{(\sigma \circ \tau)(j) j} \cdot \ldots \cdot a_{(\sigma \circ \tau)(n) n} \\
-        = a_{\sigma(1) 1} \cdot \ldots \cdot a_{\sigma(j) j} \cdot \ldots \cdot a_{\sigma(i) i} \cdot \ldots \cdot a_{\sigma(n) n} \\
-        = a_{\sigma(1) 1} \cdot \ldots \cdot a_{\sigma(i) i} \cdot \ldots \cdot a_{\sigma(j) j} \cdot \ldots \cdot a_{\sigma(n) n} \\
+      a_{(\sigma \circ \tau)(1) ~ 1} \cdot \ldots \cdot a_{(\sigma \circ \tau)(i) ~ i} \cdot \ldots \cdot a_{(\sigma \circ \tau)(j) ~ j} \cdot \ldots \cdot a_{(\sigma \circ \tau)(n) ~ n} \\
+        = a_{\sigma(1) ~ 1} \cdot \ldots \cdot a_{\sigma(j) ~ j} \cdot \ldots \cdot a_{\sigma(i) ~ i} \cdot \ldots \cdot a_{\sigma(n) ~ n} \\
+        = a_{\sigma(1) ~ 1} \cdot \ldots \cdot a_{\sigma(i) ~ i} \cdot \ldots \cdot a_{\sigma(j) ~ j} \cdot \ldots \cdot a_{\sigma(n) ~ n} \\
     \end{eqnarray*}
     %
     De plus $\epsilon(\sigma \circ \tau) = \epsilon(\sigma) \cdot \epsilon(\tau)$ où on a $\epsilon(\tau) = -1$, donc
@@ -333,19 +334,22 @@ Les propriétés $1.$ et $2.$ consistent à dire que l'application $det()$ est m
 \paragraph{Exemple}
 \begin{enumerate}
   \item Soient $n = 3$, $j = 2$ et $C_1 = \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}$, $C_2 = \begin{pmatrix} -7 \\ 0 \\ 4 \end{pmatrix}$, $C_2' = \begin{pmatrix} 3 \\ 0 \\ -5 \end{pmatrix}$, $C_3 = \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix}$. Alors
-    $$det\left(
+    \begin{eqnarray*}
+      det\left(
         \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}, 
         \begin{pmatrix} -7 \\ 0 \\ 4 \end{pmatrix} + \begin{pmatrix} 3 \\ 0 \\ -5 \end{pmatrix}, 
         \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix} 
-      \right) = det\left(
+      \right) &=& det\left(
         \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}, 
         \begin{pmatrix} -7 \\ 0 \\ 4 \end{pmatrix}, 
         \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix}
-      \right) + det\left(
+      \right) \\ 
+      &&+ det\left(
         \begin{pmatrix} 1 \\ 0 \\ 6 \end{pmatrix}, 
         \begin{pmatrix} 3 \\ 0 \\ -5 \end{pmatrix}, 
         \begin{pmatrix} 1 \\ 4 \\ -2 \end{pmatrix}
-      \right)$$
+      \right)
+    \end{eqnarray*}
     ce qui peut aussi s'écrire:
     $$\begin{vmatrix}
         1 & -7 + 3 & 1 \\
@@ -406,23 +410,17 @@ Les propriétés $1.$ et $2.$ consistent à dire que l'application $det()$ est m
 \end{eqnarray*}
 En fait, on a $det(\lambda A) = \lambda^{n} det(A)$.
 
-\paragraph{Corollaire} Soient $i, j \in \{1; \ldots; n\}$, $i\neq j$ et $C_1, C_2, \ldots, C_n$ $n$ matrices colonnes £ $n$ lignes. Alors
+\paragraph{Corollaire} Soient $i, j \in \{1; \ldots; n\}$, $i\neq j$ et $C_1, C_2, \ldots, C_n$ $n$ matrices colonnes à $n$ lignes. Alors
 $$det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) = -det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n)$$
 
 \paragraph{Démonstration} On a
 \begin{eqnarray*}
-  0 =& det(C_1, \ldots, C_i+C_j, \ldots, C_i+C_j, \ldots, C_n) \\
-    =& det(C_1, \ldots, C_i, \ldots, C_i+C_j, \ldots, C_n) \\
-    &+ det(C_1, \ldots, C_j, \ldots, C_i+C_j, \ldots, C_n) \\
-    =& det(C_1, \ldots, C_i, \ldots, C_i, \ldots, C_n) \\
-    &+ det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) \\
-    &+ det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) \\
-    &+ det(C_1, \ldots, C_j, \ldots, C_j, \ldots, C_n) \\
-    =& 0 \\
-    &+ det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) \\
-    &+ det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) \\
-    &+ 0 \\
-    =& det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) + det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) = 0
+  0 &=& det(C_1, \ldots, C_i+C_j, \ldots, C_i+C_j, \ldots, C_n) \\
+    &=& det(C_1, \ldots, C_i, \ldots, C_i+C_j, \ldots, C_n) + det(C_1, \ldots, C_j, \ldots, C_i+C_j, \ldots, C_n) \\
+    &=& det(C_1, \ldots, C_i, \ldots, C_i, \ldots, C_n) + det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) \\
+      &&+ det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) + det(C_1, \ldots, C_j, \ldots, C_j, \ldots, C_n) \\
+    &=& 0 + det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) + det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) + 0 \\
+    &=& det(C_1, \ldots, C_i, \ldots, C_j, \ldots, C_n) + det(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) = 0
 \end{eqnarray*}
 On dit alors que l'application 
 $$det: M_{n \times 1}(\R) \times \ldots \times M_{n\times 1}(\R) \rightarrow \R$$
@@ -442,18 +440,22 @@ est bijective (elle est sa propre bijection réciproque). Il vient
     &=& \sum_{\sigma^{-1} \in S_n} p_{\sigma^{-1}}(A^{T})
 \end{eqnarray*}
 Soit $\sigma \in S_n$
-$$p_{\sigma^{-1}}(A^{T}) = \epsilon(\sigma^{-1}) \cdot (A^{T})_{\sigma^{-1}(1) 1} \cdot \ldots \cdot (A^{T})_{\sigma^{-1}(n) n}$$
+$$p_{\sigma^{-1}}(A^{T}) = \epsilon(\sigma^{-1}) \cdot (A^{T})_{\sigma^{-1}(1) ~ 1} \cdot \ldots \cdot (A^{T})_{\sigma^{-1}(n) ~ n}$$
 On a $\epsilon(\sigma) \epsilon(\sigma^{-1}) = \epsilon(\sigma \circ \sigma^{-1}) = \epsilon(id) = 1$. Puisque $\epsilon(\sigma) \pm 1$ et $\epsilon(\sigma^{-1}) \pm 1$, on a 
 $$\epsilon(\sigma) = \epsilon(\sigma^{-1})$$
 Maintenant
-$$(A^{T})_{\sigma^{-1}(1) 1} \cdot \ldots \cdot (A^{T})_{\sigma^{-1}(n) n} = A_{1 \sigma^{-1}(1)} \cdot \ldots \cdot A_{n \sigma^{-1}(n)}$$
+$$(A^{T})_{\sigma^{-1}(1) ~ 1} \cdot \ldots \cdot (A^{T})_{\sigma^{-1}(n) ~ n} = (A)_{1 ~ \sigma^{-1}(1)} \cdot \ldots \cdot (A)_{n ~ \sigma^{-1}(n)}$$
 Comme $\sigma^{-1}: \{1; \ldots; n\} \rightarrow \{1; \ldots; n\}$ est bijective on a
 \begin{eqnarray*}
-  A_{1 \sigma^{-1}(1)} \cdot \ldots \cdot A_{n \sigma^{-1}(n)} &=& \prod_{j=1}^n A_{j \sigma^{-1}(j)} \\
-    &=& \prod_{k=1}^n A_{\sigma(k) k} ~~ (\text{on a posé } k = \sigma^{-1}(j))
+  (A)_{1 ~ \sigma^{-1}(1)} \cdot \ldots \cdot (A)_{n ~ \sigma^{-1}(n)} &=& \prod_{j=1}^n (A)_{j ~ \sigma^{-1}(j)} \\
+    &=& \prod_{k=1}^n (A)_{\sigma(k) ~ k} ~~ (\text{on a posé } k = \sigma^{-1}(j))
 \end{eqnarray*}
 Donc $p_{\sigma^{-1}}(A^{T}) = p_{\sigma}(A)$. Par suite
 $$det(A^{T}) = \sum_{\sigma \in S_n} p_{\sigma}(A) = det(A)$$
+
+%
+\subsection{Déterminant d'une matrice triangulaire}
+%
 
 \paragraph{Lemme} Soit $\sigma \in S_n$ telle que pour tout $i \in \{1; \ldots; n\}$, $\sigma(i) \leq i$. Alors $\sigma  = id$. En effet on a
 \begin{itemize}
@@ -461,13 +463,13 @@ $$det(A^{T}) = \sum_{\sigma \in S_n} p_{\sigma}(A) = det(A)$$
   \item on a $\sigma(2) \neq \sigma(1) = 1$, donc $\sigma(2) \geq 2$, et par hypothèse $\sigma(2) \leq 2$. Par suite $\sigma(2) = 2$.
   \item Ainsi de suite.
 \end{itemize}
-Il est équivalent de dire que si une permutations $\sigma \in S_n$ est différendte de $id$, alors il existe $i \in \{1; \ldots; n\}$ tel que $\sigma(i) > i$.
+Il est équivalent de dire que si une permutations $\sigma \in S_n$ est différente de $id$, alors il existe $i \in \{1; \ldots; n\}$ tel que $\sigma(i) > i$.
 
 \paragraph{Théorème} Le déterminant d'une matrice carré triangulaire supérieure (resp. triangulaire inférieure) est àgal au produit des ses coefficients diagonaux.
 
 \paragraph{Démonstration}  Soit $A = (a_ij)$ une matrice carrée de taille $n \times n$ triangulaire supérieure. Il vient 
 $$det(A) = p_{id}(A) + \sum_{\sigma \in S_n, \sigma \neq id} p_{\sigma}(A)$$
-Si $\sigma \neq id$, alors, d'après le lemme, il existe $j \in \{1; \ldots; n \}$ tel que $\sigma(j) > j$. Puisque $A$ est triangulaire supérieure, $a_{\sigma(j) j} = 0$. Par suite $p_{\sigma}(A) = 0$ et donc 
+Si $\sigma \neq id$, alors, d'après le lemme, il existe $j \in \{1; \ldots; n \}$ tel que $\sigma(j) > j$. Puisque $A$ est triangulaire supérieure, $a_{\sigma(j) ~ j} = 0$. Par suite $p_{\sigma}(A) = 0$ et donc 
 $$\sum_{\sigma \in S_n, \sigma \neq id} p_{\sigma}(A) = 0$$
 Il reste
 $$det(A) = p_{id}(A) = a_{11} \cdot a_{22} \cdot \ldots \cdot a_{nn}$$
@@ -476,7 +478,7 @@ Le cas "triangulaire inférieure" se déduit du cas "triangulaire supérieure" p
 %
 \subsection{Le déterminant sous l'effet des opérations élémentaires}
 %
-Les résultats précédents indiquent comment se comporte le déterminant sous l'effet des opérations élémentaires sur les lignes d'une matrice:
+\paragraph{Proposition} Les résultats précédents indiquent comment se comporte le déterminant sous l'effet des opérations élémentaires sur les lignes d'une matrice:
 \begin{itemize}
   \item Le déterminant ne change pa si on ajout à une ligne un multiple d'une autre ligne
     $$\begin{vmatrix} L_1 \\ L_2 + 4 L_3 \\ L_3 \end{vmatrix} 
@@ -506,7 +508,7 @@ Les résultats précédents indiquent comment se comporte le déterminant sous l
 \paragraph{Théorème} Soient $A$ et $B$ deux matrices carrées de même taille. Alors 
 $$det(A B) = det(A) \cdot det(B)$$
 
-\paragraph{Démonstration} Nous nous contentans ici de montros cette formule dasn le cas de matrices de taille $3 \times 3$, le cas général se traite de façon analogue. \\
+\paragraph{Démonstration} Nous nous contentans ici de montrer cette formule dans le cas de matrices de taille $3 \times 3$, le cas général se traite de façon analogue. \\
 Soient $A$ et $B$ deux matrices de taille $3 \times 3$. On note $C_1, C_2, C_3$ les colonnes de $A$
 $$A = (C_1, C_2, C_3) \text{ et } B=(b_{ij})_{1 \leq i, j \leq n}$$
 On observe que
@@ -532,7 +534,7 @@ On développe ce déterminant par multilinéairté. On obtient $3^3 = 27$ termes
   \item Les autres pour lesquels au moins deux retenues sur les trois sont égales. Alors le déterminant correspondant est nul, et donc le terme lui-même est nul.
 \end{itemize}
 On obtient donc
-$$det(A B) = \sum_{\sigma \in S_3} b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \cdot \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}$$
+$$det(A B) = \sum_{\sigma \in S_3} b_{\sigma(1) ~ 1} \cdot b_{\sigma(2) ~ 2} \cdot b_{\sigma(3) ~ 3} \cdot \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}$$
 où pour tout $\sigma \in S_3$,
 \begin{eqnarray*}
   \begin{vmatrix} C_{\sigma(1)} & C_{\sigma(2)} & C_{\sigma(3)} \end{vmatrix}
@@ -541,8 +543,8 @@ où pour tout $\sigma \in S_3$,
 \end{eqnarray*}
 D'où
 \begin{eqnarray*}
-  det(A B) &=& \sum_{\sigma \in S_3} \epsilon(\sigma) \cdot b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \cdot det(A) \\
-    &=& det(A) \left( \sum_{\sigma \in S_3} \epsilon(\sigma) \cdot b_{\sigma(1) 1} \cdot b_{\sigma(2) 2} \cdot b_{\sigma(3) 3} \right) \\
+  det(A B) &=& \sum_{\sigma \in S_3} \epsilon(\sigma) \cdot b_{\sigma(1) ~ 1} \cdot b_{\sigma(2) ~ 2} \cdot b_{\sigma(3) ~ 3} \cdot det(A) \\
+    &=& det(A) \left( \sum_{\sigma \in S_3} \epsilon(\sigma) \cdot b_{\sigma(1) ~ 1} \cdot b_{\sigma(2) ~ 2} \cdot b_{\sigma(3) ~ 3} \right) \\
     &=& det(A) \cdot det(B)
 \end{eqnarray*}
 
@@ -555,9 +557,9 @@ $$A \text{ est inversible } \Leftrightarrow det(A) \neq 0$$
     $$A A^{-1} = I_n$$
     Il vient
     $$det(A) \cdot det(A^{-1}) = det(AA^{-1}) = det(I_n) = 1 \neq 0$$
-    Cela implqiue que $det(A) \neq 0$
+    Cela implique que $det(A) \neq 0$
   
-  \item [$\Leftarrow$] Réciproquement, montrons que si $A$ n'est pas inversible, alors $det(A) = 0$. Supposons docn que $A$ ne soit pas inversible. Considérons le système 
+  \item [$\Leftarrow$] Réciproquement, montrons que si $A$ n'est pas inversible, alors $det(A) = 0$. Supposons donc que $A$ ne soit pas inversible. Considérons le système 
     $$A \cdot X = 0$$
     Puisque $A$ n'est pas inversible et que $0$ est solution de cesystème, ce système admet une infinité de solutions. Il existe donc des réels $\alpha_1, \ldots, \alpha_n$ non tous nuls tels que
     $$A \begin{pmatrix} \alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix} = 0$$
@@ -588,12 +590,12 @@ $$A \text{ est inversible } \Leftrightarrow det(A) \neq 0$$
 %
 \paragraph{Définition} Soit $A = (a_{ij})$ une matrice carrée de taille $n\times n$. Soit $(i ~ j) \in \{1; \ldots; n\} \times \{1; \ldots; n \}$. On appelle cofacteur de $A$ associé à $(i ~ j)$ le nombre réel défini par
 $$\Delta_{ij} = (-1)^{i+j} \begin{vmatrix}
-  a_{11} & \ldots & a_{1 j-1} & a_{1 j+1} & \ldots & a_{1n} \\
+  a_{1 ~ 1} & \ldots & a_{1 ~ j-1} & a_{1 ~ j+1} & \ldots & a_{1 ~ n} \\
   \vdots &  & \vdots & \vdots &  & \vdots \\
-  a_{i-1 1} & \ldots & a_{i-1 j-1} & a_{i-1 j+1} & \ldots & a_{i-1 n} \\
-  a_{i+1 1} & \ldots & a_{i+1 j-1} & a_{i+1 j+1} & \ldots & a_{i+1 n} \\
+  a_{i-1 ~ 1} & \ldots & a_{i-1 ~ j-1} & a_{i-1 ~ j+1} & \ldots & a_{i-1 ~ n} \\
+  a_{i+1 ~ 1} & \ldots & a_{i+1 ~ j-1} & a_{i+1 ~ j+1} & \ldots & a_{i+1 ~ n} \\
   \vdots &  & \vdots & \vdots &  & \vdots \\
-  a_{n 1} & \ldots & a_{n j-1} & a_{n j+1} & \ldots & a_{nn}
+  a_{n ~ 1} & \ldots & a_{n ~ j-1} & a_{n ~ j+1} & \ldots & a_{n ~ n}
 \end{vmatrix}$$
 Ce déterminant (de matrice de taille $(n-1) \times (n-1)$) est obtenu à partir de celui de $A$ en supprimant le $i^{\text{ème}}$ ligne et la $j^{\text{ème}}$ colonne.
 
@@ -619,30 +621,30 @@ Alors on a
 $$det(A) = \sum_{i=1}^{n} a_{ij} \Delta_{ij}$$
 On dit que l'on développe $det(A)$ par rapport à la $j^{\text{ème}}$ colonne.
 
-\paragraph{Exemple} Développons $\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix}$ par rapport à la $3^{\text{ème}}$ ligne
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $i \in \{1; \ldots; n\}$. Alors on a
+$$det(A) = \sum_{j=1}^{n} a_{ij} \Delta_{ij}$$
+On dit que l'on développe $det(A)$ par rapport à la $i^{\text{ème}}$ ligne.
+
+\paragraph{Exemple} Développons $\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix}$ par rapport à la $3^{\text{ème}}$ colonne
 $$\begin{vmatrix} 1 & -2 & 0 \\ 7 & 1 & 2 \\ 3 & 5 & 3 \end{vmatrix} = 
   0 \cdot \begin{vmatrix} 7 & 1 \\ 3 & 5 \end{vmatrix} 
   - 2 \cdot \begin{vmatrix} 1 & -2 \\ 3 & 5 \end{vmatrix} 
   + 3 \cdot \begin{vmatrix} 1 & -2 \\ 7 & 1 \end{vmatrix} 
 = 23$$
 
-\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n\times n$. Soit $i \in \{1; \ldots; n\}$. Alors on a
-$$det(A) = \sum_{j=1}^{n} a_{ij} \Delta_{ij}$$
-On dit que l'on développe $det(A)$ par rapport à la $i^{\text{ème}}$ ligne.
-
 \paragraph{Démonstration} On démontre la formule de développememt du déterminant suivant une colonne, la formule de développement suivant une ligne s'en déduisant par transposition. \\
-Soit $A = (a_{j})$ une matrice de taille $n \times n$.
+Soit $A = (a_{ij})$ une matrice de taille $n \times n$.
 $$det(A) = \sum_{\tau \in S_n} p_{\tau}(A)$$
 Soit $j \in \{1; \ldots; n \}$, pour tout couple $(k, l) \in  \{1; \ldots; n \}\times\{1; \ldots; n \}$ on note
-$$T_{kl} = \{\tau \in S_n \vert k = \tau(l) \}$$
+$$T_{kl} = \{\tau \in S_n ~ \vert ~ k = \tau(l) \}$$
 On a $S_n = T_{1j} \cup T_{2j} \cup \ldots \cup T_{nj}$ (union disjointe). Il vient
 $$det(A) = \sum_{\tau \in T_{1j}} p_{\tau}(A) + \sum_{\tau \in T_{2j}} p_{\tau}(A) + \ldots + \sum_{\tau \in T_{nj}} p_{\tau}(A)$$
-Soit $i \in \{1; \ldots; n\}$. Montrons que $\sum_{\tau \in T_{ij}} p_{\tau}(A) = a_{ij} \Delta_{ij}$. On considère la matrice $B$ construite à partir de $A$ en permutant la $j^{\text{ème}}$ colonne de $A$ avec les colonnes uivantes de façon à l'amener à la place de la $n^{\text{ème}}$ colonne et en fasant une démarche analoque avec la $i^{\text{ème}}$ ligne. On fait donc subir aux colonnes de $A$ la permutation
+Soit $i \in \{1; \ldots; n\}$. Montrons que $\sum_{\tau \in T_{ij}} p_{\tau}(A) = a_{ij} \Delta_{ij}$. On considère la matrice $B$ construite à partir de $A$ en permutant la $j^{\text{ème}}$ colonne de $A$ avec les colonnes uivantes de façon à l'amener à la place de la $n^{\text{ème}}$ colonne et en faisant une démarche analoque avec la $i^{\text{ème}}$ ligne. On fait donc subir aux colonnes de $A$ la permutation
 $$d^{-1} = (n-1 ~~ n) \circ \ldots \circ (j+ 1 ~~ j + 2) \circ (j ~~ j+1) = \begin{pmatrix}j & n & n-1 & \ldots & j + 2 & j + 1\end{pmatrix}$$
 et aux lignes de $A$ la permutation
 $$c^{-1} = (n-1 ~~ n) \circ \ldots \circ (i+ 1 ~~ i + 2) \circ (i ~~ i+1) = \begin{pmatrix}i & n & n-1 & \ldots & i + 2 & i + 1\end{pmatrix}$$
 On a pour tout $(k, l) \in \{1; \ldots; n \}\times\{1; \ldots; n \}$
-$$b_{kl} = a_{c(k)d(l)}$$
+$$b_{kl} = a_{c(k) ~ d(l)}$$
 On observe que l'application
 \begin{eqnarray*}
   \phi: T_{n n} &\rightarrow& T_{ij} \\
@@ -654,17 +656,18 @@ est bijective. \footnote{Sa bijections réciproque est
   \tau &\mapsto& c^{-1} \circ \tau \circ d
 \end{eqnarray*}
 On a
-$$\phi \circ \psi = id_{T_{ij}} \text{ et } \psi \circ \phi = id_{T_{n n}}$$}
-Il vient
+$$\phi \circ \psi = id_{T_{ij}} \text{ et } \psi \circ \phi = id_{T_{n n}}$$} Il vient
 \begin{eqnarray*}
-  \sum_{\tau \in T_{ij}} p_{\tau}(A) &=& \sum_{\tau \in T_{ij}} \epsilon(\tau) \prod_{l=1}^{n} a_{\tau(l) l} \\
-    &=& \sum_{\tau \in T_{ij}} \epsilon(\phi(\tau)) \prod_{l=1}^{n} a_{\phi(\tau(l)) l} \\
-    &=& \sum_{\tau \in T_{n n}} \epsilon(c \circ \tau \circ d^{-1}) \prod_{l=1}^{n} a_{(c \circ \tau \circ d^{-1})(l) l} \\
+  \sum_{\tau \in T_{ij}} p_{\tau}(A) &=& \sum_{\tau \in T_{ij}} \epsilon(\tau) \prod_{l=1}^{n} a_{\tau(l) ~ l} \\
+    &=& \sum_{\tau \in T_{ij}} \epsilon(\phi(\tau)) \prod_{l=1}^{n} a_{\phi(\tau(l)) ~ l} \\
+    &=& \sum_{\tau \in T_{n n}} \epsilon(c \circ \tau \circ d^{-1}) \prod_{l=1}^{n} a_{(c \circ \tau \circ d^{-1})(l) ~ l} \\
     &=& \sum_{\tau \in T_{n n}} \epsilon(c) \epsilon(d^{-1}) \epsilon(\tau) \prod_{l=1}^{n} a_{c(\tau(l')) ~ d(l')} ~ (\text{on pose } l' = d^{-1}(l))\\
 \end{eqnarray*}
-On a $\epsilon(c) = \epsilon(c^{-1}) = (-1)^{n-i}$ car $c^{-1}$ est le produit de $n-i$ transpositions et $\epsilon(d^{-1}) = (-1)^{n-j}$ car $d^{-1}$ est le produit de $n-j$ transpositions, d'où $\epsilon(c) \epsilon(d^{-1}) = (-1)^{2n - (i+j)}$. Comme $(2n - (i+j)) + (i+j) = 2n$, on a $2n - (i+j)$ et $i+j$ ont mêm parité donc $(-1)^{2n - (i+j)} = (-1)^{i+j}$. Par suite
+On a $\epsilon(c) = \epsilon(c^{-1}) = (-1)^{n-i}$ car $c^{-1}$ est le produit de $n-i$ transpositions et $\epsilon(d^{-1}) = (-1)^{n-j}$ car $d^{-1}$ est le produit de $n-j$ transpositions, d'où $\epsilon(c) \epsilon(d^{-1}) = (-1)^{2n - (i+j)}$. Comme $(2n - (i+j)) + (i+j) = 2n$, on a $2n - (i+j)$ et $i+j$ ont même parité donc $(-1)^{2n - (i+j)} = (-1)^{i+j}$. Par suite
 $$\epsilon(c) \epsilon(d^{-1}) = (-1)^{i+j}$$
-Pour tout $l' \in \{1; \ldots; n \}$, $a_{c(\tau(l')) ~ d(l')} = b_{\tau(l') ~ l'}$. On obtient donc
+Pour tout $l' \in \{1; \ldots; n \}$, 
+$$a_{c(\tau(l')) ~ d(l')} = b_{\tau(l') ~ l'}$$
+On obtient donc
 \begin{eqnarray*}
   \sum_{\tau \in T_{ij}} p_{\tau}(A) &=& (-1)^{i+j} \sum_{\tau \in T_{nn}} \epsilon(\tau) \prod_{l'=1}^{n} b_{\tau(l') ~ l'} \\
     &=& (-1)^{i+j} b_{nn} \sum_{\tau \in T_{nn}} \epsilon(\tau) \prod_{l' = 1}^{n-1} b_{\tau(l') ~ l'} \\
@@ -678,7 +681,7 @@ Pour tout $l' \in \{1; \ldots; n \}$, $a_{c(\tau(l')) ~ d(l')} = b_{\tau(l') ~ l
 $$(com(A))_{ij} = \Delta_{ij}$$
 
 \paragraph{Exemple} Soit $A = \begin{pmatrix} 1 & -4 & 2 \\ 0 & 3 & -1 \\ 2 & 5 & 0 \end{pmatrix}$. On a
-$$com(a) = \begin{pmatrix}
+$$com(A) = \begin{pmatrix}
   \begin{vmatrix} 3 & -1 \\ 5 & 0 \end{vmatrix} & -\begin{vmatrix} 0 & -1 \\ 2 & 0 \end{vmatrix} & \begin{vmatrix} 0 & 3 \\ 2 & 5 \end{vmatrix} \\
   -\begin{vmatrix} -4 & 2 \\ 5 & 0 \end{vmatrix} & \begin{vmatrix} 1 & 2 \\ 2 & 0 \end{vmatrix} & -\begin{vmatrix} 1 & -4 \\ 2 & 5 \end{vmatrix} \\
   \begin{vmatrix} -4 & 2 \\ 3 & -1 \end{vmatrix} & -\begin{vmatrix} 1 & 2 \\ 0 & -1 \end{vmatrix} & \begin{vmatrix} 1 & -4 \\ 0 & 3 \end{vmatrix}
@@ -692,17 +695,16 @@ $$com(a) = \begin{pmatrix}
 $$A \cdot com(A)^{T} = com(A)^{T} \cdot A = det(A) \cdot I_n$$
 
 \paragraph{Théorème} Si $A$ est inversible, alors $det(A) \neq 0$ et 
-$$A^{-1} = \frac{1}{det(a)} com(A)^{T}$$
+$$A^{-1} = \frac{1}{det(A)} com(A)^{T}$$
 
 \paragraph{Remarque} Cette formule généralise celle qui a été vue dans le cas des matrices de taille $2 \times 2$.
 
 %
 %
-\section{Systèmes de cramer}
+\section{Système de cramer}
 %
 %
-\paragraph{Définition} On dit qu'un système linéaire $A X = B$ à $n$ équations et $n$ inconnues, $A$ matrice carrée de taille $n \times n$, $B$ matrice colonée de taille $n\times 1$ est un système de cramer si la matrice $A$ du système est inversible. \\
-Dans ce cas le système admet une solution unique $(a_1, \ldots, a_n) \in \R^n$ et les $a_i \in \R$ sont donnés par les formules suivantes. Si on désigne par $C_1, \ldots, C_n$ les colonnes de $A$\footnote{$A = (C_1, \ldots, C_n)$}, on a
+\paragraph{Définition} On dit qu'un système linéaire $A X = B$ à $n$ équations et $n$ inconnues\footnote{$A$ est une matrice carrée de taille $n \times n$} \footnote{$B$ est une matrice colonne de taille $n\times 1$}, est un système de cramer si la matrice $A$ du système est inversible. Dans ce cas le système admet une solution unique $(a_1, \ldots, a_n) \in \R^n$ et les $a_i \in \R$ sont donnés par les formules suivantes. Si on désigne par $C_1, \ldots, C_n$ les colonnes de $A$\footnote{$A = (C_1, \ldots, C_n)$}, on a
 $$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix}}{det(A)} ~ (\text{on remplace } C_i \text{ avec } B)$$
 Comme $A$ est inversible, $det(A) \neq 0$.
 
@@ -716,11 +718,11 @@ Comme $A$ est inversible, $det(A) \neq 0$.
     &&+ a_n \begin{vmatrix} C_1 & \ldots & C_n & \ldots & C_n \end{vmatrix}
 \end{eqnarray*}
 On a 
-$$a_i \begin{vmatrix} C_1 & \ldots & C_i & \ldots & C_n \end{vmatrix} = a_i det(A)$$
+$$a_i \cdot \begin{vmatrix} C_1 & \ldots & C_i & \ldots & C_n \end{vmatrix} = a_i \cdot det(A)$$
 Pour $j \in \{1; \ldots; n\}$, $j\neq i$
-$$a_i \begin{vmatrix} C_1 & \ldots & C_j & \ldots & C_n \end{vmatrix} = 0$$
+$$a_i \cdot \begin{vmatrix} C_1 & \ldots & C_j & \ldots & C_n \end{vmatrix} = 0$$
 car la matrice colonne $C_j$ apparaît deux fois , en positions $i$ et $j$. On obtient donc 
-$$\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix} = a_i det(A)$$
+$$\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix} = a_i \cdot det(A)$$
 d'où
 $$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix}}{det(A)}$$
 
@@ -735,7 +737,7 @@ $$a_i = \frac{\begin{vmatrix} C_1 & \ldots & B_{(i)} & \ldots & C_n \end{vmatrix
 %
 Pour calculer le déterminant d'une matrice, on peut:
 \begin{itemize}
-  \item utilise la définition du déterminant comme somme des produits élémentaires singés convient pour les matrices de taille $1 \times 1$ ou $2 \times 2$
+  \item utiliser la définition du déterminant comme somme des produits élémentaires singnés convient pour les matrices de taille $1 \times 1$ ou $2 \times 2$
     $$\begin{array}{lcr} det\big((a)\big) = a & & det\left(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\right) = ad - bc \end{array}$$
   \item développer suivant une ligne ou une colonne convient pour les matrice de taille $3 \times 3$, éventuellement aussi pour une taille de $4 \times 4$
   \item utiliser l'algorithme d'élimination de Gauss convient pour les matrices de taille $2 \times 2$ et plus.

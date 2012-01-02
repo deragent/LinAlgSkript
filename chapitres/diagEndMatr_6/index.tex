@@ -16,12 +16,16 @@
 \paragraph{Théorème} Soient $E$ et $F$ deux espaces vectoriels de dimension finie, $f: E \rightarrow F$ une application linéaire, $\cE$ et $\cE'$ deux bases de $E$, et $\cF$ et $\cF'$ deux bases de $F$. On note $M = [f]_{\cF \cE}$ la matrice de $f$ dans les bases $\cE$ et $\cF$ et $M' = [f]_{\cF' \cE'}$ la matrice de $f$ dans les bases $\cE'$ et $\cF'$. On note également $P = P_{\cF \cF'}$ la matrice de passage de $\cF$ à $\cF'$ et $Q = P_{\cE \cE'}$ la matrice de passage de $\cE$ à $\cE'$. On a alors 
 \begin{eqnarray*}
   M' &=& P^{-1} M Q \\
-  \left[f\right]_{\cF' \cE'} &=& P_{\cF \cF'}^{-1} [f]_{\cF \cE} P_{\cE \cE'}
+  \left[f\right]_{\cF' \cE'} &=& (P_{\cF \cF'})^{-1} [f]_{\cF \cE} P_{\cE \cE'}
 \end{eqnarray*}
 
 \paragraph{Démonstration} Pour tout $\vec{v} \in E$, on a:
 $$[f(\vec{v})]_{\cF} = M [\vec{v}]_{\cE}$$
-On a $[\vec{v}]_{\cE} = Q [\vec{v}]_{\cE'}$ et $[f(\vec{v})]_{\cF} = P [f(\vec{v})]_{\cF'}$ Il vient $P [f(\vec{v})]_{\cF'} = M Q [\vec{v}]_{\cE'}$, d'où $[f(\vec{v})]_{\cF'} = (P^{-1} M Q ) [\vec{v}]_{\cE'}.$ il s'ensuit que $M' = P^{-1} M Q$.
+On a $[\vec{v}]_{\cE} = Q [\vec{v}]_{\cE'}$ et $[f(\vec{v})]_{\cF} = P [f(\vec{v})]_{\cF'}$ Il vient 
+$$P [f(\vec{v})]_{\cF'} = M Q [\vec{v}]_{\cE'}$$
+d'où 
+$$[f(\vec{v})]_{\cF'} = (P^{-1} M Q ) [\vec{v}]_{\cE'}$$
+il s'ensuit que $M' = P^{-1} M Q$.
 
 \paragraph{Exemple} Considérons l'application linéaire
 \begin{eqnarray*}
@@ -67,8 +71,8 @@ $$f(\vec{v}) = \lambda \vec{v}$$
 %
 \paragraph{Définition} L'ensemble des vecteurs de $f$ associés à $\lambda$, noté généralement $E_\lambda$, s'appelle le sous-espace propre de $f$ associé à $\lambda$. On a
 \begin{eqnarray*}
-  E_{\lambda} &=& \{\vec{v} \in E \vert f(\vec{v} = \lambda\vec{v} \} \\
-    &=& \{\vec{v} \in E \vert (f-\lambda id_E)(\vec{v}) = \vec{0} \} \\
+  E_{\lambda} &=& \{\vec{v} \in E ~ \vert ~ f(\vec{v}) = \lambda\vec{v} \} \\
+    &=& \{\vec{v} \in E ~ \vert ~ (f-\lambda id_E)(\vec{v}) = \vec{0} \} \\
     &=& Ker(f-id_E)
 \end{eqnarray*}
 Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
@@ -97,11 +101,11 @@ Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
         0 & 1
       \end{pmatrix} \right) X = 0$$
     c'est-à-dire $\begin{pmatrix} 4 & -4 \\ 1 & -1 \end{pmatrix} X = 0$ Il vient
-    $$\begin{pmatrix} 4 & -4 & \vert & 0 \\ 1 & 1 & \vert & 0 \end{pmatrix} \rightsquigarrow \begin{pmatrix} 1 & 0 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix}$$
+    $$\left( \begin{array}{cc|c} 4 & -4 & 0 \\ 1 & 1 & 0 \end{array} \right) \rightsquigarrow \left( \begin{array}{cc|c} 1 & 0 & 0 \\ 0 & 0 & 0 \end{array} \right) $$
     Donc 
     \begin{eqnarray*}
-      Ker(f + 2 \cdot id_E) &=& \{(t, t) \in \R^2 \vert \R \} \\
-        &=& \{t \cdot (1, 1) \in R^2 \vert t \in \R \} \\
+      Ker(f + 2 \cdot id_E) &=& \{(t, t) \in \R^2 ~ \vert ~ \R \} \\
+        &=& \{t \cdot (1, 1) \in R^2 ~ \vert ~ t \in \R \} \\
         &=& Vect((1, 1))
     \end{eqnarray*}
     
@@ -111,16 +115,17 @@ Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
       A &\mapsto& f(A) = A^{T}
     \end{eqnarray*}
     On sait que $f$ est un endomorphisme de $M_{3 \times 3}(\R)$. Alors $1$ est valeur propre de $f$ et
-    $$E_{1} = \{A \in M_{3 \times 3}(\R) \vert A^{T} = A \}$$
+    $$E_{1} = \{A \in M_{3 \times 3}(\R) ~ \vert ~ A^{T} = A \}$$
     est le sous-espace vectoriel de $M_{3 \times 3}(\R)$ consittué des matrices symétriques. \\
     De même $-1$ est valeur propre de $f$, et
-    $$E_{-1} = \{A \in M_{3\times 3}(\R) \vert A^{T} = -A\}$$
+    $$E_{-1} = \{A \in M_{3\times 3}(\R) ~ \vert ~ A^{T} = -A\}$$
     est le sous-espace vectoriel de $M_{3\times 3}(\R)$ constitué des matrices antisymétriques.
     
 \end{enumerate}
 
 \paragraph{Théorème} Soit $f: E \rightarrow E$ un endomorphisme de $E$. On suppose que $E$ est de dimension finie. Soit $\lambda \in \R$. \\
-Alors $\lambda$ est valeur propre de $f \Leftrightarrow f- \lambda \cdot id_E$ n'est pas bijectif.
+Alors 
+$$\lambda \text{ est valeur propre de } f \Leftrightarrow f- \lambda \cdot id_E \text{ n'est pas bijectif}$$
       
 \paragraph{Démonstration} $\lambda$ est valeur propre de $f$
 \begin{itemize}
@@ -145,7 +150,7 @@ En effet, si $\cE'$ est une autre base de $E$, et si $P = P_{\cE \cE'}$ est la m
     \begin{eqnarray*}
       (-1)^{n} det(M' - X I_n) &=& (-1)^{n} det(P^{-1} M P - X I_n) \\
         &=& (-1)^{n} det(P^{-1} (M - X I_n) P) \\
-        &=& (-1)^{n} det(P)^{-1} det(M - X I_n) det(P) \\
+        &=& (-1)^{n} det(P^{-1}) det(M - X I_n) det(P) \\
         &=& (-1)^{n} det(M - X I_n) \\
     \end{eqnarray*}
 \end{itemize}
@@ -221,10 +226,12 @@ Le valeur propres de $f$ sont donc $\frac{1 + \sqrt{21}}{2}$ et $\frac{1 - \sqrt
 %
 \paragraph{Définition} Soit $f$ un endormorphisme d'un expace vectoriel $D$ de dimension finie $n$. On dit que $f$ est diagonalisable s'il existe une base de $E$ formée de vecteurs propres de $f$.
 
-\paragraph{} Interprétation matricielle de cette définition. Si $f$ est diagonalisable, consiérons une base de $E$ $\cB = (\vec{v}_1, \ldots, \vec{v}_n)$ formée de vecteurs propres de $f$.  Pour tout $i$ disons que $\vec{v}_i$ est vecteur propre de $f$ pour la valeur propre $\lambda_i$. La matrice de $f$ dans cette base est
+\paragraph{Interprétation matricielle de cette définition} Si $f$ est diagonalisable, consiérons une base de $E$ 
+$$\cB = (\vec{v}_1, \ldots, \vec{v}_n)$$
+formée de vecteurs propres de $f$.  Pour tout $i$ disons que $\vec{v}_i$ est vecteur propre de $f$ pour la valeur propre $\lambda_i$. La matrice de $f$ dans cette base est
 \begin{eqnarray*}
   \begin{pmatrix} \\ [f(\vec{v}_1)]_{\cB} & \ldots & [f(\vec{v}_n)]_{\cB} \\ \\ \end{pmatrix} &=& 
-    \begin{pmatrix} \\ [\lambda \vec{v}_1]_{\cB} & \ldots & [\lambda \vec{v}_n)]_{\cB} \\ \\ \end{pmatrix} \\
+    \begin{pmatrix} \\ [\lambda \vec{v}_1]_{\cB} & \ldots & [\lambda \vec{v}_n]_{\cB} \\ \\ \end{pmatrix} \\
     &=& \begin{pmatrix} 
       \lambda_1 & 0 & \ldots & 0 \\
       0 & \lambda_2 & \ldots & 0 \\
@@ -259,14 +266,14 @@ Déterminons si $f$ est diagonalisable ou non.
         Il s'agit de résoudre le système linéaire
         $$(M - I_2) X = 0$$
         c'est-à-dire $\begin{pmatrix} 0 & 1 \\ 0 & 1 \end{pmatrix} X = 0$
-        $$\begin{pmatrix} 0 & 1 & \vert & 0 \\ 0 & 1 & \vert & 0 \end{pmatrix} \rightsquigarrow
-          \begin{pmatrix} 0 & 1 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix}$$
+        $$\left( \begin{array}{cc|c} 0 & 1 & 0 \\ 0 & 1 & 0 \end{array} \right) \rightsquigarrow
+          \left( \begin{array}{cc|c} 0 & 1 & 0 \\ 0 & 0 & 0 \end{array} \right) $$
         L'ensemble de solutions de ce système est
-        $$\cL_1 = \left\{(t, 0) \in \R^2 \vert t \in \R \right\}$$
+        $$\cL_1 = \left\{(t, 0) \in \R^2 ~ \vert ~ t \in \R \right\}$$
         donc 
         \begin{eqnarray*}
-          E_1 &=& \left\{(t, 0) \in \R^2 \vert t \in \R \right\} \\
-            &=& \left\{t(1, 0) \in \R^2 \vert t \in \R \right\} \\
+          E_1 &=& \left\{(t, 0) \in \R^2 ~ \vert ~ t \in \R \right\} \\
+            &=& \left\{t(1, 0) \in \R^2 ~ \vert ~ t \in \R \right\} \\
             &=& Vect\big((1, 0)\big)
         \end{eqnarray*}
         
@@ -274,14 +281,14 @@ Déterminons si $f$ est diagonalisable ou non.
         $$E_2 = Ker(f - 2 id_{\R^2})$$
         Il s'agit de résoudre le système linéaire
         $$\begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix} X = 0$$
-        $$\begin{pmatrix} -1 & 1 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix} \rightsquigarrow
-          \begin{pmatrix} 1 & -1 & \vert & 0 \\ 0 & 0 & \vert & 0 \end{pmatrix}$$
+        $$\left( \begin{array}{cc|c} -1 & 1 & 0 \\ 0 & 0 & 0 \end{array} \right) \rightsquigarrow
+          \left( \begin{array}{cc|c} 1 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right)$$
         L'ensemble de solutions de ce système est
-        $$\cL_2 = \left\{(u, u) \in \R^2 \vert u \in \R \right\}$$
+        $$\cL_2 = \left\{(u, u) \in \R^2 ~ \vert ~ u \in \R \right\}$$
         donc 
         \begin{eqnarray*}
-          E_2 &=& \left\{(u, u) \in \R^2 \vert u \in \R \right\} \\
-            &=& \left\{u(1, 1) \in \R^2 \vert u \in \R \right\} \\
+          E_2 &=& \left\{(u, u) \in \R^2 ~ \vert ~ u \in \R \right\} \\
+            &=& \left\{u(1, 1) \in \R^2 ~ \vert ~ u \in \R \right\} \\
             &=& Vect\big((1, 1)\big)
         \end{eqnarray*}
     \end{itemize}
