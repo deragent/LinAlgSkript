@@ -1,0 +1,332 @@
+\chapter{Structures}
+\section{Lois de composition internes}
+\paragraph{Rappels} On rappelle que si $E$ est un ensemble, une loi de composition interne $\star$ sur $E$ est une application:
+\begin{eqnarray*}
+\star{}:  E \times E &\rightarrow& E \\
+ (x, y) &\mapsto& x \star y
+\end{eqnarray*}
+
+%
+\subsection{Associativité}
+%
+\paragraph{Définition} Soit E un ensemble muni d'une loi de composition interne $\star$. On dit que $\star$ est associative si
+$$ \forall ~ x, y, z \in E, ~ (x \star y) \star z = x \star (y \star z)$$
+Si $\star$ est associative, alors la composition d'un nombre entier fini $n \geq 1$ quelconque d'éléments $x_1, x_2, \ldots , x_n$ de $E$ est bien défini indépendamment de l'ordre dans lequel on effectue la composition des éléments 2 à 2. On peut alors écrire $x_1 \star x_2 \star \ldots \star x_n$
+
+%
+\subsection{Commutativité}
+%
+\paragraph{Définition} On dit que $\star$ est commutative si
+$$ \forall ~ x, y \in E, ~ x \star y = y \star x$$
+
+%
+\subsection{Unifèrité}
+%
+\paragraph{Définition} On dit que $\star$ est unifère si $E$ posséde un élément neutre pour $\star$, c'est-à-dire un élément tel que
+$$\forall ~ x \in E, ~ e \star x = x = x \star e$$
+Cet élément neutre, s'il existe, est unique.
+
+%
+\subsection{Symétrie}
+%
+\paragraph{Définition} On suppose que $\star$ est unifère d'élément neutre e. Soit $x \in E$. On dit qu'un élément $y \in E$ est un symétrique de $x$ pour $\star$ si
+$$ x \star y = e = y \star x$$
+Le symétrique de $x$, s'il existe, est unique. Pour un $x \in E$. Si $\star$ est l'addition ($+$) le symétrique s'appelle l'opposé de $x$ et s'écrit $-x$. Si $\star$ est la multiplication ($\times$) le symétrique s'appelle l'inverse de $x$ et s'écrit $x^{-1}$.
+ 
+\paragraph{Exemple} La soustraction ($-$) sur $\Z$ n'est ni associative ni commutative ni unifère. ($0$ est élément neutre à droite mais pas à gauche $\rightarrow$ $0 - x = x \neq x - 0$.)
+
+%
+%
+\section{Groupes, Anneaux, Corps}
+%
+%
+%
+\subsection{Groupe}
+%
+\paragraph{Définition} On appelle groupe un ensemble $E$ muni d'une loi de composition interne $\star$ associative et unifère et tel que tout élément de $E$ admette un symétrique pour $\star$. \\
+Si de plus $\star$ est commutative, on dit que le groupe est commutatif ou un groupe abélien.
+
+\paragraph{Exemple}
+$(\Z, +)$ est un groupe commutatif. Mais $(\N, +)$ n'est pas un groupe (parce qu'il n'y a pas d'élément symétrique pour $+$).
+
+\paragraph{Exemple} Soit $n \geq 1$ un entier naturel. On appelle permutation de $\{ 1; 2; \ldots ; n\}$ une bijection de $\{ 1; 2; \ldots ; n\}$ dans lui-même. Alors l'ensemble $S_n$ des permutations de $\{ 1; 2; \ldots ; n\}$ muni de la composition des permutations est un groupe non commutatif pour $n \geq 3$.
+
+%
+\subsection{Anneau}
+%
+\paragraph{Définition} On appelle anneau un triplet $(A, +, \times)$ où $A$ est un ensemble et $+$ et $\times$ sont des lois de composition internes sur A appellées respectivement addition et multiplication telles que:
+\begin{itemize}
+  \item $A$ muni de $+$ est un groupe d'élément neutre noté $0$.
+  \item $\times$ est associative est unifère d'élément neutre noté $1$.
+  \item $\times$ est un biadditive, c'est-à-dire, pour toute $x, x', y, y' \in A$
+    \begin{itemize}
+      \item additivité à gauche: $(x + x') \times y = (x \times y)+(x' \times y)$
+      \item additivité à droite: $x \times (y + y') = (x \times y)+(x \times y')$
+    \end{itemize}
+\end{itemize}
+Si de plus $\times$ est commutative, on dit que $(A, +, \times)$ est un anneaux commutatif.
+
+\paragraph{Exemple}  $(\Z, +, \times)$, $(\R, +, \times)$ sont des anneaux commutatifs.
+
+\paragraph{Définition} Soient $(A, +, \times)$ un anneau et $x \in A$. On dit que $x$ est un élément inversible de $A$, si $A$ admet un inverse pour $x$. On note $A^{x}$ l'ensemble des éléments inversibles de $A$. L'ensemble $A^{x}$ muni de $\times$ est un groupe.
+
+%
+\subsection{Corps}
+%
+\paragraph{Définition} Un corps est un anneau dans lequel tout élément non nul est inversible.
+
+\paragraph{Exemple}
+\begin{itemize}
+  \item $(\Q, +, \times)$ cest le corps des nombres rationels.
+  \item $(\R, +, \times)$ cest le corps des nombres réels.
+  \item $(\C, +, \times)$ cest le corps des nombres complexes.
+\end{itemize}
+
+%
+%
+\section{Espaces vectoriels, algèbres}
+%
+%
+
+%
+\subsection{Espace vectoriel}
+%
+\paragraph{Définition} Soit $K$ un corps commutatif. On appelle espace vectoriel sur $K$ (ou $K$-espace vectoriel) un ensemble $V$ muni d'une loi de composition $+$ et d'une loi de composition externe
+\begin{eqnarray*}
+  \times: K \times V &\rightarrow& V \\
+  (\alpha, \vec{v}) &\mapsto& \alpha\cdot\vec{v} = \alpha\vec{v}
+\end{eqnarray*}
+telles que:
+\begin{itemize}
+  \item $(V, +)$ est un groupe commutatif d'élément neutre noté $\vec{0}$.
+  \item $\forall ~ \vec{v}, \vec{u} \in V, ~ \alpha \in K$: 
+    $$\alpha \cdot (\vec{v}+\vec{u}) = \alpha \cdot \vec{v} + \alpha \cdot \vec{u}$$
+  \item $\forall ~ \vec{v} \in V, ~ \alpha, \beta \in K$:
+    \begin{eqnarray*}
+      (\alpha \cdot \beta) \cdot \vec{v} &=& \alpha \cdot (\beta \cdot \vec{v}) \\
+      (\alpha + \beta) \cdot \vec{v} &=& \alpha \cdot \vec{v} + \beta \cdot \vec{v} \\
+      1 \cdot \vec{v} &=& \vec{v}
+    \end{eqnarray*}
+\end{itemize}
+Les éléments de $K$ sont appellées scalaires et ceux de $V$ vecteurs.
+
+\paragraph{Important} Ne pas confondre l'addition ($+$) de $K$ et de $V$. Ces sont deux lois de composition différentes.
+
+\paragraph{Exemples}
+\begin{enumerate}
+  \item Pour tous $x \in \R$ et $a\in \R$, on pose $a \times x = a x \in \R$. Alors l'ensemble $\R$ muni de l'addition usuelle $+$ et de $\times$ est un $\R$-espace vectoriel. En effet, puisque $\R$ est un anneau, $(\R, +)$ est un groupe commutatif. Le reste des axiomes de la structure d'espace vectoriel sont assurés par les propriétés de la multiplication dans $\R$. \\
+    Plus généralement, si $n \geq 1$ est un entier naturel, en possent
+    \begin{eqnarray*}
+      (x_1, x_2, \ldots, x_n) + (y_1, y_2, \ldots, y_n) &=& (x_1+y_1, x_2+y_2, \ldots, x_n+y_n) \\
+      \alpha \times (x_1, x_2, \ldots, x_n) &=& (\alpha x_1, \alpha x_2, \ldots, \alpha x_n)
+    \end{eqnarray*}
+    pour tous $(x_1, x_2, \ldots, x_n), (y_1, y_2, \ldots, y_n) \in \R^n, \alpha \in \R$ on définit une structure de $\R$-espace vectoriel sur l'ensemble $\R^n$.
+    
+  \item Un polynôme à une indéterminée $X$ à coefficients dans $\R$ est une somme formelle 
+    $$P(X) = a_0 + a_1 X + a_2 X^2 + \ldots + a_n X^{n}$$ 
+    avec $n \geq 0$ et $a_0, a_1, a_2, \ldots, a_n \in \R$. Les $a_i$ sont les coefficients de $P$. \\
+    Si 
+    $$P(X) = a_0 + a_1 X + a_2 X^2 + \ldots + a_n X^{n}, a_n \neq 0$$ 
+    et 
+    $$Q(X) = b_0 + b_1 X + b_2 X^2 + \ldots + b_m X^{m}, b_m \neq 0$$ 
+    sont deux polynômes, alors $P=Q$ si et seulement si $n=m$ et $a_i = b_i ~ \forall ~ i \in \N, 0 \leq i \leq n = m$. \\
+    
+    On note $\R[X]$ l'ensemble des polynômes à une indéterminée $X$ à coefficients dans $\R$. En posant $$(P + Q)(X) = \sum_{n \geq 0} (a_n + b_n)X^n$$ pour 
+    \begin{eqnarray*}
+      P(X) &=& a_0 + a_1 X + a_2 X^2 + \ldots + a_n X^{n} \\
+      Q(X) &=& b_0 + b_1 X + b_2 X^2 + \ldots + b_m X^{m} \\
+      a_i &=& 0 ~ \forall ~ i > n \\
+      b_i &=& 0 ~ \forall ~ i > m
+    \end{eqnarray*}
+    et 
+    $$(\alpha P)(X) = \alpha a_0 + \alpha a_1 X + \alpha a_2 X^2 + \ldots + \alpha a_n X^{n} \in \R[X]$$
+    pour $a \in \R$ et $P(X) = a_0 + a_1 X + a_2 X^2 + \ldots + a_n X^{n} \in \R[X]$ on définit une structure de $\R$-espace vectoriel sur $\R[X]$.
+  \item Soit $X$ un ensemble. On note $\mathcal{A}(X, \R)$ l'ensemble des applications de $X$ dans $\R$. En posant
+    $$(f + g)(x) = f(x) + g(x)$$
+    pour tous $x \in X$ et $f, g \in \mathcal{A}(X, \R)$,
+    $$(\alpha \cdot f)(x) = \alpha f(x)$$
+    pour tous $x \in X$ et $f \in \mathcal{A}(X, \R)$ on définit une structure de $\R$-espace vectoriel sur $\mathcal{A}(X, \R)$. \\
+    
+    En effet, la structure de groupe commutatif de $(\R, +)$ donne la structure du groupe commutatif de $(\mathcal{A}(X, \R), +)$. Ainsi, l'élément $0$ application nulle est l'application de $X$ dans $\R$ qui associé $0$ à tout $x \in X$. \\
+    Si $f \in \mathcal{A}(X, \R)$, l'opposée de $f$ est l'application de $X$ dans $\R$ qui à tout $x \in X$ associe à $-f(x)$. Le reste des axiômes de la structure d'espace vectoriel sont assurés par les propriétés de la multiplication dans $\R$.
+\end{enumerate}
+
+%
+\subsection{Morphisme}
+%
+\paragraph{Définition} Soient $(U, +, \cdot)$ et $(V, +, \cdot)$ deux $\R$-espace vectoriels. Un morphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application linéaire
+  $$f: U \rightarrow V$$
+  telle que
+  \begin{eqnarray*}
+    f(\vec{u} + \vec{v}) = f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U \mbox{~ (additivité)}\\
+    f(\alpha \vec{u} ) = \alpha f(\vec{u}) ~ &\forall&\vec{u} \in U, \alpha \in \R \mbox{~ (homogénéité)}
+  \end{eqnarray*}
+
+\paragraph{Remarque} Les deux conditions peuvent se résumer en une seule
+  \begin{eqnarray*}
+    f(\alpha \vec{u} + \vec{v}) = \alpha f(\vec{u}) + f(\vec{v}) ~ &\forall&\vec{u}, \vec{v} \in U, \alpha \in \R \mbox{~ (linéarité)}
+  \end{eqnarray*}
+
+\paragraph{Exemple} On considère l'application 
+\begin{eqnarray*}
+  f: \R^3 &\rightarrow& \R^2 \\
+  (x_1, x_2, x_3) &\mapsto& f(x_1, x_2, x_3) = (2 x_1 - x_2 + 7 x_3, 5 x_1 - x_3)
+\end{eqnarray*}
+Alors $f$ est une application linéaire. En effet, soient $(x_1, x_2, x_3), (y_1, y_2, y_3) \in \R^3$ et $\alpha \in \R$. Il vient
+\begin{eqnarray*}
+  f(\alpha (x_1, x_2, x_3) + (y_1, y_2, y_3)) &=& f(\alpha x_1 + y_1, \alpha x_2 + y_2, \alpha x_3 + y_3) \\
+    &=& (2 (\alpha x_1 + y_1) - (\alpha x_2 + y_2) + 7 (\alpha x_3 + y_3), 5 (\alpha x_1 + y_1) - (\alpha x_3 + y_3)) \\
+    &=& (\alpha (2 x_1 - x_2 + 7 x_3) + (2 y_1 - y_2 + 7 y_3), \alpha(5 x_1 - x_3) - (5 y_1 - y_3)) \\
+    &=& \alpha (2 x_1 - x_2 + 7 x_3, 5 x_1 - x_3) + (2 y_1 - y_2 + 7 y_3, 5 y_1 - y_3) \\
+    &=& \alpha f(x_1, x_2, x_3) + f(y_1, y_2, y_3)
+\end{eqnarray*}
+
+
+%
+\subsection{Isomorphisme}
+%
+\paragraph{Définition} Soient $U$ et $V$ deux $\R$-espace vectoriels. Un isomorphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application $\R$-linéaire bijective de $U$ dans $V$. 
+
+\paragraph{Exemple} Soit $n \geq 1$ un entier naturel. On note $P_n$ l'ensemble des polynômes à une indéterminée à coefficients dans $\R$ de degré au plus $n$. $P_n$ muni de l'addition $+$ des polynômes et de la multiplication $\cdot$ par les réels est un $\R$-espace vectoriel. Montrons que $P_n$ est isomorphe à $R^{n+1}$. Soit
+\begin{eqnarray*}
+  f: \R^{n+1} &\rightarrow& P_n \\
+  (a_0, a_1, \ldots, a_n) &\mapsto& (a_0 + a_1 X + \ldots + a_n X^n)
+\end{eqnarray*}
+Alors $f$ est $\R$-linéaire. En effet, pour tous $(a_0, a_1, \ldots, a_n),  (b_0, b_1, \ldots, b_n) \in \R^n$ et $\alpha\in\R$
+\begin{eqnarray*}
+  f(\alpha (a_0, a_1, \ldots, a_n) + (b_0, b_1, \ldots, b_n)) &=& f(\alpha a_0 + b_0, \alpha a_1 + b_1, \ldots, \alpha a_n + b_n) \\
+  &=& (\alpha a_0 + b_0)+ (\alpha a_1 + b_1) X + \ldots + (\alpha a_n + b_n) X^n \\
+  &=& \alpha (a_0 + a_1 X + \ldots + a_n X^n) + (b_0 + b_1 X + \ldots + b_n X^n) \\
+  &=& \alpha f(a_0, a_1, \ldots, a_n) + f(b_0, b_1, \ldots, b_n)
+\end{eqnarray*}
+$f$ est clairement surjective et $f$ est injective puisque deux polynômes sont égaux s'ils ont les mêmes coefficients, donc $f$ est bijective.
+
+\paragraph{Proposition} Soit $(V, +, \cdot)$ un $\R$-espace vectoriel. Alors on a:
+\begin{enumerate}[a)]
+  \item $0\cdot \vec{v} = \vec{0} ~\forall~ \vec{v} \in V$
+  \item $\alpha \cdot \vec{0} = \vec{0} ~\forall~ \alpha \in \R$
+  \item $\alpha \cdot \vec{v} = \vec{0}$ seulement si $\alpha = \vec{0}$ ou $\vec{v} = \vec{0}$
+  \item $(-\alpha)\cdot \vec{v} = \alpha \cdot (-\vec{v}) ~\forall~ \alpha \in \R, \vec{v} \in V$
+\end{enumerate}
+
+\paragraph{Propostition}
+\begin{enumerate} 
+  \item Soient $(U, +, \cdot)$ et $(V, +, \cdot)$ deux $\R$-espace vectoriels et $f: U \rightarrow V$ une application $\R$-linéaire. Alors on a:
+    \begin{enumerate}[a)] 
+      \item $f(\vec{0}_U) = \vec{0}_V$
+      \item $f(-\vec{u}) = -f(\vec{u}) ~\forall~ \vec{u} \in U$
+    \end{enumerate}
+  \item 
+    \begin{enumerate}[a)]
+      \item Soit $(V, +, \cdot)$ un $\R$-espace vectoriel. Alors
+        \begin{eqnarray*}
+          id_V: V &\rightarrow& V \\
+          \vec{v} &\mapsto& id_{V}(\vec{v}) = \vec{v}
+        \end{eqnarray*}
+        est une application $\R$-linéaire.
+      \item Soient $(U, +, \cdot)$, $(V, +, \cdot)$ et $(W, +, \cdot)$  trois $\R$-espaces vectoriels, $f: U \rightarrow V$ et $g: V \rightarrow W$ deux applications $\R$-linéaires. Alors l'application composée
+        \begin{eqnarray*}
+          g \circ f: U &\rightarrow& W \\
+          \vec{u} &\mapsto& (g \circ f)(\vec{u}) = g(f(\vec{u}))
+        \end{eqnarray*}
+        est aussi $\R$-linéaire.
+    \end{enumerate}
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}
+  \item
+    \begin{enumerate}[a)]
+      \item $$f(\vec{0}_U) = f(\vec{0}_U + \vec{0}_U) = f(\vec{0}_U) + f(\vec{0}_U)$$
+        Ajoutons $-f(\vec{0}_U)$ (l'opposé de $f(\vec{0}_U)$.
+        \begin{eqnarray*}
+          \vec{0}_V = f(\vec{0}_U) + (-f(\vec{0}_U)) &=& (f(\vec{0}_U) + f(\vec{0}_U)) + (-f(\vec{0}_U)) \\
+            &=& f(\vec{0}_U) + (f(\vec{0}_U) + (-f(\vec{0}_U))) \\
+            &=& f(\vec{0}_U) + \vec{0}_V = f(\vec{0}_U)
+        \end{eqnarray*}
+      \item Soit $\vec{u} \in U$. On a
+        \begin{eqnarray*}
+          f(-\vec{u}) + f(\vec{u}) &=& f((-\vec{u}) + \vec{u}) = f(\vec{0}_U) = \vec{0}_V \\
+          f(-\vec{u}) + f(\vec{u}) &=& f(\vec{u}) + f(-\vec{u}) = \vec{0}_V ~ \text{(+ est commutative)}
+        \end{eqnarray*}
+        Par conséquant, $f(-\vec{u}) = -f(\vec{u})$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}[a)]
+      \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
+        \begin{eqnarray*}
+          id_V(\alpha \vec{u} + \vec{v}) &=& \alpha \vec{u} + \vec{v} \\
+            &=& \alpha \cdot id_V(\vec{u}) + id_V(\vec{v})
+        \end{eqnarray*}$
+$Ainsi, $id_V$ est bien $\R$-linéaire.
+      \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
+        \begin{eqnarray*}
+          (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
+            &=& g(\alpha \vec{u} + \vec{v}) \\
+            &=& \alpha \cdot g(f(\vec{u})) + g(f(\vec{v})) \\
+            &=& \alpha \cdot (g \circ f)(\vec{u}) + (g \circ f)(\vec{v})
+        \end{eqnarray*}
+    \end{enumerate}
+\end{enumerate}
+
+%
+\subsection{Algèbre}
+%
+\paragraph{Définition} Soit $K$ un corps commutatif. On appelle algèbre sur $K$ (ou $K$-algèbre) un quadrouplet $(A, +, \times, \cdot)$ ou $A$ est un ensemble, $+$ et $\times$ sont des lois de composition internes sur $A$ et $\cdot: K \cdot A \rightarrow A$ une loi de composition externe tels que:
+\begin{itemize}
+  \item $(A, +, \cdot)$ est un $K$-espace vectoriel.
+  \item $\times$ est associative et possède un élément neutre noté $1$.
+  \item 
+    \begin{eqnarray*}
+      \times: A \times A &\rightarrow& A \\
+      (x, y) &\mapsto& x \times y
+    \end{eqnarray*}
+    est bilinéaire. C'est-à-dire pour tout $y \in A$, l'application
+      \begin{eqnarray*}
+        A &\rightarrow& A \\
+        x &\mapsto& x \times y
+      \end{eqnarray*}
+      est $\R$-linéaire (linéarité à gauche) et pour tout $x \in A$, l'application
+      \begin{eqnarray*}
+        A &\rightarrow& A \\
+        y &\mapsto& x \times y
+      \end{eqnarray*}
+      est aussi $\R$-linéaire (linéarité à droite).
+      \begin{eqnarray*}
+        \forall~ y \in A ~\forall~ x, x' \in A ~\text{et}~ \alpha \in \R \\
+          (\alpha \cdot x + x') \times y &=& \alpha \cdot (x \times y) + (x' \times y) \\
+        \forall~ x \in A ~\forall~ y, y' \in A ~\text{et}~ \alpha \in \R \\
+          x \times (\alpha \cdot y + y') &=& \alpha \cdot (x \times y) + (x \times y') \\
+      \end{eqnarray*}
+\end{itemize}
+
+\paragraph{Exemples}
+\begin{enumerate}[1)]
+  \item Soit $\R[X]$ le $\R$-espace vectoriel des polynômes à une indéterminée à  coefficients dans $\R$. On définit une loi de composition interne $\times$ sur $\R[X]$ comme suit:
+    \begin{eqnarray*}
+      P(X) &=& a_0 + a_1 X^1 + a_2 X^2 + \ldots + a_n X^n = \sum_{i=0}^{n} a_i X^i \\
+      Q(X) &=& b_0 + b_1 X^1 + b_2 X^2 + \ldots + b_m X^m = \sum_{j=0}^{m} b_j X^j \\
+      (P \times Q)(X) &=& (a_0 b_0) + (a_0 b_1 + a_1 b_0) X^1 + (a_0 b_2 + a_1 b_1 + a_2 b_0) X^2 + \ldots + (a_n b_m) X^{n+m} \\
+        &=& \sum_{l=0}^{n+m} \left ( \sum_{(i, j), i+j=l} a_i b_j \right ) X^l
+    \end{eqnarray*}
+    On vérifie que $\times$ est associative, unifère et bilinéaire. Alors $(\R[X], + , \times, \cdot)$ est un $\R$-algèbre.
+    
+  \item Soit $(V, +, \cdot)$ und $\R$-espace vectoriel. On note $End_{\R}(V)$ l'ensemble des applications $\R$-linéaires de $V$ dans $V$; ce sont les endomorphismes du $\R$-espace vectoriel $V$. On définit sur $End_{\R}(V)$:
+    \begin{itemize}
+      \item une addition $+$ par
+        $$f+g \in End_{\R}(V), ~ (f+g)(\vec{v}) = f(\vec{v}) + g(\vec{v}) ~ \forall ~ \vec{v} \in V$$
+      \item une multiplication externe $\cdot$ par
+        $$f \in End_{\R}(V), ~ \alpha \in \R, ~ (\alpha \cdot f)(\vec{v}) = \alpha \cdot f(\vec{v}) ~ \forall ~ \vec{v} \in V$$
+      \item une multiplication interne $\circ$ par
+        $$f, g \in End_{\R}(V), ~ (g \circ f)(\vec{v}) = g(f(\vec{v})) ~ \forall ~ \vec{v} \in V$$
+    \end{itemize} 
+    On vérifie que $(End_{\R}(V), +, \circ, \cdot)$ est un $\R$-algèbre.
+\end{enumerate}
+
+\paragraph{Exemple} Soient $P(X) = 1 - 2 X + 3 X^2$ et $Q(X) = -3 + X + X^2 - 5 X^3$. Alors
+\begin{eqnarray*}
+  (P \times Q)(X) &=& (1 \cdot (-3)) + (1 \cdot 1 + (-2) \cdot (-3)) X + (1 \cdot 1 + (-2) \cdot 1 + 3 \cdot (-3)) X^2 \\
+    && +(1 \cdot (-5) + (-2) \cdot 1 + 3 \cdot 1) X^3 + ((-2) \cdot (-5) + 3 \cdot 1) X^4 + (3 \cdot (-5)) X^5 \\
+  &=& -3 + 7 X - 10 X^2 - 4 X^3 + 13 X^4 - 15 X^5
+\end{eqnarray*}
+On vérifie que $\times$ est associative, unifère et bilinéaire. Alors $(\R[X],+ ,\times ,\cdot)$ est un $\R$-algèbre.

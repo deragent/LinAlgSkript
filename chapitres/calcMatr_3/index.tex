@@ -1,0 +1,988 @@
+\chapter{Calcul matriciel}
+
+%
+%
+\section{Matrices}
+%
+%
+
+%
+\subsection{Matrice}
+%
+\paragraph{Définition} Soient $n \geq 1$ et $m \geq 1$ deux entiers naturels. On appelle matrice de taille $n\times m$ à coefficients dans $\R$ un tableau à $n$ lignes et $m$ colonnes de la forme
+$$\begin{pmatrix}
+  a_{11} & a_{12} & \ldots & a_{1m} \\
+  a_{21} & a_{22} & \ldots & a_{2m} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{n1} & a_{n2} & \ldots & a_{nm}
+\end{pmatrix} \text{ avec } a_{ij} \in \R$$
+
+%
+\subsection{Ensemble des matrices}
+%
+\paragraph{Définition} On note $M_{n, m}(\R)$ l'ensemble des matrices de taille $n\times m$ à coefficients dans $\R$.
+
+\paragraph{Exemple}
+$$\begin{pmatrix}
+  2 & -5 & \sqrt{2} \\
+ 3 &0 & 1 \\
+\end{pmatrix} \text{ est une matrice de taille $2\times 3$ à coefficients dans $\R$. Le coefficient $a_{12}$ est -5.} $$
+
+%
+\subsection{Matrice carrée}
+%
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel et $A$ une matrice de taille $n\times n$. On dit alors que $A$ est une matrice carrée. \\ 
+On note $M_{n}(\R)$ l'ensemble des matrices carrées de taille $n\times n$ à coefficients dans $\R$. Les coefficients $a_{ii}$ pour $1 \leq i \leq n$ sont appellés coefficients diagonaux de $A$.
+
+%
+%
+\section{Opérations sur les matrices}
+%
+%
+
+%
+\subsection{Somme}
+%
+\paragraph{Définition} Soient $m\geq 1$ et $n \geq 1$ deux entiers naturels. On peut définir la somme de deux matrices de même taille. Si $A = (a_{ij}), B = (b_{ij}) \in M_{n, m}(\R)$ on définit leur somme $S = A + B \in M_{n, m}(\R)$ par
+$$s_{ij} = a_{ij} + b_{ij} ~ \forall ~ 1 \leq i \leq n, 1 \leq j \leq m$$
+
+\paragraph{Proposition} Soient $m \geq 1$ et $n\geq 1$ des entiers naturels.
+\begin{enumerate}
+  \item Soient $A, B, C \in M_{n, m}(\R)$. Alors
+    $$(A + B) + C = A + (B + C)$$
+  \item On note $0$ la matrice nulle dans $M_{n, m}(\R)$, c'est-à-dire la matrice dont tous les coefficients sont nuls. Alors pour tout $A \in M_{n, m}(\R)$ on a
+    $$A + 0 = A = 0 + A$$
+  \item Soit $A \in M_{n, m}(\R)$. On note $-A$ la matrice $(-a_{ij})$ dans l'ensemble $M_{n, m}(\R)$. Alors on a
+    $$(-A) + A = 0 = A + (-A)$$
+\end{enumerate}
+Ainsi, l'addition $+$ dans $M_{n, m}(\R)$ est associative, unifère et tout $A \in M_{n, m}(\R)$ admet une matrice opposée. Par conséquence $(M_{n, m}(\R), +)$ est un groupe.\\
+De plus, comme $+$ dans $\R$ est commutative, l'addition dans $M_{n,m}(\R)$ est commutative:
+$$\forall A, B \in M_{n, m}(\R), ~ A + B = B + A$$
+En conclusion, $(M_{n, m}(\R)$ est un groupe commutatif.
+
+\paragraph{Démonstration}
+\begin{enumerate}
+  \item Cela découle de l'associativié de l'addition dans $\R$.
+  \item Cela découle de la propriété de l'élément $0$ dans $\R$.
+  \item Cela résulte des propriétés de l'opposé d'un réel.
+\end{enumerate}
+
+%
+\subsection{Produit avec un réel}
+%
+\paragraph{Définition} Soient $n \geq 1, m \geq 1$ deux entiers naturels, $A = (a_{ij}) \in M_{n, m}(\R)$ et $\alpha \in \R$. On  définit le produit de $A$ par $\alpha$ que l'on note $\alpha A$, par
+$$\alpha A = (\alpha a_{ij}) \in M_{n, m}(\R)$$
+
+\paragraph{Proposition} Soient $n \geq 1, m \geq 1$ des entiers naturels. On a
+\begin{enumerate}
+  \item $\forall \alpha \in \R, ~ A, B \in M_{n, m}(\R)$ 
+    $$\alpha \cdot (A + B) = \alpha \cdot A + \alpha \cdot B$$
+    
+  \item $\forall \alpha, \beta \in \R, ~ A \in M_{n, m}(\R)$
+    \begin{eqnarray*}
+      (\alpha + \beta) \cdot A &=& \alpha \cdot A + \beta \cdot A \\
+      (\alpha \cdot \beta) \cdot A &=& \alpha \cdot (\beta \cdot A)
+    \end{eqnarray*}
+    
+  \item $\forall A \in M_{n, m}(\R)$
+    $$1 \cdot A = A$$
+\end{enumerate}
+On peut donc dire, que $M_{n, m}(\R)$ muni de l'addition des matrices et de la multiplication par les réels est un $\R$-espace vectoriel.
+
+%
+\subsection{Produit matriciel}
+%
+\paragraph{Définition} Soient $n \geq 1, m \geq 1$ et $p \geq 1$ trois entiers naturels. On peut définir le produit $A \times B$ d'une matrice $A$ et d'une matrice $B$ dans cet ordre si le nombre de colonnes de $A$ est égal au nombre de lignes de $B$. \\
+Si $A = (a_{ij}) \in M_{n, m}(\R)$ et $B = (b_{ij}) \in M_{m, p}(\R)$, alors on définit $C = A \times B \in M_{n, p}(\R)$
+$$c_{ij} = \sum_{l=1}^{m} a_{il} * b_{lj} = a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + \ldots + a_{im} \cdot b_{mj}$$
+
+\paragraph{Exemple} Soient $A = 
+\begin{pmatrix}
+  2 & -5 & 1 \\
+  0 & 4 & 7 \\
+\end{pmatrix} \in M_{2,3}(\R)$ et $B = 
+\begin{pmatrix}
+  1 & -5 & 2 & 4 \\
+  2 & 4 & -7 & 3\\
+  0 & 1 & 0 & 1 \\
+\end{pmatrix} \in M_{3,4}(\R)$. Le nombre de colonnes de $A$ est égal au nombre de lignes de $B$. Le produit est donc défini. 
+$$AB = 
+\begin{pmatrix}
+  -8 & -29 & 39 & -6 \\
+  8 & 23 & -28 & 19 \\
+\end{pmatrix} \in M_{2,4}(\R)$$
+
+\paragraph{Proposition} A conditions que les produits et les sommes considerés soient bien définit, on a
+\begin{enumerate}
+  \item $$A \times (B \times C) = (A \times B) \times C$$
+  \item $$A \times (B + C) = A \times B + A \times C$$ 
+    $$(B + C) \times A = B \times A + C \times A$$
+  \item Pour tout entier $m \geq 1$ on appelle matrice identité de taille $n \times n$ la matrice carrée
+    $$I_n = (a_{ij}) ~ ~ a_{ij} = \left\{ \begin{array}{lr} 1, & i=j \\ 0, & i \neq j \end{array} \right.$$
+\end{enumerate}
+
+\paragraph{Attention} Deux matrices quelconques ne commutent pas nécessairement.
+\paragraph{Exemple} Soient $A = \begin{pmatrix} 1 & 3 \\ 2 & 7 \end{pmatrix}$ et $B = \begin{pmatrix} -3 & 0 \\ 4 & 1 \end{pmatrix}$. Alors on a
+$$A B = \begin{pmatrix} 9 & 3 \\ 22 & 7 \end{pmatrix}$$
+$$B A = \begin{pmatrix} -3 & -9 \\ 6 & 19 \end{pmatrix}$$
+On voit donc que $A B \neq B A$.
+
+\paragraph{Exemple} Soient $A=\begin{pmatrix} 1 & 3 \\ 2 & 7 \end{pmatrix}$ et $B=\begin{pmatrix} -3 & 0 \\ 4 & 1 \end{pmatrix}$. Alors 
+$$A B = 
+\begin{pmatrix}
+  9 & 3 \\
+  22 & 7
+\end{pmatrix} \text{ et } B A = 
+\begin{pmatrix}
+  -3 & -9 \\
+  6 & 19
+\end{pmatrix}$$ 
+Donc $A B\neq B A$.
+
+\paragraph{Attention}
+\begin{itemize}
+  \item Si $A$ et $B$ sont deux matrices on peut avoir $A \neq 0, B \neq 0$ et $AB = 0$
+  \item On peut donc avoir également $AB = AC$ et $B \neq C$ pour des matrices $A, B, C$.
+\end{itemize}
+
+\paragraph{} On a, $(M_{n, m}(\R), +, \times, \cdot)$ est une $\R$-algèbre. En particulier $(M_{n, m}(\R), +, \times)$ est un anneau.
+
+%
+%
+\section{Inversion des matrices}
+%
+%
+
+%
+\subsection{Matrice inversible}
+%
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel. Soit $A$ une matrice carrée de taille $n \times n$. On dit que $A$ est inversible s'il existe une matrice carrée $B$ de taille $n \times n$ telle que $A B = I_n = B A$. Dans ce cas on dit que $B$ est un inverse de $A$.
+
+\paragraph{Proposition} Soit $A$ une matrice carrée de taille $n \times n$. Si $A$ est inversible, alors son inverse est unique.
+
+\paragraph{Démonstration} On suppose que $A$ est inversible. Si $B$ et $C$ sont deux inverses pour $A$, alors on a
+$$B A C = (B A) C = I_n C = C$$
+on a également
+$$B A C = B (A C) = B I_n = B$$
+d'où $B = C$.
+
+\paragraph{Notation} Si $A$ est inversible, on note $A^{-1}$ son inverse. On a donc
+$$A A^{-1} = I_n = A^{-1} A$$
+
+\paragraph{Exemple} La matrice $\begin{pmatrix} 2 & 1 \\ 7 & 4 \end{pmatrix}$ est inversible d'inverse $\begin{pmatrix} 4 & -1 \\ -7 & 2 \end{pmatrix}$.
+$$\begin{pmatrix}2 & 1 \\ 7 & 4 \end{pmatrix} 
+  \begin{pmatrix} 4 & -1 \\ -7 & 2 \end{pmatrix} 
+  = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I_2$$
+$$\begin{pmatrix} 4 & -1 \\ -7 & 2 \end{pmatrix} 
+  \begin{pmatrix}2 & 1 \\ 7 & 4 \end{pmatrix}  
+  = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I_2$$
+On vérifie que $A A^{-1} = I_n = A^{-1} A$.
+
+%
+\subsection{Matrice de taille $2\times 2$}
+%
+\paragraph{Lemme} Soient $a, b, c, d \in \R, A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$ et $B = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \in M_{2}(\R)$. Alors $A B = (a d - b c) I_n = B A$.
+
+\paragraph{Démonstration} 
+$$A B 
+  = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} 
+  = \begin{pmatrix} ad-bc & 0 \\ 0 & ad-bc \end{pmatrix} 
+  = (ad-bc) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} 
+  = (ad-bc) I_2$$
+et 
+$$B A 
+  = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} 
+  = \begin{pmatrix} ad-bc & 0 \\ 0 & ad-bc \end{pmatrix} 
+  = (ad-bc) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} 
+  = (ad-bc) I_2$$
+
+\paragraph{Proposition} Soit $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in M_{2}(\R)$. Alors $A$ est inversible si et seuelement si $a d - b c \neq 0$, et dans ce cas
+$$A^{-1} = \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
+
+\paragraph{Démonstration} Cet énoncé est une équicalence constituée de deux implications:
+\begin{enumerate}
+  \item si $a d - b c \neq 0$, alors $A$ est inversible et $A^{-1} = \frac{1}{ad-bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$
+  
+  \item si $a d - b c = 0$, alors $A$ n'est pas inversible.
+\end{enumerate}
+Démontrons les des implications:
+\begin{enumerate}
+  \item On suppose que $a d - b c \neq 0$. Par suite, $a d - b c$ est inversible dans $\R$. D'après le lemme, on a
+    $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} 
+      = (a d - b c) I_2 
+      =  \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
+    d'où
+    $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \left( \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \right) 
+      = I_2 
+      = \left( \frac{1}{a d - b c} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \right) \begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
+    Par conséquent, $A$ est inversible d'inverse $A^{-1}=\frac{1}{a d - b c}\begin{pmatrix} d & -b \\ -c & a\end{pmatrix}$.
+    
+  \item On suppose que $a d - b c = 0$. On raisonne par l'absurde. Si $A$ est inversible, on obtient: D'après le lemme on a
+    $$\begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} = (a d - b c) I_2 = 0$$
+    d'où
+    \begin{eqnarray*}
+      A^{-1} \left( A \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \right) &=& A^{-1} 0 = 0 \\
+        &=& A^{-1} A \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \\
+      0 &=& \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+    \end{eqnarray*}
+    Par conséquent $a = b = c = d = 0$, donc $A = 0$ donc $A$ n'est pas inversible, ce qui donn lien à une contradiction. Ainsi $A$ n'est pas inversible si $a d - b c = 0$.
+    
+\end{enumerate}
+
+\paragraph{Proposition} Soient $A$ et $B$ des matrices inversibles de taille $n \times n$. Alors
+\begin{enumerate}
+  \item $A^{-1}$ est inversible d'inverse $A$
+  \item $A B$ est inversible et $(A B)^{-1} = B^{-1} A^{-1}$
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}
+  \item Puisuque $A$ est inversible d'inverse $A^{-1}$, on a
+    $$A A^{-1} = I_n = A^{-1} A$$
+    donc $A^{-1}$ est inversible d'inverse $A$.
+  \item On a
+    $$(A B)(B^{-1} A^{-1}) = A (B B^{-1}) A^{-1} = A I_n A^{-1} = A A^{-1} = I_n$$
+    De même, on a $(B^{-1} A^{-1}) A B = I_n$ \\
+    Par conséquence, $A B$ est inversible d'inverse $(B^{-1} A^{-1})$
+\end{enumerate}
+
+\paragraph{Proposition} Plus généralement, si $A_1, A_2, \ldots, A_m$ sont des matrices inversibles on a $(A_1 A_2 \ldots A_m)^{-1} = A_m^{-1} A_{m-1}^{-1} \ldots A_1^{-1}$
+
+%
+\subsection{Groupe des matrices inversibles}
+%
+\paragraph{Proposition} L'ensemble des matrices inversibles de taille $n \times n$ muni de la multiplication des matrices est un group. En effet
+\begin{itemize}
+  \item L'assertion $2.$ de la proposition précédante assure que $\times$ restreinte à l'ensemble des matrices inversibles est une loi de composition interne.
+  \item $\times$ étant associative sur $M_{n}(\R)$, elle l'est en restriction à l'ensemble des matrices inversibles.
+  \item $I_n$ est élément neutre.
+  \item L'assertion $1.$ de la proposition assure que l'inverse d'une matrice inversible est bien inversible.
+\end{itemize}
+On note $(GL_{n}(\R), \times)$ le groupe des matrices inversibles de taille $n$ ($GL$ est mis pour "groupe linéaire").
+
+\paragraph{Exemple} Soient $A = \begin{pmatrix} 2 & 7 \\ 1 & 4 \end{pmatrix}$ et $B = \begin{pmatrix} 5 & 3 \\ 3 & 2 \end{pmatrix}$.
+$A$ est inversible car $2 \cdot 4 - 1 \cdot 7 = 1 \neq 0$, et
+$$A^{-1} = \frac{1}{1} \begin{pmatrix} 2 & -7 \\ -1 & 4 \end{pmatrix} = \begin{pmatrix} 2 & -7 \\ -1 & 4 \end{pmatrix}$$
+$B$ est inversible car $5 \cdot 2 - 3 \cdot 3 = 1 \neq 0$, et 
+$$B^{-1} = \frac{1}{1} \begin{pmatrix} 2 & -3 \\ -3 & 5 \end{pmatrix} = \begin{pmatrix} 2 & -3\\ -3 & 5 \end{pmatrix}$$
+On a 
+$$A B = \begin{pmatrix} 2 & 7 \\ 1 & 4 \end{pmatrix} 
+  \begin{pmatrix}5&3\\3&2\end{pmatrix}
+  = \begin{pmatrix} 31 & 20 \\ 17 & 11 \end{pmatrix}$$
+et
+$$B^{-1} A^{-1} = \begin{pmatrix} 31 & 20 \\ 17 & 11 \end{pmatrix} 
+  \begin{pmatrix} 2 & -7 \\ -1 & 4 \end{pmatrix} 
+  = \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix}$$
+On a $(31 \cdot 11) - (17 \cdot 20) = 341 - 340 = 1 \neq 0$. Donc $A B$ est inversible 
+$$\frac{1}{1} \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix} 
+  = \begin{pmatrix} 11 & -20 \\ -17 & 31 \end{pmatrix}$$
+qui est bien égale à $B^{-1} A^{-1}$.
+
+%
+%
+\section{Matrices élémentaires}
+%
+%
+
+%
+\subsection{Matrice élémentaire}
+%
+\paragraph{Définition} Soient $n \geq 1$ un entier naturel et $(i, j) \in \{1; \ldots; n\} \times \{1; \ldots; n\}$. On note $F_{i, j}$ la matrice carrée de taille $n \times n$ contenant un $1$ en $i^{\text{ème}}$ ligne et $j^{\text{ème}}$ colonne et des $0$ partout ailleurs. On dit que $F_{i, j}$ est une matrice standard.
+
+\paragraph{Exemple} 
+$$n = 3 \rightarrow F_{2,3} = 
+\begin{pmatrix}
+  0 & 0 & 0 \\
+  0 & 0 & 1 \\
+  0 & 0 & 0
+\end{pmatrix}$$
+$$n = 4 \rightarrow F_{4,1} = 
+\begin{pmatrix}
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+  1 & 0 & 0 & 0
+\end{pmatrix}$$
+
+\paragraph{Proposition} Toute matrice carrée de taille $\times n$ peut s'exprimer à l'aide des matrices standard de taille $n\times n$
+$$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
+
+\paragraph{Proposition} Soit $A$ une matrice de taille $n\times m$.
+\begin{enumerate}[a)]
+  \item Soit $F_{ij}$ une matrice standard de taille $n\times n$. Alors $F_{ij} A$ est la matrice de taille $n \times m$ dont la $i^{\text{ème}}$ ligne est la $j^{\text{ème}}$ ligne de $A$ et dont les autres sont nulles.
+  \item Soit $F_{ij}$ une matrice standard de taille $m\times m$. Alors $A F_{ij}$ est la matrice de taille $n\times m$ dont la $j^{\text{ème}}$ colonne est la $i^{\text{ème}}$ de $A$ et dont les autres colonnes sont nulles.
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}[a)]
+  \item Soit $k \in \{1, \ldots, n \}$ et $l \in \{1, \ldots, n \}$. On a
+    $$(F_{ij} A)_{k l} = \sum_{r = 1}^{n} (F_{i j})_{k r} A_{r l}$$
+    si $k\neq i$, alors la $k$-ième ligne de $F_{i j}$ est nulle, donc
+    $$(F_{i j})_{k l}=0 \text{ pour tout } l$$
+    On obtient alors
+    $$(F_{i j})_{k l}=0 \text{ si } k\neq i$$
+    Si $k=i$, alors 
+    $$(F_{i j} A)_{i l} = \sum_{r = 1}^{n} (F_{i j})_{i r}A_{r l}$$
+    si $r \neq j$, alors la $r$-ième colonne de $F_{i j}$ est nulle, donc
+    $$(F_{ij})_{i r} = 0$$
+    il suit donc
+    $$(F_{i j} A)_{i l} = (F_{i j})_{i j} A_{j l} =A_{j l}$$
+    D'après ce qui procède, si $k \neq i$, alors la $k$-ième ligne de $F_{i j}A$ est nulle. Si $k = i$, alors la $i$-ième ligne de $F_{i j} A$ est $(A_{j 1} ~ A_{j 2} ~ \ldots ~ A_{j m})$ qui est la $j$-ième ligne de $A$.
+
+  \item Ceci se montre de façon similaire.
+\end{enumerate}
+
+\paragraph{Exemple}
+\begin{itemize}
+  \item Soient $A = \begin{pmatrix} 1 & -7 & 5 \\ 0 & 3 & 4 \end{pmatrix} \in M_{2\times 3}(\R)$ et $F_{1 2} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \in M_{2 \times 2}(\R)$. Alors
+    $$F_{1 2} A 
+      = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 1 & -7 & 5 \\ 0 & 3 & 4 \end{pmatrix} 
+      = \begin{pmatrix} 0 & 3 & 3 \\ 0 & 0 & 0 \end{pmatrix}$$
+
+  \item Soient $A = \begin{pmatrix} 1 & 5 \\ 0 & 4 \\ -7 & 2 \end{pmatrix} \in  M_{3 \times 2}(\R)$ et $F_{3 1} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix} \in M_{3 \times 3}(\R)$. Alors
+    $$F_{3 1} A 
+      = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix} \begin{pmatrix} 1 & 5 \\ 0 & 4 \\ -7 & 2 \end{pmatrix} 
+      = \begin{pmatrix} 0 & 0 \\ 0 & 0 \\ 1 & 5 \end{pmatrix}$$
+      
+  \item Soient $A = \begin{pmatrix} 1 & 5 \\ 0 & 4 \\ -7 & 2 \end{pmatrix} \in  M_{3 \times 2}(\R)$  et $F_{1 2} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \in M_{2 \times 2}(\R)$. Alors
+    $$A F_{1 2} 
+      = \begin{pmatrix} 1 & 5 \\ 0 & 4 \\ -7 & 2 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} 
+      =\begin{pmatrix} 0 & 1 \\ 0 & 0 \\ 0 & -7 \end{pmatrix}$$
+\end{itemize}
+
+%
+\subsection{Symbole de Kronecker}
+%
+\paragraph{Définition} Soit $n \geq 1$ un entier naturel. On note
+$$\mS: \{1; \ldots; n\}\times\{1; \ldots; n \} \rightarrow {0; 1}$$
+L'application est défini par
+$$\delta_{ij} = \left\{\begin{array}{lr} 1 & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$ 
+
+\paragraph{Corollaire} Soient $n \geq 1$ un entier naturel et
+$$(i, j), (k, l) \in \{1; \ldots; n\}\times\{1; \ldots; n\}$$
+alors
+$$F_{ij}F_{kl} = \delta_{ik} F_{il} = 
+  \left\{\begin{array}{lr} F_{il} & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$
+
+\paragraph{Démonstration} D'après la proposition, précédente, $F_{ij} F_{kl}$ est la matrice don la $i^{\text{ème}}$ ligne est la $j^{\text{ème}}$ ligne de $F_{kl}$ et dont les autres lignes sont nulles. Il vient
+\begin{itemize}
+  \item si $j\neq k$, la $j^{\text{ème}}$ ligne de $F_{kl}$ est nulle
+  \item si $j = k$ la $j^{\text{ème}} = k^{\text{ème}}$ ligne de $F_{kl}$ est $(0_{1} \ldots 0_{l-1} ~ 1_{l} ~ 0_{l+1} \ldots 0_{n})$
+\end{itemize}
+Par conséquent, si $j\neq k$, toutes les lignes de $F_{ij} F_{kl}$ sont nulles donc $F_{ij} F_{kl} = 0$; si $j=k$, alors 
+$$F_{ij} F_{kl} = \begin{pmatrix} 
+  & & & 0 & \\
+  & & & \vdots & \\
+  & & & 0 & \\
+  0 & \ldots & 0 & 1 & 0 \\
+  & & & 0 & \\
+\end{pmatrix} = F_{il}$$
+Ainsi $F_{ij} F{kl} = \delta_{ik} F_{il}$.
+
+%
+\subsection{Les opérations élémentaires}
+%
+\paragraph{Rappel} On rappelle que l'on distingue trois types d'opérations éLémentaires que l'on peut effectuer sur les lignes d'une matrice
+\begin{itemize}
+  \item multiplier une ligne par un réel
+  \item ajouter à une ligne un multiple quelconque d'une autre ligne
+  \item permuter deux lignes
+\end{itemize}
+On introdiut les matrices suivantes ($n \geq 1$ entier naturel)
+\begin{itemize}
+  \item $c \in \R \backslash \{0 \}, i \in \{1; \ldots; n\}$
+    $$E_i(c) = \left( \sum_{l=1, l\neq i}^n F_{ll} \right) +  c F_{ii} = 
+      \begin{pmatrix}
+        1 & & \\
+        & 1 & \\
+        & & \ddots & \\
+        & & & c & \\
+        & & & & 1
+      \end{pmatrix}$$
+      
+  \item $c \in \R, (i, j) \in \{1;\ldots;n\}\times\{1;\ldots;n\}, i\neq j$
+    $$E_{ij}(c) = I_n + c F_{ij} =
+      \begin{pmatrix}
+        1 & & & \\
+        & 1 & & c \\
+        & & \ddots & \\
+        & & & 1
+      \end{pmatrix}$$
+      
+  \item $(i, j) \in \{1; \ldots; n\}\times\{1;\ldots; n\}, i\neq j$
+    $$E_{ij} = \left( \sum_{l=1, l \notin {i; j}}^n F_{ll} \right) + F_{ij} + F_{ji} = 
+      \begin{pmatrix}
+        1 & & & & & & 0 \\
+        & 0 & & & & 1 & \\
+        & & 1 & & 0 & & \\
+        & & & \ddots & & & \\
+        & & 0 & & 1 & & \\
+        & 1 & & & & 0 & \\
+        0 & & & & & & 1
+      \end{pmatrix}$$
+\end{itemize} 
+Les opérations élémentaires que l'un peut effectuer sur les lignes d'une matrice peuvent s'interpréter en termes de multiplications de cette par les matrices précédantes.
+
+\paragraph{Exemple} Pour $n = 2$ on a
+$$E_1(-3) = \begin{pmatrix} -3 & 0 \\ 0 & 1 \end{pmatrix} ~~ 
+  E_{1 2} = \begin{pmatrix} 0 & 1 \\ 1 &  0 \end{pmatrix} ~~ 
+  E_{2 1}(5) = \begin{pmatrix} 1 & 5 \\ 0 & 1 \end{pmatrix}$$
+Pour $n = 3$ on a
+$$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~~
+  E_{2 1} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~~
+  E_{2 3}(7) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 7 \\ 0 & 0 & 1 \end{pmatrix}$$
+
+\paragraph{Théorème} Soit $A$ une matrice de taille $n\times m$
+\begin{enumerate}[a)]
+  \item Multiplier la $i^{\text{ème}}$ ligne de $A$ par un réel $c$ non nul est équvalent à multiplier $A$ à gauche par la matrice $E_i(c)$ de taille $n \times n$
+  
+  \item Ajouter à la $i^{\text{ème}}$ ligne de $A$ $c$-fois la ligne $j$ de $A$ où $i\neq j$ et $c\in \R$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}(c)$.
+  
+  \item Permuter la $i^{\text{ème}}$ ligne et la $j^{\text{ème}}$ ligne de $A$ où $i\neq j$ est équivalent à multiplier $A$ à gauche par la matrice $E_{ij}$.
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}[a)]
+  \item $$E_i(c) A = \left( \sum_{l=1, l\neq i}^n F_{ll} \right) A +  c F_{ii} A$$
+    Si $l\neq i$ on a
+    $$F_{ll} A =
+      \begin{pmatrix} 
+        \\ l^{\text{ème}} \text{ ligne de } A \\ \\
+      \end{pmatrix} 
+      \begin{array}{c} 
+        1, \ldots, l-1 \\ l \\ l+1, \ldots, n 
+      \end{array}$$
+    sinon, on a
+    $$c F_{ii} A =
+      \begin{pmatrix}
+        \\ c\text{-fois } i^{\text{ème}} \text{ ligne de } A \\ \\
+      \end{pmatrix} 
+      \begin{array}{c} 
+        1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
+      \end{array}$$
+    On voit alors que $\left( \sum_{l=1, l\neq i}^n F_{ll} \right) A +  c F_{ii} A$ est la matrice cherchée.
+    
+  \item $$E_{ij}(c) A = (I_n + c F_{ij}) A = E_{ij}(c) = A + c F_{ij} A$$
+    Où on a
+      $$c F_{ij} A =
+        \begin{pmatrix}
+          \\ c\text{-fois } j^{\text{ème}} \text{ ligne de } A \\ \\
+        \end{pmatrix} 
+        \begin{array}{c} 
+          1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
+        \end{array}$$
+    Donc $A + c F_{ij} A$ est bien la matrice cherchée.
+    
+  \item $$E_{ij} A = \left( \sum_{l=1, l \notin {i; j}}^n F_{ll} A \right) + F_{ij} A + F_{ji} A$$
+    Si $l\neq i$ et $l\neq j$ 
+    $$F_{ll} A =
+      \begin{pmatrix}
+        \\ l^{\text{ème}} \text{ ligne de } A \\ \\
+      \end{pmatrix} 
+      \begin{array}{c} 
+        1, \ldots, l-1 \\ l \\ l+1, \ldots, n 
+      \end{array}$$
+    sinon
+      $$F_{ij} A =
+      \begin{pmatrix}
+        \\ j^{\text{ème}} \text{ ligne de } A \\ \\
+      \end{pmatrix} 
+      \begin{array}{c} 
+        1, \ldots, i-1 \\ i \\ i+1, \ldots, n 
+      \end{array}$$
+      $$F_{ji} A =
+      \begin{pmatrix}
+        \\ i^{\text{ème}} \text{ ligne de } A \\ \\
+      \end{pmatrix} 
+      \begin{array}{c} 
+        1, \ldots, j-1 \\ j \\ j+1, \ldots, n 
+      \end{array}$$
+    Ainsi $\left( \sum_{l=1, l \notin {i; j}}^{n} F_{ll} A \right) + F_{ij} A + F_{ji} A$ est la matrice cherchée.
+\end{enumerate}
+
+\paragraph{Exemple} Soit $A = \begin{pmatrix} 5 & -3 & 0 \\ 4 & 2 & 7 \end{pmatrix} \in M_{2 \times 3}(\R)$. 
+\begin{itemize}
+  \item On veut multiplier la première ligne par $-7$.
+    $$A \xrightarrow {L_1 \leftarrow L_1(-7)} 
+    \begin{pmatrix} -35 & 21 & 0 \\ 4 & 2 & 7 \end{pmatrix}$$
+    On calcule
+    $$E_1(-7) A 
+      = \begin{pmatrix} -7 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 5 & -3 & 0 \\ 4 & 2 & 7 \end{pmatrix} 
+      = \begin{pmatrix} -35 & 21 & 0 \\ 4 & 2 & 7 \end{pmatrix}$$
+
+  \item Ajouter à la première ligne de $A$ $3$ fois la deuxième ligne.
+    $$A \xrightarrow{L_1\leftarrow L_1+3L_2} 
+      \begin{pmatrix} 17 & 3 & 21 \\ 4 & 2 & 7 \end{pmatrix}$$
+    On calcule
+    $$E_{1 2}(3) A 
+      = \begin{pmatrix} 1 & 3 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 5 & -3 & 0 \\ 4 & 2 & 7 \end{pmatrix} 
+      = \begin{pmatrix} 17 & 3 & 21 \\ 4 & 2 & 7 \end{pmatrix}$$
+\end{itemize}
+
+\paragraph{Théorème} Soit $n$ un entier naturel et $n \geq 1$. Alors les matrices élémentaires de taille $n \times n$ sont inversibles, et l'on a:
+\begin{enumerate}
+  \item $$E_i(C)^{-1} = \frac{1}{C} E_i \text{ avec } C \in \R \backslash \{ 0 \}$$
+  \item $$E_{i j}(C)^{-1} = E_{i j}(-C) \text{ avec } C \in \R$$
+  \item $$E_{i j}^{-1} = E_{j i}$$
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}
+  \item On a
+    $$E_i(C)E_i(\frac{1}{C}) = 
+      \begin{pmatrix}
+        1 & 0 & \dots & & 0 \\
+        0 & \ddots & & & \vdots \\
+        \vdots & & c \\
+        & & & \ddots & 0 \\
+        0 & \dots & & 0 & 1
+      \end{pmatrix} 
+      \begin{pmatrix}
+        1 & 0 & \dots & & 0 \\
+        0 & \ddots & & & \vdots \\
+        \vdots & & \frac{1}{c} \\
+        & & & \ddot s & 0 \\
+        0 & \dots & & 0 & 1
+      \end{pmatrix} = 
+      \begin{pmatrix}
+        1 & 0 & \dots & & 0 \\
+        0 & \ddots & & & \vdots \\
+        \vdots & & 1 \\
+        & & & \ddots & 0 \\
+       0 &\dots & & 0 & 1
+      \end{pmatrix} = I_n$$
+    On vérifie de même que $E_i(\frac{1}{C}) E_i(C) = I_n$.
+  
+  \item On a
+    $$E_{i j}(C) E_{i j}(-C) = (I_n + C F_{i j}) (I_n - C F_{i j}) = I_n + C F_{i j} - C F_{i j} - C^2 F_{i j} F_{i j}$$
+    puisque $i\neq j$, on a $F_{i j} F_{i j} = 0$. Donc
+    $$E_{i j}(C) E_{i j}(-C) = I_n$$
+    On vérifie de même que $E_{i j}(-C) E_{i j}(C) = I_n$.
+  
+  \item On a
+    \begin{eqnarray*}
+      E_{i j}E_{j i} 
+        &=& \left( \sum_{r = 1, r \notin \{i, j\}}^{n} F_{r r} + F_{i j} + F_{j i}\right) \left( \sum_{s = 1, s \notin \{i, j\}}^{n} F_{s s}+F_{i j}+F_{j i} \right) \\
+        &=& (I_n - F_{i i} - F_{j j} + F_{i j} + F_{j i}) (I_n - F_{i i} - F_{j j} + F_{i j} + F_{j i}) \\
+        &=& I_n - F_{i i} - F_{j j} + F_{i j} + F_{j i} - F_{j j} + F_{i i} F_{i i} + F_{j j} F_{i i} - F_{i j} F_{i i} - F_{j i} F_{i i} \\
+          && - F_{j j} + F_{i i} F_{j j} + F_{j j} F_{j j} - F_{i j} F_{j j} - F_{j i} F_{j j} + F_{i j} - F_{i i} F_{i j} - F_{j j} F_{i j} \\
+          && + F_{i j} F_{i j} + F_{j i} F_{i j} + F_{j i} - F_{i i} F_{i i} - F_{j j} F_{j i} + F_{i j} F_{j i} + F_{j i} F_{j i}\\
+        &=& I_n - F_{i i} - F_{j j} + F_{i j} + F_{j i} - F_{i i} + F_{i i} - F_{j i} - F_{j j} \\
+          && + F_{j j} - F_{i j} + F_{i j} - F_{i j} + F_{j j} + F_{j i} - F_{j i} + F_{i i} \\
+        &=& I_n
+    \end{eqnarray*}
+\end{enumerate}
+Le fait que les matrices élémentaires soient inversibles confirme le fait que les opérations élémentaires soient réversibles.
+
+%
+%
+\section{Écriture matricielle des systèmes linéaires}
+%
+%
+\paragraph{Écriture} Considérons le système linéaire à $n$ équations et $m$ inconnues suivant:
+$$\left\{ \begin{array}{rcl}
+  a_{1 1} x_{1} + a_{1 2} x_2 + \ldots + a_{1 m} x_m & = & b_1 \\
+  a_{2 1} x_{1} + a_{2 2} x_2 + \ldots + a_{2 m} x_m & = & b_2 \\
+  \vdots & & \vdots \\
+  a_{n 1} x_{1} + a_{n 2} x_2 + \ldots + a_{n m} x_m & = & b_n
+\end{array} \right.$$
+où les $a_{i j}$ et les $b_{i}$ sont des réels. Soit
+$$A = \begin{pmatrix}
+  a_{1 1} & a_{1 2} & \dots & a_{1 m} \\
+  a_{2 1} & a_{2 2} & \dots & a_{2 m} \\
+  \vdots & \vdots & \vdots & \vdots \\
+  a_{n 1} & a_{n 2} & \dots & a_{n m}
+\end{pmatrix}$$
+la matrice du système et soit
+$$B = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{pmatrix} \text{ et } 
+  X = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_m \end{pmatrix}$$
+Alors le système peut s'écrire matriciellement sous la forme
+$$A X = B$$
+
+%
+\subsection{Nombres de solutions possibles pour un système linéaire}
+%
+\paragraph{Théorème} Soit $A X = B$ un système linéaire. Alors, on se trouve dans l'un des cas suivants:
+\begin{itemize}
+  \item le système a aucune solution (système incompatible) 
+  \item le système a une solution unique
+  \item le système a une infinité de solutions
+\end{itemize}
+
+\paragraph{Démonstrations}
+\begin{itemize}
+  \item Si le système est incomaptible, il n'a pas de solutions.
+  \item S'il est compatible, il faut voir que dans le cas où il admet au moins deux solutions détérminés, il admet une infinité de solutions. Supposons que $t = (t_1, t_2, \ldots, t_m)$ et $t' = (t'_1, t'_2, \ldots, t'_m)$ soient deux solutions distinctes de ce système. On a donc
+    $$A \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} = B = A \begin{pmatrix} t'_1 \\ \vdots \\ t'_m \end{pmatrix}$$
+    Il vient
+    $$A \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} - \begin{pmatrix} t'_1 \\ \vdots \\ t'_m \end{pmatrix} \right) = 0$$
+    puisque $t \neq t'$, $t - t' \neq 0$. On obtient alors pour tout $\alpha \in \R$
+    $$A \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} + \alpha \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} - \begin{pmatrix} t'_1 \\ \vdots \\ t'_m \end{pmatrix} \right) \right) 
+      = A \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} + \alpha A \left( \begin{pmatrix} t_1 \\ \vdots \\ t_m \end{pmatrix} - \begin{pmatrix} t'_1 \\ \vdots \\ t'_m \end{pmatrix} \right) 
+      = B + 0 = B$$
+    donc $(t_1, t_2, \ldots, t_m) + \alpha ((t_1, t_2, \ldots, t_m) - (t'_1, t'_2, \ldots, t'_m))$ est une solution du système. Lorsque $\alpha$ parcourt $\R$ tout entier, on obtien une infinité de solutions.
+\end{itemize}
+
+%
+%
+\section{Calcul de $A^{-1}$ et $A^{-1} B$}
+%
+%
+
+\paragraph{Théorème} Soit $A$ une matrice carrée de taille $n \times n$. Alors les conditions suivantes sont équivalentes
+\begin{enumerate} 
+  \item $A$ est inversible,
+  \item Pour tout $B \in M_{n, 1}(\R)$, le système linéaire $A X = B$ admet une solutions unique.
+  \item $A$ admet $I_n$ pour forme échelonné réduite.
+  \item $A$ est produit de matrices élémentaires.
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{itemize}
+  \item[$1. \Rightarrow 2.$] On suppose que $A$ est inversible. Soit $B \in M_{n, 1}(\R)$. On a
+    $$A (A^{-1} B) = (A A^{-1}) B = I_n B = B$$
+    donc $A^{-1} B \in M_{n, 1}(\R)$ est une solution du système $A X = B$. Maintenant, si $T \in M_{n, 1}(\R)$ est une solutions de ce système, on a $A T = B$, d'où $A^{-1}(A T) = A^{-1} B$\footnote{avec $T = (A^{-1} A) T$} ce qui montre que $T$ est unique. Par conséquent, le système $A X = B$ a une unique solution.
+    
+  \item[$2. \Rightarrow 3.$] Supposons que pour tout $B \in M_{n, 1}(\R)$, le système $A X = B$ admet une unique solutions. Puisque ce système admet une unique solution, toutes les inconnues du système sont principale. En effet, si l'une\footnote{où plusieurs} des inconnues était sécondaire, on se trouverait dans l'un des cas suivants
+    \begin{itemize}
+      \item le système est incompatible et n'a pas de solution
+      \item le système est compatible et a une infinité de solutions
+    \end{itemize}
+    Comme $A$ est carrée, cela implque que la forme réduite de $A$ est $I_n$.
+    
+  \item[$3. \Rightarrow 4.$] Supposons que la forme échelonnée réduite de $A$ soit $I_n$. Il existe donc des matrices élémentaires $E_1, E_2, \ldots , E_r$, telles que
+    $$I_n = E_r \cdot \ldots \cdot E_2 \cdot E_1 \cdot A$$
+    Il vient alors $E_1^{-1} \cdot E_2^{-1} \cdot \ldots \cdot E_r^{-1} \cdot I_n = A$ d'où
+    $$A = E_1^{-1} \cdot E_2^{-1} \cdot \ldots \cdot E_r^{-1}$$
+    Or les $E_i^{-1}$ sont également des matrices élémentaires. Donc $A$ est bien produit de matrices élémentaires.
+    
+  \item[$4. \Rightarrow 1.$] On suppose que $A$ est produit de matrices élémentaires $A = E_1^{-1} \cdot E_2^{-1} \cdot \ldots \cdot E_r^{-1}$. Comme les $E_i$ sont inversibles, il en est de même de leur produit, donc de $A$.
+\end{itemize}
+Ce qui précède fournit une méthode pour calcule l'inverse d'une matrice, si cet inverse existe.
+
+%
+\subsection{Calculer l'inverse d'une matrice}
+%
+\paragraph{Methode de calcul} Soit $A$ matrice carrée de taille $n\times n$. \\
+On forme la matrice $(A ~ \vert ~ I_n)$. En utilisant les opérations élémentaires on met la matrice $E$ en forme échelonnée réduite et on éffectue parallelement les mêmes opérations élémentaires sur les lignes de $I_n$. Si $A$ sous la forme échelonnée réduite est égale à $I_n$ $A$ est inversible. La matrice inverse de $A$ est alors la partie $I_n$ où on a éffectue les opérations élémentaires. \\
+$E_1, E_2, \ldots, E_l$ sont des matrices élémentaires.
+\begin{eqnarray*}
+  A \cdot E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = I_n \\
+  &\Downarrow& \\
+  I_n \cdot E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = A^{-1} \\
+  &\Downarrow& \\
+  E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = A^{-1}
+\end{eqnarray*}
+De la même manière on peut calculer $A^{-1} B$.
+$$A^{-1} B = E_1 \cdot E_2 \cdot \ldots \cdot E_l \cdot B$$
+où $E_1, E_2, \ldots, E_l$ sont les opérations élémentaires dont on à besoin pour mettre $A$ sous forme échelonnée réduite égal à $I_n$.
+
+\paragraph{Exemple} Soient $A = \begin{pmatrix} 1 & 2 & 1 \\ 4 & 0 & -1 \\ -1 & 2 & 2 \end{pmatrix}$ et $B = \begin{pmatrix} 1 & 2 & 0 & 4 \\ -3 & 1 & 2 & 0 \\ 5 & 1 & -1 & 3 \end{pmatrix}$.
+On a
+$$A^{-1} B 
+  = \frac{1}{4} \begin{pmatrix} -2 & 2 & 2 \\ 7 & -3 & -5 \\ -8 & 4 & 8 \end{pmatrix} 
+    \begin{pmatrix} 1 & 2 & 0 & 4 \\ -3 & 1 & 2 & 0 \\ 5 & 1 & -1 & 3 \end{pmatrix} 
+  = \frac{1}{4} \begin{pmatrix} 2 & 0 & 2 & -2 \\ -9 & 6 & -1 & 13 \\ 20 & -4 & 0 & -8 \end{pmatrix}$$
+En applicant la méthode décrite, on obtient:
+\begin{eqnarray*}
+  \left( \begin{array}{ccc|cccc}
+    1 & 2 & 1 &    1 & 2 & 0 & 4 \\ 
+    4 & 0 & -1 &   -9 & 6 & -1 & 13 \\
+    -8 & 4 & 8 &   20 & -4 & 0 & -8
+  \end{array}\right)
+  &\xrightarrow[L_3 \leftarrow L_3 + L_1]{L_2 \leftarrow L_2 - 4 L_1}&
+  \left( \begin{array}{ccc|cccc}
+    1 & 2 & 1 &     1 & 2 & 0 & 4 \\ 
+    0 & -8 & -5 &   -7 & -7 & 2 & -16 \\
+    0 & 4 & 3 &     6 & 3 & -1 & 7
+  \end{array}\right) \\
+%
+  \xrightarrow{L_3 \leftarrow \frac{1}{4} L_3}
+  \left( \begin{array}{ccc|cccc}
+    1 & 2 & 1 &             1 & 2 & 0 & 4 \\ 
+    0 & -8 & -5 &           -7 & -7 & 2 & -16 \\
+    0 & 1 & \frac{3}{4} &   \frac{3}{2} & \frac{3}{4} & \frac{-1}{4} & \frac{7}{4}
+  \end{array}\right)
+  &\xrightarrow[L_3 \leftarrow L_3 + 8 L_2]{L_2 \leftrightarrow L_3}&
+  \left( \begin{array}{ccc|cccc}
+    1 & 2 & 1 &             1 & 2 & 0 & 4 \\ 
+    0 & 1 & \frac{3}{4} &   \frac{3}{2} & \frac{3}{4} & \frac{-1}{4} & \frac{7}{4} \\
+    0 & 0 & 1 &             5 & -1 & 0 & -2
+  \end{array}\right) \\
+%
+  \xrightarrow[L_1 \leftarrow L_1 - L_3]{L_2 \leftarrow L_2 - \frac{3}{4} L_3}
+  \left( \begin{array}{ccc|cccc}
+    1 & 2 & 0 &   -4 & 3 & 0 & 6 \\ 
+    0 & 1 & 0 &   \frac{-9}{4} & \frac{3}{2} & \frac{-1}{4} & \frac{13}{4} \\
+    0 & 0 & 1 &   5 & -1 & 0  & -2
+  \end{array}\right)
+  &\xrightarrow{L_1 \leftarrow L_1 - 2L_2}&
+  \left( \begin{array}{ccc|cccc}
+    1 & 0 & 0 &  	\frac{1}{2} & 0 & \frac{1}{2} & \frac{-1}{2} \\ 
+    0 & 1 & 0 &   \frac{-9}{4} & \frac{3}{2} & \frac{-1}{4} & \frac{13}{4} \\
+    0 & 0 & 1 &   5 & -1 & 0 & -2
+  \end{array}\right)
+\end{eqnarray*}
+On a donc
+$$A^{-1} B = \frac{1}{4} \begin{pmatrix} 
+  2 & 0 & 2 & -2 \\ 
+  -9 & 6 & -1 & 13 \\ 
+  20 & -4 & 0 & -8 
+\end{pmatrix}$$
+
+
+%
+%
+\section{Matrices triangulaires, matrice diagonales}
+%
+%
+\paragraph{} Soient $n \geq 1$ un entier naturel et $A_{i j}$ une matrice carrée de taille $n\times n$.
+
+%
+\subsection{Matrice triangulaire supérieure}
+%
+\paragraph{Définition} On dit que $A$ est triangulaire supérieure si les coefficients de $A$ en-dessous de la diagonale sont nuls, autrement dit si $i > j \Rightarrow a_{ij} = 0$
+
+%
+\subsection{Matrice triangulaire inférieure}
+%
+\paragraph{Définition} On dit que $A$ est triangulaire inférieure si tous les coefficients de $A$ au-dessus de la diagonale sont nuls, autrement dit si $i < j \Rightarrow a_{ij} = 0$
+
+%
+\subsection{Matrice diagonale}
+%
+\paragraph{Définition} On dit que $A$ est diagonale si les coefficients de $A$ en dehors de la diagonale sont nuls, autrement dit si $i\neq j \Rightarrow a_{ij} = 0$
+
+\paragraph{Théorème} Soit $A$ une matrice triangulaire supérieure de taille $n\times n$. Alors $A$ est inversible si et seulement si tous ses coefficients diagonaux sont nun nuls. Si $A$ est inversible, alors $A^{-1}$ est encore une matrice triangulaire supérieure.
+\\\\
+On applique le même pour les matrices triangulaires inférieures et les matrices diagonaux.
+
+\paragraph{Démonstration} Comme $A$ est triangulaire supérieure, elle est échelonnée. Alors $A$ est inversible si et seuelement si sa form échelonnée réduit est $I_n$, si et seulement si chaque coefficient diagonal de $A$ donne un coefficicent pivot, autrement di si et seuelement si chacun de ces coefficients diagonaux est non nul. \\
+Montrons par récurence sur $n \geq 1$ que l'inverse d'une matrice triangulaire supérieure inversible de taille $n\times n$ est encore triangulaire supérieure.
+\begin{enumerate}[(1)]
+  \item Si $n=1$, alors $A$ est de forme $A = ( a )$, pour un certain $a \in \R$. Puisque $A$ est inversible, $a \neq 0$ donc $a$ est inversible dans $\R$. On a alors 
+    $$(a) (a^{-1}) = I_n = (a^{-1})(a)$$
+    et donc $A^{-1} = (a^{-1})$ est triangulaire supérieure.
+    
+  \item On suppose que l'inverse de toute matrice triangulaire supérieure inversible de taille $(n-1) \times (n-1)$ est encore triangulaire supérieure.
+  
+  \item Soit $A$ une matrice triangulaire supérieure inversible de taille $n\times n$. Présentons $A$ par blocs de la façon suivante
+    $$A = \begin{pmatrix}
+      a &   & L &   \\
+        & * & * & * \\
+      0 & 0 & T & * \\
+        & 0 & 0 & * \\
+    \end{pmatrix}$$
+    où $a \in \R$, $L$ est une matrice ligne de taille $1 \times (n-1)$ et $T$ est une matrice triangulaire supérieure de taille $(n-1)\times(n-1)$. Du fait que $A$ est inversible, tous ses coefficients diagonaux sont non nuls. Cela implique que $a \neq 0$ et que les coefficients diagonaux de $T$ sont non nuls, donc $T$ est inversible. Par l'hypothèse de récurence, l'inverse $T^{-1}$ de $T$ est une matrice triangulaire supérieure. \\
+    Calculons de façon générale le produit de deux matrices triangulaires supérieure décomposées par blocs:
+    $$\begin{pmatrix}
+        a' &   & L' & ~ \\
+          &   &   &  ~  \\
+        0 &   & T' & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix}
+      \begin{pmatrix}
+        a &   & L &  ~ \\
+          &   &   &  ~ \\
+        0 &   & T &  ~ \\
+          &   &   &  ~ \\
+      \end{pmatrix}
+      =\begin{pmatrix}
+        a' a &   & a' L + L' T & ~ \\
+          &   &   & ~ \\
+        0 &   & T' T & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}$$
+    On veut que $T' T = I_{n-1}$ et que $a' L + L' T = 0$; posons $a' = a^{-1}$, $T' = T^-{1}$ et $L' = - a^{-1} L T^{-1}$. Il vient
+    \begin{eqnarray*}
+      \begin{pmatrix}
+        a^{-1} &   & -a^{-1} L T^{-1} & ~ \\
+          &   &   &  ~  \\
+        0 &   & T^{-1} & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix} &\cdot&
+      \begin{pmatrix}
+        a &   & L &  ~ \\
+          &   &   &  ~ \\
+        0 &   & T &  ~ \\
+          &   &   &  ~ \\
+      \end{pmatrix} \\
+      &=&\begin{pmatrix}
+        a^{-1} a &   & a^{-1} L - a^{-1} L T^{-1} T & ~ \\
+          &   &   & ~ \\
+        0 &   & T^{-1} T & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}  \\
+      &=&\begin{pmatrix}
+        1 &   & 0 & ~ \\
+          &   &   & ~ \\
+        0 &   & I_{n-1} & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}
+      = I_n
+    \end{eqnarray*}
+    On a également
+    \begin{eqnarray*}
+      \begin{pmatrix}
+        a &   & L &  ~ \\
+          &   &   &  ~ \\
+        0 &   & T &  ~ \\
+          &   &   &  ~ \\
+      \end{pmatrix} &\cdot&
+      \begin{pmatrix}
+        a^{-1} &   & a^{-1} L T^{-1} & ~ \\
+          &   &   &  ~  \\
+        0 &   & T^{-1} & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix}\\
+      &=&\begin{pmatrix}
+        a a^{-1} &   & - a^{-1} L T^{-1} T + a^{-1} L & ~ \\
+          &   &   & ~ \\
+        0 &   & T T^{-1} & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}  \\ 
+      &=&\begin{pmatrix}
+        1 &   & 0 & ~ \\
+          &   &   & ~ \\
+        0 &   & I_{n-1} & ~ \\
+          &   &   & ~ \\
+      \end{pmatrix}
+      = I_n
+    \end{eqnarray*}
+    donc
+    $$A^{-1} = 
+      \begin{pmatrix}
+        a^{-1} &   & a^{-1} L T^{-1} & ~ \\
+          &   &   &  ~  \\
+        0 &   & T^{-1} & ~  \\
+          &   &   &  ~ \\
+      \end{pmatrix}$$
+    est triangulaire supérieure. Par principe de récurence, la propriété est vrai pour tout $n \geq 1$
+\end{enumerate} 
+    
+
+%
+%
+\section{Transposition}
+%
+%
+%
+\subsection{Matrice transposée}
+%
+\paragraph{Définition} Soit $A$ une matrice de taille $n\times m$. On appelle transposée de $A$ la matrice de taille $m\times n$ notée $A^T$, définie par
+\begin{itemize}
+  \item la colonne $i$ de $A$ devient la ligne $i$ de $A^T$
+  \item la ligne $i$ de $A$ deivent la colonne $i$ de $A^T$
+\end{itemize}
+
+\paragraph{Exemple}
+$$\text{Si } A = \begin{pmatrix} 1 & 3 & 0 \\ 2 & -7 & 4 \end{pmatrix} 
+  \text{, alors } A^{-1} = \begin{pmatrix} 1 & 2 \\ 3 & -7 \\ 0 & 4 \end{pmatrix}$$
+$$\text{Si } B = \begin{pmatrix} 4 & 1 & 7 \\ 0 & -5 & 3 \\ 1 & 2 & 6 \end{pmatrix} 
+  \text{, alors } B^{-1} = \begin{pmatrix} 4 & 0 & 1 \\ 1 & -5 & 2 \\ 7 & 3 & 6 \end{pmatrix}$$
+
+\paragraph*{Proposition}
+\begin{enumerate}[1)]
+  \item $\forall A, B \in M_{n\times m}(\R)$ on a
+    $$(A + B)^{T} = A^{T} + B^{T}$$
+  \item $\forall A \in M_{n\times m}(\R), \lambda \in \R$ on a
+    $$(\lambda A)^{T} = \lambda A^{T}$$
+  \item $\forall A \in M_{n\times m}(\R), B \in M_{m\times n}(\R)$ on a
+    $$(A \cdot B)^{T} = B^{T} \cdot A^{T}$$
+  \item $\forall A \in M_{n\times m}(\R)$ on a
+    $$(A^{T})^{T} = A$$
+  \item $\forall A \in M_{n}(\R)$ si $A$ est inversible, alors $A^{T}$ est inversible et 
+    $$(A^{-1})^{T} = (A^{T})^{-1}$$
+\end{enumerate}
+
+%
+%
+\section{Matrices symétriques, matrices antisymétriques}
+%
+%
+%
+\subsection{Matrice symétrique}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On dit que $A$ est symétrique si $A^{T} = A$.
+
+\paragraph{Exemple}$$\begin{pmatrix}1&-7\\-7&1\end{pmatrix} \text{ et }\begin{pmatrix}0&3&5\\3&1&6\\5&6&2\end{pmatrix}\text{ sont des matrices symétriques.}$$
+
+%
+\subsection{Matrice antisymétrique}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On dit que $A$ est antisymétrique si $A^{T} = -A$
+\paragraph{Remarque} Si $A$ est antisymétrique $a_{ij}$ pour $i=j$ sont nuls.
+
+\paragraph{Exemple}$$\begin{pmatrix}0&1\\-1&0\end{pmatrix} \text{ et }\begin{pmatrix}0&-7&-3\\7&0&2\\3&-2&0\end{pmatrix}\text{ sont des matrices antisymétriques.}$$
+
+\paragraph{Théorème} Soit $A$ une matrice carrée. Alors $A$ peut s'écrire comme la somme d'une matrice symétrique et d'une matrice antisymétrique.
+
+\paragraph{Démonstration}  On pose $C = \frac{1}{2} ( A + A^{T})$ et $D = \frac{1}{2} ( A - A^{T})$ et alors on a
+$$ C + D = \frac{1}{2} ( A + A^{T}) + \frac{1}{2} ( A - A^{T}) = A$$
+On a 
+\begin{eqnarray*} 
+  C^{T} = (\frac{1}{2} ( A + A^{T}))^{T} &=& \frac{1}{2} ( A^{T} + A) \\
+    &=& \frac{1}{2} ( A + A^{T}) = C
+\end{eqnarray*}
+donc $C$ est symétrique. On a également
+\begin{eqnarray*}
+  D^{T} = (\frac{1}{2} ( A - A^{T}))^{T} &=& \frac{1}{2} ( A^{T} - A) \\
+    &=& -\frac{1}{2} ( A - A^{T}) = -C
+\end{eqnarray*}
+donc $D$ est antisymétrique. Ainsi $A = C + D$ est une composition de la forme cherché.
+
+%
+%
+\section{La trace}
+%
+%
+%
+\subsection{Trace d'une matrice}
+%
+\paragraph{Définition} Soit $A$ une matrice carrée de taille $n\times n$. On appelle trace de $A$ le nombre réel noté $tr(a)$ défini par
+$$tr(a) = a_{11} + a_{22} + \ldots + a_{nn}$$
+La trace de $A$ est donc la somme des coefficients diagonaux de $A$.
+
+\paragraph{Exemple} 
+$$A = \begin{pmatrix} 1 & 4 \\ 3 & -2 \end{pmatrix} \rightarrow tr(A) = -2 + 1 = -1$$
+$$B = \begin{pmatrix} 7 & 3 & 4 \\ 2 & 0 & -6 \\ -3 & 1 & -2 \end{pmatrix} \rightarrow tr(B) = 7 + 0 - 2 = 5$$
+
+\paragraph{Proposition}
+\begin{enumerate}[1)]
+  \item Soient $A, B \in M_{n}(\R)$. Alors
+    $$tr(A + B) = tr(A) + tr(B)$$
+  \item Soient $A \in M_{n}(\R)$ et $\lambda \in \R$. Alors
+    $$tr(\lambda A) = \lambda \cdot tr(A)$$
+  \item Soient $A, B \in M_{n}(\R)$. Alors
+    $$tr(A \cdot B) = tr(B \cdot A)$$
+  \item Soient $A \in M_{n}(\R)$ . Alors
+    $$tr(A^{T}) = tr(A)$$
+\end{enumerate}
+
+\paragraph{Démonstration}
+\begin{enumerate}[1)]
+  \item 
+    \begin{eqnarray*}
+      tr(A + B) = \sum_{k=1}^{n}(A + B)_{kk} &=& \sum_{k=1}^{n}(A)_{kk} + (B)_{kk} \\
+        &=& \sum_{k=1}^{n}(A)_{kk} + \sum_{k=1}^{n}(B)_{kk} \\
+        &=& tr(A) + tr(B)
+    \end{eqnarray*}
+    
+  \item
+    \begin{eqnarray*}
+      tr(\lambda A) = \sum_{k=1}^{n}(\lambda A)_{kk} &=& \sum_{k=1}^{n} \lambda \cdot (A)_{kk} \\
+        &=& \lambda \sum_{k=1}^{n}(A)_{kk} \\
+        &=& \lambda \cdot tr(A)
+    \end{eqnarray*}
+  
+  \item 
+    \begin{eqnarray*}
+      tr(A \cdot B) = \sum_{k=1}^{n} (A B)_{kk} &=& \sum_{k=1}^{n} \left( \sum_{l=1}^{n} A_{kl} B_{lk} \right) \\
+        &=& \sum_{l=1}^{n} \left( \sum_{k=1}^{n} A_{kl} B_{lk} \right) \\
+        &=& \sum_{l=1}^{n} \left( \sum_{k=1}^{n} B_{lk} A_{kl} \right) \\
+        &=& \sum_{l=1}^{n} (B A)_{ll} = tr(B \cdot A)
+    \end{eqnarray*}
+    
+  \item
+    $$tr(A^{T}) = \sum_{k=1}^{n} (A^{T})_{kk} = \sum_{k=1}^{n} (A)_{kk} = tr(A)$$
+\end{enumerate}
