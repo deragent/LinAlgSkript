@@ -19,13 +19,14 @@
   \left[f\right]_{\cF' \cE'} &=& (P_{\cF \cF'})^{-1} [f]_{\cF \cE} P_{\cE \cE'}
 \end{eqnarray*}
 
-\paragraph{Démonstration} Pour tout $\vec{v} \in E$, on a:
-$$[f(\vec{v})]_{\cF} = M [\vec{v}]_{\cE}$$
-On a $[\vec{v}]_{\cE} = Q [\vec{v}]_{\cE'}$ et $[f(\vec{v})]_{\cF} = P [f(\vec{v})]_{\cF'}$ Il vient 
-$$P [f(\vec{v})]_{\cF'} = M Q [\vec{v}]_{\cE'}$$
-d'où 
-$$[f(\vec{v})]_{\cF'} = (P^{-1} M Q ) [\vec{v}]_{\cE'}$$
-il s'ensuit que $M' = P^{-1} M Q$.
+\demo{Pour tout $\vec{v} \in E$, on a:
+  $$[f(\vec{v})]_{\cF} = M [\vec{v}]_{\cE}$$
+  On a $[\vec{v}]_{\cE} = Q [\vec{v}]_{\cE'}$ et $[f(\vec{v})]_{\cF} = P [f(\vec{v})]_{\cF'}$ Il vient 
+  $$P [f(\vec{v})]_{\cF'} = M Q [\vec{v}]_{\cE'}$$
+  d'où 
+  $$[f(\vec{v})]_{\cF'} = (P^{-1} M Q ) [\vec{v}]_{\cE'}$$
+  il s'ensuit que $M' = P^{-1} M Q$.
+}
 
 \paragraph{Exemple} Considérons l'application linéaire
 \begin{eqnarray*}
@@ -127,13 +128,14 @@ Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
 Alors 
 $$\lambda \text{ est valeur propre de } f \Leftrightarrow f- \lambda \cdot id_E \text{ n'est pas bijectif}$$
       
-\paragraph{Démonstration} $\lambda$ est valeur propre de $f$
-\begin{itemize}
-  \item[$\Leftrightarrow$] il existe $\vec{v} \in E$, $\vec{v} \neq \vec{0}$, $(f - \lambda \cdot id_E)(\vec{v}) = \vec{0}$ 
-  \item[$\Leftrightarrow$] $Ker(f-\lambda\cdot id_E) \neq \{\vec{0}\}$
-  \item[$\Leftrightarrow$] $f-\lambda \cdot id_E$ n'est pas injectif 
-  \item[$\Leftrightarrow$] $f-\lambda \cdot id_E$ n'est pas bijectif.
-\end{itemize}
+\demo{$\lambda$ est valeur propre de $f$
+  \begin{itemize}
+    \item[$\Leftrightarrow$] il existe $\vec{v} \in E$, $\vec{v} \neq \vec{0}$, $(f - \lambda \cdot id_E)(\vec{v}) = \vec{0}$ 
+    \item[$\Leftrightarrow$] $Ker(f-\lambda\cdot id_E) \neq \{\vec{0}\}$
+    \item[$\Leftrightarrow$] $f-\lambda \cdot id_E$ n'est pas injectif 
+    \item[$\Leftrightarrow$] $f-\lambda \cdot id_E$ n'est pas bijectif.
+  \end{itemize}
+}
 
 %
 \subsection{Polynôme caractéristique d'un endomorphisme}
@@ -188,13 +190,14 @@ $$P(X) = (-1)^n det(A -X I_n)$$
 
 \paragraph{Théorème} Soit $f: E \rightarrow E$ un endomorphisme. Alors un réel $\lambda$ est valeur propre de $f$ si et seulement si $P(\lambda) = 0$, où $P$ est le polynôme caractéristique de $f$. Autrement dit, les valeurs propres de $f$ sont exactément les racines de $P$.
 
-\paragraph{Démonstration} Soit $\lambda \in \R$. $\lambda$ est valeur propre de $f$
-\begin{itemize}
-  \item[$\Leftrightarrow$] $f - \lambda id_E$ n'est pas bijectif 
-  \item[$\Leftrightarrow$] la matrice\footnote{$M$ désigne la matrice de $f$ dans une base de $E$.} $M- \lambda id_E$ de $f- \lambda id_E$ n'est pas inversible
-  \item[$\Leftrightarrow$] $det(M - \lambda I_n) = 0$
-  \item[$\Leftrightarrow$] $P(\lambda) = 0$.
-\end{itemize}
+\demo{Soit $\lambda \in \R$. $\lambda$ est valeur propre de $f$
+  \begin{itemize}
+    \item[$\Leftrightarrow$] $f - \lambda id_E$ n'est pas bijectif 
+    \item[$\Leftrightarrow$] la matrice\footnote{$M$ désigne la matrice de $f$ dans une base de $E$.} $M- \lambda id_E$ de $f- \lambda id_E$ n'est pas inversible
+    \item[$\Leftrightarrow$] $det(M - \lambda I_n) = 0$
+    \item[$\Leftrightarrow$] $P(\lambda) = 0$.
+  \end{itemize}
+}
 
 \paragraph{Exemple} 
 \begin{eqnarray*}

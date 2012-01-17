@@ -237,41 +237,42 @@ $f$ est clairement surjective et $f$ est injective puisque deux polynômes sont 
     \end{enumerate}
 \end{enumerate}
 
-\paragraph{Démonstration}
-\begin{enumerate}
-  \item
-    \begin{enumerate}[a)]
-      \item $$f(\vec{0}_U) = f(\vec{0}_U + \vec{0}_U) = f(\vec{0}_U) + f(\vec{0}_U)$$
-        Ajoutons $-f(\vec{0}_U)$ (l'opposé de $f(\vec{0}_U)$.
-        \begin{eqnarray*}
-          \vec{0}_V = f(\vec{0}_U) + (-f(\vec{0}_U)) &=& (f(\vec{0}_U) + f(\vec{0}_U)) + (-f(\vec{0}_U)) \\
-            &=& f(\vec{0}_U) + (f(\vec{0}_U) + (-f(\vec{0}_U))) \\
-            &=& f(\vec{0}_U) + \vec{0}_V = f(\vec{0}_U)
-        \end{eqnarray*}
-      \item Soit $\vec{u} \in U$. On a
-        \begin{eqnarray*}
-          f(-\vec{u}) + f(\vec{u}) &=& f((-\vec{u}) + \vec{u}) = f(\vec{0}_U) = \vec{0}_V \\
-          f(-\vec{u}) + f(\vec{u}) &=& f(\vec{u}) + f(-\vec{u}) = \vec{0}_V ~ \text{(+ est commutative)}
-        \end{eqnarray*}
-        Par conséquant, $f(-\vec{u}) = -f(\vec{u})$.
-    \end{enumerate}
-  \item
-    \begin{enumerate}[a)]
-      \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
-        \begin{eqnarray*}
-          id_V(\alpha \vec{u} + \vec{v}) &=& \alpha \vec{u} + \vec{v} \\
-            &=& \alpha \cdot id_V(\vec{u}) + id_V(\vec{v})
-        \end{eqnarray*}$
-$Ainsi, $id_V$ est bien $\R$-linéaire.
-      \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
-        \begin{eqnarray*}
-          (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
-            &=& g(\alpha \vec{u} + \vec{v}) \\
-            &=& \alpha \cdot g(f(\vec{u})) + g(f(\vec{v})) \\
-            &=& \alpha \cdot (g \circ f)(\vec{u}) + (g \circ f)(\vec{v})
-        \end{eqnarray*}
-    \end{enumerate}
-\end{enumerate}
+\demo{
+  \begin{enumerate}
+    \item
+      \begin{enumerate}[a)]
+        \item $$f(\vec{0}_U) = f(\vec{0}_U + \vec{0}_U) = f(\vec{0}_U) + f(\vec{0}_U)$$
+          Ajoutons $-f(\vec{0}_U)$ (l'opposé de $f(\vec{0}_U)$.
+          \begin{eqnarray*}
+            \vec{0}_V = f(\vec{0}_U) + (-f(\vec{0}_U)) &=& (f(\vec{0}_U) + f(\vec{0}_U)) + (-f(\vec{0}_U)) \\
+              &=& f(\vec{0}_U) + (f(\vec{0}_U) + (-f(\vec{0}_U))) \\
+              &=& f(\vec{0}_U) + \vec{0}_V = f(\vec{0}_U)
+          \end{eqnarray*}
+        \item Soit $\vec{u} \in U$. On a
+          \begin{eqnarray*}
+            f(-\vec{u}) + f(\vec{u}) &=& f((-\vec{u}) + \vec{u}) = f(\vec{0}_U) = \vec{0}_V \\
+            f(-\vec{u}) + f(\vec{u}) &=& f(\vec{u}) + f(-\vec{u}) = \vec{0}_V ~ \text{(+ est commutative)}
+          \end{eqnarray*}
+          Par conséquant, $f(-\vec{u}) = -f(\vec{u})$.
+      \end{enumerate}
+    \item
+      \begin{enumerate}[a)]
+        \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
+          \begin{eqnarray*}
+            id_V(\alpha \vec{u} + \vec{v}) &=& \alpha \vec{u} + \vec{v} \\
+              &=& \alpha \cdot id_V(\vec{u}) + id_V(\vec{v})
+          \end{eqnarray*}$
+  $Ainsi, $id_V$ est bien $\R$-linéaire.
+        \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
+          \begin{eqnarray*}
+            (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
+              &=& g(\alpha \vec{u} + \vec{v}) \\
+              &=& \alpha \cdot g(f(\vec{u})) + g(f(\vec{v})) \\
+              &=& \alpha \cdot (g \circ f)(\vec{u}) + (g \circ f)(\vec{v})
+          \end{eqnarray*}
+      \end{enumerate}
+  \end{enumerate}
+}
 
 %
 \subsection{Algèbre}

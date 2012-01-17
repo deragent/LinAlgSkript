@@ -77,18 +77,19 @@ est encore un sous-espace vectoriel de V.
 $$Vect\{\vec{v}_1, \ldots, \vec{v}_r\} = \{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$$
 c'est-à-dire: le sous-espace vectoriel« de $V$ engerdré par $\vec{v}_1, \ldots, \vec{v}_r$ est constitué des combinaisons linéaires de $\vec{v}_1, \ldots, \vec{v}_r$.
 
-\paragraph{Démonstration} On procède par double inclusion.
-\begin{itemize}
-  \item Montrons que $\{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \} \subset Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$. $Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$ est en particulier un sous-espace vectoriel de $V$, donc $Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$ est stable par combinaison linéaire. Puisque $\vec{v}_1, \ldots, \vec{v}_r \in Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$, alors tout combinaison linéaire $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r$ appartient à $Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$.%TODO dans le cours on a écrit plus petit ou égale et pas sousensemble
-  
-  \item Montrons que $Vect\{\vec{v}_1, \ldots, \vec{v}_r\} \subset \{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ $\{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \} \neq \emptyset$ (par Exemple $\vec{v}_1 = 1 \cdot \vec{v}_1 + 0 \cdot \vec{v_2} + \ldots + 0 \cdot \vec{v}_r \in ensemble$) et stable par combinaison linéaire. En effet, si $\vec{u}$ et $\vec{w}$ sont des vecteurs dans cet ensemble et $\alpha$, $\beta$ deux réels, alors ils existent $\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_r \in \R$ tels que
-    \begin{eqnarray*}
-      \vec{u} = \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r \\
-      \vec{w} = \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r
-    \end{eqnarray*}
-    D'où $\alpha \cdot \vec{u} + \beta \cdot \vec{w} = (\alpha \cdot \alpha_1 + \beta \cdot \beta_1)\cdot \vec{v}_1 + \ldots + (\alpha \cdot \alpha_r + \beta \cdot \beta_r)\cdot \vec{v}_1$ est encore une combinaison linéaire de $\vec{v}_1, \ldots, \vec{v}_r$. \\
-    Puisque $\{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ qui contient $\vec{v}_1, \ldots, \vec{v}_r$ par définition de $Vect(\vec{v}_1, \ldots, \vec{v}_r)$, on a $Vect\{\vec{v}_1, \ldots, \vec{v}_r\} \subset \{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$
-\end{itemize}
+\demo{On procède par double inclusion.
+  \begin{itemize}
+    \item Montrons que $\{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \} \subset Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$. $Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$ est en particulier un sous-espace vectoriel de $V$, donc $Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$ est stable par combinaison linéaire. Puisque $\vec{v}_1, \ldots, \vec{v}_r \in Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$, alors tout combinaison linéaire $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r$ appartient à $Vect\{\vec{v}_1, \ldots, \vec{v}_r\}$.%TODO dans le cours on a écrit plus petit ou égale et pas sousensemble
+    
+    \item Montrons que $Vect\{\vec{v}_1, \ldots, \vec{v}_r\} \subset \{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ $\{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \} \neq \emptyset$ (par Exemple $\vec{v}_1 = 1 \cdot \vec{v}_1 + 0 \cdot \vec{v_2} + \ldots + 0 \cdot \vec{v}_r \in ensemble$) et stable par combinaison linéaire. En effet, si $\vec{u}$ et $\vec{w}$ sont des vecteurs dans cet ensemble et $\alpha$, $\beta$ deux réels, alors ils existent $\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_r \in \R$ tels que
+      \begin{eqnarray*}
+        \vec{u} = \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r \\
+        \vec{w} = \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r
+      \end{eqnarray*}
+      D'où $\alpha \cdot \vec{u} + \beta \cdot \vec{w} = (\alpha \cdot \alpha_1 + \beta \cdot \beta_1)\cdot \vec{v}_1 + \ldots + (\alpha \cdot \alpha_r + \beta \cdot \beta_r)\cdot \vec{v}_1$ est encore une combinaison linéaire de $\vec{v}_1, \ldots, \vec{v}_r$. \\
+      Puisque $\{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$ est un sous-espace vectoriel de $V$ qui contient $\vec{v}_1, \ldots, \vec{v}_r$ par définition de $Vect(\vec{v}_1, \ldots, \vec{v}_r)$, on a $Vect\{\vec{v}_1, \ldots, \vec{v}_r\} \subset \{\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r ~ | ~ \alpha_1, \ldots, \alpha_r \in \R \}$
+  \end{itemize}
+}
 
 \paragraph{Théorème} Soient $V$ un espace-vectoriel et $S = (\vec{v}_1, \ldots, \vec{v}_r)$ et $S' = (\vec{v}_{1'}, \ldots, \vec{v}_{r'})$ deux systèmes de vecteurs de $V$. Alors $Vect(\vec{v}_1, \ldots, \vec{v}_r) = Vect(\vec{v}_{1'}, \ldots, \vec{v}_{r'})$ si et seulement si tout vecteurs de $S$ est combinaison linéaire des vecteurs de $S'$ et vice-versa.
 
@@ -145,41 +146,44 @@ autrement dit si pour toute combinaison liéaire des $\vec{v}_i$ égale à $\vec
 \end{itemize}
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel et $\vec{v}_1, \ldots, \vec{v}_r$ des vecteurs de $V$. Alors $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié si et seulement si l'un des $\vec{v}_i$ est combinaison linéaire des autres.
-\paragraph{Démonstration} 
-\begin{itemize}
-  \item[$\Rightarrow$] On suppose que $\vec{v}_1, \ldots, \vec{v}_r$ forment un système liè. Alors il existent $\alpha_i \in \R$ non tous nul tel que $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = \vec{0}$. Soit $i_0$ entre $1$ et $r$ et $\alpha_{i_0} \neq 0$. Il vient
-    \begin{eqnarray*}
-      \sum_{j=1}^{r} \alpha_j \cdot \vec{v}_j = \vec{0} \\
-      \alpha_{i_0} \cdot \vec{v}_{i_0} + \sum_{j=1, j \neq i_0}^{r} \alpha_j \cdot \vec{v}_j = \vec{0}
-    \end{eqnarray*}
-    D'où
-    $$\vec{v}_{i_0} = -\frac{1}{\alpha_{i_0}} \cdot \sum_{j=1, j \neq i_0}^{r} \alpha_j \cdot \vec{v}_j$$
-    Donc $\vec{v}_{i_0}$ est combinaison linéaire des autres vecteurs.
-  
-  \item[$\Leftarrow$] Supposons que l'un des vecteurs soit combinaison linéaire des autres. Il existe donc $i$ entre $1$ et $r$ tel que 
-    $$\vec{v}_i = \sum_{j=1, j \neq i}^{r} \alpha_j \cdot \vec{v}_j$$
-    Il vient 
-    $$\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_{i-1} \cdot \vec{v}_{i-1} - \vec{v}_i (\neq 0) + \alpha_{i+1} \cdot \vec{v}_{i+1} + \ldots + \alpha_r \cdot \vec{v}_r = \vec{0}$$
-    Par conséquent $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié.
-\end{itemize}
+
+\demo{
+  \begin{itemize}
+    \item[$\Rightarrow$] On suppose que $\vec{v}_1, \ldots, \vec{v}_r$ forment un système liè. Alors il existent $\alpha_i \in \R$ non tous nul tel que $\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r = \vec{0}$. Soit $i_0$ entre $1$ et $r$ et $\alpha_{i_0} \neq 0$. Il vient
+      \begin{eqnarray*}
+        \sum_{j=1}^{r} \alpha_j \cdot \vec{v}_j = \vec{0} \\
+        \alpha_{i_0} \cdot \vec{v}_{i_0} + \sum_{j=1, j \neq i_0}^{r} \alpha_j \cdot \vec{v}_j = \vec{0}
+      \end{eqnarray*}
+      D'où
+      $$\vec{v}_{i_0} = -\frac{1}{\alpha_{i_0}} \cdot \sum_{j=1, j \neq i_0}^{r} \alpha_j \cdot \vec{v}_j$$
+      Donc $\vec{v}_{i_0}$ est combinaison linéaire des autres vecteurs.
+    
+    \item[$\Leftarrow$] Supposons que l'un des vecteurs soit combinaison linéaire des autres. Il existe donc $i$ entre $1$ et $r$ tel que 
+      $$\vec{v}_i = \sum_{j=1, j \neq i}^{r} \alpha_j \cdot \vec{v}_j$$
+      Il vient 
+      $$\alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_{i-1} \cdot \vec{v}_{i-1} - \vec{v}_i (\neq 0) + \alpha_{i+1} \cdot \vec{v}_{i+1} + \ldots + \alpha_r \cdot \vec{v}_r = \vec{0}$$
+      Par conséquent $\vec{v}_1, \ldots, \vec{v}_r$ forment un système lié.
+  \end{itemize}
+}
 
 \paragraph*{Théorème} Soient $V$ un espace vectoriel et $(\vec{v}_1, \ldots, \vec{v}_r)$ un système libre de vecteurs de $V$. Alors si un vecteur peut s'écrire comme combinaison linéaire des $\vec{v}_i$, alors son écriture comme tel est unique.
 
-\paragraph{Démonstration} Soiv $\vec{v} \in V$. Si 
-\begin{eqnarray*}
-  \vec{v} &=& \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r, ~ \alpha_i \in \R \\
-  \vec{v} &=& \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r, ~ \beta_i \in \R 
-\end{eqnarray*}
-sont deux écritures de $\vec{v}$ comme combinaison linéaire des $\vec{v}_i$, il vient
-\begin{eqnarray*}
-  \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r &=& \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r \\
-  (\alpha_1 - \beta_1) \cdot \vec{v}_1 + \ldots + (\alpha_r - \beta_r) \cdot \vec{v}_r &=& \vec{0}
-\end{eqnarray*}
-comme les $\vec{v}_i$ forment un système libre, on a pour tout $i, \alpha_i - \beta_i = 0 ~\Leftrightarrow~ \alpha_i = \beta_i$.
+\demo{Soiv $\vec{v} \in V$. Si 
+  \begin{eqnarray*}
+    \vec{v} &=& \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r, ~ \alpha_i \in \R \\
+    \vec{v} &=& \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r, ~ \beta_i \in \R 
+  \end{eqnarray*}
+  sont deux écritures de $\vec{v}$ comme combinaison linéaire des $\vec{v}_i$, il vient
+  \begin{eqnarray*}
+    \alpha_1 \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_r &=& \beta_1 \cdot \vec{v}_1 + \ldots + \beta_r \cdot \vec{v}_r \\
+    (\alpha_1 - \beta_1) \cdot \vec{v}_1 + \ldots + (\alpha_r - \beta_r) \cdot \vec{v}_r &=& \vec{0}
+  \end{eqnarray*}
+  comme les $\vec{v}_i$ forment un système libre, on a pour tout $i, \alpha_i - \beta_i = 0 ~\Leftrightarrow~ \alpha_i = \beta_i$.
 
-\subsection{Interprétation géométrique de la dépendance linéaire}
-\paragraph{$\R^2$} Dans le plan $\R^2$, deux vecteurs sont liés s'ils sont colinéaires. c'est-à-dire si l'un est égal à un multiple de l'autre. \\
-\paragraph{$\R^3$} Dans l'espace $\R^3$, trois vecteurs sont liés s'ils sont coplanaires, c'est-à-dire si le sous-espace vectoriel qu'ils engendrent est contenue dans un plan.
+  \subsection{Interprétation géométrique de la dépendance linéaire}
+  \paragraph{$\R^2$} Dans le plan $\R^2$, deux vecteurs sont liés s'ils sont colinéaires. c'est-à-dire si l'un est égal à un multiple de l'autre. \\
+  \paragraph{$\R^3$} Dans l'espace $\R^3$, trois vecteurs sont liés s'ils sont coplanaires, c'est-à-dire si le sous-espace vectoriel qu'ils engendrent est contenue dans un plan.
+}
 
 %
 %
@@ -285,9 +289,10 @@ Plus généralement, un système de $n$ vecteurs de $\R^n$ est une base de $\R^n
 $$\vec{v} \in V, \vec{v}=\alpha_i \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_n, \alpha_i \in \R$$
 Les réels $\alpha_i$ s'appellent les coordonnées de $\vec{v}$ dans la base $(\vec{v}_1, \ldots, \vec{v}_n)$.
 
-\paragraph{Démonstration} Comme le système $(\vec{v}_1, \ldots, \vec{v}_n)$ est générateur il existe  $\alpha_1, \ldots, \alpha_n \in \R$ tels que 
-$$\vec{v}=\alpha_i \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_n$$
-Comme ce système est libre, les $\alpha_i$ sont uniques.
+\demo{Comme le système $(\vec{v}_1, \ldots, \vec{v}_n)$ est générateur il existe  $\alpha_1, \ldots, \alpha_n \in \R$ tels que 
+  $$\vec{v}=\alpha_i \cdot \vec{v}_1 + \ldots + \alpha_r \cdot \vec{v}_n$$
+  Comme ce système est libre, les $\alpha_i$ sont uniques.
+}
 
 %
 \subsection{Cardinalité}
@@ -314,50 +319,52 @@ Comme ce système est libre, les $\alpha_i$ sont uniques.
   \item Si $S$ est un système libre de vecteurs de $V$ et $T$ un système générateur, alors on a $card(S) \leq card(T)$.
 \end{enumerate}
 
-\paragraph{Démonstration}
-\begin{enumerate}
-  \item Soit $(\vec{v}_1, \ldots, \vec{v}_n)$ un système génératuer de vecteurs de $V$- On extrait de S une base de $V$ en procédant comme suit:
-    \begin{itemize}
-      \item Soit $i_1$ l'indice du premier vecteur non nul de $S$.
-      \item Si $\vec{v}_{i_1 + 1}$ est multiple de $\vec{v}_{i_1}$ on ne retient pas $\vec{v}_{i_1 + 1}$. Sinon, on le retient et on le note $\vec{v}_{i_2}$.
-      \item Si $\vec{v}_{i_1 + 2}$ est combinaison linéaire du ou des vecteurs sélectionnés auparavant, on ne le retien pas, sinon on le retient, et on le note $\vec{v}_{i_2}$ si auparavant on a sélectionné seulement $\vec{v}_{i_1}$, ou $\vec{v}_{i_3}$ si on a sélectionné $\vec{v}_{i_1}$ et $\vec{v}_{i_2}$.
-      \item Ainsi de suite ...
-    \end{itemize}
-    Au terme du processus, on obient un système $T = (\vec{v}_{i_1}, \vec{v}_{i_2}, \ldots, \vec{v}_{i_r})$ de vecteurs extrait de $S$. Ce système est libre et générateur (un vecteur de $S$ appartient à $T$ ou bien est combinaison linéaire des vecteurs de $T$). Par suite, $T$ est une base de $V$.
-  
-  \item Soient $S=(\vec{u}_1, \ldots, \vec{u}_r)$ un système libre de vecteurs de $V$ et $T=(\vec{v}_1, \ldots, \vec{v}_r)$ un système générateur. On effectue le processus suivant:
-    \begin{itemize}
-      \item Si $\vec{v}_1$ est combinaison linéaire des  vecteurs de $S$, on ne le retient pas, sinon on le retient on obtient alors un nouveau système $S_1$.
-      \item Si $\vec{v}_2$ est combinaison linéaire des vecteurs de $S_1$, on ne le retient pas, sinon on le retient. On obtient un nouveau système $S_2$.
-    \end{itemize}
-    Au terme de ce processus, on obtient un système $S_r$ de vecteurs de $V$ obtenu en completant $S$ par des vecteurs de $T$. $S_r$ est libre et générateur, donc une base de $V$.
+\demo{
+  \begin{enumerate}
+    \item Soit $(\vec{v}_1, \ldots, \vec{v}_n)$ un système génératuer de vecteurs de $V$- On extrait de S une base de $V$ en procédant comme suit:
+      \begin{itemize}
+        \item Soit $i_1$ l'indice du premier vecteur non nul de $S$.
+        \item Si $\vec{v}_{i_1 + 1}$ est multiple de $\vec{v}_{i_1}$ on ne retient pas $\vec{v}_{i_1 + 1}$. Sinon, on le retient et on le note $\vec{v}_{i_2}$.
+        \item Si $\vec{v}_{i_1 + 2}$ est combinaison linéaire du ou des vecteurs sélectionnés auparavant, on ne le retien pas, sinon on le retient, et on le note $\vec{v}_{i_2}$ si auparavant on a sélectionné seulement $\vec{v}_{i_1}$, ou $\vec{v}_{i_3}$ si on a sélectionné $\vec{v}_{i_1}$ et $\vec{v}_{i_2}$.
+        \item Ainsi de suite ...
+      \end{itemize}
+      Au terme du processus, on obient un système $T = (\vec{v}_{i_1}, \vec{v}_{i_2}, \ldots, \vec{v}_{i_r})$ de vecteurs extrait de $S$. Ce système est libre et générateur (un vecteur de $S$ appartient à $T$ ou bien est combinaison linéaire des vecteurs de $T$). Par suite, $T$ est une base de $V$.
     
-  \item On note $S = (\vec{u}_1, \ldots, \vec{u}_r)$ et $T = (\vec{v}_1, \ldots, \vec{v}_s)$ quitte à extraire une base de T, on peut supposer que $T$ est une base. Pout tout $j \in \{1; \ldots ; r\}$ on a
-    $$\vec{u}_j = \sum_{i=1}^{j} {a_{ij} \vec{v}_i}$$
-    Raisonnons par l'absurde, et supposons que $s < r$. Pour tous $\lambda_1, \ldots, \lambda_r \in \R$, on a
-    \begin{eqnarray*}
-      \sum_{j=1}^r { \lambda_j \vec{u}_j} &=& \sum_{j=1}^r {\lambda_j \left( \sum_{i=1}^r {a_{ij}\vec{v}_i} \right)} \\
-        &=& \sum_{i=1}^s {\left( \sum_{j=1}^r {a_{ij}\lambda_j} \right) \vec{v}_i }
-    \end{eqnarray*}
-    On a $\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$ si et seulement si pour tout $i$, $\sum_{j=1}^r {a_{ij} \lambda_j } = 0$ car $T$ est en particulier un système libre. Puisque $s < r$, le nombre d'équations du système
-    $$ \left\{ \begin{matrix}
-      a_{11} \lambda_1 + \ldots + a_{1r} \lambda_r = 0 \\
-      \vdots \\
-      a_{s1} \lambda_1 + \ldots + a_{sr} \lambda_r = 0
-    \end{matrix} \right. $$
-    est strictement inférieur au nombre d'inconnues. Puisque le système admet au moins une solution, à savoir $(0, \ldots, 0) \in \R^r$, il admet une infinité de solutions. \\
-    Soit $(\lambda_1, \ldots, \lambda_r) \neq (0, \ldots, 0)$ une solution de ce système. On a alors
-    $$\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$$
-    donc $S$ est lié, ce qui donne lien à une contradiction.
-\end{enumerate}
+    \item Soient $S=(\vec{u}_1, \ldots, \vec{u}_r)$ un système libre de vecteurs de $V$ et $T=(\vec{v}_1, \ldots, \vec{v}_r)$ un système générateur. On effectue le processus suivant:
+      \begin{itemize}
+        \item Si $\vec{v}_1$ est combinaison linéaire des  vecteurs de $S$, on ne le retient pas, sinon on le retient on obtient alors un nouveau système $S_1$.
+        \item Si $\vec{v}_2$ est combinaison linéaire des vecteurs de $S_1$, on ne le retient pas, sinon on le retient. On obtient un nouveau système $S_2$.
+      \end{itemize}
+      Au terme de ce processus, on obtient un système $S_r$ de vecteurs de $V$ obtenu en completant $S$ par des vecteurs de $T$. $S_r$ est libre et générateur, donc une base de $V$.
+      
+    \item On note $S = (\vec{u}_1, \ldots, \vec{u}_r)$ et $T = (\vec{v}_1, \ldots, \vec{v}_s)$ quitte à extraire une base de T, on peut supposer que $T$ est une base. Pout tout $j \in \{1; \ldots ; r\}$ on a
+      $$\vec{u}_j = \sum_{i=1}^{j} {a_{ij} \vec{v}_i}$$
+      Raisonnons par l'absurde, et supposons que $s < r$. Pour tous $\lambda_1, \ldots, \lambda_r \in \R$, on a
+      \begin{eqnarray*}
+        \sum_{j=1}^r { \lambda_j \vec{u}_j} &=& \sum_{j=1}^r {\lambda_j \left( \sum_{i=1}^r {a_{ij}\vec{v}_i} \right)} \\
+          &=& \sum_{i=1}^s {\left( \sum_{j=1}^r {a_{ij}\lambda_j} \right) \vec{v}_i }
+      \end{eqnarray*}
+      On a $\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$ si et seulement si pour tout $i$, $\sum_{j=1}^r {a_{ij} \lambda_j } = 0$ car $T$ est en particulier un système libre. Puisque $s < r$, le nombre d'équations du système
+      $$ \left\{ \begin{matrix}
+        a_{11} \lambda_1 + \ldots + a_{1r} \lambda_r = 0 \\
+        \vdots \\
+        a_{s1} \lambda_1 + \ldots + a_{sr} \lambda_r = 0
+      \end{matrix} \right. $$
+      est strictement inférieur au nombre d'inconnues. Puisque le système admet au moins une solution, à savoir $(0, \ldots, 0) \in \R^r$, il admet une infinité de solutions. \\
+      Soit $(\lambda_1, \ldots, \lambda_r) \neq (0, \ldots, 0)$ une solution de ce système. On a alors
+      $$\sum_{j=1}^r {\lambda_j \vec{u}_j } = \vec{0}$$
+      donc $S$ est lié, ce qui donne lien à une contradiction.
+  \end{enumerate}
+}
 
 \paragraph{Corollaire} Tout espace vectoriel de type fini, admet une base de cardinal fini.
-\paragraph{Démonstration} Si $S$ est un système générateur de cet espace de cardinal fini, on en extrait une base de cardinal fini.
+\demo{Si $S$ est un système générateur de cet espace de cardinal fini, on en extrait une base de cardinal fini.}
 
 \paragraph{Corollaire} Soit $V$ un espace vectoriel de type fini. Alors toutes les bases de $V$ ont même cardinal.
-\paragraph{Démonstration} Soient $\B$ et $\B'$ deux bases de $V$. En particulier $\B$ est un système libre, et $\B'$ un système générateur. On a donc $card(\B) \leq card(\B')$. \\
-En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') \leq card(\B)$, d'où 
-$$card(\B) = card(\B')$$
+\demo{Soient $\B$ et $\B'$ deux bases de $V$. En particulier $\B$ est un système libre, et $\B'$ un système générateur. On a donc $card(\B) \leq card(\B')$. \\
+  En échangeant les rôles de $\B$ et $\B'$, on obtient l'inégalité $card(\B') \leq card(\B)$, d'où 
+  $$card(\B) = card(\B')$$
+}
 
 %
 \subsection{Dimension}
@@ -378,11 +385,12 @@ $$card(\B) = card(\B')$$
   \item Si $T$ est un système générateur de $V$, alors $card(T) \geq n$.
 \end{enumerate}
 
-\paragraph{Démonstration} Soit $\B$ une base de $V$.
-\begin{enumerate}
-  \item Comme $\B$ est en particulier un système générateur de $V$ on a $card(s) \leq card(\B) = n$.
-  \item Comme $\B$ est un particulier un système libre, on a $n = card(\B) \leq card(T)$.
-\end{enumerate}
+\demo{Soit $\B$ une base de $V$.
+  \begin{enumerate}
+    \item Comme $\B$ est en particulier un système générateur de $V$ on a $card(s) \leq card(\B) = n$.
+    \item Comme $\B$ est un particulier un système libre, on a $n = card(\B) \leq card(T)$.
+  \end{enumerate}
+}
 
 \paragraph{Théorème} Soit $V$ un espace vectoriel de dimension $n$. Soit $S$ un système de $n$ vecteurs de $V$. Alors les affirmations suivantes sont équivalentes.
 \begin{enumerate}
@@ -391,29 +399,31 @@ $$card(\B) = card(\B')$$
   \item $S$ est libre.
 \end{enumerate}
 
-\paragraph{Démonstration}
-\begin{enumerate}
-  \item $\Rightarrow$ 2. est clair par définition d'une base
-  \item $\Rightarrow$ 3. Raisonnons par l'absurde et supposons que $S$ est lié. Alors l'un des vecteurs de $S$ est combinaison linéaire des autres. Notons $vec{v}$ un tel vecteur de $S$. \\
-    Alors $S - \{ \vec{v}\}$ est encore un système générateur de $V$. Mais $card(S - \{\vec{v}\}) = n-1$, ce qui contredit le théorème précédent.
-  \item $\Rightarrow$ 1. Il s'agit de voir que $S$ engendre $V$. On raisonne par l'absurde, et on suppose que $S$ n'engendre pas $V$. On écrit $S = (\vec{v}_1, \ldots, \vec{v}_n)$. Soit $\vec{v} \in V$ tel que $\vec{v}$ ne soit pas combinaison linéaire des $\vec{v}_i$. \\
-    Alors le système $S \cup \{ \vec{v}\}$ est encore libre. Soient $\lambda_1, \ldots, \lambda_n, \lambda \in \R$ tels que 
-    $$\lambda_1 \cdot \vec{v}_1 + \ldots + \lambda_n \cdot \vec{v}_n + \lambda \cdot \vec{v} = \vec{0}$$
-    si $\lambda \neq 0$, on pourrait écrire 
-    $$\vec{v} = -\frac{\lambda_1}{\lambda} \cdot \vec{v}_1 - \ldots - \frac{\lambda_n}{\lambda} \cdot \vec{v}_n$$
-    ce qui contredirait l'hypothèse faite sur $\vec{v}$. Donc $\lambda = 0$. Il vient alors
-    $$\lambda_1 \cdot \vec{v}_1 + \ldots + \lambda_n  \cdot \vec{v}_n = \vec{0}$$
-    Puisque $S$ est libre, on a $\lambda_1 = 0, \ldots, \lambda_n = 0$. Or $card(S \cup \{\vec{v}\} ) = n+1$, ce qui contredit le théorème précédent.
-\end{enumerate}
+\demo{
+  \begin{enumerate}
+    \item $\Rightarrow$ 2. est clair par définition d'une base
+    \item $\Rightarrow$ 3. Raisonnons par l'absurde et supposons que $S$ est lié. Alors l'un des vecteurs de $S$ est combinaison linéaire des autres. Notons $vec{v}$ un tel vecteur de $S$. \\
+      Alors $S - \{ \vec{v}\}$ est encore un système générateur de $V$. Mais $card(S - \{\vec{v}\}) = n-1$, ce qui contredit le théorème précédent.
+    \item $\Rightarrow$ 1. Il s'agit de voir que $S$ engendre $V$. On raisonne par l'absurde, et on suppose que $S$ n'engendre pas $V$. On écrit $S = (\vec{v}_1, \ldots, \vec{v}_n)$. Soit $\vec{v} \in V$ tel que $\vec{v}$ ne soit pas combinaison linéaire des $\vec{v}_i$. \\
+      Alors le système $S \cup \{ \vec{v}\}$ est encore libre. Soient $\lambda_1, \ldots, \lambda_n, \lambda \in \R$ tels que 
+      $$\lambda_1 \cdot \vec{v}_1 + \ldots + \lambda_n \cdot \vec{v}_n + \lambda \cdot \vec{v} = \vec{0}$$
+      si $\lambda \neq 0$, on pourrait écrire 
+      $$\vec{v} = -\frac{\lambda_1}{\lambda} \cdot \vec{v}_1 - \ldots - \frac{\lambda_n}{\lambda} \cdot \vec{v}_n$$
+      ce qui contredirait l'hypothèse faite sur $\vec{v}$. Donc $\lambda = 0$. Il vient alors
+      $$\lambda_1 \cdot \vec{v}_1 + \ldots + \lambda_n  \cdot \vec{v}_n = \vec{0}$$
+      Puisque $S$ est libre, on a $\lambda_1 = 0, \ldots, \lambda_n = 0$. Or $card(S \cup \{\vec{v}\} ) = n+1$, ce qui contredit le théorème précédent.
+  \end{enumerate}
+}
 
 \paragraph{Théorème} Soient $V$ un espace vectoriel de dimension $n$ et $W$ un sous-espace vectoriel de $V$. Alors 
 $$dim(W) \leq dim(V)$$
   Si $dim(W) = dim(V)$, alors $W = V$.
   
-\paragraph{Démonstration} Soit $\B$ une base de $W$. Alors $\B$ est en particulier un système libre de vecteurs de $V$. Donc 
-$$dim(W) = card(\B) \leq n = dim(V)$$
-Si $dim(W) = dim(V)$, alors $\B$ est un système libre de $n$ vecteurs de $V$, donc  $\B$ engendre $V$. Par suite 
-$$W = Vect(\B) = V$$
+\demo{Soit $\B$ une base de $W$. Alors $\B$ est en particulier un système libre de vecteurs de $V$. Donc 
+  $$dim(W) = card(\B) \leq n = dim(V)$$
+  Si $dim(W) = dim(V)$, alors $\B$ est un système libre de $n$ vecteurs de $V$, donc  $\B$ engendre $V$. Par suite 
+  $$W = Vect(\B) = V$$
+}
 
 %
 %
@@ -423,24 +433,25 @@ $$W = Vect(\B) = V$$
 \paragraph{Proposition} Soit $m \geq 1$ un entier naturel. Alors une application $f: \R^m \rightarrow \R$ est linéaire si et seulement s'il existe $a_1, \ldots, a_m \in \R$ tels que pour tout $(x_1, \ldots, x_m) \in \R^m$, on a
 $$f(x_1, \ldots, x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$$
 
-\paragraph{Démonstration}
-\begin{itemize}
-  \item Si $f: \R^m \rightarrow \R$ est une applicaiton de la forme $f(x_1, \ldots x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$ pour tout $(x_1, \ldots, x_m) \in \R^m$, avec $a_i \in \R$, alors $f$ est linéaire. En effet, pour tous $(x_1, \ldots, x_m), (y_1, \ldots, y_m) \in \R^m$ et $\alpha \in \R$ on a
-    \begin{eqnarray*}
-      f(\alpha(x_1, \ldots, x_m) + (y_1, \ldots, y_m)) &=& f(\alpha x_1 + y_1, \ldots, \alpha x_m + y_m) \\
-        &=& a_1 \cdot (\alpha x_1 + y_1) + \ldots + a_m \cdot (\alpha x_m + y_m) \\
-        &=& \alpha (a_1 x_1 + \ldots + a_m x_m) + (a_1 y_1 + \ldots + a_m y_m) \\
-        &=& \alpha f(x_1, \ldots, x_m) + f(y_1, \ldots, y_m).
-    \end{eqnarray*}
-  \item Réciproquement, si $f: \R^m \rightarrow \R$ est linéaire, pout tout i, on pose 
-    $$a_i = f(0_1, \ldots, 0_{i-1}, 1_i, 0_{i+1}, \ldots, 0_m) \in \R$$
-    Alors pout tout $(x_1, \ldots, x_m) \in \R^m$
-    \begin{eqnarray*}
-      f(x_1, \ldots, x_m) &=& f(x_1 (1, 0, \ldots, 0) + \ldots + x_m (0, \ldots, 0, 1)) \\
-        &=& x_1 f(1, 0, \ldots, 0) + \ldots + x_m f(0, \ldots, 0, 1) \\
-        &=& a_1 x_1 + \ldots + a_m x_m
-    \end{eqnarray*}
-\end{itemize}
+\demo{
+  \begin{itemize}
+    \item Si $f: \R^m \rightarrow \R$ est une applicaiton de la forme $f(x_1, \ldots x_m) = a_1 \cdot x_1 + \ldots + a_m \cdot x_m$ pour tout $(x_1, \ldots, x_m) \in \R^m$, avec $a_i \in \R$, alors $f$ est linéaire. En effet, pour tous $(x_1, \ldots, x_m), (y_1, \ldots, y_m) \in \R^m$ et $\alpha \in \R$ on a
+      \begin{eqnarray*}
+        f(\alpha(x_1, \ldots, x_m) + (y_1, \ldots, y_m)) &=& f(\alpha x_1 + y_1, \ldots, \alpha x_m + y_m) \\
+          &=& a_1 \cdot (\alpha x_1 + y_1) + \ldots + a_m \cdot (\alpha x_m + y_m) \\
+          &=& \alpha (a_1 x_1 + \ldots + a_m x_m) + (a_1 y_1 + \ldots + a_m y_m) \\
+          &=& \alpha f(x_1, \ldots, x_m) + f(y_1, \ldots, y_m).
+      \end{eqnarray*}
+    \item Réciproquement, si $f: \R^m \rightarrow \R$ est linéaire, pout tout i, on pose 
+      $$a_i = f(0_1, \ldots, 0_{i-1}, 1_i, 0_{i+1}, \ldots, 0_m) \in \R$$
+      Alors pout tout $(x_1, \ldots, x_m) \in \R^m$
+      \begin{eqnarray*}
+        f(x_1, \ldots, x_m) &=& f(x_1 (1, 0, \ldots, 0) + \ldots + x_m (0, \ldots, 0, 1)) \\
+          &=& x_1 f(1, 0, \ldots, 0) + \ldots + x_m f(0, \ldots, 0, 1) \\
+          &=& a_1 x_1 + \ldots + a_m x_m
+      \end{eqnarray*}
+  \end{itemize}
+}
 
 %
 \subsection{Équation linéaire homogène}
@@ -456,20 +467,22 @@ $$f(x_1, \ldots, x_m) = a_1 x_1 + \ldots + a_m x_m$$
 \paragraph{Remarque} Cela justice la terminologie d'équation linéaire et de système utilisée jusqu'ici.
 
 \paragraph{Théorème} L'ensemble des solutions d'un système linéaire homogène (c'est-à-dire tel que toutes les équations du système soient linéaires homogènes) est un sous-espace vectoriel de $\R^m$.
-\paragraph{Démonstration} Écrivons ce système sous la forme:
-$$ \left\{ \begin{matrix}
-  f_1(x_1, \ldots, x_m) = 0\\
-  \vdots \\
-  f_n(x_1, \ldots, x_m = 0
-\end{matrix} \right. $$
-pour tout $i \in \{1; \ldots; n\}$, montrons que l'ensemble $\mS_i$ des solutions est un ssous-espace vectoriel de $\R^m$. \\
-Puisque $f_i$ est linéaire, $f_i(0, \ldots, 0) = 0$, donc $(0,  \ldots, 0) \in \mS_i$ et $\alpha \in \R$. Il vient 
-$$f_i(\alpha \cdot x + y) = \alpha f_i(x) + f_i(y) = \alpha \cdot 0 
-+ 0 = 0$$
-donc $\alpha \cdot x + \beta \cdot y \in \mS_i$ \\
-Maintenant, l'ensemble $\mS$ des solutions du système est 
-$$\mS =  \bigcap_{i=1}^n {\mS_i}$$
-Par conséquent, $\mS$ est un sous-espace vectoriel de $\R^m$.
+
+\demo{Écrivons ce système sous la forme:
+  $$ \left\{ \begin{matrix}
+    f_1(x_1, \ldots, x_m) = 0\\
+    \vdots \\
+    f_n(x_1, \ldots, x_m = 0
+  \end{matrix} \right. $$
+  pour tout $i \in \{1; \ldots; n\}$, montrons que l'ensemble $\mS_i$ des solutions est un ssous-espace vectoriel de $\R^m$. \\
+  Puisque $f_i$ est linéaire, $f_i(0, \ldots, 0) = 0$, donc $(0,  \ldots, 0) \in \mS_i$ et $\alpha \in \R$. Il vient 
+  $$f_i(\alpha \cdot x + y) = \alpha f_i(x) + f_i(y) = \alpha \cdot 0 
+  + 0 = 0$$
+  donc $\alpha \cdot x + \beta \cdot y \in \mS_i$ \\
+  Maintenant, l'ensemble $\mS$ des solutions du système est 
+  $$\mS =  \bigcap_{i=1}^n {\mS_i}$$
+  Par conséquent, $\mS$ est un sous-espace vectoriel de $\R^m$.
+}
 
 %
 %
@@ -497,19 +510,22 @@ est le noyau de $f$.
 
 \paragraph{Proposition} Si $f: E \rightarrow F$ est une application linéaire. Alors $Ker(f)$ est un sous-epsace vectoriel de $E$.
 
-\paragraph{Démonstration} Puisque $f$ est linéaire, $f(\vec{0}_E) = \vec{0}_F$ donc $\vec{0}_E \in Ker(f)$ et par conséquent $Ker(f) \neq \emptyset$. \\
-Soient $\vec{x}, \vec{y} \in Ker(f)$ et $\alpha, \beta \in \R$.
-$$f(\alpha \vec{x} + \beta \vec{y}) = \alpha f(\vec{x}) + \beta f(\vec{y}) = \vec{0}_F$$
-donc $\alpha \vec{x} + \beta \vec{y} \in Ker(f)$.
+\demo{Puisque $f$ est linéaire, $f(\vec{0}_E) = \vec{0}_F$ donc $\vec{0}_E \in Ker(f)$ et par conséquent $Ker(f) \neq \emptyset$. \\
+  Soient $\vec{x}, \vec{y} \in Ker(f)$ et $\alpha, \beta \in \R$.
+  $$f(\alpha \vec{x} + \beta \vec{y}) = \alpha f(\vec{x}) + \beta f(\vec{y}) = \vec{0}_F$$
+  donc $\alpha \vec{x} + \beta \vec{y} \in Ker(f)$.
+}
 
 \paragraph{Théorème} Soit $f: E \rightarrow F$ une application linéaire. Alors
 $$f \text{est injective} \Leftrightarrow Ker(f) = \{\vec{0}_E\}$$
-\paragraph{Démonstration} 
-\begin{itemize}
-  \item[$\Rightarrow$] On suppose que $f$ est injective. Puisque $f$ est linéaire, $f(\vec{0}_E) = \vec{0}_F$, donc $\vec{0}_E \in Ker(f)$. Soit $\vec{v} \in E, \vec{v}\neq \vec{0}_E$. Puisque $f$ est injective, $f(\vec{v}) \neq f(\vec{0}_E) = \vec{0}_F$. Par conséquent, $Ker(f) = \{\vec{0}_E\}$.
-  \item[$\Leftarrow$] Supposons que $Ker(f) = \{\vec{0}_E\}$. Soient $\vec{u}, \vec{v} \in E$ tels que $f(\vec{u}) = f(\vec{v})$. Puisque $f$ est linéaire, on a $f(\vec{u} - \vec{v}) = f(\vec{u}) - f(\vec{v}) = \vec{0}_F$. Par suite, $\vec{u} - \vec{v} \in Ker(f)$, donc $\vec{u}-\vec{v} = \vec{0}_E$, c'est-à-dire $\vec{u} = \vec{v}$.
-\end{itemize}
-Donc $f$ est injective.
+
+\demo{ 
+  \begin{itemize}
+    \item[$\Rightarrow$] On suppose que $f$ est injective. Puisque $f$ est linéaire, $f(\vec{0}_E) = \vec{0}_F$, donc $\vec{0}_E \in Ker(f)$. Soit $\vec{v} \in E, \vec{v}\neq \vec{0}_E$. Puisque $f$ est injective, $f(\vec{v}) \neq f(\vec{0}_E) = \vec{0}_F$. Par conséquent, $Ker(f) = \{\vec{0}_E\}$.
+    \item[$\Leftarrow$] Supposons que $Ker(f) = \{\vec{0}_E\}$. Soient $\vec{u}, \vec{v} \in E$ tels que $f(\vec{u}) = f(\vec{v})$. Puisque $f$ est linéaire, on a $f(\vec{u} - \vec{v}) = f(\vec{u}) - f(\vec{v}) = \vec{0}_F$. Par suite, $\vec{u} - \vec{v} \in Ker(f)$, donc $\vec{u}-\vec{v} = \vec{0}_E$, c'est-à-dire $\vec{u} = \vec{v}$.
+  \end{itemize}
+  Donc $f$ est injective.
+}
 
 \paragraph{Remarque} Si $f: E \rightarrow F$ est une application linéaire, alors pour tout $y \in F$, si $x \in E$ est un antécédent de $y$ par $f$, autrement dit $y = f(x)$, l'ensemble des antecédents de $y$ par $f$ est
 $$x + Ker(f) = \left\{ x+z ~ \vert ~ z \in Ker(f) \right\}$$
@@ -522,8 +538,10 @@ Autrement dit, si $x \in E$, alors pour tout $x' \in E, f(x') = f(x) \Leftrighta
 $$Im(f) = \left\{ y \in F ~ \vert ~ \text{ il existe } x \in E \text{ tel que } y = f(x) \right\}$$
 
 \paragraph{Proposotion} Soit $f: E \rightarrow F$ une application linéaire. Alors $Im(f)$ est un sous-espace vectoriel de $F$.
-\paragraph{Démonstration} On a $\vec{0}_f = f(\vec{0}_E) \in Im(f)$, donc $Im(f) \neq \emptyset$. Soient $\vec{y}, \vec{y}' \in Im(f)$ et $\alpha, \beta \in \R$. Il existe $\vec{x}, \vec{x}' \in E$ tels que $\vec{y} = f(\vec{x})$ et $\vec{y}' = f(\vec{x}')$. Il vient
-$$\alpha \vec{y} + \beta \vec{y}' = \alpha f(\vec{x}) + \beta f(\vec{x}') = f(\alpha \vec{x} + \beta \vec{x}') \in Im(f)$$
+
+\demo{On a $\vec{0}_f = f(\vec{0}_E) \in Im(f)$, donc $Im(f) \neq \emptyset$. Soient $\vec{y}, \vec{y}' \in Im(f)$ et $\alpha, \beta \in \R$. Il existe $\vec{x}, \vec{x}' \in E$ tels que $\vec{y} = f(\vec{x})$ et $\vec{y}' = f(\vec{x}')$. Il vient
+  $$\alpha \vec{y} + \beta \vec{y}' = \alpha f(\vec{x}) + \beta f(\vec{x}') = f(\alpha \vec{x} + \beta \vec{x}') \in Im(f)$$
+}
 
 \paragraph{Théorème} Soit $f: E \rightarrow F$  une application linéaire. Alors $f$ est surjective si et seulement si $Im(f) = F$.
 
@@ -534,56 +552,58 @@ On dit que $F$ est \underline{isomorphe} à $E$ s'il existe un isomorphisme d'es
 
 \paragraph{Proposition} Soient $E$ et $F$ deux espaces vectoriels. On suppose que $E$ est de dimension finie $n$. Soient $\B = (\vec{u}_1, \ldots, \vec{u}_n)$ une base de E et $\vec{v}_1, \ldots, \vec{v}_n$ $n$ vecteurs de $F$. Alors il existe une unique application linéaire $f: E \rightarrow F$ telle que pour tout $i$, $f(\vec{u}_i) = \vec{v}_i$.
 
-\paragraph{Démonstration}
-\begin{itemize}
-  \item[Existence:] Soit $\vec{u} \in E$. Alors $\vec{u}$ s'écrit de façon unique sous la forme
-    $$\vec{u} = \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n, \alpha_i \in \R$$
-    On pose alors $f(\vec{u}) = \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n \in F$. On a donc défini une application $f: E \rightarrow F$ telle que pour tout $i$, $f(\vec{u}_i) = \vec{v}_i$ puisque
-    $$\vec{u}_i = 0 \cdot \vec{u}_1 + \ldots + 1 \cdot \vec{u}_i + \ldots \vec{u}_n$$
-    Montrons que $f$ est linéaire. Soient $\vec{u}, \vec{u}' \in E$ et $\alpha \in \R$. Écrivons 
-    \begin{eqnarray*}
-      \vec{u} &=& \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n \\
-      \vec{u}' &=& \alpha_1' \vec{u}_1 + \ldots + \alpha_n' \vec{u}_n \\
-      \alpha \vec{u} + \vec{u}' &=& (\alpha \alpha_1 + \alpha_1') \vec{u}_1 + \ldots + (\alpha \alpha_n + \alpha_n') \vec{u}_n \\
-    \end{eqnarray*}
-    Cette écriture est bien la décomposition de $\alpha \vec{u} + \vec{u}'$ dans la base $\B$ par unicité de cette décomposition. On a
-    \begin{eqnarray*}
-      f(\alpha \vec{u} + \vec{u}') &=& (\alpha \alpha_1 + \alpha_1') \vec{v}_1 + \ldots + (\alpha \alpha_n + \alpha_n') \vec{v}_n \\
-        &=& \alpha ( \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n ) + (\alpha_1' \vec{v}_1 + \ldots + \alpha_n' \vec{v}_n') \\
-        &=& \alpha f(\vec{u}) + f(\vec{u}')
-    \end{eqnarray*}
-    
-  \item[Unicité:] Si $f: E \rightarrow F$ est une application telle que pour tout i, $f(\vec{u}_i) = \vec{v}_i$, alors on a nécessairement pour tout $\vec{u} = \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n \in E$,
-    \begin{eqnarray*}
-      f(\vec{u}) &=& f(\alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n) \\
-       &=& \alpha_1 f(\vec{u}_1) + \ldots + \alpha_n f(\vec{u}_n) \\
-       &=& \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n.
-    \end{eqnarray*}
-    Par conséquent, une telle application linéaire est unique.
-\end{itemize}
-Ainsi, une application linéaire $f: E \rightarrow F$ est entièrement détermineé par la donnée de ses valeurs sur une base de $E$.
+\demo{
+  \begin{itemize}
+    \item[Existence:] Soit $\vec{u} \in E$. Alors $\vec{u}$ s'écrit de façon unique sous la forme
+      $$\vec{u} = \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n, \alpha_i \in \R$$
+      On pose alors $f(\vec{u}) = \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n \in F$. On a donc défini une application $f: E \rightarrow F$ telle que pour tout $i$, $f(\vec{u}_i) = \vec{v}_i$ puisque
+      $$\vec{u}_i = 0 \cdot \vec{u}_1 + \ldots + 1 \cdot \vec{u}_i + \ldots \vec{u}_n$$
+      Montrons que $f$ est linéaire. Soient $\vec{u}, \vec{u}' \in E$ et $\alpha \in \R$. Écrivons 
+      \begin{eqnarray*}
+        \vec{u} &=& \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n \\
+        \vec{u}' &=& \alpha_1' \vec{u}_1 + \ldots + \alpha_n' \vec{u}_n \\
+        \alpha \vec{u} + \vec{u}' &=& (\alpha \alpha_1 + \alpha_1') \vec{u}_1 + \ldots + (\alpha \alpha_n + \alpha_n') \vec{u}_n \\
+      \end{eqnarray*}
+      Cette écriture est bien la décomposition de $\alpha \vec{u} + \vec{u}'$ dans la base $\B$ par unicité de cette décomposition. On a
+      \begin{eqnarray*}
+        f(\alpha \vec{u} + \vec{u}') &=& (\alpha \alpha_1 + \alpha_1') \vec{v}_1 + \ldots + (\alpha \alpha_n + \alpha_n') \vec{v}_n \\
+          &=& \alpha ( \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n ) + (\alpha_1' \vec{v}_1 + \ldots + \alpha_n' \vec{v}_n') \\
+          &=& \alpha f(\vec{u}) + f(\vec{u}')
+      \end{eqnarray*}
+      
+    \item[Unicité:] Si $f: E \rightarrow F$ est une application telle que pour tout i, $f(\vec{u}_i) = \vec{v}_i$, alors on a nécessairement pour tout $\vec{u} = \alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n \in E$,
+      \begin{eqnarray*}
+        f(\vec{u}) &=& f(\alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n) \\
+         &=& \alpha_1 f(\vec{u}_1) + \ldots + \alpha_n f(\vec{u}_n) \\
+         &=& \alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n.
+      \end{eqnarray*}
+      Par conséquent, une telle application linéaire est unique.
+  \end{itemize}
+  Ainsi, une application linéaire $f: E \rightarrow F$ est entièrement détermineé par la donnée de ses valeurs sur une base de $E$.
+}
 
 \paragraph{Proposition} Soient $E$ et $F$ deux espaces vectoriels de dimension finis et $f: E \rightarrow F$ une application linéaire. Alors $f$ est un isomorphisme si et seulement si, pour toute base $(\vec{u}_1, \ldots, \vec{u}_n)$ de $E$, $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est une base de $F$.
 
-\paragraph{Démonstration} 
-\begin{itemize}
-  \item[$\Rightarrow$]Supposons que $f$ soit un isomorphisme. Soit $(\vec{u}_1, \ldots, \vec{u}_n)$ une base de $E$. Montrons que $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est un système libre dans $F$. Soient $\alpha_1, \ldots, \alpha_n \in \R$ tels que 
-    $$\alpha_1 f(\vec{u}_1) + \ldots + \alpha_n f(\vec{u}_n) = \vec{0}$$
-    Puisque $f$ est linéaire, on a
-    \begin{eqnarray*}
-      f(\vec{0}_E) = \vec{0}_F &=& \alpha_1 f(\vec{u}_1) + \ldots + \alpha_n f(\vec{u}_n) \\
-        &=& f(\alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n)
-    \end{eqnarray*}
-    Par injectivité de $f$ on a $\alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n = \vec{0}_E$. Puisque $(\vec{u}_1, \ldots, \vec{u}_n)$ est un système libre, il vient 
-    $$\alpha_1 = 0, \ldots, \alpha_n = 0$$ \\
-    Montros que $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est un système génératuer de $F$. Soit $\vec{v} \in F$. Comme $f$ est surjective, il existe $\vec{u} \in E$ tel que $\vec{v} = f(\vec{u})$. Écrivons $\vec{u} = \lambda_1 \vec{u}_1 + \ldots + \lambda_n \vec{u}_n$, $\lambda_1, \ldots, \lambda_n \in \R$. Il vient
-    $$\vec{v} = f(\vec{u}) = f(\lambda_1 \vec{u}_1 + \ldots + \lambda_n \vec{u}_n) = \lambda_1 f(\vec{u}_1) + \ldots + \lambda_n f(\vec{u}_n)$$
-    Comme tout vecteur de $F$ est combinaison linéaire des $f(\vec{u}_i)$, $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ engendre $F$. Par conséquent $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est une base de $F$.
-    
-  \item[$\Leftarrow$] Réciproquement, supposons que l'image par $f$ d'une base quelconque de $E$ est une base de $F$. Soit $(\vec{u}_1, \ldots, \vec{u}_n)$ une base de $E$. Par hypothèse, $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est une base de $F$. Alors il existe une unique application linéaire $g: F \rightarrow E$ telle que $g(f(\vec{u}_i)) = \vec{u}_i$ pour tout $i$. En particulier, on a pour tout $i$, $(g \circ f)(\vec{u}_i) = g(f(\vec{u}_i)) = \vec{u}_i$. Ainsi, $g \circ f: E \rightarrow E$ est une application linéaire\footnote{Comme $f$ et $g$ sont des applications linéaires, $(g \circ f)$ est aussi une.} telle que
-    $$(g \circ f)(\vec{u}_i) = \vec{u}_i$$
-    pour tout $i$. Par unicité d'une telle application, on a $g \circ f = id_E$. On montre de même que $f \circ g = id_F$. On voit donc que $f$ est bijective, de bijection réciproque $g$. Par suite, $f$ est un isomorphisme.
-\end{itemize}
+\demo{
+  \begin{itemize}
+    \item[$\Rightarrow$]Supposons que $f$ soit un isomorphisme. Soit $(\vec{u}_1, \ldots, \vec{u}_n)$ une base de $E$. Montrons que $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est un système libre dans $F$. Soient $\alpha_1, \ldots, \alpha_n \in \R$ tels que 
+      $$\alpha_1 f(\vec{u}_1) + \ldots + \alpha_n f(\vec{u}_n) = \vec{0}$$
+      Puisque $f$ est linéaire, on a
+      \begin{eqnarray*}
+        f(\vec{0}_E) = \vec{0}_F &=& \alpha_1 f(\vec{u}_1) + \ldots + \alpha_n f(\vec{u}_n) \\
+          &=& f(\alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n)
+      \end{eqnarray*}
+      Par injectivité de $f$ on a $\alpha_1 \vec{u}_1 + \ldots + \alpha_n \vec{u}_n = \vec{0}_E$. Puisque $(\vec{u}_1, \ldots, \vec{u}_n)$ est un système libre, il vient 
+      $$\alpha_1 = 0, \ldots, \alpha_n = 0$$ \\
+      Montros que $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est un système génératuer de $F$. Soit $\vec{v} \in F$. Comme $f$ est surjective, il existe $\vec{u} \in E$ tel que $\vec{v} = f(\vec{u})$. Écrivons $\vec{u} = \lambda_1 \vec{u}_1 + \ldots + \lambda_n \vec{u}_n$, $\lambda_1, \ldots, \lambda_n \in \R$. Il vient
+      $$\vec{v} = f(\vec{u}) = f(\lambda_1 \vec{u}_1 + \ldots + \lambda_n \vec{u}_n) = \lambda_1 f(\vec{u}_1) + \ldots + \lambda_n f(\vec{u}_n)$$
+      Comme tout vecteur de $F$ est combinaison linéaire des $f(\vec{u}_i)$, $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ engendre $F$. Par conséquent $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est une base de $F$.
+      
+    \item[$\Leftarrow$] Réciproquement, supposons que l'image par $f$ d'une base quelconque de $E$ est une base de $F$. Soit $(\vec{u}_1, \ldots, \vec{u}_n)$ une base de $E$. Par hypothèse, $(f(\vec{u}_1), \ldots, f(\vec{u}_n))$ est une base de $F$. Alors il existe une unique application linéaire $g: F \rightarrow E$ telle que $g(f(\vec{u}_i)) = \vec{u}_i$ pour tout $i$. En particulier, on a pour tout $i$, $(g \circ f)(\vec{u}_i) = g(f(\vec{u}_i)) = \vec{u}_i$. Ainsi, $g \circ f: E \rightarrow E$ est une application linéaire\footnote{Comme $f$ et $g$ sont des applications linéaires, $(g \circ f)$ est aussi une.} telle que
+      $$(g \circ f)(\vec{u}_i) = \vec{u}_i$$
+      pour tout $i$. Par unicité d'une telle application, on a $g \circ f = id_E$. On montre de même que $f \circ g = id_F$. On voit donc que $f$ est bijective, de bijection réciproque $g$. Par suite, $f$ est un isomorphisme.
+  \end{itemize}
+}
 
 \paragraph{Théorème} Soit $E$ un espace vectoriel de dimension $n$. Alors un système $(\vec{v}_1, \ldots \vec{v}_n)$ de $n$ vecteurs de $E$ est une base si et seulement si l'application
 \begin{eqnarray*}
@@ -592,20 +612,21 @@ Ainsi, une application linéaire $f: E \rightarrow F$ est entièrement détermin
 \end{eqnarray*}
 est un isomorphisme.
 
-\paragraph{Démonstration} 
-Montros d'abord que $f$ est linéaire. Soient $(\alpha_1, \ldots, \alpha_n), (\beta_1, \ldots, \beta_n) \in \R^n$ et $ \lambda \in \R$. Calculons
-\begin{eqnarray*}
-  f(\lambda (\alpha_1, \ldots, \alpha_n) + (\beta_1, \ldots, \beta_n))
-    &=& f( \lambda \alpha_1 + \beta_1, \ldots, \lambda \alpha_n + \beta_n) \\
-    &=& (\lambda \alpha_1 + \beta_1) \vec{v}_1 + \ldots + (\lambda \alpha_n + \beta_n) \vec{v}_n \\
-    &=& \lambda (\alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n) + (\beta_1 \vec{v}_1 + \ldots + \beta_n \vec{v}_n) \\
-    &=& \lambda f(\alpha_1, \ldots, \alpha_n) + f(\beta_1, \ldots, \beta_n)
-\end{eqnarray*}
-\begin{itemize}
-  \item[$\Rightarrow$] Si $(\vec{v}_1, \ldots, \vec{v}_n)$ est une base de $E$, alors $f$ est une application linéaire de $\R^n$ dans $E$ qui envoie la base canonique de $\R^n$ sur la base $(\vec{v}_1, \ldots, \vec{v}_n)$ de $E$. C'est donc un ismorphisme.
-  
-  \item[$\Leftarrow$] Réciproquement, si $f$ est un isomorphisme, si $(\vec{e}_1, \ldots, \vec{e}_n)$ désigne la base canonique de $\R^n$. Alors $(f(\vec{e}_1), \ldots, f(\vec{e}_n))$ est une base de $E$. Or $(f(\vec{e}_1), \ldots, f(\vec{e}_n)) = (\vec{v}_1, \ldots, \vec{v}_n)$. Donc $(\vec{v}_1, \ldots, \vec{v}_n)$ est une base de $E$.
-\end{itemize}
+\demo{
+  Montros d'abord que $f$ est linéaire. Soient $(\alpha_1, \ldots, \alpha_n), (\beta_1, \ldots, \beta_n) \in \R^n$ et $ \lambda \in \R$. Calculons
+  \begin{eqnarray*}
+    f(\lambda (\alpha_1, \ldots, \alpha_n) + (\beta_1, \ldots, \beta_n))
+      &=& f( \lambda \alpha_1 + \beta_1, \ldots, \lambda \alpha_n + \beta_n) \\
+      &=& (\lambda \alpha_1 + \beta_1) \vec{v}_1 + \ldots + (\lambda \alpha_n + \beta_n) \vec{v}_n \\
+      &=& \lambda (\alpha_1 \vec{v}_1 + \ldots + \alpha_n \vec{v}_n) + (\beta_1 \vec{v}_1 + \ldots + \beta_n \vec{v}_n) \\
+      &=& \lambda f(\alpha_1, \ldots, \alpha_n) + f(\beta_1, \ldots, \beta_n)
+  \end{eqnarray*}
+  \begin{itemize}
+    \item[$\Rightarrow$] Si $(\vec{v}_1, \ldots, \vec{v}_n)$ est une base de $E$, alors $f$ est une application linéaire de $\R^n$ dans $E$ qui envoie la base canonique de $\R^n$ sur la base $(\vec{v}_1, \ldots, \vec{v}_n)$ de $E$. C'est donc un ismorphisme.
+    
+    \item[$\Leftarrow$] Réciproquement, si $f$ est un isomorphisme, si $(\vec{e}_1, \ldots, \vec{e}_n)$ désigne la base canonique de $\R^n$. Alors $(f(\vec{e}_1), \ldots, f(\vec{e}_n))$ est une base de $E$. Or $(f(\vec{e}_1), \ldots, f(\vec{e}_n)) = (\vec{v}_1, \ldots, \vec{v}_n)$. Donc $(\vec{v}_1, \ldots, \vec{v}_n)$ est une base de $E$.
+  \end{itemize}
+}
 
 \paragraph{Corrolaire}
 \begin{enumerate}
@@ -960,19 +981,20 @@ de taille $n \times m$.
 $$[f(\vec{u})]_{\cF} = [f]_{\cF \cE} [\vec{v}]_{\cE}$$
 Cette relation caractérise $[f]_{\cF \cE}$, c'est-à-dire si $M$ est une matrice (de taille convenable) telle que pour tout $\vec{u} \in E, [f(\vec{u})]_{\cF} = M [\vec{u}]_{\cE}$, alors $M = [f]_{\cF \cE}$.
 
-\paragraph{Démonstration} Soit $\vec{u} \in E$. On écrit
-$$[\vec{u}]_{\cE} = \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix}, ~ \lambda_1, \ldots \lambda_m \in \R$$
-Il vient
-\begin{eqnarray*}
-  [f]_{\cF \cE}[\vec{u}]_{\cE}
-  &=& 
-  \begin{pmatrix} \\ [f(\vec{u}_1)]_\cF & \ldots & [f(\vec{u}_m)]_\cF \\ \\ \end{pmatrix}
-  \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix} \\
-  &=& \lambda_1 [f(\vec{u}_1)]_\cF + \ldots + \lambda_m [f(\vec{u}_m)]_\cF \\
-  &=& [\lambda_1 f(\vec{u}_1) + \ldots + \lambda_m f(\vec{u}_m)]_\cF \\
-  &=& [ f( \lambda_1 \vec{u}_1 + \ldots + \lambda_m \vec{u}_m)]_\cF \\
-  &=& [f(\vec{u})]_\cF
-\end{eqnarray*}
+\demo{Soit $\vec{u} \in E$. On écrit
+  $$[\vec{u}]_{\cE} = \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix}, ~ \lambda_1, \ldots \lambda_m \in \R$$
+  Il vient
+  \begin{eqnarray*}
+    [f]_{\cF \cE}[\vec{u}]_{\cE}
+    &=& 
+    \begin{pmatrix} \\ [f(\vec{u}_1)]_\cF & \ldots & [f(\vec{u}_m)]_\cF \\ \\ \end{pmatrix}
+    \begin{pmatrix} \lambda_1 \\ \vdots \\ \lambda_m \end{pmatrix} \\
+    &=& \lambda_1 [f(\vec{u}_1)]_\cF + \ldots + \lambda_m [f(\vec{u}_m)]_\cF \\
+    &=& [\lambda_1 f(\vec{u}_1) + \ldots + \lambda_m f(\vec{u}_m)]_\cF \\
+    &=& [ f( \lambda_1 \vec{u}_1 + \ldots + \lambda_m \vec{u}_m)]_\cF \\
+    &=& [f(\vec{u})]_\cF
+  \end{eqnarray*}
+}
 
 \paragraph{Exemple} Soit $f: \R^3 \rightarrow \R^2$ définie par
 $$f(x, y, z) = (2x + y - 5z ,  x + 3y)$$
@@ -1024,13 +1046,14 @@ On observe que pour tout $\vec{u} = (x, y, z) \in \R^3$, on a
 \paragraph{Proposition} Soient $f: E \rightarrow F$ et $g: F \rightarrow G$ deux applications linéaires, et $\cE, \cF$ et $\cG$ des bases de $E, F, G$ respectivement. Alors
 $$[g \circ f]_{\cG \cE} = [g]_{\cG \cF} [f]_{\cF \cE} ~ (g \circ f: E \rightarrow G)$$
 
-\paragraph{Démonstration} Soit $\vec{u} \in E$
-\begin{eqnarray*}
-  [(g \circ f)(\vec{u})]_{\cG} &=& [g(f(\vec{u}))]_{\cG} = [g]_{\cG \cF} [f(\vec{u})]_{\cF} \\
-    &=& [g]_{\cG \cF} ([f]_{\cF \cE} [\vec{u}]_{\cE}) \\
-    &=& ([g]_{\cG \cF} [f]_{\cF \cE}) [\vec{u}]_{\cE} 
-\end{eqnarray*}
-Par suite, $[g \circ f]_{\cG \cE} = [g]_{\cG \cF} [f]_{\cF \cE}$.
+\demo{Soit $\vec{u} \in E$
+  \begin{eqnarray*}
+    [(g \circ f)(\vec{u})]_{\cG} &=& [g(f(\vec{u}))]_{\cG} = [g]_{\cG \cF} [f(\vec{u})]_{\cF} \\
+      &=& [g]_{\cG \cF} ([f]_{\cF \cE} [\vec{u}]_{\cE}) \\
+      &=& ([g]_{\cG \cF} [f]_{\cF \cE}) [\vec{u}]_{\cE} 
+  \end{eqnarray*}
+  Par suite, $[g \circ f]_{\cG \cE} = [g]_{\cG \cF} [f]_{\cF \cE}$.
+}
 
 \paragraph{Méthode de calcul} Pour déterminer une base et la dimension du noyau et de l'image d'une application, on utilise la matrice de cette application linéaire dans des bases. \\
 Soit $f: E \rightarrow F$ une application linéaire $\cE, \cF$ des bases de $E$ et $F$.
@@ -1057,18 +1080,19 @@ $$dim(Ker(f)) + dim(Im(f)) = dim(E)$$
   \item $f$ est bijective
 \end{enumerate}
 
-\paragraph{Démonstration} 
-\begin{itemize}
-  \item[3. $\Rightarrow$ 1.] est clair.
-  \item[1. $\Rightarrow$ 2.] on suppose que $f$ est injective donc $Ker(f) = \{\vec{0}_E\}$ donc $dim(Ker(f)) = 0$. Par le théorème du rang on a
-    \begin{eqnarray*}
-      dim(Im(f)) &=& dim(E) - dim(Ker(f)) \\
-        &=& dim(E) = dim(F)
-    \end{eqnarray*}
-    Ainsi, $Im(f)$ est un sous-epsace vectoriel de $F$ de même dimension que $F$: on en déduit que $Im(f) = F$. Donc $f$ est surjectve.
-  \item[2. $ \Rightarrow$ 3.] On suppose que $f$ est surjective. Il s'agit de voir que $f$ est injective. Cela se-fait montrant que $dim(Ker(f)) = 0$. 
-\end{itemize}
-Enfi, $f$ est bijective si et seuelement si sa matrice dans les bases de $E$ et $F$ est inversible.
+\demo{ 
+  \begin{itemize}
+    \item[3. $\Rightarrow$ 1.] est clair.
+    \item[1. $\Rightarrow$ 2.] on suppose que $f$ est injective donc $Ker(f) = \{\vec{0}_E\}$ donc $dim(Ker(f)) = 0$. Par le théorème du rang on a
+      \begin{eqnarray*}
+        dim(Im(f)) &=& dim(E) - dim(Ker(f)) \\
+          &=& dim(E) = dim(F)
+      \end{eqnarray*}
+      Ainsi, $Im(f)$ est un sous-epsace vectoriel de $F$ de même dimension que $F$: on en déduit que $Im(f) = F$. Donc $f$ est surjectve.
+    \item[2. $ \Rightarrow$ 3.] On suppose que $f$ est surjective. Il s'agit de voir que $f$ est injective. Cela se-fait montrant que $dim(Ker(f)) = 0$. 
+  \end{itemize}
+  Enfin, $f$ est bijective si et seuelement si sa matrice dans les bases de $E$ et $F$ est inversible.
+}
 
 %
 %
