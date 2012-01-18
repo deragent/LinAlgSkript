@@ -132,4 +132,31 @@
         \end{quote}
         
     \end{itemize}
+    
+    \item[BETA next (DATE)] Correction des fautes suivantes:
+    \begin{itemize}
+      \item Section (\ref{sec:determ}), dans l'example: Avant:
+        \begin{quote}
+          \begin{eqnarray*}
+            \sigma = id           &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{22} \cdot A_{33} \\
+            \sigma = (1 ~ 2)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{21} \cdot A_{21} \cdot A_{33} \\
+            \sigma = (1 ~ 3)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{22} \cdot A_{13} \\
+            \sigma = (2 ~ 3)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{32} \cdot A_{23} \\
+            \sigma = (1 ~ 2 ~ 3)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{21} \cdot A_{32} \cdot A_{13} \\
+            \sigma = (1 ~ 3 ~ 2)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{12} \cdot A_{23}
+          \end{eqnarray*}
+        \end{quote}
+        Après:
+        \begin{quote}
+          \begin{eqnarray*}
+            \sigma = id           &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{22} \cdot A_{33} \\
+            \sigma = (1 ~ 2)      &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{21} \cdot A_{12} \cdot A_{33} \\
+            \sigma = (1 ~ 3)      &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{31} \cdot A_{22} \cdot A_{13} \\
+            \sigma = (2 ~ 3)      &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{11} \cdot A_{32} \cdot A_{23} \\
+            \sigma = (1 ~ 2 ~ 3)  &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{21} \cdot A_{32} \cdot A_{13} \\
+            \sigma = (1 ~ 3 ~ 2)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{12} \cdot A_{23}
+          \end{eqnarray*}
+        \end{quote}
+        
+    \end{itemize}
 \end{itemize}
