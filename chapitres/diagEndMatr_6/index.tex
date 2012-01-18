@@ -5,7 +5,7 @@
 %
 \paragraph{Rappels} Si $E$ est un espace vectoriel, on rappelle qu'un \underline{endomorphisme de $E$} est une application linéaire de $E$ dans $E$.
 
-\paragraph{Définition} On appelle réduction des endomorphismes (d'un espavec vectoriel de dimension finie) la démarche consistant à chercher une base de l'espace dans laquelle la matrice de l'endomorphisme à une form relativement simple. La diagonalisation des endomorphisme, lorsqu'elle est possible, s'inscrit dans cette démarche.
+\paragraph{Définition} On appelle réduction des endomorphismes (d'un espace vectoriel de dimension finie) la démarche consistant à chercher une base de l'espace dans laquelle la matrice de l'endomorphisme à une form relativement simple. La diagonalisation des endomorphisme, lorsqu'elle est possible, s'inscrit dans cette démarche.
 
 %
 %
@@ -69,6 +69,7 @@ $$f(\vec{v}) = \lambda \vec{v}$$
 
 %
 \subsection{Sous-espace propre}
+\label{sec:se_prop}
 %
 \paragraph{Définition} L'ensemble des vecteurs de $f$ associés à $\lambda$, noté généralement $E_\lambda$, s'appelle le sous-espace propre de $f$ associé à $\lambda$. On a
 \begin{eqnarray*}
@@ -102,11 +103,13 @@ Par suite, $E_\lambda$ est un sous-espace vectoriel de $E$.
         0 & 1
       \end{pmatrix} \right) X = 0$$
     c'est-à-dire $\begin{pmatrix} 4 & -4 \\ 1 & -1 \end{pmatrix} X = 0$ Il vient
-    $$\left( \begin{array}{cc|c} 4 & -4 & 0 \\ 1 & 1 & 0 \end{array} \right) \rightsquigarrow \left( \begin{array}{cc|c} 1 & 0 & 0 \\ 0 & 0 & 0 \end{array} \right) $$
+    $$\left( \begin{array}{cc|c} 4 & -4 & 0 \\ 1 & -1 & 0 \end{array} \right) 
+      \rightsquigarrow 
+      \left( \begin{array}{cc|c} 1 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right) $$
     Donc 
     \begin{eqnarray*}
       Ker(f + 2 \cdot id_E) &=& \{(t, t) \in \R^2 ~ \vert ~ \R \} \\
-        &=& \{t \cdot (1, 1) \in R^2 ~ \vert ~ t \in \R \} \\
+        &=& \{t \cdot (1, 1) \in \R^2 ~ \vert ~ t \in \R \} \\
         &=& Vect((1, 1))
     \end{eqnarray*}
     

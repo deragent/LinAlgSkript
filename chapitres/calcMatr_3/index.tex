@@ -304,7 +304,7 @@ $$n = 4 \rightarrow F_{4,1} =
   1 & 0 & 0 & 0
 \end{pmatrix}$$
 
-\paragraph{Proposition} Toute matrice carrée de taille $\times n$ peut s'exprimer à l'aide des matrices standard de taille $n\times n$
+\paragraph{Proposition} Toute matrice carrée de taille $n \times n$ peut s'exprimer à l'aide des matrices standard de taille $n\times n$
 $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
 
 \paragraph{Proposition} Soit $A$ une matrice de taille $n\times m$.
@@ -524,7 +524,7 @@ $$E_2(-4) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -4 & 0 \\ 0 & 0 & 1 \end{pmatrix} ~
 
 \paragraph{Théorème} Soit $n$ un entier naturel et $n \geq 1$. Alors les matrices élémentaires de taille $n \times n$ sont inversibles, et l'on a:
 \begin{enumerate}
-  \item $$E_i(C)^{-1} = \frac{1}{C} E_i \text{ avec } C \in \R \backslash \{ 0 \}$$
+  \item $$E_i(C)^{-1} = E_i(\frac{1}{C}) \text{ avec } C \in \R \backslash \{ 0 \}$$
   \item $$E_{i j}(C)^{-1} = E_{i j}(-C) \text{ avec } C \in \R$$
   \item $$E_{i j}^{-1} = E_{j i}$$
 \end{enumerate}
@@ -882,7 +882,7 @@ On applique le même pour les matrices triangulaires inférieures et les matrice
 \paragraph{Définition} Soit $A$ une matrice de taille $n\times m$. On appelle transposée de $A$ la matrice de taille $m\times n$ notée $A^T$, définie par
 \begin{itemize}
   \item la colonne $i$ de $A$ devient la ligne $i$ de $A^T$
-  \item la ligne $i$ de $A$ deivent la colonne $i$ de $A^T$
+  \item la ligne $i$ de $A$ devient la colonne $i$ de $A^T$
 \end{itemize}
 
 \paragraph{Exemple}

@@ -21,6 +21,7 @@ La composée de deux bijections étant encore une bijection, la composée de deu
 
 %
 \subsection{Groupe symétrique}
+\label{sec:grp_sym}
 %
 Alors $(Sym(E), \circ)$ est un groupe. En effet
 \begin{itemize}
@@ -62,7 +63,7 @@ $$(\sigma \circ \tau)(i) = \sigma(\tau(i))$$
 On obtient donc
 $$\sigma \circ \tau =\begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 2 & 4 \end{pmatrix}$$
 Calculons $\tau \circ \sigma^{-1} \in S_4$. Pour tout $i \in :\{1; 2; 3; 4\}$,
-$$(\tau \circ \sigma)^{-1}(i) = \tau(\sigma^{-1}(i))$$
+$$(\tau \circ \sigma^{-1})(i) = \tau(\sigma^{-1}(i))$$
 On obtient
 $$\tau \circ \sigma^{-1} = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 1 & 3 & 2 & 4 \end{pmatrix}$$
 La permutation inverse $\tau^{-1}$ de $\tau$ est
@@ -757,6 +758,6 @@ Pour calculer le déterminant d'une matrice, on peut:
 \subsection{Méthodes de calcul de l'inverse d'une matrice}
 Pour calculer  l'inverse d'une matrice\footnote{si l'inverse existe}, on peut
 \begin{itemize}
-  \item calculer la comatrice de cette matruce convient pour des matrices de taille $2 \times 2$ et $3 \times 3$.
+  \item calculer la comatrice de cette matrice convient pour des matrices de taille $2 \times 2$ et $3 \times 3$.
   \item utiliser l'algorithme d'élimination de Gauss convient pour des matrice de taille $3 \times 3$ et plus.
 \end{itemize}
