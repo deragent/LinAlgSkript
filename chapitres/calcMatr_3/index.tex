@@ -353,6 +353,7 @@ $$A = \sum_{(i, j) \in \{1; \ldots; n\}\times\{1; \ldots; n\}} a_{ij} F_{ij}$$
 
 %
 \subsection{Symbole de Kronecker}
+\label{sec:symb_kroen}
 %
 \paragraph{Définition} Soit $n \geq 1$ un entier naturel. On note
 $$\mS: \{1; \ldots; n\}\times\{1; \ldots; n \} \rightarrow \{0; 1\}$$
@@ -362,8 +363,8 @@ $$\delta_{ij} = \left\{\begin{array}{lr} 1 & \text{si i=j} \\ 0 & \text{sinon} \
 \paragraph{Corollaire} Soient $n \geq 1$ un entier naturel et
 $$(i, j), (k, l) \in \{1; \ldots; n\}\times\{1; \ldots; n\}$$
 alors
-$$F_{ij}F_{kl} = \delta_{ik} F_{il} = 
-  \left\{\begin{array}{lr} F_{il} & \text{si i=j} \\ 0 & \text{sinon} \end{array} \right.$$
+$$F_{ij}F_{kl} = \delta_{jk} F_{il} = 
+  \left\{\begin{array}{lr} F_{il} & \text{si j=k} \\ 0 & \text{sinon} \end{array} \right.$$
 
 \demo{D'après la proposition, précédente, $F_{ij} F_{kl}$ est la matrice don la $i^{\text{ème}}$ ligne est la $j^{\text{ème}}$ ligne de $F_{kl}$ et dont les autres lignes sont nulles. Il vient
   \begin{itemize}
@@ -668,19 +669,20 @@ Ce qui précède fournit une méthode pour calcule l'inverse d'une matrice, si c
 
 %
 \subsection{Calculer l'inverse d'une matrice}
+\label{sec:calc_inv_matr}
 %
 \paragraph{Methode de calcul} Soit $A$ matrice carrée de taille $n\times n$. \\
 On forme la matrice $(A ~ \vert ~ I_n)$. En utilisant les opérations élémentaires on met la matrice $E$ en forme échelonnée réduite et on éffectue parallelement les mêmes opérations élémentaires sur les lignes de $I_n$. Si $A$ sous la forme échelonnée réduite est égale à $I_n$ $A$ est inversible. La matrice inverse de $A$ est alors la partie $I_n$ où on a éffectue les opérations élémentaires. \\
 $E_1, E_2, \ldots, E_l$ sont des matrices élémentaires.
 \begin{eqnarray*}
-  A \cdot E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = I_n \\
+  I_n = E_l \cdot &\ldots& \cdot E_2 \cdot E_1 \cdot A \\
   &\Downarrow& \\
-  I_n \cdot E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = A^{-1} \\
+  E_1^{-1} \cdot E_2^{-1} \cdot &\ldots& \cdot E_l^{-1} \cdot I_n = A \\
   &\Downarrow& \\
-  E_1 \cdot E_2 \cdot &\ldots& \cdot E_l = A^{-1}
+  E_l \cdot &\ldots& \cdot E_2 \cdot E_1 = A^{-1}
 \end{eqnarray*}
 De la même manière on peut calculer $A^{-1} B$.
-$$A^{-1} B = E_1 \cdot E_2 \cdot \ldots \cdot E_l \cdot B$$
+$$A^{-1} B = E_l \cdot &\ldots& \cdot E_2 \cdot E_1 \cdot B$$
 où $E_1, E_2, \ldots, E_l$ sont les opérations élémentaires dont on à besoin pour mettre $A$ sous forme échelonnée réduite égal à $I_n$.
 
 \paragraph{Exemple} Soient $A = \begin{pmatrix} 1 & 2 & 1 \\ 4 & 0 & -1 \\ -1 & 2 & 2 \end{pmatrix}$ et $B = \begin{pmatrix} 1 & 2 & 0 & 4 \\ -3 & 1 & 2 & 0 \\ 5 & 1 & -1 & 3 \end{pmatrix}$.
