@@ -203,6 +203,7 @@ $$p_{\sigma}(A) = \epsilon(\sigma) \cdot a_{\sigma(1) ~ 1} \cdot a_{\sigma(2) ~ 
 
 %
 \subsection{Déterminant}
+\label{sec:determ}
 %
 \paragraph{Définition} Soit $A = (a_{ij})_{1 \leq i, j \leq n}$ une matrice carrée de taille $n \times n$. On appelle déterminant de $A$ le nombre
 $$det(A) = \sum_{\sigma \in S_n} p_{\sigma}(A) = \sum_{\sigma \in S_n} \epsilon(\sigma) \prod_{i=1}^{n} a_{\sigma(i) ~ i}$$
@@ -212,10 +213,10 @@ $$S_3 = \{id; (1 ~ 2); (1 ~ 3); (2 ~ 3); (1 ~ 2 ~ 3); (1 ~ 3 ~ 2)\}$$
 On a 
 \begin{eqnarray*}
   \sigma = id           &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{22} \cdot A_{33} \\
-  \sigma = (1 ~ 2)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{21} \cdot A_{21} \cdot A_{33} \\
-  \sigma = (1 ~ 3)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{22} \cdot A_{13} \\
-  \sigma = (2 ~ 3)      &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{11} \cdot A_{32} \cdot A_{23} \\
-  \sigma = (1 ~ 2 ~ 3)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{21} \cdot A_{32} \cdot A_{13} \\
+  \sigma = (1 ~ 2)      &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{21} \cdot A_{12} \cdot A_{33} \\
+  \sigma = (1 ~ 3)      &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{31} \cdot A_{22} \cdot A_{13} \\
+  \sigma = (2 ~ 3)      &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{11} \cdot A_{32} \cdot A_{23} \\
+  \sigma = (1 ~ 2 ~ 3)  &\Rightarrow& p_{\sigma}(A) = -1 \cdot A_{21} \cdot A_{32} \cdot A_{13} \\
   \sigma = (1 ~ 3 ~ 2)  &\Rightarrow& p_{\sigma}(A) = 1 \cdot A_{31} \cdot A_{12} \cdot A_{23}
 \end{eqnarray*}
 
