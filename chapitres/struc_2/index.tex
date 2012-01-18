@@ -95,7 +95,7 @@ Si de plus $\times$ est commutative, on dit que $(A, +, \times)$ est un anneaux 
 %
 \subsection{Espace vectoriel}
 %
-\paragraph{Définition} Soit $K$ un corps commutatif. On appelle espace vectoriel sur $K$ (ou $K$-espace vectoriel) un ensemble $V$ muni d'une loi de composition $+$ et d'une loi de composition externe
+\paragraph{Définition} Soit $K$ un corps commutatif. On appelle espace vectoriel sur $K$ (ou $K$-espace vectoriel) un ensemble $V$ muni d'une loi de composition interne $+$ et d'une loi de composition externe
 \begin{eqnarray*}
   \times: K \times V &\rightarrow& V \\
   (\alpha, \vec{v}) &\mapsto& \alpha\cdot\vec{v} = \alpha\vec{v}
@@ -188,6 +188,7 @@ Alors $f$ est une application linéaire. En effet, soient $(x_1, x_2, x_3), (y_1
 
 %
 \subsection{Isomorphisme}
+\label{sec:isomorphisme}
 %
 \paragraph{Définition} Soient $U$ et $V$ deux $\R$-espace vectoriels. Un isomorphisme de $\R$-espace vectoriels de $U$ dans $V$ est une application $\R$-linéaire bijective de $U$ dans $V$. 
 
@@ -215,7 +216,7 @@ $f$ est clairement surjective et $f$ est injective puisque deux polynômes sont 
 
 \paragraph{Propostition}
 \begin{enumerate} 
-  \item Soient $(U, +, \cdot)$ et $(V, +, \cdot)$ deux $\R$-espace vectoriels et $f: U \rightarrow V$ une application $\R$-linéaire. Alors on a:
+  \item Soient $(U, +, \cdot)$ et $(V, +, \cdot)$ deux $\R$-espace vectoriels et $f: U \rightarrow V$ une application $\R$-linéaire. Alors:
     \begin{enumerate}[a)] 
       \item $f(\vec{0}_U) = \vec{0}_V$
       \item $f(-\vec{u}) = -f(\vec{u}) ~\forall~ \vec{u} \in U$
@@ -266,7 +267,7 @@ $f$ est clairement surjective et $f$ est injective puisque deux polynômes sont 
         \item Soient $\vec{u}, \vec{v} \in V, \alpha \in \R$.
           \begin{eqnarray*}
             (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
-              &=& g(\alpha \vec{u} + \vec{v}) \\
+              &=& g(\alpha \cdot f(\vec{u}) + f(\vec{v})) \\
               &=& \alpha \cdot g(f(\vec{u})) + g(f(\vec{v})) \\
               &=& \alpha \cdot (g \circ f)(\vec{u}) + (g \circ f)(\vec{v})
           \end{eqnarray*}
@@ -334,4 +335,3 @@ $f$ est clairement surjective et $f$ est injective puisque deux polynômes sont 
     && +(1 \cdot (-5) + (-2) \cdot 1 + 3 \cdot 1) X^3 + ((-2) \cdot (-5) + 3 \cdot 1) X^4 + (3 \cdot (-5)) X^5 \\
   &=& -3 + 7 X - 10 X^2 - 4 X^3 + 13 X^4 - 15 X^5
 \end{eqnarray*}
-On vérifie que $\times$ est associative, unifère et bilinéaire. Alors $(\R[X],+ ,\times ,\cdot)$ est un $\R$-algèbre.

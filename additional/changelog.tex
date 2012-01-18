@@ -17,4 +17,62 @@
       \end{eqnarray*}
     \end{quote}
 
+  \item[BETA 0.1.2 (17.01.2012)] Correction des errerud d'orthographe et des fautes suivantes:
+    \begin{itemize}
+      \item Section (\ref{sec:isomorphisme}): Avant
+        \begin{quote}
+          \begin{eqnarray*}
+            (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
+              &=& g(\alpha \vec{u} + \vec{v}) \\
+              &=& \alpha \cdot g(f(\vec{u})) + g(f(\vec{v})) \\
+              &=& \alpha \cdot (g \circ f)(\vec{u}) + (g \circ f)(\vec{v})
+          \end{eqnarray*}
+        \end{quote}
+        Après
+        \begin{quote}
+          \begin{eqnarray*}
+            (g \circ f)(\alpha \vec{u} +\vec{v}) &=& g(f(\alpha \vec{u} +\vec{v})) \\
+              &=& g(\alpha \cdot f(\vec{u}) + f(\vec{v})) \\
+              &=& \alpha \cdot g(f(\vec{u})) + g(f(\vec{v})) \\
+              &=& \alpha \cdot (g \circ f)(\vec{u}) + (g \circ f)(\vec{v})
+          \end{eqnarray*}
+        \end{quote}
+      
+      \item Section (\ref{sec:grp_sym}), dans les exemples: Avant
+        \begin{quote}
+          Calculons $\tau \circ \sigma^{-1} \in S_4$. Pour tout $i \in :\{1; 2; 3; 4\}$,
+          $$(\tau \circ \sigma)^{-1}(i) = \tau(\sigma^{-1}(i))$$
+        \end{quote}
+        Après
+        \begin{quote}
+          Calculons $\tau \circ \sigma^{-1} \in S_4$. Pour tout $i \in :\{1; 2; 3; 4\}$,
+          $$(\tau \circ \sigma^{-1})(i) = \tau(\sigma^{-1}(i))$$
+        \end{quote}
+        
+      \item Section (\ref{sec:se_prop}), dans les exemples: Avant:
+        \begin{quote}
+          $$\left( \begin{array}{cc|c} 4 & -4 & 0 \\ 1 & 1 & 0 \end{array} \right) 
+            \rightsquigarrow 
+            \left( \begin{array}{cc|c} 1 & 0 & 0 \\ 0 & 0 & 0 \end{array} \right) $$
+          Donc 
+          \begin{eqnarray*}
+            Ker(f + 2 \cdot id_E) &=& \{(t, t) \in \R^2 ~ \vert ~ \R \} \\
+              &=& \{t \cdot (1, 1) \in R^2 ~ \vert ~ t \in \R \} \\
+              &=& Vect((1, 1))
+          \end{eqnarray*}
+        \end{quote}
+        Après:
+        \begin{quote}
+          $$\left( \begin{array}{cc|c} 4 & -4 & 0 \\ 1 & -1 & 0 \end{array} \right) 
+            \rightsquigarrow 
+            \left( \begin{array}{cc|c} 1 & -1 & 0 \\ 0 & 0 & 0 \end{array} \right) $$
+          Donc 
+          \begin{eqnarray*}
+            Ker(f + 2 \cdot id_E) &=& \{(t, t) \in \R^2 ~ \vert ~ \R \} \\
+              &=& \{t \cdot (1, 1) \in \R^2 ~ \vert ~ t \in \R \} \\
+              &=& Vect((1, 1))
+          \end{eqnarray*}
+        \end{quote}
+        
+    \end{itemize}
 \end{itemize}
